@@ -1,6 +1,5 @@
 # README
 
-[![Build Status](https://secure.travis-ci.org/fungio/fungio-google-map.png?branch=master)](http://travis-ci.org/fungio/fungio-google-map)
 [![Coverage Status](https://coveralls.io/repos/fungio/fungio-google-map/badge.png?branch=master)](https://coveralls.io/r/fungio/fungio-google-map?branch=master)
 
 The Fungio Google Map project provides a Google Map integration for your PHP 5.3+ Project. It allows you to manage map,
