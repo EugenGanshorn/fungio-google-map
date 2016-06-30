@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Circle which describes a google map circle.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Exception\OverlayException;
  */
 class Circle extends AbstractOptionsAsset implements ExtendableInterface
 {
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $center;
 
     /** @var double */
@@ -32,7 +32,7 @@ class Circle extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Create a circle.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $center The circle center.
+     * @param \Fungio\GoogleMap\Base\Coordinate $center The circle center.
      * @param double                           $radius The circle radius.
      */
     public function __construct(Coordinate $center = null, $radius = 1)
@@ -52,7 +52,7 @@ class Circle extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the circle center.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The circle center.
+     * @return \Fungio\GoogleMap\Base\Coordinate The circle center.
      */
     public function getCenter()
     {
@@ -63,10 +63,10 @@ class Circle extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the circle center.
      *
      * Available prototypes:
-     *  - function setCenter(Ivory\GoogleMap\Base\Coordinate $center)
+     *  - function setCenter(Fungio\GoogleMap\Base\Coordinate $center)
      *  - function setCenter(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the center is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the center is not valid (prototypes).
      */
     public function setCenter()
     {
@@ -101,7 +101,7 @@ class Circle extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param double $radius The circle radius.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the radius is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the radius is not valid.
      */
     public function setRadius($radius)
     {

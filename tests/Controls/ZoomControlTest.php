@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Controls;
+namespace Fungio\Tests\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
 
 /**
  * Zoom control test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Controls\ZoomControlStyle;
  */
 class ZoomControlTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Controls\ZoomControl */
+    /** @var \Fungio\GoogleMap\Controls\ZoomControl */
     protected $zoomControl;
 
     /**
@@ -56,7 +56,7 @@ class ZoomControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      */
     public function testControlPositionWithInvalidValue()
     {
@@ -64,7 +64,7 @@ class ZoomControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      * @expectedExceptionMessage The zoom control style of a zoom control can only be : default, large, small.
      */
     public function testZoomControlStyleWithInvalidValue()

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Controls;
+namespace Fungio\Tests\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\RotateControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\RotateControl;
 
 /**
  * Rotate control test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Controls\RotateControl;
  */
 class RotateControlTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Controls\RotateControl */
+    /** @var \Fungio\GoogleMap\Controls\RotateControl */
     protected $rotateControl;
 
     /**
@@ -53,7 +53,7 @@ class RotateControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      */
     public function testControlPositionWithInvalidValue()
     {

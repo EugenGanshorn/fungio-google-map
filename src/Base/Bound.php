@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Base;
+namespace Fungio\GoogleMap\Base;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Exception\BaseException;
-use Ivory\GoogleMap\Overlays\ExtendableInterface;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Exception\BaseException;
+use Fungio\GoogleMap\Overlays\ExtendableInterface;
 
 /**
  * Bound wich describes a google map bound.
@@ -23,10 +23,10 @@ use Ivory\GoogleMap\Overlays\ExtendableInterface;
  */
 class Bound extends AbstractJavascriptVariableAsset
 {
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $southWest;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $northEast;
 
     /** @var array */
@@ -57,7 +57,7 @@ class Bound extends AbstractJavascriptVariableAsset
     /**
      * Gets the south west coordinate.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The south west coordinate.
+     * @return \Fungio\GoogleMap\Base\Coordinate The south west coordinate.
      */
     public function getSouthWest()
     {
@@ -68,10 +68,10 @@ class Bound extends AbstractJavascriptVariableAsset
      * Sets the south west coordinate.
      *
      * Available prototypes:
-     *  - function setSouthWest(Ivory\GoogleMap\Base\Coordinate $southWest = null)
+     *  - function setSouthWest(Fungio\GoogleMap\Base\Coordinate $southWest = null)
      *  - function setSouthWest(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the south west coordinate is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the south west coordinate is not valid (prototypes).
      */
     public function setSouthWest()
     {
@@ -100,7 +100,7 @@ class Bound extends AbstractJavascriptVariableAsset
     /**
      * Gets the north east coordinate.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The northh east coordinate.
+     * @return \Fungio\GoogleMap\Base\Coordinate The northh east coordinate.
      */
     public function getNorthEast()
     {
@@ -111,10 +111,10 @@ class Bound extends AbstractJavascriptVariableAsset
      * Sets the north east coordinate.
      *
      * Available prototypes:
-     *  - function setNorthEast(Ivory\GoogleMap\Base\Coordinate $northEast = null)
+     *  - function setNorthEast(Fungio\GoogleMap\Base\Coordinate $northEast = null)
      *  - function setNorthEast(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the north east coordinate is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the north east coordinate is not valid (prototypes).
      */
     public function setNorthEast()
     {
@@ -177,7 +177,7 @@ class Bound extends AbstractJavascriptVariableAsset
     /**
      * Adds an object that the bound extends.
      *
-     * @param \Ivory\GoogleMap\Overlays\ExtendableInterface $extend The object that the bound extends.
+     * @param \Fungio\GoogleMap\Overlays\ExtendableInterface $extend The object that the bound extends.
      */
     public function extend(ExtendableInterface $extend)
     {
@@ -187,7 +187,7 @@ class Bound extends AbstractJavascriptVariableAsset
     /**
      * Gets the center of the bound.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The bound center.
+     * @return \Fungio\GoogleMap\Base\Coordinate The bound center.
      */
     public function getCenter()
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper;
+namespace Fungio\Tests\GoogleMap\Helper;
 
-use Ivory\GoogleMap\Helper\ApiHelper;
+use Fungio\GoogleMap\Helper\ApiHelper;
 
 /**
  * Api helper test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Helper\ApiHelper;
  */
 class ApiHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\ApiHelper */
+    /** @var \Fungio\GoogleMap\Helper\ApiHelper */
     protected $apiHelper;
 
     /**
@@ -59,9 +59,9 @@ class ApiHelperTest extends \PHPUnit_Framework_TestCase
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -72,9 +72,9 @@ EOF;
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=fr&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=fr&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -85,9 +85,9 @@ EOF;
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -98,9 +98,9 @@ EOF;
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=geometry,places&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=geometry,places&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -111,9 +111,9 @@ EOF;
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false","callback":callback}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false","callback":callback}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -124,9 +124,9 @@ EOF;
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=true"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=true"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 

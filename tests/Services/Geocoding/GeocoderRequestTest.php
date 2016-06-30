@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding;
 
-use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderRequest;
 
 /**
  * Geocoder request test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest;
  */
 class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Geocoding\GeocoderRequest */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\GeocoderRequest */
     protected $geocoderRequest;
 
     /**
@@ -66,7 +66,7 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder request address must be a string value.
      */
     public function testAddressWithInvalidValue()
@@ -76,7 +76,7 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testCoordinateWithCoordinate()
     {
-        $coordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $coordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->geocoderRequest->setCoordinate($coordinate);
 
@@ -102,10 +102,10 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The coordinate setter arguments is invalid.
      * The available prototypes are :
-     * - function setCoordinate(Ivory\GoogleMap\Base\Coordinate $coordinate = null)
+     * - function setCoordinate(Fungio\GoogleMap\Base\Coordinate $coordinate = null)
      * - function setCoordinate(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testCoordinateWithInvalidValue()
@@ -115,7 +115,7 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $this->geocoderRequest->setBound($bound);
 
         $this->assertTrue($this->geocoderRequest->hasBound());
@@ -124,8 +124,8 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithCoordinates()
     {
-        $southWest = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $northEast = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $southWest = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $northEast = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->geocoderRequest->setBound($southWest, $northEast);
 
@@ -155,11 +155,11 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The bound setter arguments are invalid.
      * The available prototypes are :
-     * - function setBound(Ivory\GoogleMap\Base\Bound $bound = null)
-     * - function setBound(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     * - function setBound(Fungio\GoogleMap\Base\Bound $bound = null)
+     * - function setBound(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      * - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,
@@ -191,7 +191,7 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder request region must be a string with two characters.
      */
     public function testRegionWithInvalidValue()
@@ -216,7 +216,7 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder request language must be a string with two or five characters.
      */
     public function testLanguageWithInvalidValue()
@@ -232,7 +232,7 @@ class GeocoderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder request sensor flag must be a boolean value.
      */
     public function testSensorWithInvalidValue()

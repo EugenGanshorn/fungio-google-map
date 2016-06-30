@@ -6,8 +6,8 @@ control appears by default in the top left corner of the map.
 ## Build your rotate control
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\RotateControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\RotateControl;
 
 $rotateControl = new RotateControl();
 
@@ -18,12 +18,12 @@ $rotateControl->setControlPosition(ControlPosition::TOP_LEFT);
 ## Configure the rotate control position
 
 For configurating the rotate control position, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
+``Fungio\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
 position. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\RotateControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\RotateControl;
 
 $rotateControl = new RotateControl():
 
@@ -68,8 +68,8 @@ $rotateControl->setControlPosition('bottom_right');
 ## Add your rotate control to the map
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\RotateControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\RotateControl;
 
 $rotateControl = new RotateControl();
 

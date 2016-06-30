@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Events\Event;
-use Ivory\GoogleMap\Helper\Events\EventManagerHelper;
+use Fungio\GoogleMap\Events\Event;
+use Fungio\GoogleMap\Helper\Events\EventManagerHelper;
 
 /**
  * Event manager helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Events\EventManagerHelper;
  */
 class EventManagerHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Events\EventHelper */
+    /** @var \Fungio\GoogleMap\Helper\Events\EventHelper */
     protected $eventManagerHelper;
 
     /**

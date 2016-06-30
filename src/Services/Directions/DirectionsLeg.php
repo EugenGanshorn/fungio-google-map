@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\DirectionsException;
-use Ivory\GoogleMap\Services\Base\Distance;
-use Ivory\GoogleMap\Services\Base\Duration;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Services\Base\Distance;
+use Fungio\GoogleMap\Services\Base\Duration;
 
 /**
  * A directions leg which describes a google map directions leg.
@@ -24,22 +24,22 @@ use Ivory\GoogleMap\Services\Base\Duration;
  */
 class DirectionsLeg
 {
-    /** @var \Ivory\GoogleMap\Services\Base\Distance */
+    /** @var \Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Duration */
+    /** @var \Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
     /** @var string */
     protected $endAddress;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $endLocation;
 
     /** @var string */
     protected $startAddress;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $startLocation;
 
     /** @var array */
@@ -51,12 +51,12 @@ class DirectionsLeg
     /**
      * Creates a directions leg.
      *
-     * @param \Ivory\GoogleMap\Services\Base\Distance $distance      The distance.
-     * @param \Ivory\GoogleMap\Services\Base\Duration $duration      The duration.
+     * @param \Fungio\GoogleMap\Services\Base\Distance $distance      The distance.
+     * @param \Fungio\GoogleMap\Services\Base\Duration $duration      The duration.
      * @param string                                  $endAddress    The end address.
-     * @param \Ivory\GoogleMap\Base\Coordinate        $endLocation   The end location.
+     * @param \Fungio\GoogleMap\Base\Coordinate        $endLocation   The end location.
      * @param string                                  $startAddress  The start address.
-     * @param \Ivory\GoogleMap\Base\Coordinate        $startLocation The start location.
+     * @param \Fungio\GoogleMap\Base\Coordinate        $startLocation The start location.
      * @param array                                   $steps         The steps.
      * @param array                                   $viaWaypoint   The via waypoint.
      */
@@ -83,7 +83,7 @@ class DirectionsLeg
     /**
      * Gets the leg distance.
      *
-     * @return \Ivory\GoogleMap\Services\Base\Distance The leg distance.
+     * @return \Fungio\GoogleMap\Services\Base\Distance The leg distance.
      */
     public function getDistance()
     {
@@ -93,7 +93,7 @@ class DirectionsLeg
     /**
      * Sets the leg distance.
      *
-     * @param \Ivory\GoogleMap\Services\Base\Distance $distance The leg distance.
+     * @param \Fungio\GoogleMap\Services\Base\Distance $distance The leg distance.
      */
     public function setDistance(Distance $distance)
     {
@@ -103,7 +103,7 @@ class DirectionsLeg
     /**
      * Gets the leg duration.
      *
-     * @return \Ivory\GoogleMap\Services\Base\Duration The leg duration.
+     * @return \Fungio\GoogleMap\Services\Base\Duration The leg duration.
      */
     public function getDuration()
     {
@@ -113,7 +113,7 @@ class DirectionsLeg
     /**
      * Sets the leg duration
      *
-     * @param \Ivory\GoogleMap\Services\Base\Duration $duration The leg duration.
+     * @param \Fungio\GoogleMap\Services\Base\Duration $duration The leg duration.
      */
     public function setDuration(Duration $duration)
     {
@@ -135,7 +135,7 @@ class DirectionsLeg
      *
      * @param string The leg end address.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the and address is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the and address is not valid.
      */
     public function setEndAddress($endAddress)
     {
@@ -149,7 +149,7 @@ class DirectionsLeg
     /**
      * Gets the leg end location.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The leg end location.
+     * @return \Fungio\GoogleMap\Base\Coordinate The leg end location.
      */
     public function getEndLocation()
     {
@@ -159,7 +159,7 @@ class DirectionsLeg
     /**
      * Sets the leg end location.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $endLocation The leg end location.
+     * @param \Fungio\GoogleMap\Base\Coordinate $endLocation The leg end location.
      */
     public function setEndLocation(Coordinate $endLocation)
     {
@@ -181,7 +181,7 @@ class DirectionsLeg
      *
      * @param string $startAddress The leg start address.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the start address is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the start address is not valid.
      */
     public function setStartAddress($startAddress)
     {
@@ -195,7 +195,7 @@ class DirectionsLeg
     /**
      * Gets the leg start location.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The leg start location.
+     * @return \Fungio\GoogleMap\Base\Coordinate The leg start location.
      */
     public function getStartLocation()
     {
@@ -205,7 +205,7 @@ class DirectionsLeg
     /**
      * Sets the leg start location.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $startLocation The leg start location.
+     * @param \Fungio\GoogleMap\Base\Coordinate $startLocation The leg start location.
      */
     public function setStartLocation(Coordinate $startLocation)
     {
@@ -239,7 +239,7 @@ class DirectionsLeg
     /**
      * Add a step to the leg.
      *
-     * @param \Ivory\GoogleMap\Services\Directions\DirectionsStep The step to add.
+     * @param \Fungio\GoogleMap\Services\Directions\DirectionsStep The step to add.
      */
     public function addStep(DirectionsStep $step)
     {

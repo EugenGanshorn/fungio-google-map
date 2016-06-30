@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResponse;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResponse;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
 
 /**
  * Geocoder response test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
  */
 class GeocoderResponseTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResponse */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResponse */
     protected $geocoderResponse;
 
     /** @var array */
@@ -35,7 +35,7 @@ class GeocoderResponseTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $geocoderResult = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult')
+        $geocoderResult = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResult')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -63,7 +63,7 @@ class GeocoderResponseTest extends \PHPUnit_Framework_TestCase
 
     public function testResults()
     {
-        $geocoderResult = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult')
+        $geocoderResult = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResult')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -82,7 +82,7 @@ class GeocoderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder response status can only be : ERROR, INVALID_REQUEST, OK,
      * OVER_QUERY_LIMIT, REQUEST_DENIED, UNKNOWN_ERROR, ZERO_RESULTS.
      */

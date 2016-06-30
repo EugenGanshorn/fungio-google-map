@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\PanControl;
-use Ivory\GoogleMap\Helper\Controls\PanControlHelper;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\PanControl;
+use Fungio\GoogleMap\Helper\Controls\PanControlHelper;
 
 /**
  * Overview map control helper test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Helper\Controls\PanControlHelper;
  */
 class PanControlHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\PanControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\PanControlHelper */
     protected $panControlHelper;
 
     /**
@@ -44,14 +44,14 @@ class PanControlHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ControlPositionHelper',
+            'Fungio\GoogleMap\Helper\Controls\ControlPositionHelper',
             $this->panControlHelper->getControlPositionHelper()
         );
     }
 
     public function testInitialState()
     {
-        $controlPositionHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ControlPositionHelper');
+        $controlPositionHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ControlPositionHelper');
 
         $this->panControlHelper = new PanControlHelper($controlPositionHelper);
 

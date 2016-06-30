@@ -6,7 +6,7 @@ balloon. It has a content area and a tapered stem, where the tip of the stem is 
 ## Build your info window
 
 ``` php
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 $infoWindow = new InfoWindow();
 
@@ -30,7 +30,7 @@ $infoWindow->setOptions(array(
 ## Add your info window to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 $infoWindow = new InfoWindow();
 
@@ -41,7 +41,7 @@ $map->addInfoWindow($infoWindow);
 ## Add your info window to a marker
 
 ``` php
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 $infoWindow = new InfoWindow();
 
@@ -52,12 +52,12 @@ $marker->setInfoWindow($infoWindow);
 ## Configure info window open event
 
 For configurating the info window open event, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Events\MouseEvent`` is here. It allows you to access all constants which describe open event. If you
+``Fungio\GoogleMap\Events\MouseEvent`` is here. It allows you to access all constants which describe open event. If you
 don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Events\MouseEvent;
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Events\MouseEvent;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 $infoWindow = new InfoWindow();
 

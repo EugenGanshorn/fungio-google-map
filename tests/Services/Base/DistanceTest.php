@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Service;
+namespace Fungio\Tests\GoogleMap\Services\Service;
 
-use Ivory\GoogleMap\Services\Base\Distance;
+use Fungio\GoogleMap\Services\Base\Distance;
 
 /**
  * Distance test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Base\Distance;
  */
 class DistanceTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Base\Distance */
+    /** @var \Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
     /**
@@ -46,7 +46,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The distance text must be a string value.
      */
     public function testTextWithInvalidValue()
@@ -55,7 +55,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The distance value must be a numeric value.
      */
     public function testValueWithInvalidValue()

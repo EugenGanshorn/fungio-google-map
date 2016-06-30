@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Assets;
+namespace Fungio\Tests\GoogleMap\Assets;
 
 /**
  * Javascript variable asset test.
@@ -18,7 +18,7 @@ namespace Ivory\Tests\GoogleMap\Assets;
  */
 class JavascriptVariableAssetTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset */
+    /** @var \Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset */
     protected $asset;
 
     /**
@@ -26,7 +26,7 @@ class JavascriptVariableAssetTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->asset = $this->getMockForAbstractClass('Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset');
+        $this->asset = $this->getMockForAbstractClass('Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset');
     }
 
     /**
@@ -44,7 +44,7 @@ class JavascriptVariableAssetTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $this->asset = $this->getMockBuilder('Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset')
+        $this->asset = $this->getMockBuilder('Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset')
             ->setConstructorArgs(array('foo'))
             ->getMockForAbstractClass();
 
@@ -59,7 +59,7 @@ class JavascriptVariableAssetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\AssetException
+     * @expectedException \Fungio\GoogleMap\Exception\AssetException
      * @expectedExceptionMessage The javascript variable must be a string value.
      */
     public function testJavascriptVariableWithInvalidVariable()
@@ -76,7 +76,7 @@ class JavascriptVariableAssetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\AssetException
+     * @expectedException \Fungio\GoogleMap\Exception\AssetException
      * @expectedExceptionMessage The prefix of a javascript variable must be a string value.
      */
     public function testPrefixJavascriptVariableWithInvalidPrefix()

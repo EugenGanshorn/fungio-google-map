@@ -3,9 +3,9 @@
 ## Build a directions request
 
 ``` php
-use Ivory\GoogleMap\Services\Directions\DirectionsRequest;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\Directions\DirectionsRequest;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 $request = new DirectionsRequest();
 
@@ -38,7 +38,7 @@ $request->setSensor(false);
 ## Route your request
 
 ``` php
-use Ivory\GoogleMap\Services\Directions\DirectionsRequest;
+use Fungio\GoogleMap\Services\Directions\DirectionsRequest;
 
 $request = new DirectionsRequest();
 

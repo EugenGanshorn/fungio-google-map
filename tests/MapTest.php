@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap;
+namespace Fungio\Tests\GoogleMap;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\MapTypeId;
 
 /**
  * Map test.
@@ -25,7 +25,7 @@ use Ivory\GoogleMap\MapTypeId;
  */
 class MapTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Map */
+    /** @var \Fungio\GoogleMap\Map */
     protected $map;
 
     /**
@@ -41,7 +41,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUpBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $bound
             ->expects($this->any())
             ->method('hasCoordinates')
@@ -83,8 +83,8 @@ class MapTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->map->hasStreetViewControl());
         $this->assertFalse($this->map->hasZoomControl());
 
-        $this->assertInstanceOf('Ivory\GoogleMap\Events\EventManager', $this->map->getEventManager());
-        $this->assertInstanceOf('Ivory\GoogleMap\Overlays\MarkerCluster', $this->map->getMarkerCluster());
+        $this->assertInstanceOf('Fungio\GoogleMap\Events\EventManager', $this->map->getEventManager());
+        $this->assertInstanceOf('Fungio\GoogleMap\Overlays\MarkerCluster', $this->map->getMarkerCluster());
 
         $this->assertEmpty($this->map->getMarkers());
         $this->assertEmpty($this->map->getInfoWindows());
@@ -109,7 +109,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The html container id of a map must be a string value.
      */
     public function testHtmlContainerWithInvalidValue()
@@ -125,7 +125,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The asynchronous load of a map must be a boolean value.
      */
     public function testAsyncWithInvalidValue()
@@ -141,7 +141,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The auto zoom of a map must be a boolean value.
      */
     public function testAutoZoomWithInvalidValue()
@@ -151,7 +151,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testCenterWithCoordinate()
     {
-        $coordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $coordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->map->setCenter($coordinate);
 
         $this->assertSame($coordinate, $this->map->getCenter());
@@ -167,10 +167,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The center setter arguments is invalid.
      * The available prototypes are :
-     * - function setCenter(Ivory\GoogleMap\Base\Coordinate $center)
+     * - function setCenter(Fungio\GoogleMap\Base\Coordinate $center)
      * - function setCenter(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testCenterWithInvalidValue()
@@ -180,7 +180,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $this->map->setBound($bound);
 
         $this->assertSame($bound, $this->map->getBound());
@@ -188,8 +188,8 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithCoordinates()
     {
-        $southWestCoordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $northEastCoordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $southWestCoordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $northEastCoordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->map->setBound($southWestCoordinate, $northEastCoordinate);
 
@@ -220,11 +220,11 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The bound setter arguments is invalid.
      * The available prototypes are :
-     * - function setBound(Ivory\GoogleMap\Base\Bound $bound)
-     * - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     * - function setBound(Fungio\GoogleMap\Base\Bound $bound)
+     * - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      * - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,
@@ -246,7 +246,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The map option property of a map must be a string value.
      */
     public function testHasMapOptionWithInvalidValue()
@@ -262,7 +262,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      */
     public function testSetMapOptionWithInvalidValue()
     {
@@ -270,7 +270,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      */
     public function testGetMapOptionWithInvalidValue()
     {
@@ -285,7 +285,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The map option "foo" does not exist.
      */
     public function testRemoveMapOptionWithInvalidValue()
@@ -300,7 +300,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The stylesheet option property of a map must be a string value.
      */
     public function testHasStylesheetOptionWithInvalidValue()
@@ -316,7 +316,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      */
     public function testSetStylesheetOptionWithInvalidValue()
     {
@@ -324,7 +324,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      */
     public function testGetStylesheetOptionWithInvalidValue()
     {
@@ -339,7 +339,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The stylesheet option "foo" does not exist.
      */
     public function testRemoveStylesheetOptionWithInvalidValue()
@@ -349,7 +349,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testMapTypeControlWithMapTypeControl()
     {
-        $mapTypeControl = $this->getMock('Ivory\GoogleMap\Controls\MapTypeControl');
+        $mapTypeControl = $this->getMock('Fungio\GoogleMap\Controls\MapTypeControl');
         $this->map->setMapTypeControl($mapTypeControl);
 
         $this->assertSame($mapTypeControl, $this->map->getMapTypeControl());
@@ -373,7 +373,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testMapTypeControlWithNullValue()
     {
-        $this->map->setMapTypeControl($this->getMock('Ivory\GoogleMap\Controls\MapTypeControl'));
+        $this->map->setMapTypeControl($this->getMock('Fungio\GoogleMap\Controls\MapTypeControl'));
         $this->map->setMapTypeControl(null);
 
         $this->assertNull($this->map->getMapTypeControl());
@@ -381,10 +381,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The map type control setter arguments is invalid.
      * The available prototypes are :
-     * - function setMapTypeControl(Ivory\GoogleMap\Controls\MapTypeControl $mapTypeControl = null)
+     * - function setMapTypeControl(Fungio\GoogleMap\Controls\MapTypeControl $mapTypeControl = null)
      * - function setMaptypeControl(array $mapTypeIds, string $controlPosition, string $mapTypeControlStyle)
      */
     public function testMapTypeControlWithInvalidValue()
@@ -394,7 +394,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testOverviewMapControlWithOverviewMapControl()
     {
-        $overviewMapControl = $this->getMock('Ivory\GoogleMap\Controls\OverviewMapControl');
+        $overviewMapControl = $this->getMock('Fungio\GoogleMap\Controls\OverviewMapControl');
         $this->map->setOverviewMapControl($overviewMapControl);
 
         $this->assertSame($overviewMapControl, $this->map->getOverviewMapControl());
@@ -411,7 +411,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testOverviewMapControlWithNullValue()
     {
-        $this->map->setOverviewMapControl($this->getMock('Ivory\GoogleMap\Controls\OverviewMapControl'));
+        $this->map->setOverviewMapControl($this->getMock('Fungio\GoogleMap\Controls\OverviewMapControl'));
         $this->map->setOverviewMapControl(null);
 
         $this->assertNull($this->map->getOverviewMapControl());
@@ -419,10 +419,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The overview map control setter arguments is invalid.
      * The available prototypes are :
-     * - function setOverviewMapControl(Ivory\GoogleMap\Controls\OverviewMapControl $overviewMapControl = null)
+     * - function setOverviewMapControl(Fungio\GoogleMap\Controls\OverviewMapControl $overviewMapControl = null)
      * - function setOverviewMapControl(boolean $opened)
      */
     public function testOverviewMapControlWithInvalidValue()
@@ -432,7 +432,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testPanControlWithPanControl()
     {
-        $panControl = $this->getMock('Ivory\GoogleMap\Controls\PanControl');
+        $panControl = $this->getMock('Fungio\GoogleMap\Controls\PanControl');
         $this->map->setPanControl($panControl);
 
         $this->assertSame($panControl, $this->map->getPanControl());
@@ -449,7 +449,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testPanControlWithNullValue()
     {
-        $this->map->setPanControl($this->getMock('Ivory\GoogleMap\Controls\PanControl'));
+        $this->map->setPanControl($this->getMock('Fungio\GoogleMap\Controls\PanControl'));
         $this->map->setPanControl(null);
 
         $this->assertNull($this->map->getPanControl());
@@ -457,10 +457,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The pan control setter arguments is invalid.
      * The available prototypes are :
-     * - function setPanControl(Ivory\GoogleMap\Controls\PanControl $panControl = null)
+     * - function setPanControl(Fungio\GoogleMap\Controls\PanControl $panControl = null)
      * - function setPanControl(string $controlPosition)
      */
     public function testPanControlWithInvalidValue()
@@ -470,7 +470,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testRotateControlWithRotateControl()
     {
-        $rotateControl = $this->getMock('Ivory\GoogleMap\Controls\RotateControl');
+        $rotateControl = $this->getMock('Fungio\GoogleMap\Controls\RotateControl');
         $this->map->setRotateControl($rotateControl);
 
         $this->assertSame($rotateControl, $this->map->getRotateControl());
@@ -487,7 +487,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testRotateControlWithNullValue()
     {
-        $this->map->setRotateControl($this->getMock('Ivory\GoogleMap\Controls\RotateControl'));
+        $this->map->setRotateControl($this->getMock('Fungio\GoogleMap\Controls\RotateControl'));
         $this->map->setRotateControl(null);
 
         $this->assertNull($this->map->getRotateControl());
@@ -495,10 +495,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The rotate control setter arguments is invalid.
      * The available prototypes are :
-     * - function setRotateControl(Ivory\GoogleMap\Controls\RotateControl $rotateControl = null)
+     * - function setRotateControl(Fungio\GoogleMap\Controls\RotateControl $rotateControl = null)
      * - function setRotateControl(string $controlPosition)
      */
     public function testRotateControlWithInvalidValue()
@@ -508,7 +508,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testScaleControlWithScaleControl()
     {
-        $scaleControl = $this->getMock('Ivory\GoogleMap\Controls\ScaleControl');
+        $scaleControl = $this->getMock('Fungio\GoogleMap\Controls\ScaleControl');
         $this->map->setScaleControl($scaleControl);
 
         $this->assertSame($scaleControl, $this->map->getScaleControl());
@@ -530,7 +530,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testScaleControlWithNullValue()
     {
-        $this->map->setScaleControl($this->getMock('Ivory\GoogleMap\Controls\ScaleControl'));
+        $this->map->setScaleControl($this->getMock('Fungio\GoogleMap\Controls\ScaleControl'));
         $this->map->setScaleControl(null);
 
         $this->assertNull($this->map->getScaleControl());
@@ -538,10 +538,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The scale control setter arguments is invalid.
      * The available prototypes are :
-     * - function setScaleControl(Ivory\GoogleMap\Controls\ScaleControl $scaleControl = null)
+     * - function setScaleControl(Fungio\GoogleMap\Controls\ScaleControl $scaleControl = null)
      * - function setScaleControl(string $controlPosition, string $scaleControlStyle)
      */
     public function testScaleControlWithInvalidValue()
@@ -551,7 +551,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testStreetViewControlWithStreetViewControl()
     {
-        $streetViewControl = $this->getMock('Ivory\GoogleMap\Controls\StreetViewControl');
+        $streetViewControl = $this->getMock('Fungio\GoogleMap\Controls\StreetViewControl');
         $this->map->setStreetViewControl($streetViewControl);
 
         $this->assertSame($streetViewControl, $this->map->getStreetViewControl());
@@ -568,7 +568,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testStreetViewControlWithNullValue()
     {
-        $this->map->setStreetViewControl($this->getMock('Ivory\GoogleMap\Controls\StreetViewControl'));
+        $this->map->setStreetViewControl($this->getMock('Fungio\GoogleMap\Controls\StreetViewControl'));
         $this->map->setStreetViewControl(null);
 
         $this->assertNull($this->map->getStreetViewControl());
@@ -576,10 +576,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The street view control setter arguments is invalid.
      * The available prototypes are :
-     * - function setStreetViewControl(Ivory\GoogleMap\Controls\StreetViewControl $streetViewControl = null)
+     * - function setStreetViewControl(Fungio\GoogleMap\Controls\StreetViewControl $streetViewControl = null)
      * - function setStreetViewControl(string $controlPosition)
      */
     public function testStreetViewControlWithInvalidValue()
@@ -589,7 +589,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testZoomControlWithZoomControl()
     {
-        $zoomControl = $this->getMock('Ivory\GoogleMap\Controls\ZoomControl');
+        $zoomControl = $this->getMock('Fungio\GoogleMap\Controls\ZoomControl');
         $this->map->setZoomControl($zoomControl);
 
         $this->assertSame($zoomControl, $this->map->getZoomControl());
@@ -610,7 +610,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testZoomControlWithNullValue()
     {
-        $this->map->setZoomControl($this->getMock('Ivory\GoogleMap\Controls\ZoomControl'));
+        $this->map->setZoomControl($this->getMock('Fungio\GoogleMap\Controls\ZoomControl'));
         $this->map->setZoomControl(null);
 
         $this->assertNull($this->map->getZoomControl());
@@ -618,10 +618,10 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\MapException
+     * @expectedException \Fungio\GoogleMap\Exception\MapException
      * @expectedExceptionMessage The zoom control setter arguments is invalid.
      * The available prototypes are :
-     * - function setZoomControl(Ivory\GoogleMap\Controls\ZoomControl $zoomControl = null)
+     * - function setZoomControl(Fungio\GoogleMap\Controls\ZoomControl $zoomControl = null)
      * - function setZoomControl(string $controlPosition, string $zoomControlStyle)
      */
     public function testZoomControlWithInvalidValue()
@@ -631,7 +631,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testEventManager()
     {
-        $eventManager = $this->getMock('Ivory\GoogleMap\Events\EventManager');
+        $eventManager = $this->getMock('Fungio\GoogleMap\Events\EventManager');
         $this->map->setEventManager($eventManager);
 
         $this->assertSame($eventManager, $this->map->getEventManager());
@@ -639,7 +639,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testMarkerCluster()
     {
-        $markerCluster = $this->getMock('Ivory\GoogleMap\Overlays\MarkerCluster');
+        $markerCluster = $this->getMock('Fungio\GoogleMap\Overlays\MarkerCluster');
         $this->map->setMarkerCluster($markerCluster);
 
         $this->assertSame($markerCluster, $this->map->getMarkerCluster());
@@ -647,7 +647,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testMarkerWithAutoZoom()
     {
-        $marker = $this->getMock('Ivory\GoogleMap\Overlays\Marker');
+        $marker = $this->getMock('Fungio\GoogleMap\Overlays\Marker');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -663,7 +663,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testMarkerWithoutAutoZoom()
     {
-        $marker = $this->getMock('Ivory\GoogleMap\Overlays\Marker');
+        $marker = $this->getMock('Fungio\GoogleMap\Overlays\Marker');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -677,7 +677,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testInfoWindowWithAutoZoom()
     {
-        $infoWindow = $this->getMock('Ivory\GoogleMap\Overlays\InfoWindow');
+        $infoWindow = $this->getMock('Fungio\GoogleMap\Overlays\InfoWindow');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -693,7 +693,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testInfoWindowWithoutAutoZoom()
     {
-        $infoWindow = $this->getMock('Ivory\GoogleMap\Overlays\InfoWindow');
+        $infoWindow = $this->getMock('Fungio\GoogleMap\Overlays\InfoWindow');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -707,7 +707,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testPolylineWithAutoZoom()
     {
-        $polyline = $this->getMock('Ivory\GoogleMap\Overlays\Polyline');
+        $polyline = $this->getMock('Fungio\GoogleMap\Overlays\Polyline');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -723,7 +723,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testPolylineWithoutAutoZoom()
     {
-        $polyline = $this->getMock('Ivory\GoogleMap\Overlays\Polyline');
+        $polyline = $this->getMock('Fungio\GoogleMap\Overlays\Polyline');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -737,7 +737,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testEncodedPolylineWithAutoZoom()
     {
-        $encodedPolyline = $this->getMock('Ivory\GoogleMap\Overlays\EncodedPolyline');
+        $encodedPolyline = $this->getMock('Fungio\GoogleMap\Overlays\EncodedPolyline');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -753,7 +753,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testEncodedPolylineWithoutAutoZoom()
     {
-        $encodedPolyline = $this->getMock('Ivory\GoogleMap\Overlays\EncodedPolyline');
+        $encodedPolyline = $this->getMock('Fungio\GoogleMap\Overlays\EncodedPolyline');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -767,7 +767,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testPolygonWithAutoZoom()
     {
-        $polygon = $this->getMock('Ivory\GoogleMap\Overlays\Polygon');
+        $polygon = $this->getMock('Fungio\GoogleMap\Overlays\Polygon');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -783,7 +783,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testPolygonWithoutAutoZoom()
     {
-        $polygon = $this->getMock('Ivory\GoogleMap\Overlays\Polygon');
+        $polygon = $this->getMock('Fungio\GoogleMap\Overlays\Polygon');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -797,7 +797,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testRectangleWithAutoZoom()
     {
-        $rectangle = $this->getMock('Ivory\GoogleMap\Overlays\Rectangle');
+        $rectangle = $this->getMock('Fungio\GoogleMap\Overlays\Rectangle');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -813,7 +813,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testRectangleWithoutAutoZoom()
     {
-        $rectangle = $this->getMock('Ivory\GoogleMap\Overlays\Rectangle');
+        $rectangle = $this->getMock('Fungio\GoogleMap\Overlays\Rectangle');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -827,7 +827,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testCircleWithAutoZoom()
     {
-        $circle = $this->getMock('Ivory\GoogleMap\Overlays\Circle');
+        $circle = $this->getMock('Fungio\GoogleMap\Overlays\Circle');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -843,7 +843,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testCircleWithoutAutoZoom()
     {
-        $circle = $this->getMock('Ivory\GoogleMap\Overlays\Circle');
+        $circle = $this->getMock('Fungio\GoogleMap\Overlays\Circle');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -857,7 +857,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testGroundOverlayWithAutoZoom()
     {
-        $groundOverlay = $this->getMock('Ivory\GoogleMap\Overlays\GroundOverlay');
+        $groundOverlay = $this->getMock('Fungio\GoogleMap\Overlays\GroundOverlay');
         $this->map->setAutoZoom(true);
 
         $this->setUpBound();
@@ -873,7 +873,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testGroundOverlayWithoutAutoZoom()
     {
-        $groundOverlay = $this->getMock('Ivory\GoogleMap\Overlays\GroundOverlay');
+        $groundOverlay = $this->getMock('Fungio\GoogleMap\Overlays\GroundOverlay');
 
         $this->setUpBound();
         $this->map->getBound()
@@ -887,7 +887,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
     public function testKmlLayer()
     {
-        $kmlLayer = $this->getMock('Ivory\GoogleMap\Layers\KMLLayer');
+        $kmlLayer = $this->getMock('Fungio\GoogleMap\Layers\KMLLayer');
         $this->map->addKMLLayer($kmlLayer);
 
         $this->assertSame(array($kmlLayer), $this->map->getKMLLayers());

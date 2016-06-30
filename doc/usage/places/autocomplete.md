@@ -10,9 +10,9 @@ out address fields in online forms.
 In order to use the Google Autocomplete feature, you need to build & configure it.
 
 ``` php
-use Ivory\GoogleMap\Places\Autocomplete;
-use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
-use Ivory\GoogleMap\Places\AutocompleteType;
+use Fungio\GoogleMap\Places\Autocomplete;
+use Fungio\GoogleMap\Places\AutocompleteComponentRestriction;
+use Fungio\GoogleMap\Places\AutocompleteType;
 
 $autocomplete = new Autocomplete();
 
@@ -35,11 +35,11 @@ $autocomplete->setLanguage('en');
 ## Render your autocomplete
 
 Now, you have builded & configured your autocomplete, you can render it. For this purpose, you will need the
-`Ivory\GoogleMap\Helper\Places\AutocompleteHelper` which allows to render the autocomplete html container & some
+`Fungio\GoogleMap\Helper\Places\AutocompleteHelper` which allows to render the autocomplete html container & some
 javascript for being able to render it.
 
 ``` php
-use Ivory\GoogleMap\Helper\Places\AutocompleteHelper;
+use Fungio\GoogleMap\Helper\Places\AutocompleteHelper;
 
 $autocompleteHelper = new AutocompleteHelper();
 ```

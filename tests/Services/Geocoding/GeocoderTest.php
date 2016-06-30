@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding;
 
 use Geocoder\HttpAdapter\CurlHttpAdapter;
 use Geocoder\Provider\GoogleMapsProvider;
-use Ivory\GoogleMap\Services\Geocoding\Geocoder;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
+use Fungio\GoogleMap\Services\Geocoding\Geocoder;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderProvider;
 
 /**
  * Geocoder test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
  */
 class GeocoderTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Geocoder */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Geocoder */
     protected $geocoder;
 
     /**
@@ -43,9 +43,9 @@ class GeocoderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Set up the Ivory provider.
+     * Set up the Fungio provider.
      */
-    protected function setUpIvoryProvider()
+    protected function setUpFungioProvider()
     {
         $this->geocoder->registerProvider(new GeocoderProvider(new CurlHttpAdapter()));
     }
@@ -65,12 +65,12 @@ class GeocoderTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Geocoder\Result\Geocoded', $this->geocoder->geocode('Paris'));
     }
 
-    public function testGeocodeWithIvoryProvider()
+    public function testGeocodeWithFungioProvider()
     {
-        $this->setUpIvoryProvider();
+        $this->setUpFungioProvider();
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResponse',
+            'Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResponse',
             $this->geocoder->geocode('Paris')
         );
     }
@@ -82,12 +82,12 @@ class GeocoderTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Geocoder\Result\Geocoded', $this->geocoder->reverse(48.856633, 2.352254));
     }
 
-    public function testReverseWithIvoryProvider()
+    public function testReverseWithFungioProvider()
     {
-        $this->setUpIvoryProvider();
+        $this->setUpFungioProvider();
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResponse',
+            'Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResponse',
             $this->geocoder->reverse(48.856633, 2.352254)
         );
     }

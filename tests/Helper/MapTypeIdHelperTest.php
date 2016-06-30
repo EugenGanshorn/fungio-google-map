@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper;
+namespace Fungio\Tests\GoogleMap\Helper;
 
-use Ivory\GoogleMap\MapTypeId;
-use Ivory\GoogleMap\Helper\MapTypeIdHelper;
+use Fungio\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Helper\MapTypeIdHelper;
 
 /**
  * Map type ID helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\MapTypeIdHelper;
  */
 class MapTypeIdHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\MapTypeIdHelper */
+    /** @var \Fungio\GoogleMap\Helper\MapTypeIdHelper */
     protected $mapTypeIdHelper;
 
     /**
@@ -49,7 +49,7 @@ class MapTypeIdHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The map type id can only be : hybrid, roadmap, satellite, terrain.
      */
     public function testRenderWithInvalidValue()

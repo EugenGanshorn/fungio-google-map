@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Base;
+namespace Fungio\Tests\GoogleMap\Helper\Base;
 
-use Ivory\GoogleMap\Base\Point;
-use Ivory\GoogleMap\Helper\Base\PointHelper;
+use Fungio\GoogleMap\Base\Point;
+use Fungio\GoogleMap\Helper\Base\PointHelper;
 
 /**
  * Point helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Base\PointHelper;
  */
 class PointHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Base\PointHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\PointHelper */
     protected $pointHelper;
 
     /**

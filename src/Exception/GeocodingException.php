@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderStatus;
 
 /**
  * Geocoding exception.
@@ -24,7 +24,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER ADDRESS COMPONENT LONG NAME" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER ADDRESS COMPONENT LONG NAME"
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER ADDRESS COMPONENT LONG NAME"
      *                                                       exception.
      */
     public static function invalidGeocoderAddressComponentLongName()
@@ -35,7 +35,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER ADDRESS COMPONENT SHORT NAME" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER ADDRESS COMPONENT SHORT NAME"
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER ADDRESS COMPONENT SHORT NAME"
      *                                                       exception.
      */
     public static function invalidGeocoderAddressComponentShortName()
@@ -46,7 +46,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER ADDRESS COMPONENT TYPE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER ADDRESS COMPONENT TYPE" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER ADDRESS COMPONENT TYPE" exception.
      */
     public static function invalidGeocoderAddressComponentType()
     {
@@ -56,7 +56,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER LOCATION TYPE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER LOCATION TYPE" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER LOCATION TYPE" exception.
      */
     public static function invalidGeocoderLocationType()
     {
@@ -69,7 +69,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER PROVIDER FORMAT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER FORMAT" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER FORMAT" exception.
      */
     public static function invalidGeocoderProviderFormat()
     {
@@ -82,7 +82,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER PROVIDER HTTPS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER HTTPS" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER HTTPS" exception.
      */
     public static function invalidGeocoderProviderHttps()
     {
@@ -92,7 +92,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER PROVIDER REQUEST" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER REQUEST" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER REQUEST" exception.
      */
     public static function invalidGeocoderProviderRequest()
     {
@@ -102,7 +102,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER PROVIDER REQUEST ARGUMENTS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER REQUEST ARGUMENTS"
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER REQUEST ARGUMENTS"
      *                                                       exception.
      */
     public static function invalidGeocoderProviderRequestArguments()
@@ -112,14 +112,14 @@ class GeocodingException extends ServiceException
             'The geolocate argument is invalid.',
             'The available prototypes are :',
             ' - function geocode(string $address)',
-            ' - function geocode(Ivory\GoogleMap\Services\Geocoding\GeocoderRequest $request)'
+            ' - function geocode(Fungio\GoogleMap\Services\Geocoding\GeocoderRequest $request)'
         ));
     }
 
     /**
      * Gets the "INVALID GEOCODER PROVIDER URL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER URL" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER PROVIDER URL" exception.
      */
     public static function invalidGeocoderProviderUrl()
     {
@@ -129,7 +129,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER REQUEST ADDRESS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST ADDRESS" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST ADDRESS" exception.
      */
     public static function invalidGeocoderRequestAddress()
     {
@@ -139,7 +139,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER REQUEST BOUND" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST BOUND" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST BOUND" exception.
      */
     public static function invalidGeocoderRequestBound()
     {
@@ -147,10 +147,10 @@ class GeocodingException extends ServiceException
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The bound setter arguments are invalid.',
             'The available prototypes are :',
-            ' - function setBound(Ivory\GoogleMap\Base\Bound $bound = null)',
+            ' - function setBound(Fungio\GoogleMap\Base\Bound $bound = null)',
             ' - function setBound('.
-            'Ivory\GoogleMap\Base\Coordinate $southWest, '.
-            'Ivory\GoogleMap\Base\Coordinate $northEast'.
+            'Fungio\GoogleMap\Base\Coordinate $southWest, '.
+            'Fungio\GoogleMap\Base\Coordinate $northEast'.
             ')',
             ' - function setBound('.
             'double $southWestLatitude, '.
@@ -166,7 +166,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER REQUEST COORDINATE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST COORDINATE" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST COORDINATE" exception.
      */
     public static function invalidGeocoderRequestCoordinate()
     {
@@ -174,7 +174,7 @@ class GeocodingException extends ServiceException
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The coordinate setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setCoordinate(Ivory\GoogleMap\Base\Coordinate $coordinate = null)',
+            ' - function setCoordinate(Fungio\GoogleMap\Base\Coordinate $coordinate = null)',
             ' - function setCoordinate(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -182,7 +182,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER REQUEST REGION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST REGION" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST REGION" exception.
      */
     public static function invalidGeocoderRequestRegion()
     {
@@ -192,7 +192,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER REQUEST LANGUAGE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST LANGUAGE" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST LANGUAGE" exception.
      */
     public static function invalidGeocoderRequestLanguage()
     {
@@ -202,7 +202,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER REQUEST SENSOR" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST SENSOR" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER REQUEST SENSOR" exception.
      */
     public static function invalidGeocoderRequestSensor()
     {
@@ -212,7 +212,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER RESPONSE STATUS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESPONSE STATUS" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESPONSE STATUS" exception.
      */
     public static function invalidGeocoderResponseStatus()
     {
@@ -225,7 +225,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER RESULT FORMATTED ADDRESS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESULT FORMATTED ADDRESS" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESULT FORMATTED ADDRESS" exception.
      */
     public static function invalidGeocoderResultFormattedAddress()
     {
@@ -235,7 +235,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER RESULT PARTIAL MATCH" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESULT PARTIAL MATCH" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESULT PARTIAL MATCH" exception.
      */
     public static function invalidGeocoderResultPartialMatch()
     {
@@ -245,7 +245,7 @@ class GeocodingException extends ServiceException
     /**
      * Gets the "INVALID GEOCODER RESULT TYPE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESULT TYPE" exception.
+     * @return \Fungio\GoogleMap\Exception\GeocodingException The "INVALID GEOCODER RESULT TYPE" exception.
      */
     public static function invalidGeocoderResultType()
     {

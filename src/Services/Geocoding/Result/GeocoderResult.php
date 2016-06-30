@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Exception\GeocodingException;
+use Fungio\GoogleMap\Exception\GeocodingException;
 
 /**
  * Geocoder result which describes a google map geocoder result.
@@ -27,7 +27,7 @@ class GeocoderResult
     /** @var string */
     protected $formattedAddress;
 
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry */
     protected $geometry;
 
     /** @var boolean */
@@ -41,7 +41,7 @@ class GeocoderResult
      *
      * @param array                                                       $addressComponents The address components.
      * @param string                                                      $formattedAddress  The formatted address.
-     * @param \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry $geometry          The geometry.
+     * @param \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry $geometry          The geometry.
      * @param array                                                       $types             The types.
      * @param boolean                                                     $partialMatch      The partial match flag.
      */
@@ -100,7 +100,7 @@ class GeocoderResult
     /**
      * Adds an address component to the geocoder result.
      *
-     * @param \Ivory\GoogleMapBundle\Model\Services\Result\GeocoderAddressComponent $addressComponent The address
+     * @param \Fungio\GoogleMapBundle\Model\Services\Result\GeocoderAddressComponent $addressComponent The address
      *                                                                                                component to add.
      */
     public function addAddressComponent(GeocoderAddressComponent $addressComponent)
@@ -123,7 +123,7 @@ class GeocoderResult
      *
      * @param string $formattedAddress The formatted address.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the formatted address is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the formatted address is not valid.
      */
     public function setFormattedAddress($formattedAddress)
     {
@@ -137,7 +137,7 @@ class GeocoderResult
     /**
      * Gets the geocoder result geometry.
      *
-     * @return \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry The geocoder result geometry.
+     * @return \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry The geocoder result geometry.
      */
     public function getGeometry()
     {
@@ -147,7 +147,7 @@ class GeocoderResult
     /**
      * Sets the geocoder result geometry.
      *
-     * @param \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry $geometry The geocoder result geometry.
+     * @param \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry $geometry The geocoder result geometry.
      */
     public function setGeometry(GeocoderGeometry $geometry)
     {
@@ -169,7 +169,7 @@ class GeocoderResult
      *
      * @param boolean $partialMatch TRUE if the geocoder result is a partial match else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the partial match flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the partial match flag is not valid.
      */
     public function setPartialMatch($partialMatch = null)
     {
@@ -209,7 +209,7 @@ class GeocoderResult
      *
      * @param string $type The type to add.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the type is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the type is not valid.
      */
     public function addType($type)
     {

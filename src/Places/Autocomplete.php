@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Places;
+namespace Fungio\GoogleMap\Places;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\PlaceException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\PlaceException;
 
 /**
  * Places autocomplete.
@@ -26,7 +26,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
     /** @var string */
     protected $inputId;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /** @var array */
@@ -82,7 +82,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *
      * @param string $inputId The autocomplete input ID.
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the input ID is not a valid string.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the input ID is not a valid string.
      */
     public function setInputId($inputId)
     {
@@ -106,7 +106,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
     /**
      * Gets the autocomplete bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The autocomplete bound.
+     * @return \Fungio\GoogleMap\Base\Bound The autocomplete bound.
      */
     public function getBound()
     {
@@ -117,8 +117,8 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      * Sets the autocomplete bound.
      *
      * Available prototypes:
-     *  - function setBound(Ivory\GoogleMap\Base\Bound $bound = null)
-     *  - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     *  - function setBound(Fungio\GoogleMap\Base\Bound $bound = null)
+     *  - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      *  - function setBound(
      *      double $southWestLatitude,
      *      double $southWestLongitude,
@@ -128,7 +128,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *      boolean $northEastNoWrap = true
      *  )
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the bound is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the bound is not valid (prototypes).
      */
     public function setBound()
     {
@@ -222,8 +222,8 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *
      * @param string $type The type to add.
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the type is not valid.
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the type already exists.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the type is not valid.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the type already exists.
      */
     public function addType($type)
     {
@@ -243,7 +243,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *
      * @param string $type The type to remove.
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the type does not exist.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the type does not exist.
      */
     public function removeType($type)
     {
@@ -292,7 +292,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *
      * @param string $type The component restriction type.
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the component restriction type does not exist.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the component restriction type does not exist.
      *
      * @return mixed The component restriction.
      */
@@ -325,8 +325,8 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      * @param string $type  The component restriction type.
      * @param mixed  $value The component restriction value.
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the component restriction type is not supported.
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the component restriction type already exists.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the component restriction type is not supported.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the component restriction type already exists.
      */
     public function addComponentRestriction($type, $value)
     {
@@ -346,7 +346,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *
      * @param string $type The component restriction.
      *
-     * @throws \Ivory\GoogleMap\Exception\PlaceException If the component restriction type does not exists.
+     * @throws \Fungio\GoogleMap\Exception\PlaceException If the component restriction type does not exists.
      */
     public function removeComponentRestriction($type)
     {

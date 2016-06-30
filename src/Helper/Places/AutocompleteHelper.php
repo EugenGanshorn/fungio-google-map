@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Places;
+namespace Fungio\GoogleMap\Helper\Places;
 
-use Ivory\GoogleMap\Exception\HelperException;
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Helper\ApiHelper;
-use Ivory\GoogleMap\Helper\Base\CoordinateHelper;
-use Ivory\GoogleMap\Helper\Base\BoundHelper;
-use Ivory\GoogleMap\Places\Autocomplete;
+use Fungio\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Helper\ApiHelper;
+use Fungio\GoogleMap\Helper\Base\CoordinateHelper;
+use Fungio\GoogleMap\Helper\Base\BoundHelper;
+use Fungio\GoogleMap\Places\Autocomplete;
 
 /**
  * Places autocomplete helper.
@@ -25,21 +25,21 @@ use Ivory\GoogleMap\Places\Autocomplete;
  */
 class AutocompleteHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\ApiHelper */
+    /** @var \Fungio\GoogleMap\Helper\ApiHelper */
     protected $apiHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Base\CoordinateHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\CoordinateHelper */
     protected $coordinateHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Base\BoundHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\BoundHelper */
     protected $boundHelper;
 
     /**
      * Creates an autocomplete helper.
      *
-     * @param \Ivory\GoogleMap\Helper\ApiHelper             $apiHelper        The API helper.
-     * @param \Ivory\GoogleMap\Helper\Base\CoordinateHelper $coordinateHelper The coordinate helper.
-     * @param \Ivory\GoogleMap\Helper\Base\BoundHelper      $boundHelper      The bound helper.
+     * @param \Fungio\GoogleMap\Helper\ApiHelper             $apiHelper        The API helper.
+     * @param \Fungio\GoogleMap\Helper\Base\CoordinateHelper $coordinateHelper The coordinate helper.
+     * @param \Fungio\GoogleMap\Helper\Base\BoundHelper      $boundHelper      The bound helper.
      */
     public function __construct(
         ApiHelper $apiHelper = null,
@@ -69,7 +69,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Gets the API helper.
      *
-     * @return \Ivory\GoogleMap\Helper\ApiHelper The API helper.
+     * @return \Fungio\GoogleMap\Helper\ApiHelper The API helper.
      */
     public function getApiHelper()
     {
@@ -79,7 +79,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Sets the API helper.
      *
-     * @param \Ivory\GoogleMap\Helper\ApiHelper $apiHelper The API helper.
+     * @param \Fungio\GoogleMap\Helper\ApiHelper $apiHelper The API helper.
      */
     public function setApiHelper(ApiHelper $apiHelper)
     {
@@ -89,7 +89,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Gets the coordinate helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Base\CoordinateHelper The coordinate helper.
+     * @return \Fungio\GoogleMap\Helper\Base\CoordinateHelper The coordinate helper.
      */
     public function getCoordinateHelper()
     {
@@ -99,7 +99,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Sets the coordinate helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\CoordinateHelper $coordinateHelper The coordinate helper.
+     * @param \Fungio\GoogleMap\Helper\Base\CoordinateHelper $coordinateHelper The coordinate helper.
      */
     public function setCoordinateHelper(CoordinateHelper $coordinateHelper)
     {
@@ -109,7 +109,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Gets the bound helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Base\BoundHelper The bound helper.
+     * @return \Fungio\GoogleMap\Helper\Base\BoundHelper The bound helper.
      */
     public function getBoundHelper()
     {
@@ -119,7 +119,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Sets the bound helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\BoundHelper $boundHelper The bound helper.
+     * @param \Fungio\GoogleMap\Helper\Base\BoundHelper $boundHelper The bound helper.
      */
     public function setBoundHelper(BoundHelper $boundHelper)
     {
@@ -129,7 +129,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Renders the autocomplete HTML container.
      *
-     * @param \Ivory\GoogleMap\Places\Autocomplete $autocomplete The autocomplete.
+     * @param \Fungio\GoogleMap\Places\Autocomplete $autocomplete The autocomplete.
      *
      * @return string The HTML output.
      */
@@ -154,9 +154,9 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Renders the autocomplete javascripts.
      *
-     * @param \Ivory\GoogleMap\Places\Autocomplete $autocomplete The autocomplete.
+     * @param \Fungio\GoogleMap\Places\Autocomplete $autocomplete The autocomplete.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException if the autocomplete bound does not have coordinates.
+     * @throws \Fungio\GoogleMap\Exception\HelperException if the autocomplete bound does not have coordinates.
      *
      * @return string The HTML output.
      */
@@ -171,7 +171,7 @@ class AutocompleteHelper extends AbstractHelper
         $output[] = '<script type="text/javascript">'.PHP_EOL;
 
         if ($autocomplete->isAsync()) {
-            $output[] = 'function load_ivory_google_place () {'.PHP_EOL;
+            $output[] = 'function load_fungio_google_place () {'.PHP_EOL;
         }
 
         if ($autocomplete->hasBound()) {
@@ -196,7 +196,7 @@ class AutocompleteHelper extends AbstractHelper
             $output[] = $this->apiHelper->render(
                 $autocomplete->getLanguage(),
                 array('places'),
-                'load_ivory_google_place'
+                'load_fungio_google_place'
             );
         }
 
@@ -206,7 +206,7 @@ class AutocompleteHelper extends AbstractHelper
     /**
      * Renders the autocomplete.
      *
-     * @param \Ivory\GoogleMap\Places\Autocomplete $autocomplete The autocomplete.
+     * @param \Fungio\GoogleMap\Places\Autocomplete $autocomplete The autocomplete.
      *
      * @return string The JS output.
      */

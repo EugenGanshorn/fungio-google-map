@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Directions;
+namespace Fungio\Tests\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Services\Directions\DirectionsLeg;
+use Fungio\GoogleMap\Services\Directions\DirectionsLeg;
 
 /**
  * Directions leg test.
@@ -20,25 +20,25 @@ use Ivory\GoogleMap\Services\Directions\DirectionsLeg;
  */
 class DirectionsLegTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Directions\DirectionsLeg */
+    /** @var \Fungio\GoogleMap\Services\Directions\DirectionsLeg */
     protected $directionsLeg;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Distance */
+    /** @var \Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Duration */
+    /** @var \Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
     /** @var string */
     protected $endAddress;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $endLocation;
 
     /** @var string */
     protected $startAddress;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $startLocation;
 
     /** @var array */
@@ -52,20 +52,20 @@ class DirectionsLegTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->distance = $this->getMockBuilder('Ivory\GoogleMap\Services\Base\Distance')
+        $this->distance = $this->getMockBuilder('Fungio\GoogleMap\Services\Base\Distance')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->duration = $this->getMockBuilder('Ivory\GoogleMap\Services\Base\Duration')
+        $this->duration = $this->getMockBuilder('Fungio\GoogleMap\Services\Base\Duration')
             ->disableOriginalConstructor()
             ->getMock();
 
         $this->endAddress = 'foo';
-        $this->endLocation = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $this->endLocation = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->startAddress = 'bar';
-        $this->startLocation = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $this->startLocation = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
-        $step = $this->getMockBuilder('Ivory\GoogleMap\Services\Directions\DirectionsStep')
+        $step = $this->getMockBuilder('Fungio\GoogleMap\Services\Directions\DirectionsStep')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -113,7 +113,7 @@ class DirectionsLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The leg end address must be a string value.
      */
     public function testEndAddressWithInvalidValue()
@@ -122,7 +122,7 @@ class DirectionsLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The leg start address must be a string value.
      */
     public function testStartAddressWithInvalidValue()

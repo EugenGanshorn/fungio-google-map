@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Base;
+namespace Fungio\Tests\GoogleMap\Base;
 
-use Ivory\GoogleMap\Base\Size;
+use Fungio\GoogleMap\Base\Size;
 
 /**
  * Size test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Base\Size;
  */
 class SizeTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Base\Size */
+    /** @var \Fungio\GoogleMap\Base\Size */
     protected $size;
 
     /**
@@ -71,7 +71,7 @@ class SizeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The width of a size must be a numeric value.
      */
     public function testWidthWithInvalidValue()
@@ -87,7 +87,7 @@ class SizeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The height of a size must be a numeric value.
      */
     public function testHeightWithInvalidValue()
@@ -103,7 +103,7 @@ class SizeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The width unit of a size must be a string value.
      */
     public function testWidthUnitWithInvalidValue()
@@ -119,7 +119,7 @@ class SizeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The height unit of a size must be a string value.
      */
     public function testHeightUnitWithInvalidValue()

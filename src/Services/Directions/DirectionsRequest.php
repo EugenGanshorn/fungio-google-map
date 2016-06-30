@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
 use \DateTime;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\DirectionsException;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * Directions request represents a google map directions request.
@@ -31,13 +31,13 @@ class DirectionsRequest
     /** @var boolean */
     protected $avoidTolls;
 
-    /** @var string | \Ivory\GoogleMap\Base\Coordinate */
+    /** @var string | \Fungio\GoogleMap\Base\Coordinate */
     protected $destination;
 
     /** @var boolean */
     protected $optimizeWaypoints;
 
-    /** @var string | \Ivory\GoogleMap\Base\Coordinate */
+    /** @var string | \Fungio\GoogleMap\Base\Coordinate */
     protected $origin;
 
     /** @var \DateTime */
@@ -101,7 +101,7 @@ class DirectionsRequest
      *
      * @param boolean $avoidHighways TRUE if the directions request avoids hightways else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the avoid highways flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the avoid highways flag is not valid.
      */
     public function setAvoidHighways($avoidHighways = null)
     {
@@ -137,7 +137,7 @@ class DirectionsRequest
      *
      * @param boolean $avoidTolls TRUE if the directions request avoids tolls else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the avoid tolls flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the avoid tolls flag is not valid.
      */
     public function setAvoidTolls($avoidTolls = null)
     {
@@ -161,7 +161,7 @@ class DirectionsRequest
     /**
      * Gets the directions request destination.
      *
-     * @return string | \Ivory\GoogleMap\Base\Coordinate The directions request destination.
+     * @return string | \Fungio\GoogleMap\Base\Coordinate The directions request destination.
      */
     public function getDestination()
     {
@@ -173,10 +173,10 @@ class DirectionsRequest
      *
      * Available prototypes:
      * - function setDestination(string $destination)
-     * - function setDestination(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setDestination(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setDestination(double $latitude, double $longitude, boolean $noWrap)
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the destination is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the destination is not valid (prototypes).
      */
     public function setDestination()
     {
@@ -227,7 +227,7 @@ class DirectionsRequest
      *
      * @param boolean $optimizeWaypoints TRUE if the directions request optimizes waypoints else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the optimize waypoints flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the optimize waypoints flag is not valid.
      */
     public function setOptimizeWaypoints($optimizeWaypoints = null)
     {
@@ -251,7 +251,7 @@ class DirectionsRequest
     /**
      * Gets the directions request origin.
      *
-     * @return string | \Ivory\GoogleMap\Base\Coordinate The directions request origin.
+     * @return string | \Fungio\GoogleMap\Base\Coordinate The directions request origin.
      */
     public function getOrigin()
     {
@@ -263,10 +263,10 @@ class DirectionsRequest
      *
      * Available prototypes:
      * - function setOrigin(string $destination)
-     * - function setOrigin(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setOrigin(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setOrigin(double $latitude, double $longitude, boolean $noWrap)
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the origin is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the origin is not valid (prototypes).
      */
     public function setOrigin()
     {
@@ -377,7 +377,7 @@ class DirectionsRequest
      *
      * @param boolean $provideRouteAlternatives TRUE if the directions request provides route alternatives else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the provide route alternatives flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the provide route alternatives flag is not valid.
      */
     public function setProvideRouteAlternatives($provideRouteAlternatives = null)
     {
@@ -413,7 +413,7 @@ class DirectionsRequest
      *
      * @param string $region The directions request region.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the region is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the region is not valid.
      */
     public function setRegion($region = null)
     {
@@ -449,7 +449,7 @@ class DirectionsRequest
      *
      * @param string $language The directions request language.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the language is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the language is not valid.
      */
     public function setLanguage($language = null)
     {
@@ -485,7 +485,7 @@ class DirectionsRequest
      *
      * @param string $travelMode The directions request travel mode.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the travel mode is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the travel mode is not valid.
      */
     public function setTravelMode($travelMode = null)
     {
@@ -521,7 +521,7 @@ class DirectionsRequest
      *
      * @param string $unitSystem The directions request unit system.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the unit system is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the unit system is not valid.
      */
     public function setUnitSystem($unitSystem = null)
     {
@@ -570,12 +570,12 @@ class DirectionsRequest
      * Adds a waypoint to the directions request.
      *
      * Available prototypes:
-     * - function addWaypoint(Ivory\GoogleMap\Services\Directions\DirectionsWaypoint $waypoint)
+     * - function addWaypoint(Fungio\GoogleMap\Services\Directions\DirectionsWaypoint $waypoint)
      * - function addWaypoint(string $location)
      * - function addWaypoint(double $latitude, double $longitude, boolean $noWrap)
-     * - function addWaypoint(Ivory\GoogleMap\Base\Coordinate $location)
+     * - function addWaypoint(Fungio\GoogleMap\Base\Coordinate $location)
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the waypoint is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the waypoint is not valid (prototypes).
      */
     public function addWaypoint()
     {
@@ -617,7 +617,7 @@ class DirectionsRequest
      *
      * @param boolean $sensor TRUE if the directions request has a sensor else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the sensor flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the sensor flag is not valid.
      */
     public function setSensor($sensor)
     {

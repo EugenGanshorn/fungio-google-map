@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\Tests\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
 
 /**
  * Directions response test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
  */
 class DirectionsResponseTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse */
+    /** @var \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse */
     protected $distanceMatrixResponse;
 
     /** @var string */
@@ -41,7 +41,7 @@ class DirectionsResponseTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $row = $this->getMockBuilder('Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow')
+        $row = $this->getMockBuilder('Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -79,7 +79,7 @@ class DirectionsResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix response status can only be : INVALID_REQUEST,
      * MAX_DIMENSIONS_EXCEEDED, MAX_ELEMENTS_EXCEEDED, OK, OVER_QUERY_LIMIT, REQUEST_DENIED, UNKNOWN_ERROR.
      */

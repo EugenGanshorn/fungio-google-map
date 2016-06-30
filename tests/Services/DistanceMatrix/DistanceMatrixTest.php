@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\Tests\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
 use Widop\HttpAdapter\CurlHttpAdapter;
 
 /**
@@ -27,7 +27,7 @@ use Widop\HttpAdapter\CurlHttpAdapter;
  */
 class DistanceMatrixTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix */
+    /** @var \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrix */
     protected $service;
 
     /**
@@ -190,7 +190,7 @@ class DistanceMatrixTest extends \PHPUnit_Framework_TestCase
     {
         $url = 'http://maps.googleapis.com/maps/api/staticmap?center=%E4%B8%8A%E6%B5%B7+%E4%B8%AD%E5%9C%8B&size=640x640&zoom=10&sensor=false';
 
-        $businessAccount = $this->getMockBuilder('Ivory\GoogleMap\Services\BusinessAccount')
+        $businessAccount = $this->getMockBuilder('Fungio\GoogleMap\Services\BusinessAccount')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -209,11 +209,11 @@ class DistanceMatrixTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The process arguments are invalid.
      * The available prototypes are:
      * - function route(array $origins, array $destinations)
-     * - function route(Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $request)
+     * - function route(Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $request)
      */
     public function testProcessWithInvalidRequestParameters()
     {
@@ -221,7 +221,7 @@ class DistanceMatrixTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The directions request is not valid. It needs at least one origin and one destination.
      */
     public function testProcessWithInvalidRequest()
@@ -230,7 +230,7 @@ class DistanceMatrixTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The service result is not valid.
      */
     public function testProcessWithInvalidResult()
@@ -246,7 +246,7 @@ class DistanceMatrixTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage An error occured while fetching
      */
     public function testProcessThrowsInvalidResponse()

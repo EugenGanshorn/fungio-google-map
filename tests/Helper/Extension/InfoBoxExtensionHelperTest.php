@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Extension;
+namespace Fungio\Tests\GoogleMap\Helper\Extension;
 
-use Ivory\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
+use Fungio\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
 
 /**
  * InfoBox extension helper test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
  */
 class InfoBoxExtensionHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Extension\InfoBoxExtensionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Extension\InfoBoxExtensionHelper */
     protected $infoBoxExtensionHelper;
 
     /**
@@ -46,7 +46,7 @@ class InfoBoxExtensionHelperTest extends \PHPUnit_Framework_TestCase
             $this->infoBoxExtensionHelper->getSource()
         );
 
-        $this->assertSame('load_ivory_google_map_info_box', $this->infoBoxExtensionHelper->getCallback());
+        $this->assertSame('load_fungio_google_map_info_box', $this->infoBoxExtensionHelper->getCallback());
     }
 
     public function testInitialState()
@@ -59,7 +59,7 @@ class InfoBoxExtensionHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderLibrariesWithSyncMap()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
 
         $expected = <<<EOF
 <script type="text/javascript" src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js"></script>
@@ -71,21 +71,21 @@ EOF;
 
     public function testRenderBeforeWithSyncMap()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
 
         $this->assertNull($this->infoBoxExtensionHelper->renderBefore($map));
     }
 
     public function testRenderAfterWithSyncMap()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
 
         $this->assertNull($this->infoBoxExtensionHelper->renderAfter($map));
     }
 
     public function testRenderLibrariesWithAsyncMap()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('isAsync')
@@ -96,14 +96,14 @@ EOF;
 
     public function testRenderBeforeWithAsyncMap()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('isAsync')
             ->will($this->returnValue(true));
 
         $expected = <<<EOF
-function load_ivory_google_map_info_box () {
+function load_fungio_google_map_info_box () {
 
 EOF;
 
@@ -112,7 +112,7 @@ EOF;
 
     public function testRenderAfterWithAsyncMap()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('isAsync')
@@ -124,7 +124,7 @@ var s = document.createElement("script");
 s.type = "text/javascript";
 s.async = true;
 s.src = "//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js";
-s.addEventListener("load", function () { load_ivory_google_map_info_box(); }, false);
+s.addEventListener("load", function () { load_fungio_google_map_info_box(); }, false);
 document.getElementsByTagName("head")[0].appendChild(s);
 
 EOF;

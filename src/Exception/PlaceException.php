@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Places\AutocompleteType;
-use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
+use Fungio\GoogleMap\Places\AutocompleteType;
+use Fungio\GoogleMap\Places\AutocompleteComponentRestriction;
 
 /**
  * Place exception.
@@ -26,7 +26,7 @@ class PlaceException extends Exception
      *
      * @param string $type The type.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE RESTRICTION TYPE ALREADY EXISTS" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE RESTRICTION TYPE ALREADY EXISTS" exception.
      */
     public static function autocompleteComponentRestrictionAlreadyExists($type)
     {
@@ -38,7 +38,7 @@ class PlaceException extends Exception
      *
      * @param string $type The type.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE RESTRICTION TYPE DOES DOES NOT EXIST" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE RESTRICTION TYPE DOES DOES NOT EXIST" exception.
      */
     public static function autocompleteComponentRestrictionDoesNotExist($type)
     {
@@ -50,7 +50,7 @@ class PlaceException extends Exception
      *
      * @param string $type The type.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE TYPE ALREADY EXISTS" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE TYPE ALREADY EXISTS" exception.
      */
     public static function autocompleteTypeAlreadyExists($type)
     {
@@ -62,7 +62,7 @@ class PlaceException extends Exception
      *
      * @param string $type The type.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE TYPE DOES NOT EXIST" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "AUTOCOMPLETE TYPE DOES NOT EXIST" exception.
      */
     public static function autocompleteTypeDoesNotExist($type)
     {
@@ -72,7 +72,7 @@ class PlaceException extends Exception
     /**
      * Gets the "INVALID AUTOCOMPLETE ASYNC" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE ASYNC" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE ASYNC" exception.
      */
     public static function invalidAutocompleteAsync()
     {
@@ -82,7 +82,7 @@ class PlaceException extends Exception
     /**
      * Gets the "INVALID AUTOCOMPLETE BOUND" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE BOUND" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE BOUND" exception.
      */
     public static function invalidAutocompleteBound()
     {
@@ -90,10 +90,10 @@ class PlaceException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The bound setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setBound(Ivory\GoogleMap\Base\Bound $bound)',
+            ' - function setBound(Fungio\GoogleMap\Base\Bound $bound)',
             ' - function setBount('.
-            'Ivory\GoogleMap\Base\Coordinate $southWest, '.
-            'Ivory\GoogleMap\Base\Coordinate $northEast'.
+            'Fungio\GoogleMap\Base\Coordinate $southWest, '.
+            'Fungio\GoogleMap\Base\Coordinate $northEast'.
             ')',
             ' - function setBound('.
             'double $southWestLatitude, '.
@@ -109,7 +109,7 @@ class PlaceException extends Exception
     /**
      * Gets the "INVALID AUTOCOMPLETE COMPONENT RESTRICTION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE COMPONENT RESTRICTION" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE COMPONENT RESTRICTION" exception.
      */
     public static function invalidAutocompleteComponentRestriction()
     {
@@ -124,7 +124,7 @@ class PlaceException extends Exception
     /**
      * Gets the "INVALID AUTOCOMPLETE INPUT ID" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE INPUT ID" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE INPUT ID" exception.
      */
     public static function invalidAutocompleteInputId()
     {
@@ -134,7 +134,7 @@ class PlaceException extends Exception
     /**
      * Gets the "INVALID AUTOCOMPLETE TYPE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE TYPE" exception.
+     * @return \Fungio\GoogleMap\Exception\PlaceException The "INVALID AUTOCOMPLETE TYPE" exception.
      */
     public static function invalidAutocompleteType()
     {

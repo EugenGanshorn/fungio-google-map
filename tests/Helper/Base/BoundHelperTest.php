@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Base;
+namespace Fungio\Tests\GoogleMap\Helper\Base;
 
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Helper\Base\BoundHelper;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Helper\Base\BoundHelper;
 
 /**
  * Bound helper test
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Helper\Base\BoundHelper;
  */
 class BoundHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Base\BoundHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\BoundHelper */
     protected $boundHelper;
 
     /**
@@ -68,55 +68,55 @@ class BoundHelperTest extends \PHPUnit_Framework_TestCase
         $bound = new Bound();
         $bound->setJavascriptVariable('bound');
 
-        $circle = $this->getMock('Ivory\GoogleMap\Overlays\Circle');
+        $circle = $this->getMock('Fungio\GoogleMap\Overlays\Circle');
         $circle
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('circle'));
 
-        $groundOverlayBound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $groundOverlayBound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $groundOverlayBound
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('groundOverlayBound'));
 
-        $groundOverlay = $this->getMock('Ivory\GoogleMap\Overlays\GroundOverlay');
+        $groundOverlay = $this->getMock('Fungio\GoogleMap\Overlays\GroundOverlay');
         $groundOverlay
             ->expects($this->once())
             ->method('getBound')
             ->will($this->returnValue($groundOverlayBound));
 
-        $infoWindow = $this->getMock('Ivory\GoogleMap\Overlays\InfoWindow');
+        $infoWindow = $this->getMock('Fungio\GoogleMap\Overlays\InfoWindow');
         $infoWindow
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('infoWindow'));
 
-        $marker = $this->getMock('Ivory\GoogleMap\Overlays\Marker');
+        $marker = $this->getMock('Fungio\GoogleMap\Overlays\Marker');
         $marker
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('marker'));
 
-        $polygon = $this->getMock('Ivory\GoogleMap\Overlays\Polygon');
+        $polygon = $this->getMock('Fungio\GoogleMap\Overlays\Polygon');
         $polygon
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('polygon'));
 
-        $polyline = $this->getMock('Ivory\GoogleMap\Overlays\Polyline');
+        $polyline = $this->getMock('Fungio\GoogleMap\Overlays\Polyline');
         $polyline
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('polyline'));
 
-        $rectangleBound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $rectangleBound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $rectangleBound
             ->expects($this->once())
             ->method('getJavascriptVariable')
             ->will($this->returnValue('rectangleBound'));
 
-        $rectangle = $this->getMock('Ivory\GoogleMap\Overlays\Rectangle');
+        $rectangle = $this->getMock('Fungio\GoogleMap\Overlays\Rectangle');
         $rectangle
             ->expects($this->once())
             ->method('getBound')

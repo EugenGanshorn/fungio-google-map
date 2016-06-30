@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
-use Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Helper\Controls\ScaleControlStyleHelper;
 
 /**
  * Scale control style helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper;
  */
 class ScaleControlStyleHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper */
+    /** @var Fungio\GoogleMap\Helper\Controls\ScaleControlStyleHelper */
     protected $scaleControlStyleHelper;
 
     /**
@@ -49,7 +49,7 @@ class ScaleControlStyleHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The scale control style can only be : default.
      */
     public function testRenderWithInvalidValue()

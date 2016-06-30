@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
 /**
  * Asset exception.
@@ -21,7 +21,7 @@ class AssetException extends Exception
     /**
      * Gets the "INVALID JAVASCRIPT VARIABLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\AssetException The "INVALID JAVASCRIPT VARIABLE" exception.
+     * @return \Fungio\GoogleMap\Exception\AssetException The "INVALID JAVASCRIPT VARIABLE" exception.
      */
     public static function invalidJavascriptVariable()
     {
@@ -31,7 +31,7 @@ class AssetException extends Exception
     /**
      * Gets the "INVALID OPTION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\AssetException The "INVALID OPTION" exception.
+     * @return \Fungio\GoogleMap\Exception\AssetException The "INVALID OPTION" exception.
      */
     public static function invalidOption()
     {
@@ -41,7 +41,7 @@ class AssetException extends Exception
     /**
      * Gets the "INVALID PREFIX JAVASCRIPT VARIABLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\AssetException The "INVALID PREFIX JAVASCRIPT VARIABLE" exception.
+     * @return \Fungio\GoogleMap\Exception\AssetException The "INVALID PREFIX JAVASCRIPT VARIABLE" exception.
      */
     public static function invalidPrefixJavascriptVariable()
     {
@@ -53,7 +53,7 @@ class AssetException extends Exception
      *
      * @param string $option The option.
      *
-     * @return \Ivory\GoogleMap\Exception\AssetException The "OPTION DOES NOT EXIST" exception.
+     * @return \Fungio\GoogleMap\Exception\AssetException The "OPTION DOES NOT EXIST" exception.
      */
     public static function optionDoesNotExist($option)
     {

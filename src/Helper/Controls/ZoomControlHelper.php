@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Helper\AbstractHelper;
 
 /**
  * Zoom control helper.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\AbstractHelper;
  */
 class ZoomControlHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper */
     protected $controlPositionHelper;
 
     /** @var \vory\GoogleMap\Templating\Helper\Controls\ZoomControlStyleHelper */
@@ -30,9 +30,9 @@ class ZoomControlHelper extends AbstractHelper
     /**
      * Create a zoom control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper  $controlPositionHelper  The control position
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper  $controlPositionHelper  The control position
      *                                                                                        helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper $zoomControlStyleHelper The zoom control style
+     * @param \Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper $zoomControlStyleHelper The zoom control style
      *                                                                                        helper.
      */
     public function __construct(
@@ -56,7 +56,7 @@ class ZoomControlHelper extends AbstractHelper
     /**
      * Gets the control position helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
      */
     public function getControlPositionHelper()
     {
@@ -66,7 +66,7 @@ class ZoomControlHelper extends AbstractHelper
     /**
      * Sets the control position helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
      */
     public function setControlPositionHelper(ControlPositionHelper $controlPositionHelper)
     {
@@ -76,7 +76,7 @@ class ZoomControlHelper extends AbstractHelper
     /**
      * Gets the zoom control style helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper The zoom control style helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper The zoom control style helper.
      */
     public function getZoomControlStyleHelper()
     {
@@ -86,7 +86,7 @@ class ZoomControlHelper extends AbstractHelper
     /**
      * Sets the zoom control style helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper $zoomControlStyleHelper The zoom control style
+     * @param \Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper $zoomControlStyleHelper The zoom control style
      *                                                                                        helper.
      */
     public function setZoomControlStyleHelper(ZoomControlStyleHelper $zoomControlStyleHelper)
@@ -97,7 +97,7 @@ class ZoomControlHelper extends AbstractHelper
     /**
      * Renders a zoom control.
      *
-     * @param \Ivory\GoogleMap\Controls\ZoomControl $zoomControl The zoom control.
+     * @param \Fungio\GoogleMap\Controls\ZoomControl $zoomControl The zoom control.
      *
      * @return string The JS output.
      */

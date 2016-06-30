@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Base\Size;
-use Ivory\GoogleMap\Events\MouseEvent;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Base\Size;
+use Fungio\GoogleMap\Events\MouseEvent;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Info window which describes a google map info window.
@@ -28,10 +28,10 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
     /** @var string */
     protected $content;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $position;
 
-    /** @var \Ivory\GoogleMap\Base\Size */
+    /** @var \Fungio\GoogleMap\Base\Size */
     protected $pixedOffset;
 
     /** @var boolean */
@@ -50,8 +50,8 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      * Creates an info window.
      *
      * @param string                           $content     The info window content.
-     * @param \Ivory\GoogleMap\Base\Coordinate $position    The info window position.
-     * @param \Ivory\GoogleMap\Base\Size       $pixelOffset The info window pixel offset.
+     * @param \Fungio\GoogleMap\Base\Coordinate $position    The info window position.
+     * @param \Fungio\GoogleMap\Base\Size       $pixelOffset The info window pixel offset.
      * @param boolean                          $open        The info window open flag.
      * @param string                           $openEvent   The info window open event.
      * @param boolean                          $autoOpen    The info window auto open flag.
@@ -90,7 +90,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the infow window position.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The info window position.
+     * @return \Fungio\GoogleMap\Base\Coordinate The info window position.
      */
     public function getPosition()
     {
@@ -101,10 +101,10 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the info window position
      *
      * Available prototypes:
-     *  - function setPosition(Ivory\GoogleMap\Base\Coordinate $position = null)
+     *  - function setPosition(Fungio\GoogleMap\Base\Coordinate $position = null)
      *  - function setPosition(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the position is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the position is not valid.
      */
     public function setPosition()
     {
@@ -143,7 +143,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the pixel offset.
      *
-     * @return \Ivory\GoogleMap\Base\Size The pixel offset.
+     * @return \Fungio\GoogleMap\Base\Size The pixel offset.
      */
     public function getPixelOffset()
     {
@@ -154,10 +154,10 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the pixel offset.
      *
      * Available prototypes:
-     *  - function setPixelOffset(Ivory\GoogleMap\Base\Size $scaledSize)
+     *  - function setPixelOffset(Fungio\GoogleMap\Base\Size $scaledSize)
      *  - function setPixelOffset(double $width, double $height, string $widthUnit = null, string $heightUnit = null)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the pixel offset is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the pixel offset is not valid (prototypes).
      */
     public function setPixelOffset()
     {
@@ -202,7 +202,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param string $content The info window content.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the content is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the content is not valid.
      */
     public function setContent($content)
     {
@@ -228,7 +228,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param boolean $open TRUE if the info window is open else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the info window open flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the info window open flag is not valid.
      */
     public function setOpen($open)
     {
@@ -254,7 +254,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param boolean $autoOpen TRUE if the info window auto open on event else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the auto open flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the auto open flag is not valid.
      */
     public function setAutoOpen($autoOpen)
     {
@@ -280,7 +280,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param string $openEvent The info window open event.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the open event is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the open event is not valid.
      */
     public function setOpenEvent($openEvent)
     {
@@ -306,7 +306,7 @@ class InfoWindow extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param boolean $autoClose TRUE if all opened info windows close when one is opened else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the auto close flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the auto close flag is not valid.
      */
     public function setAutoClose($autoClose)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Base;
+namespace Fungio\Tests\GoogleMap\Services\Base;
 
-use Ivory\GoogleMap\Services\Base\Duration;
+use Fungio\GoogleMap\Services\Base\Duration;
 
 /**
  * Duration test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Base\Duration;
  */
 class DurationTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Base\Duration */
+    /** @var \Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
     /**
@@ -46,7 +46,7 @@ class DurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The duration text must be a string value.
      */
     public function testTextWithInvalidValue()
@@ -55,7 +55,7 @@ class DurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The duration value must be a numeric value.
      */
     public function testValueWithInvalidValue()

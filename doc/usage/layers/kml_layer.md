@@ -6,7 +6,7 @@ information, see official [documentation](http://code.google.com/apis/maps/docum
 ## Build your KML layer
 
 ``` php
-use Ivory\GoogleMap\Layers\KMLLayer;
+use Fungio\GoogleMap\Layers\KMLLayer;
 
 $kmlLayer = new KMLLayer();
 
@@ -24,7 +24,7 @@ $kmlLayer->setOptions(array(
 ## Add your KML layer to the map
 
 ``` php
-use Ivory\GoogleMap\Layers\KMLLayer;
+use Fungio\GoogleMap\Layers\KMLLayer;
 
 $kmlLayer = new KMLLayer();
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\MarkerShape;
+use Fungio\GoogleMap\Overlays\MarkerShape;
 
 /**
  * Marker shape test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\MarkerShape;
  */
 class MarkerShapeTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\MarkerShape */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerShape */
     protected $markerShape;
 
     /**
@@ -65,7 +65,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The type of a marker shape can only be : circle, poly, rect.
      */
     public function testTypeWithInvalidValue()
@@ -82,7 +82,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The coordinates setter arguments is invalid if the marker shape type is circle.
      * The available prototype is : function setCoordinates(array(double $x, double $y, double $r))
      */
@@ -101,7 +101,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The coordinates setter arguments is invalid if the marker shape type is poly.
      * The available prototype is : function setCoordinates(array(double $x1, double $y1, ..., double $xn, double $yn))
      */
@@ -112,7 +112,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The coordinates setter arguments is invalid if the marker shape type is poly.
      * The available prototype is : function setCoordinates(array(double $x1, double $y1, ..., double $xn, double $yn))
      */
@@ -131,7 +131,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The coordinates setter arguments is invalid if the marker shape type is rect.
      * The available prototype is : function setCoordinates(array(double $x1, double $y1, double $x2, double $y2))
      */
@@ -153,7 +153,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The MarkerShape::addPolyCoordinate($x, $y) method can only be use with a marker
      * shape which has type poly.
      */
@@ -164,7 +164,7 @@ class MarkerShapeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The x & y coordinates of a poly marker shape must be numeric values.
      */
     public function testAddPolyCoordinateWithInvalidValue()

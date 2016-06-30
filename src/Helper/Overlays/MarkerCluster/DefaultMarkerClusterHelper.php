@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Events\Event;
-use Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper;
-use Ivory\GoogleMap\Helper\Overlays\MarkerHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Events\Event;
+use Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper;
+use Fungio\GoogleMap\Helper\Overlays\MarkerHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 /**
  * Default marker cluster helper.
@@ -25,14 +25,14 @@ use Ivory\GoogleMap\Overlays\MarkerCluster;
  */
 class DefaultMarkerClusterHelper extends AbstractMarkerClusterHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper */
     protected $infoWindowHelper;
 
     /**
      * Creates a default marker cluster helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerHelper $markerHelper     The marker helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper           $infoWindowHelper The info window helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerHelper $markerHelper     The marker helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper           $infoWindowHelper The info window helper.
      */
     public function __construct(MarkerHelper $markerHelper = null, InfoWindowHelper $infoWindowHelper = null)
     {
@@ -48,7 +48,7 @@ class DefaultMarkerClusterHelper extends AbstractMarkerClusterHelper
     /**
      * Gets the info window helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper The info window helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper The info window helper.
      */
     public function getInfoWindowHelper()
     {
@@ -58,7 +58,7 @@ class DefaultMarkerClusterHelper extends AbstractMarkerClusterHelper
     /**
      * Sets the info window helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper $infoWindowHelper The info window helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper $infoWindowHelper The info window helper.
      */
     public function setInfoWindowHelper(InfoWindowHelper $infoWindowHelper)
     {
@@ -102,8 +102,8 @@ class DefaultMarkerClusterHelper extends AbstractMarkerClusterHelper
     /**
      * Renders a marker with the js map container.
      *
-     * @param \Ivory\GoogleMap\Overlays\Marker $marker The marker.
-     * @param \Ivory\GoogleMap\Map             $map    The map.
+     * @param \Fungio\GoogleMap\Overlays\Marker $marker The marker.
+     * @param \Fungio\GoogleMap\Map             $map    The map.
      *
      * @return string The JS output.
      */
@@ -120,8 +120,8 @@ class DefaultMarkerClusterHelper extends AbstractMarkerClusterHelper
     /**
      * Registers the info window event (auto open).
      *
-     * @param \Ivory\GoogleMap\Overlays\Marker $marker The marker.
-     * @param \Ivory\GoogleMap\Map             $map    The map.
+     * @param \Fungio\GoogleMap\Overlays\Marker $marker The marker.
+     * @param \Fungio\GoogleMap\Map             $map    The map.
      */
     protected function registerInfoWindowEvent(Marker $marker, Map $map)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Controls;
+namespace Fungio\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Exception\ControlException;
+use Fungio\GoogleMap\Exception\ControlException;
 
 /**
  * Scale control options describes a google map scale control options
@@ -56,7 +56,7 @@ class ScaleControl
      *
      * @param string $controlPosition The control position.
      *
-     * @throws \Ivory\GoogleMap\Exception\ControlException If the control position is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ControlException If the control position is not valid.
      */
     public function setControlPosition($controlPosition)
     {
@@ -82,7 +82,7 @@ class ScaleControl
      *
      * @param type $scaleControlStyle The scale control style.
      *
-     * @throws \Ivory\GoogleMap\Exception\ControlException If the scale control style is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ControlException If the scale control style is not valid.
      */
     public function setScaleControlStyle($scaleControlStyle)
     {

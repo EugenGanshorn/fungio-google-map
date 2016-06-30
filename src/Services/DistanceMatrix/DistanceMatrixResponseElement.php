@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Exception\DistanceMatrixException;
-use Ivory\GoogleMap\Services\Base\Distance;
-use Ivory\GoogleMap\Services\Base\Duration;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
+use Fungio\GoogleMap\Exception\DistanceMatrixException;
+use Fungio\GoogleMap\Services\Base\Distance;
+use Fungio\GoogleMap\Services\Base\Duration;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
 
 /**
  * A distance matrix response wraps the distance results & the response status.
@@ -27,17 +27,17 @@ class DistanceMatrixResponseElement
     /** @var string */
     protected $status;
 
-    /** @var null|\Ivory\GoogleMap\Services\Base\Distance */
+    /** @var null|\Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
-    /** @var null|\Ivory\GoogleMap\Services\Base\Duration */
+    /** @var null|\Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
     /**
      * Create a distance matrix response element.
      *
-     * @param \Ivory\GoogleMap\Services\Base\Distance $distance The element distance.
-     * @param \Ivory\GoogleMap\Services\Base\Duration $duration The element duration.
+     * @param \Fungio\GoogleMap\Services\Base\Distance $distance The element distance.
+     * @param \Fungio\GoogleMap\Services\Base\Duration $duration The element duration.
      * @param string                                  $status   The element status.
      */
     public function __construct($status, Distance $distance = null, Duration $duration = null)
@@ -68,7 +68,7 @@ class DistanceMatrixResponseElement
      *
      * @param string $status The distance matrix status.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the status is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the status is not valid.
      */
     public function setStatus($status)
     {
@@ -82,7 +82,7 @@ class DistanceMatrixResponseElement
     /**
      * Gets the step distance.
      *
-     * @return \Ivory\GoogleMap\Services\Base\Distance The step distance.
+     * @return \Fungio\GoogleMap\Services\Base\Distance The step distance.
      */
     public function getDistance()
     {
@@ -92,7 +92,7 @@ class DistanceMatrixResponseElement
     /**
      * Sets the step distance.
      *
-     * @param \Ivory\GoogleMap\Services\Base\Distance $distance The step distance.
+     * @param \Fungio\GoogleMap\Services\Base\Distance $distance The step distance.
      */
     public function setDistance(Distance $distance)
     {
@@ -102,7 +102,7 @@ class DistanceMatrixResponseElement
     /**
      * Gets the step duration.
      *
-     * @return \Ivory\GoogleMap\Services\Base\Duration The step duration.
+     * @return \Fungio\GoogleMap\Services\Base\Duration The step duration.
      */
     public function getDuration()
     {
@@ -112,7 +112,7 @@ class DistanceMatrixResponseElement
     /**
      * Sets the step duration
      *
-     * @param \Ivory\GoogleMap\Services\Base\Duration $duration The step duration.
+     * @param \Fungio\GoogleMap\Services\Base\Duration $duration The step duration.
      */
     public function setDuration(Duration $duration)
     {

@@ -3,10 +3,10 @@
 ## Build a distance matrix request
 
 ``` php
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 $request = new DistanceMatrixRequest();
 
@@ -31,7 +31,7 @@ $request->setSensor(false);
 ## Process your request
 
 ``` php
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
 
 $request = new DistanceMatrixRequest();
 

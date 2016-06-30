@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Controls;
+namespace Fungio\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Exception\ControlException;
+use Fungio\GoogleMap\Exception\ControlException;
 
 /**
  * A zoom control describes a google map zoom control.
@@ -53,7 +53,7 @@ class ZoomControl
      *
      * @param string $controlPosition The control position.
      *
-     * @throws \Ivory\GoogleMap\Exception\ControlException If the control position is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ControlException If the control position is not valid.
      */
     public function setControlPosition($controlPosition)
     {
@@ -79,7 +79,7 @@ class ZoomControl
      *
      * @param string $zoomControlStyle The zoom control style.
      *
-     * @throws \Ivory\GoogleMap\Exception\ControlException If the zoom control style is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ControlException If the zoom control style is not valid.
      */
     public function setZoomControlStyle($zoomControlStyle)
     {

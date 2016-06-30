@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
 
 /**
  * Geocoder location type test.

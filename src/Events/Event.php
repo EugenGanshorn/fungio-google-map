@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Events;
+namespace Fungio\GoogleMap\Events;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Exception\EventException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Exception\EventException;
 
 /**
  * Event which describes a google map event.
@@ -76,7 +76,7 @@ class Event extends AbstractJavascriptVariableAsset
      *
      * @param string $instance The event object instance.
      *
-     * @throws \Ivory\GoogleMap\Exception\EventException If the instance is not valid.
+     * @throws \Fungio\GoogleMap\Exception\EventException If the instance is not valid.
      */
     public function setInstance($instance)
     {
@@ -102,7 +102,7 @@ class Event extends AbstractJavascriptVariableAsset
      *
      * @param string $eventName The event name.
      *
-     * @throws \Ivory\GoogleMap\Exception\EventException If the event name is not valid.
+     * @throws \Fungio\GoogleMap\Exception\EventException If the event name is not valid.
      */
     public function setEventName($eventName)
     {
@@ -128,7 +128,7 @@ class Event extends AbstractJavascriptVariableAsset
      *
      * @param string $handle The event function handle.
      *
-     * @throws \Ivory\GoogleMap\Exception\EventException If the handle is not valid.
+     * @throws \Fungio\GoogleMap\Exception\EventException If the handle is not valid.
      */
     public function setHandle($handle)
     {
@@ -154,7 +154,7 @@ class Event extends AbstractJavascriptVariableAsset
      *
      * @param boolean $capture TRUE if the event is capture else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\EventException If the capture is not valid.
+     * @throws \Fungio\GoogleMap\Exception\EventException If the capture is not valid.
      */
     public function setCapture($capture)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\DirectionsException;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Services\AbstractService;
-use Ivory\GoogleMap\Services\Base\Distance;
-use Ivory\GoogleMap\Services\Base\Duration;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Services\AbstractService;
+use Fungio\GoogleMap\Services\Base\Distance;
+use Fungio\GoogleMap\Services\Base\Duration;
 use Widop\HttpAdapter\HttpAdapterInterface;
 
 /**
@@ -42,9 +42,9 @@ class Directions extends AbstractService
      *
      * Available prototypes:
      * - function route(string $origin, string $destination)
-     * - function route(Ivory\GoogleMap\Services\Directions\DirectionsRequest $request)
+     * - function route(Fungio\GoogleMap\Services\Directions\DirectionsRequest $request)
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the request is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the request is not valid (prototypes).
      */
     public function route()
     {
@@ -74,7 +74,7 @@ class Directions extends AbstractService
     /**
      * Generates directions URL API according to the request.
      *
-     * @param \Ivory\GoogleMap\Services\Directions\DirectionsRequest $directionsRequest The direction request.
+     * @param \Fungio\GoogleMap\Services\Directions\DirectionsRequest $directionsRequest The direction request.
      *
      * @return string The generated URL.
      */
@@ -219,7 +219,7 @@ class Directions extends AbstractService
      *
      * @param \stdClass $directionsResponse The normalied directions response.
      *
-     * @return \Ivory\GoogleMap\Services\Directions\DirectionsResponse The builded directions response.
+     * @return \Fungio\GoogleMap\Services\Directions\DirectionsResponse The builded directions response.
      */
     protected function buildDirectionsResponse(\stdClass $directionsResponse)
     {
@@ -251,7 +251,7 @@ class Directions extends AbstractService
      *
      * @param \stdClass $directionsRoute The normalized directions route.
      *
-     * @return \Ivory\GoogleMap\Services\Directions\DirectionsRoute The builded directions route.
+     * @return \Fungio\GoogleMap\Services\Directions\DirectionsRoute The builded directions route.
      */
     protected function buildDirectionsRoute(\stdClass $directionsRoute)
     {
@@ -260,7 +260,7 @@ class Directions extends AbstractService
             new Coordinate($directionsRoute->bounds->northeast->lat, $directionsRoute->bounds->northeast->lng)
         );
 
-        // @see https://github.com/egeloen/IvoryGoogleMapBundle/issues/72
+        // @see https://github.com/fungio/FungioGoogleMapBundle/issues/72
         // @codeCoverageIgnoreStart
         if (!isset($directionsRoute->copyrights)) {
             $directionsRoute->copyrights = '';
@@ -322,7 +322,7 @@ class Directions extends AbstractService
      *
      * @param \stdClass $directionsLeg The normalized directions leg.
      *
-     * @return \Ivory\GoogleMap\Services\Directions\DirectionsLeg The builded directions leg.
+     * @return \Fungio\GoogleMap\Services\Directions\DirectionsLeg The builded directions leg.
      */
     protected function buildDirectionsLeg(\stdClass $directionsLeg)
     {
@@ -375,7 +375,7 @@ class Directions extends AbstractService
      *
      * @param \stdClass $directionsStep The normalized directions step.
      *
-     * @return \Ivory\GoogleMap\Services\Directions\DirectionsStep The builded directions step.
+     * @return \Fungio\GoogleMap\Services\Directions\DirectionsStep The builded directions step.
      */
     protected function buildDirectionsStep(\stdClass $directionsStep)
     {

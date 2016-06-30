@@ -6,7 +6,7 @@ Defining an icon or a shadow involves setting a number of properties that define
 ## Build your marker image
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerImage;
+use Fungio\GoogleMap\Overlays\MarkerImage;
 
 $markerImage = new MarkerImage();
 
@@ -26,7 +26,7 @@ Now you have configurated your marker image, you need to add it like an icon or 
 ### Adds the marker image to a marker as icon
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerImage;
+use Fungio\GoogleMap\Overlays\MarkerImage;
 
 $markerImage = new MarkerImage();
 
@@ -37,7 +37,7 @@ $marker->setIcon($markerImage);
 ### Add your marker image to the marker as shadow
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerImage;
+use Fungio\GoogleMap\Overlays\MarkerImage;
 
 $markerImage = new MarkerImage();
 

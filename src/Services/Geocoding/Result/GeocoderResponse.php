@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Exception\GeocodingException;
+use Fungio\GoogleMap\Exception\GeocodingException;
 
 /**
  * A geocoder response wraps the geocoder results & the response status.
@@ -65,7 +65,7 @@ class GeocoderResponse
     /**
      * Adds a geocoder result.
      *
-     * @param \Ivory\GoogleMap\Services\Result\GeocoderResult $result The geocoder result to add.
+     * @param \Fungio\GoogleMap\Services\Result\GeocoderResult $result The geocoder result to add.
      */
     public function addResult(GeocoderResult $result)
     {
@@ -87,7 +87,7 @@ class GeocoderResponse
      *
      * @param string $status The geocoder result status.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the status is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the status is not valid.
      */
     public function setStatus($status)
     {

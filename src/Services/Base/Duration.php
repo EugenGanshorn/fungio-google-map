@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Base;
+namespace Fungio\GoogleMap\Services\Base;
 
-use Ivory\GoogleMap\Exception\ServiceException;
+use Fungio\GoogleMap\Exception\ServiceException;
 
 /**
  * A duration which describes a google map duration.
@@ -54,7 +54,7 @@ class Duration
      *
      * @param string $text The duration as text.
      *
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the text is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the text is not valid.
      */
     public function setText($text)
     {
@@ -80,7 +80,7 @@ class Duration
      *
      * @param double $value The duration in minutes.
      *
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the value is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the value is not valid.
      */
     public function setValue($value)
     {

@@ -1,15 +1,15 @@
 # Info box
 
 Info box displays content in a floating window above the map. Basically, it is the same as an
-[info window](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/info_window.md) but through a
-different implementation. The Ivory Google Map library allows you to easily use this implementation by simply replacing
-the info window helper & registering a new [extension helper](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/helper/extension.md).
+[info window](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/info_window.md) but through a
+different implementation. The Fungio Google Map library allows you to easily use this implementation by simply replacing
+the info window helper & registering a new [extension helper](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/helper/extension.md).
 
 So, on the map side, nothing change, you can still use an `InfoWindow`:
 
 ``` php
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 $map = new Map();
 
@@ -23,9 +23,9 @@ Now, to render the info window as info box, you need to replace the info window 
 register the info box helper extension:
 
 ``` php
-use Ivory\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
-use Ivory\GoogleMap\Helper\MapHelper;
-use Ivory\GoogleMap\Helper\Overlays\InfoBoxHelper;
+use Fungio\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
+use Fungio\GoogleMap\Helper\MapHelper;
+use Fungio\GoogleMap\Helper\Overlays\InfoBoxHelper;
 
 // Configure your map...
 

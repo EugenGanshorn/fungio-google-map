@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Base;
+namespace Fungio\GoogleMap\Helper\Base;
 
-use Ivory\GoogleMap\Base\Point;
+use Fungio\GoogleMap\Base\Point;
 
 /**
  * Point helper.
@@ -23,7 +23,7 @@ class PointHelper
     /**
      * Renders a point.
      *
-     * @param \Ivory\GoogleMap\Base\Point $point The point.
+     * @param \Fungio\GoogleMap\Base\Point $point The point.
      *
      * @return string The JS output.
      */

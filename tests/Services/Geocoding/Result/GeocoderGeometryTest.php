@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderLocationType;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
 
 /**
  * Geocoder geometry test.
@@ -21,19 +21,19 @@ use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
  */
 class GeocoderGeometryTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry */
     protected $geocoderGeometry;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $location;
 
     /** @var string */
     protected $locationType;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $viewport;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /**
@@ -41,10 +41,10 @@ class GeocoderGeometryTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->location = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $this->location = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->locationType = GeocoderLocationType::RANGE_INTERPOLATED;
-        $this->viewport = $this->getMock('Ivory\GoogleMap\Base\Bound');
-        $this->bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $this->viewport = $this->getMock('Fungio\GoogleMap\Base\Bound');
+        $this->bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
 
         $this->geocoderGeometry = new GeocoderGeometry(
             $this->location,
@@ -73,7 +73,7 @@ class GeocoderGeometryTest extends \PHPUnit_Framework_TestCase
 
     public function testLocation()
     {
-        $location = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $location = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->geocoderGeometry->setLocation($location);
 
         $this->assertSame($location, $this->geocoderGeometry->getLocation());
@@ -87,7 +87,7 @@ class GeocoderGeometryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder geometry location type can only be : APPROXIMATE, GEOMETRIC_CENTER,
      * RANGE_INTERPOLATED, ROOFTOP.
      */
@@ -98,7 +98,7 @@ class GeocoderGeometryTest extends \PHPUnit_Framework_TestCase
 
     public function testViewport()
     {
-        $viewport = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $viewport = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $this->geocoderGeometry->setViewport($viewport);
 
         $this->assertSame($viewport, $this->geocoderGeometry->getViewport());
@@ -106,7 +106,7 @@ class GeocoderGeometryTest extends \PHPUnit_Framework_TestCase
 
     public function testBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $this->geocoderGeometry->setBound($bound);
 
         $this->assertSame($bound, $this->geocoderGeometry->getBound());

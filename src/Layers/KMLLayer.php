@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Layers;
+namespace Fungio\GoogleMap\Layers;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Exception\LayerException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Exception\LayerException;
 
 /**
  * KML Layer which describes a google map KML layer.
@@ -55,7 +55,7 @@ class KMLLayer extends AbstractOptionsAsset
      *
      * @param string $url The KML layer URL.
      *
-     * @throws \Ivory\GoogleMap\Exception\LayerException If the URL is not valid.
+     * @throws \Fungio\GoogleMap\Exception\LayerException If the URL is not valid.
      */
     public function setUrl($url)
     {

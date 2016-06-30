@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Marker which describes a google map marker.
@@ -23,33 +23,33 @@ use Ivory\GoogleMap\Exception\OverlayException;
  */
 class Marker extends AbstractOptionsAsset implements ExtendableInterface
 {
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $position;
 
     /** @var string */
     protected $animation;
 
-    /** @var \Ivory\GoogleMap\Overlays\MarkerImage */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerImage */
     protected $icon;
 
-    /** @var \Ivory\GoogleMap\Overlays\MarkerImage */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerImage */
     protected $shadow;
 
-    /** @var \Ivory\GoogleMap\Overlays\MarkerShape */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerShape */
     protected $shape;
 
-    /** @var \Ivory\GoogleMap\Overlays\InfoWindow */
+    /** @var \Fungio\GoogleMap\Overlays\InfoWindow */
     protected $infoWindow;
 
     /**
      * Creates a marker.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate      $position   The marker position.
+     * @param \Fungio\GoogleMap\Base\Coordinate      $position   The marker position.
      * @param string                                $animation  The marker animation.
-     * @param \Ivory\GoogleMap\Overlays\MarkerImage $icon       The marker icon.
-     * @param \Ivory\GoogleMap\Overlays\MarkerImage $shadow     The marker shadow.
-     * @param \Ivory\GoogleMap\Overlays\MarkerShape $shape      The marker shape.
-     * @param \Ivory\GoogleMap\Overlays\InfoWindow  $infoWindow The marker info window.
+     * @param \Fungio\GoogleMap\Overlays\MarkerImage $icon       The marker icon.
+     * @param \Fungio\GoogleMap\Overlays\MarkerImage $shadow     The marker shadow.
+     * @param \Fungio\GoogleMap\Overlays\MarkerShape $shape      The marker shape.
+     * @param \Fungio\GoogleMap\Overlays\InfoWindow  $infoWindow The marker info window.
      */
     public function __construct(
         Coordinate $position = null,
@@ -93,7 +93,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the marker position.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The marker position.
+     * @return \Fungio\GoogleMap\Base\Coordinate The marker position.
      */
     public function getPosition()
     {
@@ -104,10 +104,10 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the marker position.
      *
      * Available prototypes:
-     * - function setPosition(Ivory\GoogleMap\Base\Coordinate $position = null)
+     * - function setPosition(Fungio\GoogleMap\Base\Coordinate $position = null)
      * - function setPosition(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the position is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the position is not valid.
      */
     public function setPosition()
     {
@@ -154,7 +154,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
      *
      * @param string $animation The marker animation.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the animation is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the animation is not valid.
      */
     public function setAnimation($animation = null)
     {
@@ -178,7 +178,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the marker icon.
      *
-     * @return \Ivory\GoogleMap\Overlays\MarkerImage The marker image.
+     * @return \Fungio\GoogleMap\Overlays\MarkerImage The marker image.
      */
     public function getIcon()
     {
@@ -189,10 +189,10 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the marker icon.
      *
      * Available prototypes:
-     *  - function setIcon(Ivory\GoogleMap\Overlays\MarkerImage $markerImage = null)
+     *  - function setIcon(Fungio\GoogleMap\Overlays\MarkerImage $markerImage = null)
      *  - function setIcon(string $url = null)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the icon is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the icon is not valid.
      */
     public function setIcon()
     {
@@ -230,7 +230,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the marker shadow.
      *
-     * @return \Ivory\GoogleMap\Overlays\MarkerImage The marker shadow.
+     * @return \Fungio\GoogleMap\Overlays\MarkerImage The marker shadow.
      */
     public function getShadow()
     {
@@ -241,10 +241,10 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the marker shadow.
      *
      * Available prototypes:
-     *  - function setShadow(Ivory\GoogleMap\Overlays\MarkerImage $markerImage = null)
+     *  - function setShadow(Fungio\GoogleMap\Overlays\MarkerImage $markerImage = null)
      *  - function setShadow(string $url = null)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the marker shadow is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the marker shadow is not valid.
      */
     public function setShadow()
     {
@@ -282,7 +282,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the marker shape.
      *
-     * @return \Ivory\GoogleMap\Overlays\MarkerShape The marker shape.
+     * @return \Fungio\GoogleMap\Overlays\MarkerShape The marker shape.
      */
     public function getShape()
     {
@@ -293,10 +293,10 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the marker shape.
      *
      * Available prototypes:
-     *  - function setShape(Ivory\GoogleMap\Overlays\MarkerShape $shape = null)
+     *  - function setShape(Fungio\GoogleMap\Overlays\MarkerShape $shape = null)
      *  - function setShape(string $type, array $coordinates)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the shape is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the shape is not valid.
      */
     public function setShape()
     {
@@ -335,7 +335,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the info window.
      *
-     * @return \Ivory\GoogleMap\Overlays\InfoWindow The info window.
+     * @return \Fungio\GoogleMap\Overlays\InfoWindow The info window.
      */
     public function getInfoWindow()
     {
@@ -345,7 +345,7 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Sets the info window.
      *
-     * @param \Ivory\GoogleMap\Overlays\InfoWindow $infoWindow The info window.
+     * @param \Fungio\GoogleMap\Overlays\InfoWindow $infoWindow The info window.
      */
     public function setInfoWindow(InfoWindow $infoWindow)
     {

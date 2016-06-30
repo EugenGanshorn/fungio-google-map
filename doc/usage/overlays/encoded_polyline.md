@@ -1,13 +1,13 @@
 # Encoded Polyline
 
-The Encoded Polyline class defines a [Polyline](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/polyline.md)
+The Encoded Polyline class defines a [Polyline](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/polyline.md)
 which has been encoded using the algorithm described
 [here](http://code.google.com/apis/maps/documentation/utilities/polylinealgorithm.html).
 
 ## Build your encoded polyline
 
 ``` php
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
 
 $encodedPolyline = new EncodedPolyline();
 
@@ -27,7 +27,7 @@ $polyline->setOptions(array(
 ## Add your encoded polyline to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
 
 $encodedPolyline = new EncodedPolyline();
 

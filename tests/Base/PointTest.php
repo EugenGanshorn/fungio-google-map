@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Base;
+namespace Fungio\Tests\GoogleMap\Base;
 
-use Ivory\GoogleMap\Base\Point;
+use Fungio\GoogleMap\Base\Point;
 
 /**
  * Point test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Base\Point;
  */
 class PointTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Base\Point */
+    /** @var \Fungio\GoogleMap\Base\Point */
     protected $point;
 
     /**
@@ -62,7 +62,7 @@ class PointTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The x coordinate of a point must be a numeric value.
      */
     public function testXWithInvalidValue()
@@ -78,7 +78,7 @@ class PointTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The y coordinate of a point must be a numeric value.
      */
     public function testYWithInvalidValue()

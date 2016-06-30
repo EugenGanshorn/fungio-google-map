@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,25 +9,25 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper;
+namespace Fungio\Tests\GoogleMap\Helper;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\Events\Event;
-use Ivory\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
-use Ivory\GoogleMap\Helper\Overlays\InfoBoxHelper;
-use Ivory\GoogleMap\Layers\KMLLayer;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\MapTypeId;
-use Ivory\GoogleMap\Overlays\Circle;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Overlays\GroundOverlay;
-use Ivory\GoogleMap\Overlays\InfoWindow;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Overlays\Polygon;
-use Ivory\GoogleMap\Overlays\Polyline;
-use Ivory\GoogleMap\Overlays\Rectangle;
-use Ivory\GoogleMap\Helper\MapHelper;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\Events\Event;
+use Fungio\GoogleMap\Helper\Extension\InfoBoxExtensionHelper;
+use Fungio\GoogleMap\Helper\Overlays\InfoBoxHelper;
+use Fungio\GoogleMap\Layers\KMLLayer;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Overlays\GroundOverlay;
+use Fungio\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Helper\MapHelper;
 
 /**
  * Map helper test.
@@ -36,7 +36,7 @@ use Ivory\GoogleMap\Helper\MapHelper;
  */
 class MapHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\MapHelper */
+    /** @var \Fungio\GoogleMap\Helper\MapHelper */
     protected $mapHelper;
 
     /**
@@ -58,122 +58,122 @@ class MapHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Base\CoordinateHelper',
+            'Fungio\GoogleMap\Helper\Base\CoordinateHelper',
             $this->mapHelper->getCoordinateHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Base\BoundHelper',
+            'Fungio\GoogleMap\Helper\Base\BoundHelper',
             $this->mapHelper->getBoundHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Base\PointHelper',
+            'Fungio\GoogleMap\Helper\Base\PointHelper',
             $this->mapHelper->getPointHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Base\SizeHelper',
+            'Fungio\GoogleMap\Helper\Base\SizeHelper',
             $this->mapHelper->getSizeHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\MapTypeIdHelper',
+            'Fungio\GoogleMap\Helper\MapTypeIdHelper',
             $this->mapHelper->getMapTypeIdHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper',
             $this->mapHelper->getMapTypeControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper',
             $this->mapHelper->getOverviewMapControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\PanControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\PanControlHelper',
             $this->mapHelper->getPanControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\RotateControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\RotateControlHelper',
             $this->mapHelper->getRotateControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ScaleControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\ScaleControlHelper',
             $this->mapHelper->getScaleControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper',
             $this->mapHelper->getStreetViewControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ZoomControlHelper',
+            'Fungio\GoogleMap\Helper\Controls\ZoomControlHelper',
             $this->mapHelper->getZoomControlHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper',
+            'Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper',
             $this->mapHelper->getMarkerClusterHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper',
+            'Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper',
             $this->mapHelper->getMarkerImageHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper',
+            'Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper',
             $this->mapHelper->getMarkerShapeHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper',
+            'Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper',
             $this->mapHelper->getInfoWindowHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\PolylineHelper',
+            'Fungio\GoogleMap\Helper\Overlays\PolylineHelper',
             $this->mapHelper->getPolylineHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper',
+            'Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper',
             $this->mapHelper->getEncodedPolylineHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\PolygonHelper',
+            'Fungio\GoogleMap\Helper\Overlays\PolygonHelper',
             $this->mapHelper->getPolygonHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\RectangleHelper',
+            'Fungio\GoogleMap\Helper\Overlays\RectangleHelper',
             $this->mapHelper->getRectangleHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\CircleHelper',
+            'Fungio\GoogleMap\Helper\Overlays\CircleHelper',
             $this->mapHelper->getCircleHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper',
+            'Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper',
             $this->mapHelper->getGroundOverlayHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Layers\KMLLayerHelper',
+            'Fungio\GoogleMap\Helper\Layers\KMLLayerHelper',
             $this->mapHelper->getKmlLayerHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Events\EventManagerHelper',
+            'Fungio\GoogleMap\Helper\Events\EventManagerHelper',
             $this->mapHelper->getEventManagerHelper()
         );
 
@@ -182,38 +182,38 @@ class MapHelperTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($this->mapHelper->hasExtensionHelper('core'));
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Extension\CoreExtensionHelper',
+            'Fungio\GoogleMap\Helper\Extension\CoreExtensionHelper',
             $this->mapHelper->getExtensionHelper('core')
         );
     }
 
     public function testInitialState()
     {
-        $coordinateHelper = $this->getMock('Ivory\GoogleMap\Helper\Base\CoordinateHelper');
-        $boundHelper = $this->getMock('Ivory\GoogleMap\Helper\Base\BoundHelper');
-        $pointHelper = $this->getMock('Ivory\GoogleMap\Helper\Base\PointHelper');
-        $sizeHelper = $this->getMock('Ivory\GoogleMap\Helper\Base\SizeHelper');
-        $mapTypeIdHelper = $this->getMock('Ivory\GoogleMap\Helper\MapTypeIdHelper');
-        $mapTypeControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper');
-        $overviewMapControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper');
-        $panControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\PanControlHelper');
-        $rotateControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\RotateControlHelper');
-        $scaleControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ScaleControlHelper');
-        $streetViewControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper');
-        $zoomControlHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ZoomControlHelper');
-        $markerClusterHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface');
-        $markerImageHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper');
-        $markerShapeHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper');
-        $infoWindowHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper');
-        $polylineHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\PolylineHelper');
-        $encodedPolylineHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper');
-        $polygonHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\PolygonHelper');
-        $rectangleHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\RectangleHelper');
-        $circleHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\CircleHelper');
-        $groundOverlayHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper');
-        $kmlLayerHelper = $this->getMock('Ivory\GoogleMap\Helper\Layers\KMLLayerHelper');
-        $eventManagerHelper = $this->getMock('Ivory\GoogleMap\Helper\Events\EventManagerHelper');
-        $extensionHelpers = array('foo' => $this->getMock('Ivory\GoogleMap\Helper\Extension\ExtensionHelperInterface'));
+        $coordinateHelper = $this->getMock('Fungio\GoogleMap\Helper\Base\CoordinateHelper');
+        $boundHelper = $this->getMock('Fungio\GoogleMap\Helper\Base\BoundHelper');
+        $pointHelper = $this->getMock('Fungio\GoogleMap\Helper\Base\PointHelper');
+        $sizeHelper = $this->getMock('Fungio\GoogleMap\Helper\Base\SizeHelper');
+        $mapTypeIdHelper = $this->getMock('Fungio\GoogleMap\Helper\MapTypeIdHelper');
+        $mapTypeControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper');
+        $overviewMapControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper');
+        $panControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\PanControlHelper');
+        $rotateControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\RotateControlHelper');
+        $scaleControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ScaleControlHelper');
+        $streetViewControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper');
+        $zoomControlHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ZoomControlHelper');
+        $markerClusterHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface');
+        $markerImageHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper');
+        $markerShapeHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper');
+        $infoWindowHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper');
+        $polylineHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\PolylineHelper');
+        $encodedPolylineHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper');
+        $polygonHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\PolygonHelper');
+        $rectangleHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\RectangleHelper');
+        $circleHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\CircleHelper');
+        $groundOverlayHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper');
+        $kmlLayerHelper = $this->getMock('Fungio\GoogleMap\Helper\Layers\KMLLayerHelper');
+        $eventManagerHelper = $this->getMock('Fungio\GoogleMap\Helper\Events\EventManagerHelper');
+        $extensionHelpers = array('foo' => $this->getMock('Fungio\GoogleMap\Helper\Extension\ExtensionHelperInterface'));
 
         $this->mapHelper = new MapHelper(
             $coordinateHelper,
@@ -272,7 +272,7 @@ class MapHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRemoveExtensionHelperWithValidValue()
     {
-        $extensionHelper = $this->getMock('Ivory\GoogleMap\Helper\Extension\ExtensionHelperInterface');
+        $extensionHelper = $this->getMock('Fungio\GoogleMap\Helper\Extension\ExtensionHelperInterface');
         $this->mapHelper->setExtensionHelper('foo', $extensionHelper);
 
         $this->assertTrue($this->mapHelper->hasExtensionHelper('foo'));
@@ -283,7 +283,7 @@ class MapHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The extension helper "foo" does not exist.
      */
     public function testRemoveExtensionHelperWithInvalidValue()
@@ -292,7 +292,7 @@ class MapHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The extension helper "foo" does not exist.
      */
     public function testGetExtensionHelperWithInvalidValue()
@@ -1004,9 +1004,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);
@@ -1032,9 +1032,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=geometry&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=geometry&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);
@@ -1058,9 +1058,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);
@@ -1083,7 +1083,7 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map() {
+function load_fungio_google_map() {
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);
 map_container.map = map = new google.maps.Map(document.getElementById("map_canvas"), {"mapTypeId":google.maps.MapTypeId.ROADMAP,"zoom":3});
@@ -1091,9 +1091,9 @@ map.setCenter(map_center);
 }
 </script>
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false","callback":load_ivory_google_map}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false","callback":load_fungio_google_map}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -1117,9 +1117,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);
@@ -1156,9 +1156,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);
@@ -1183,9 +1183,9 @@ EOF;
 
         $expected1 = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map1_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map1_container.coordinates.map1_center = map1_center = new google.maps.LatLng(0, 0, true);
@@ -1229,9 +1229,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript" src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
@@ -1263,9 +1263,9 @@ height:300px;
 }
 </style>
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 map_container = {"map":null,"coordinates":{},"bounds":{},"points":{},"sizes":{},"circles":{},"encoded_polylines":{},"ground_overlays":{},"polygons":{},"polylines":{},"rectangles":{},"info_windows":{},"marker_images":{},"marker_shapes":{},"markers":{},"marker_cluster":null,"kml_layers":{},"event_manager":{"dom_events":{},"dom_events_once":{},"events":{},"events_once":{}},"closable_info_windows":{},"functions":{"to_array":function (object) { var array = []; for (var key in object) { array.push(object[key]); } return array; }}};
 map_container.coordinates.map_center = map_center = new google.maps.LatLng(0, 0, true);

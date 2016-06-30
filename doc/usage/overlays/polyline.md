@@ -6,7 +6,7 @@ array of coordinates, and creates a series of line segments that connect those l
 ## Build your polyline
 
 ``` php
-use Ivory\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Polyline;
 
 $polyline = new Polyline();
 
@@ -27,7 +27,7 @@ Like describe in the introduction, a polyline object consists of an array of coo
 coordinate to your polyline.
 
 ``` php
-use Ivory\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Polyline;
 
 $polyline = new Polyline();
 
@@ -39,7 +39,7 @@ $polyline->addCoordinate(1, 1, true);
 ## Add your polyline to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Polyline;
 
 $polyline = new Polyline();
 

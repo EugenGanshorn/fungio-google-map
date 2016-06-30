@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,30 +9,30 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap;
+namespace Fungio\GoogleMap;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMap\Controls\OverviewMapControl;
-use Ivory\GoogleMap\Controls\PanControl;
-use Ivory\GoogleMap\Controls\RotateControl;
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Controls\StreetViewControl;
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Events\EventManager;
-use Ivory\GoogleMap\Exception\MapException;
-use Ivory\GoogleMap\Layers\KMLLayer;
-use Ivory\GoogleMap\Overlays\Circle;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Overlays\GroundOverlay;
-use Ivory\GoogleMap\Overlays\InfoWindow;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
-use Ivory\GoogleMap\Overlays\Polygon;
-use Ivory\GoogleMap\Overlays\Polyline;
-use Ivory\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Controls\OverviewMapControl;
+use Fungio\GoogleMap\Controls\PanControl;
+use Fungio\GoogleMap\Controls\RotateControl;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\StreetViewControl;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Events\EventManager;
+use Fungio\GoogleMap\Exception\MapException;
+use Fungio\GoogleMap\Layers\KMLLayer;
+use Fungio\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Overlays\GroundOverlay;
+use Fungio\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Rectangle;
 
 /**
  * Map wich describes a google map.
@@ -51,10 +51,10 @@ class Map extends AbstractJavascriptVariableAsset
     /** @var boolean */
     protected $autoZoom;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $center;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /** @var array */
@@ -63,31 +63,31 @@ class Map extends AbstractJavascriptVariableAsset
     /** @var array */
     protected $stylesheetOptions;
 
-    /** @var \Ivory\GoogleMap\Controls\MapTypeControl */
+    /** @var \Fungio\GoogleMap\Controls\MapTypeControl */
     protected $mapTypeControl;
 
-    /** @var \Ivory\GoogleMap\Controls\OverviewMapControl */
+    /** @var \Fungio\GoogleMap\Controls\OverviewMapControl */
     protected $overviewMapControl;
 
-    /** @var \Ivory\GoogleMap\Controls\PanControl */
+    /** @var \Fungio\GoogleMap\Controls\PanControl */
     protected $panControl;
 
-    /** @var \Ivory\GoogleMap\Controls\RotateControl */
+    /** @var \Fungio\GoogleMap\Controls\RotateControl */
     protected $rotateControl;
 
-    /** @var \Ivory\GoogleMap\Controls\ScaleControl */
+    /** @var \Fungio\GoogleMap\Controls\ScaleControl */
     protected $scaleControl;
 
-    /** @var \Ivory\GoogleMap\Controls\StreetViewControl */
+    /** @var \Fungio\GoogleMap\Controls\StreetViewControl */
     protected $streetViewControl;
 
-    /** @var \Ivory\GoogleMap\Controls\ZoomControl */
+    /** @var \Fungio\GoogleMap\Controls\ZoomControl */
     protected $zoomControl;
 
-    /** @var \Ivory\GoogleMap\Events\EventManager */
+    /** @var \Fungio\GoogleMap\Events\EventManager */
     protected $eventManager;
 
-    /** @var \Ivory\GoogleMap\Overlays\MarkerCluster */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerCluster */
     protected $markerCluster;
 
     /** @var array */
@@ -175,7 +175,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $htmlContainerId The map HTML container ID.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the HTML container ID is not a string.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the HTML container ID is not a string.
      */
     public function setHtmlContainerId($htmlContainerId)
     {
@@ -201,7 +201,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param boolean $async TRUE if the map loading is asynchronous else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the async flag is not a boolean.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the async flag is not a boolean.
      */
     public function setAsync($async)
     {
@@ -227,7 +227,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param boolean $autoZoom TRUE if the map autozooms else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the auto zoom flag is not a boolean.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the auto zoom flag is not a boolean.
      */
     public function setAutoZoom($autoZoom)
     {
@@ -241,7 +241,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map center.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The map center.
+     * @return \Fungio\GoogleMap\Base\Coordinate The map center.
      */
     public function getCenter()
     {
@@ -252,10 +252,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map center.
      *
      * Available prototypes:
-     *  - function setCenter(Ivory\GoogleMap\Base\Coordinate $center)
+     *  - function setCenter(Fungio\GoogleMap\Base\Coordinate $center)
      *  - function setCenter(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the center is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the center is not valid (prototypes).
      */
     public function setCenter()
     {
@@ -278,7 +278,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The map bound.
+     * @return \Fungio\GoogleMap\Base\Bound The map bound.
      */
     public function getBound()
     {
@@ -289,8 +289,8 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map bound.
      *
      * Available prototypes:
-     *  - function setBound(Ivory\GoogleMap\Base\Bound $bound = null)
-     *  - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     *  - function setBound(Fungio\GoogleMap\Base\Bound $bound = null)
+     *  - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      *  - function setBound(
      *      double $southWestLatitude,
      *      double $southWestLongitude,
@@ -300,7 +300,7 @@ class Map extends AbstractJavascriptVariableAsset
      *      boolean $northEastNoWrap = true
      *  )
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the bound is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the bound is not valid (prototypes).
      */
     public function setBound()
     {
@@ -341,7 +341,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $mapOption The map option.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the map option is not valid.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the map option is not valid.
      *
      * @return boolean TRUE if the map option exists else FALSE.
      */
@@ -381,7 +381,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $mapOption The map option.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the map option does not exist.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the map option does not exist.
      *
      * @return mixed The map option value.
      */
@@ -400,7 +400,7 @@ class Map extends AbstractJavascriptVariableAsset
      * @param string $mapOption The map option.
      * @param mixed  $value     The map option value.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the map option is not valid.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the map option is not valid.
      */
     public function setMapOption($mapOption, $value)
     {
@@ -416,7 +416,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $mapOption The map option.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the map option does not exist.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the map option does not exist.
      */
     public function removeMapOption($mapOption)
     {
@@ -432,7 +432,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $stylesheetOption The stylesheet option.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the stylesheet option is not valid.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the stylesheet option is not valid.
      *
      * @return boolean TRUE if the stylesheet option exists else FALSE.
      */
@@ -472,7 +472,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $stylesheetOption  The stylesheet option.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the stylesheet option does not exist.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the stylesheet option does not exist.
      *
      * @return mixed The stylesheet option value.
      */
@@ -491,7 +491,7 @@ class Map extends AbstractJavascriptVariableAsset
      * @param string $stylesheetOption The stylesheet option.
      * @param mixed  $value            The stylesheet option value.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the stylesheet option is not valid.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the stylesheet option is not valid.
      */
     public function setStylesheetOption($stylesheetOption, $value)
     {
@@ -507,7 +507,7 @@ class Map extends AbstractJavascriptVariableAsset
      *
      * @param string $stylesheetOption The stylesheet option.
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the stylesheet option does not exist.
+     * @throws \Fungio\GoogleMap\Exception\MapException If the stylesheet option does not exist.
      */
     public function removeStylesheetOption($stylesheetOption)
     {
@@ -531,7 +531,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map type control.
      *
-     * @return \Ivory\GoogleMap\Controls\MapTypeControl The map type control.
+     * @return \Fungio\GoogleMap\Controls\MapTypeControl The map type control.
      */
     public function getMapTypeControl()
     {
@@ -542,10 +542,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map type control.
      *
      * Available prototypes:
-     *  - function setMapTypeControl(Ivory\GoogleMap\Controls\MapTypeControl $mapTypeControl = null)
+     *  - function setMapTypeControl(Fungio\GoogleMap\Controls\MapTypeControl $mapTypeControl = null)
      *  - function setMaptypeControl(array $mapTypeIds, string $controlPosition, string $mapTypeControlStyle)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the map type control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the map type control is not valid (prototypes).
      */
     public function setMapTypeControl()
     {
@@ -591,7 +591,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the overview map control.
      *
-     * @return \Ivory\GoogleMap\Controls\OverviewMapControl The overview map control.
+     * @return \Fungio\GoogleMap\Controls\OverviewMapControl The overview map control.
      */
     public function getOverviewMapControl()
     {
@@ -602,10 +602,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the overview map control.
      *
      * Available prototypes:
-     *  - function setOverviewMapControl(Ivory\GoogleMap\Controls\OverviewMapControl $overviewMapControl = null)
+     *  - function setOverviewMapControl(Fungio\GoogleMap\Controls\OverviewMapControl $overviewMapControl = null)
      *  - function setOverviewMapControl(boolean $opened)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the overview map control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the overview map control is not valid (prototypes).
      */
     public function setOverviewMapControl()
     {
@@ -645,7 +645,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map pan control.
      *
-     * @return \Ivory\GoogleMap\Controls\PanControl The map pan control.
+     * @return \Fungio\GoogleMap\Controls\PanControl The map pan control.
      */
     public function getPanControl()
     {
@@ -656,10 +656,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map pan control.
      *
      * Available prototypes:
-     *  - function setPanControl(Ivory\GoogleMap\Controls\PanControl $panControl = null)
+     *  - function setPanControl(Fungio\GoogleMap\Controls\PanControl $panControl = null)
      *  - function setPanControl(string $controlPosition)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the pan control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the pan control is not valid (prototypes).
      */
     public function setPanControl()
     {
@@ -699,7 +699,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map rotate control.
      *
-     * @return \Ivory\GoogleMap\Controls\RotateControl The map rotate control.
+     * @return \Fungio\GoogleMap\Controls\RotateControl The map rotate control.
      */
     public function getRotateControl()
     {
@@ -710,10 +710,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map rotate control.
      *
      * Available prototypes:
-     *  - function setRotateControl(Ivory\GoogleMap\Controls\RotateControl $rotateControl = null)
+     *  - function setRotateControl(Fungio\GoogleMap\Controls\RotateControl $rotateControl = null)
      *  - function setRotateControl(string $controlPosition)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the rotate control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the rotate control is not valid (prototypes).
      */
     public function setRotateControl()
     {
@@ -753,7 +753,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map scale control.
      *
-     * @return \Ivory\GoogleMap\Controls\ScaleControl The map scale control.
+     * @return \Fungio\GoogleMap\Controls\ScaleControl The map scale control.
      */
     public function getScaleControl()
     {
@@ -764,10 +764,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map scale control.
      *
      * Available prototypes:
-     *  - function setScaleControl(Ivory\GoogleMap\Controls\ScaleControl $scaleControl = null)
+     *  - function setScaleControl(Fungio\GoogleMap\Controls\ScaleControl $scaleControl = null)
      *  - function setScaleControl(string $controlPosition, string $scaleControlStyle)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the scale control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the scale control is not valid (prototypes).
      */
     public function setScaleControl()
     {
@@ -809,7 +809,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map street view control.
      *
-     * @return \Ivory\GoogleMap\Controls\StreetViewControl The map street view control.
+     * @return \Fungio\GoogleMap\Controls\StreetViewControl The map street view control.
      */
     public function getStreetViewControl()
     {
@@ -820,10 +820,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map street view control.
      *
      * Available prototypes:
-     *  - function setStreetViewControl(Ivory\GoogleMap\Controls\StreetViewControl $streetViewControl = null)
+     *  - function setStreetViewControl(Fungio\GoogleMap\Controls\StreetViewControl $streetViewControl = null)
      *  - function setStreetViewControl(string $controlPosition)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the street view control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the street view control is not valid (prototypes).
      */
     public function setStreetViewControl()
     {
@@ -863,7 +863,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map zoom control.
      *
-     * @return \Ivory\GoogleMap\Controls\ZoomControl The map zoom control.
+     * @return \Fungio\GoogleMap\Controls\ZoomControl The map zoom control.
      */
     public function getZoomControl()
     {
@@ -874,10 +874,10 @@ class Map extends AbstractJavascriptVariableAsset
      * Sets the map zoom control.
      *
      * Available prototypes:
-     *  - function setZoomControl(Ivory\GoogleMap\Controls\ZoomControl $zoomControl = null)
+     *  - function setZoomControl(Fungio\GoogleMap\Controls\ZoomControl $zoomControl = null)
      *  - function setZoomControl(string $controlPosition, string $zoomControlStyle)
      *
-     * @throws \Ivory\GoogleMap\Exception\MapException If the zoom control is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\MapException If the zoom control is not valid (prototypes).
      */
     public function setZoomControl()
     {
@@ -909,7 +909,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map event manager.
      *
-     * @return \Ivory\GoogleMap\Events\EventManager The map event manager.
+     * @return \Fungio\GoogleMap\Events\EventManager The map event manager.
      */
     public function getEventManager()
     {
@@ -919,7 +919,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Sets the map event manager.
      *
-     * @param \Ivory\GoogleMap\Events\EventManager $eventManager The map event manager.
+     * @param \Fungio\GoogleMap\Events\EventManager $eventManager The map event manager.
      */
     public function setEventManager(EventManager $eventManager)
     {
@@ -929,7 +929,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the marker cluster.
      *
-     * @return \Ivory\GoogleMap\Overlays\MarkerCluster The marker cluster.
+     * @return \Fungio\GoogleMap\Overlays\MarkerCluster The marker cluster.
      */
     public function getMarkerCluster()
     {
@@ -939,7 +939,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Sets the marker cluster.
      *
-     * @param \Ivory\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
+     * @param \Fungio\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
      */
     public function setMarkerCluster(MarkerCluster $markerCluster)
     {
@@ -959,7 +959,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map marker.
      *
-     * @param \Ivory\GoogleMap\Overlays\Marker $marker The marker to add.
+     * @param \Fungio\GoogleMap\Overlays\Marker $marker The marker to add.
      */
     public function addMarker(Marker $marker)
     {
@@ -983,7 +983,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map info window.
      *
-     * @param \Ivory\GoogleMap\Overlays\InfoWindow $infoWindow The info window to add.
+     * @param \Fungio\GoogleMap\Overlays\InfoWindow $infoWindow The info window to add.
      */
     public function addInfoWindow(InfoWindow $infoWindow)
     {
@@ -1007,7 +1007,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map polyline.
      *
-     * @param \Ivory\GoogleMap\Overlays\Polyline The polyline to add.
+     * @param \Fungio\GoogleMap\Overlays\Polyline The polyline to add.
      */
     public function addPolyline(Polyline $polyline)
     {
@@ -1031,7 +1031,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Adds an encoded polyline to the map.
      *
-     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline to add.
+     * @param \Fungio\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline to add.
      */
     public function addEncodedPolyline(EncodedPolyline $encodedPolyline)
     {
@@ -1055,7 +1055,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map polygon.
      *
-     * @param \Ivory\GoogleMap\Overlays\Polygon $polygon The polygon to add.
+     * @param \Fungio\GoogleMap\Overlays\Polygon $polygon The polygon to add.
      */
     public function addPolygon(Polygon $polygon)
     {
@@ -1079,7 +1079,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map rectangle to the map.
      *
-     * @param \Ivory\GoogleMap\Overlays\Rectangle $rectangle The rectangle to add.
+     * @param \Fungio\GoogleMap\Overlays\Rectangle $rectangle The rectangle to add.
      */
     public function addRectangle(Rectangle $rectangle)
     {
@@ -1103,7 +1103,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a circle to the map.
      *
-     * @param \Ivory\GoogleMap\Overlays\Circle $circle The circle to add.
+     * @param \Fungio\GoogleMap\Overlays\Circle $circle The circle to add.
      */
     public function addCircle(Circle $circle)
     {
@@ -1127,7 +1127,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a ground overlay to the map.
      *
-     * @param \Ivory\GoogleMapBundle\Model\Overlays\GroupOverlay $groundOverlay The ground overlay to add.
+     * @param \Fungio\GoogleMapBundle\Model\Overlays\GroupOverlay $groundOverlay The ground overlay to add.
      */
     public function addGroundOverlay(GroundOverlay $groundOverlay)
     {
@@ -1151,7 +1151,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Adds a KML Layer to the map.
      *
-     * @param \Ivory\GoogleMap\Layers\KMLLayer $kmlLayer The KML Layer to add.
+     * @param \Fungio\GoogleMap\Layers\KMLLayer $kmlLayer The KML Layer to add.
      */
     public function addKMLLayer(KMLLayer $kmlLayer)
     {

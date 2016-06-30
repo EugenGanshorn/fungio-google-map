@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Geocoding;
+namespace Fungio\GoogleMap\Services\Geocoding;
 
 use Geocoder\HttpAdapter\HttpAdapterInterface;
 use Geocoder\Provider\AbstractProvider;
 use Geocoder\Provider\ProviderInterface;
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\GeocodingException;
-use Ivory\GoogleMap\Services\BusinessAccount;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResponse;
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
-use Ivory\GoogleMap\Services\Utils\XmlParser;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\GeocodingException;
+use Fungio\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResponse;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResult;
+use Fungio\GoogleMap\Services\Utils\XmlParser;
 
 /**
  * Geocoder provider.
@@ -40,10 +40,10 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
     /** @var string */
     protected $format;
 
-    /** @var \Ivory\GoogleMap\Services\Utils\XmlParser */
+    /** @var \Fungio\GoogleMap\Services\Utils\XmlParser */
     protected $xmlParser;
 
-    /** @var \Ivory\GoogleMap\Services\BusinessAccount */
+    /** @var \Fungio\GoogleMap\Services\BusinessAccount */
     protected $businessAccount;
 
     /**
@@ -78,7 +78,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param string $url The service url.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the url is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the url is not valid.
      */
     public function setUrl($url)
     {
@@ -104,7 +104,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param boolean $https TRUE if the service uses HTTPS else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the https flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the https flag is not valid.
      */
     public function setHttps($https)
     {
@@ -130,7 +130,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param string $format The service format.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the format is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the format is not valid.
      */
     public function setFormat($format)
     {
@@ -144,7 +144,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
     /**
      * Gets the xml parser.
      *
-     * @return \Ivory\GoogleMap\Services\Utils\XmlParser The xml parser.
+     * @return \Fungio\GoogleMap\Services\Utils\XmlParser The xml parser.
      */
     public function getXmlParser()
     {
@@ -154,7 +154,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
     /**
      * Sets the xml parser.
      *
-     * @param \Ivory\GoogleMap\Services\Geocoding\XmlParser $xmlParser The xml parser.
+     * @param \Fungio\GoogleMap\Services\Geocoding\XmlParser $xmlParser The xml parser.
      */
     public function setXmlParser(XmlParser $xmlParser)
     {
@@ -174,7 +174,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
     /**
      * Gets the business account.
      *
-     * @return \Ivory\GoogleMap\Services\BusinessAccount The business account.
+     * @return \Fungio\GoogleMap\Services\BusinessAccount The business account.
      */
     public function getBusinessAccount()
     {
@@ -184,7 +184,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
     /**
      * Sets the business account.
      *
-     * @param \Ivory\GoogleMap\Services\BusinessAccount $businessAccount The business account.
+     * @param \Fungio\GoogleMap\Services\BusinessAccount $businessAccount The business account.
      */
     public function setBusinessAccount(BusinessAccount $businessAccount = null)
     {
@@ -194,7 +194,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
     /**
      * {@inheritdoc}
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the request is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the request is not valid.
      */
     public function getGeocodedData($request)
     {
@@ -239,13 +239,13 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      */
     public function getName()
     {
-        return 'ivory_google_map';
+        return 'fungio_google_map';
     }
 
     /**
      * Generates geocoding URL according to the request.
      *
-     * @param \Ivory\GoogleMap\Services\Geocoding\GeocoderRequest $geocoderRequest The geocoder request.
+     * @param \Fungio\GoogleMap\Services\Geocoding\GeocoderRequest $geocoderRequest The geocoder request.
      *
      * @return string The generated URL.
      */
@@ -355,7 +355,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param \stdClass $geocoderResponse The normalized geocder response.
      *
-     * @return \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResponse The builded geocoder response.
+     * @return \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResponse The builded geocoder response.
      */
     protected function buildGeocoderResponse(\stdClass $geocoderResponse)
     {
@@ -374,7 +374,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param \stdClass $geocoderResult The normalized geocoder result.
      *
-     * @return \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult The builded geocoder result.
+     * @return \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResult The builded geocoder result.
      */
     protected function buildGeocoderResult(\stdClass $geocoderResult)
     {
@@ -410,7 +410,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param \stdClass $geocoderAddressComponent The normalized geocoder address component.
      *
-     * @return \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent The builded geocoder address
+     * @return \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent The builded geocoder address
      *                                                                             component.
      */
     protected function buildGeocoderAddressComponent(\stdClass $geocoderAddressComponent)
@@ -427,7 +427,7 @@ class GeocoderProvider extends AbstractProvider implements ProviderInterface
      *
      * @param \stdClass $geocoderGeometry The normalized geocoder geomety.
      *
-     * @return \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry The builded geocoder geometry.
+     * @return \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry The builded geocoder geometry.
      */
     protected function buildGeocoderGeometry(\stdClass $geocoderGeometry)
     {

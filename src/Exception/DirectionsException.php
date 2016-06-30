@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Services\Directions\DirectionsStatus;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\Directions\DirectionsStatus;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * Directions exception.
@@ -25,7 +25,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS LEG END ADDRESS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS LEG END ADDRESS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS LEG END ADDRESS" exception.
      */
     public static function invalidDirectionsLegEndAddress()
     {
@@ -35,7 +35,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS LEG START ADDRESS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS LEG START ADDRESS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS LEG START ADDRESS" exception.
      */
     public static function invalidDirectionsLegStartAddress()
     {
@@ -45,7 +45,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST" exception.
      */
     public static function invalidDirectionsRequest()
     {
@@ -60,7 +60,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST PARAMETERS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST PARAMETERS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST PARAMETERS" exception.
      */
     public static function invalidDirectionsRequestParameters()
     {
@@ -69,14 +69,14 @@ class DirectionsException extends ServiceException
             'The route arguments are invalid.',
             'The available prototypes are:',
             '- function route(string $origin, string $destination)',
-            '- function route(Ivory\GoogleMap\Services\Directions\DirectionsRequest $request)'
+            '- function route(Fungio\GoogleMap\Services\Directions\DirectionsRequest $request)'
         ));
     }
 
     /**
      * Gets the "INVALID DIRECTIONS REQUEST AVOID HIGHWAYS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST AVOID HIGHWAYS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST AVOID HIGHWAYS" exception.
      */
     public static function invalidDirectionsRequestAvoidHighways()
     {
@@ -86,7 +86,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST AVOID TOLLS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST AVOID TOLLS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST AVOID TOLLS" exception.
      */
     public static function invalidDirectionsRequestAvoidTolls()
     {
@@ -96,7 +96,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST DESTINATION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST DESTINATION" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST DESTINATION" exception.
      */
     public static function invalidDirectionsRequestDestination()
     {
@@ -105,7 +105,7 @@ class DirectionsException extends ServiceException
             'The destination setter arguments are invalid.',
             'The available prototypes are :',
             ' - function setDestination(string $destination)',
-            ' - function setDestination(Ivory\GoogleMap\Base\Coordinate $destination)',
+            ' - function setDestination(Fungio\GoogleMap\Base\Coordinate $destination)',
             ' - function setDestination(double $latitude, double $longitude, boolean $noWrap)'
         ));
     }
@@ -113,7 +113,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST OPTIMIZE WAYPOINTS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST OPTIMIZE WAYPOINTS"
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST OPTIMIZE WAYPOINTS"
      *                                                        exception.
      */
     public static function invalidDirectionsRequestOptimizeWaypoints()
@@ -124,7 +124,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST ORIGIN" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST ORIGIN" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST ORIGIN" exception.
      */
     public static function invalidDirectionsRequestOrigin()
     {
@@ -133,7 +133,7 @@ class DirectionsException extends ServiceException
             'The origin setter arguments are invalid.',
             'The available prototypes are :',
             ' - function setOrigin(string $destination)',
-            ' - function setOrigin(Ivory\GoogleMap\Base\Coordinate $destination)',
+            ' - function setOrigin(Fungio\GoogleMap\Base\Coordinate $destination)',
             ' - function setOrigin(double $latitude, double $longitude, boolean $noWrap)'
         ));
     }
@@ -141,7 +141,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST PROVIDE ROUTE ALTERNATIVES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST PROVIDE ROUTE
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST PROVIDE ROUTE
      *                                                        ALTERNATIVES" exception.
      */
     public static function invalidDirectionsRequestProvideRouteAlternatives()
@@ -152,7 +152,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST REGION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST REGION" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST REGION" exception.
      */
     public static function invalidDirectionsRequestRegion()
     {
@@ -162,7 +162,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST LANGUAGE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST LANGUAGE" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST LANGUAGE" exception.
      */
     public static function invalidDirectionsRequestLanguage()
     {
@@ -172,7 +172,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST SENSOR" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST SENSOR" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST SENSOR" exception.
      */
     public static function invalidDirectionsRequestSensor()
     {
@@ -182,7 +182,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST TRAVEL MODE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST TRAVEL MODE" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST TRAVEL MODE" exception.
      */
     public static function invalidDirectionsRequestTravelMode()
     {
@@ -195,7 +195,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST UNIT SYSTEM" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST UNIT SYSTEM" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST UNIT SYSTEM" exception.
      */
     public static function invalidDirectionsRequestUnitSystem()
     {
@@ -208,7 +208,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS REQUEST WAYPOINT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST WAYPOINT" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS REQUEST WAYPOINT" exception.
      */
     public static function invalidDirectionsRequestWaypoint()
     {
@@ -216,9 +216,9 @@ class DirectionsException extends ServiceException
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The waypoint adder arguments are invalid.',
             'The available prototypes are :',
-            ' - function addWaypoint(Ivory\GoogleMap\Services\Directions\DirectionsWaypoint $waypoint)',
+            ' - function addWaypoint(Fungio\GoogleMap\Services\Directions\DirectionsWaypoint $waypoint)',
             ' - function addWaypoint(string $location)',
-            ' - function addWaypoint(Ivory\GoogleMap\Base\Coordinate $location)',
+            ' - function addWaypoint(Fungio\GoogleMap\Base\Coordinate $location)',
             ' - function addWaypoint(double $latitude, double $longitude, boolean $noWrap)'
         ));
     }
@@ -226,7 +226,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS RESPONSE STATUS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS RESPONSE STATUS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS RESPONSE STATUS" exception.
      */
     public static function invalidDirectionsResponseStatus()
     {
@@ -239,7 +239,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS ROUTE COPYRIGHTS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE COPYRIGHTS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE COPYRIGHTS" exception.
      */
     public static function invalidDirectionsRouteCopyrights()
     {
@@ -249,7 +249,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS ROUTE SUMMARY" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE SUMMARY" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE SUMMARY" exception.
      */
     public static function invalidDirectionsRouteSummary()
     {
@@ -259,7 +259,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS ROUTE WARNING" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE WARNING" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE WARNING" exception.
      */
     public static function invalidDirectionsRouteWarning()
     {
@@ -269,7 +269,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS ROUTE WAYPOINT ORDER" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE WAYPOINT ORDER" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS ROUTE WAYPOINT ORDER" exception.
      */
     public static function invalidDirectionsRouteWaypointOrder()
     {
@@ -279,7 +279,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INALID DIRECTIONS STEP INSTRUCTIONS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INALID DIRECTIONS STEP INSTRUCTIONS" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INALID DIRECTIONS STEP INSTRUCTIONS" exception.
      */
     public static function invalidDirectionsStepInstructions()
     {
@@ -289,7 +289,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS STEP TRAVEL MODE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS STEP TRAVEL MODE" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS STEP TRAVEL MODE" exception.
      */
     public static function invalidDirectionsStepTravelMode()
     {
@@ -302,7 +302,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS WAYPOINT LOCATION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS WAYPOINT LOCATION" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS WAYPOINT LOCATION" exception.
      */
     public static function invalidDirectionsWaypointLocation()
     {
@@ -311,7 +311,7 @@ class DirectionsException extends ServiceException
             'The location setter arguments are invalid.',
             'The available prototypes are :',
             ' - function setLocation(string $destination)',
-            ' - function setLocation(Ivory\GoogleMap\Base\Coordinate $destination)',
+            ' - function setLocation(Fungio\GoogleMap\Base\Coordinate $destination)',
             ' - function setLocation(double $latitude, double $longitude, boolean $noWrap)'
         ));
     }
@@ -319,7 +319,7 @@ class DirectionsException extends ServiceException
     /**
      * Gets the "INVALID DIRECTIONS WAYPOINT STOPOPVER" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS WAYPOINT STOPOPVER" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DIRECTIONS WAYPOINT STOPOPVER" exception.
      */
     public static function invalidDirectionsWaypointStopover()
     {

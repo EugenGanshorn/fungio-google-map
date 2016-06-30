@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\Helper\Controls\MapTypeControlStyleHelper;
 
 /**
  * Map type control style helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper;
  */
 class MapTypeControlStyleHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\MapTypeControlStyleHelper */
     protected $mapTypeControlStyleHelper;
 
     /**
@@ -59,7 +59,7 @@ class MapTypeControlStyleHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The map type control style can only be : default, dropdown_menu, horizontal_bar.
      */
     public function testRenderWithInvalidValue()

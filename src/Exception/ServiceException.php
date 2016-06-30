@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
 /**
  * Service exception.
@@ -21,7 +21,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID SERVICE FORMAT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ServiceException The "INVALID SERVICE FORMAT" exception.
+     * @return \Fungio\GoogleMap\Exception\ServiceException The "INVALID SERVICE FORMAT" exception.
      */
     public static function invalidServiceFormat()
     {
@@ -31,7 +31,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID SERVICE HTTPS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ServiceException The "INVALID SERVICE HTTPS" exception.
+     * @return \Fungio\GoogleMap\Exception\ServiceException The "INVALID SERVICE HTTPS" exception.
      */
     public static function invalidServiceHttps()
     {
@@ -41,7 +41,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID SERVICE RESULT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ServiceException The "INVALID SERVICE RESULT" exception.
+     * @return \Fungio\GoogleMap\Exception\ServiceException The "INVALID SERVICE RESULT" exception.
      */
     public static function invalidServiceResult()
     {
@@ -51,7 +51,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID SERVICE URL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ServiceException The "INVALID SERVICE URL" exception.
+     * @return \Fungio\GoogleMap\Exception\ServiceException The "INVALID SERVICE URL" exception.
      */
     public static function invalidServiceUrl()
     {
@@ -61,7 +61,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID DISTANCE TEXT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DISTANCE TEXT" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DISTANCE TEXT" exception.
      */
     public static function invalidDistanceText()
     {
@@ -71,7 +71,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID DISTANCE VALUE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DISTANCE VALUE" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DISTANCE VALUE" exception.
      */
     public static function invalidDistanceValue()
     {
@@ -81,7 +81,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID DURATION TEXT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DURATION TEXT" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DURATION TEXT" exception.
      */
     public static function invalidDurationText()
     {
@@ -91,7 +91,7 @@ class ServiceException extends Exception
     /**
      * Gets the "INVALID DURATION VALUE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DirectionsException The "INVALID DURATION VALUE" exception.
+     * @return \Fungio\GoogleMap\Exception\DirectionsException The "INVALID DURATION VALUE" exception.
      */
     public static function invalidDurationValue()
     {
@@ -104,7 +104,7 @@ class ServiceException extends Exception
      * @param string  $url        The url fetched.
      * @param integer $statusCode The status code.
      *
-     * @return \Ivory\GoogleMap\Exception\ServiceException The "INVALID RESPONSE" exception.
+     * @return \Fungio\GoogleMap\Exception\ServiceException The "INVALID RESPONSE" exception.
      */
     public static function invalidResponse($url, $statusCode)
     {

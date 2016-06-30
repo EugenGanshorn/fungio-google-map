@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services;
+namespace Fungio\Tests\GoogleMap\Services;
 
-use Ivory\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\BusinessAccount;
 
 /**
  * Abstract service test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\BusinessAccount;
  */
 class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\AbstractService */
+    /** @var \Fungio\GoogleMap\Services\AbstractService */
     protected $service;
 
     /** @var \Widop\HttpAdapter\HttpAdapterInterface */
@@ -33,7 +33,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
     {
         $this->httpAdapter = $this->getMock('Widop\HttpAdapter\HttpAdapterInterface');
 
-        $this->service = $this->getMockBuilder('Ivory\GoogleMap\Services\AbstractService')
+        $this->service = $this->getMockBuilder('Fungio\GoogleMap\Services\AbstractService')
             ->setConstructorArgs(array($this->httpAdapter, 'http://foo'))
             ->getMockForAbstractClass();
     }
@@ -53,20 +53,20 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('http://foo', $this->service->getUrl());
         $this->assertFalse($this->service->isHttps());
         $this->assertSame('json', $this->service->getFormat());
-        $this->assertInstanceOf('Ivory\GoogleMap\Services\Utils\XmlParser', $this->service->getXmlParser());
+        $this->assertInstanceOf('Fungio\GoogleMap\Services\Utils\XmlParser', $this->service->getXmlParser());
         $this->assertFalse($this->service->hasBusinessAccount());
         $this->assertNull($this->service->getBusinessAccount());
     }
 
     public function testInitialState()
     {
-        $xmlParser = $this->getMock('Ivory\GoogleMap\Services\Utils\XmlParser');
+        $xmlParser = $this->getMock('Fungio\GoogleMap\Services\Utils\XmlParser');
 
-        $businessAccount = $this->getMockBuilder('Ivory\GoogleMap\Services\BusinessAccount')
+        $businessAccount = $this->getMockBuilder('Fungio\GoogleMap\Services\BusinessAccount')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->service = $this->getMockBuilder('Ivory\GoogleMap\Services\AbstractService')
+        $this->service = $this->getMockBuilder('Fungio\GoogleMap\Services\AbstractService')
             ->setConstructorArgs(array($this->httpAdapter, 'http://bar', true, 'xml', $xmlParser, $businessAccount))
             ->getMockForAbstractClass();
 
@@ -95,7 +95,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The service https flag must be a boolean value.
      */
     public function testHttpsWithInvalidValue()
@@ -110,7 +110,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The service url must be a string value.
      */
     public function testUrlWithInvalidValue()
@@ -128,7 +128,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The service format can only be : json, xml.
      */
     public function testFormatWithInvalidValue()
@@ -138,7 +138,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
     public function testXmlParser()
     {
-        $xmlParser = $this->getMock('Ivory\GoogleMap\Services\Utils\XmlParser');
+        $xmlParser = $this->getMock('Fungio\GoogleMap\Services\Utils\XmlParser');
         $this->service->setXmlParser($xmlParser);
 
         $this->assertSame($xmlParser, $this->service->getXmlParser());
@@ -146,7 +146,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
     public function testBusinessAccount()
     {
-        $businessAccount = $this->getMockBuilder('Ivory\GoogleMap\Services\BusinessAccount')
+        $businessAccount = $this->getMockBuilder('Fungio\GoogleMap\Services\BusinessAccount')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -175,7 +175,7 @@ class AbstractServiceTest extends \PHPUnit_Framework_TestCase
     {
         $url = 'http://maps.googleapis.com/maps/api/staticmap?center=%E4%B8%8A%E6%B5%B7+%E4%B8%AD%E5%9C%8B&size=640x640&zoom=10&sensor=false';
 
-        $businessAccount = $this->getMockBuilder('Ivory\GoogleMap\Services\BusinessAccount')
+        $businessAccount = $this->getMockBuilder('Fungio\GoogleMap\Services\BusinessAccount')
             ->disableOriginalConstructor()
             ->getMock();
 

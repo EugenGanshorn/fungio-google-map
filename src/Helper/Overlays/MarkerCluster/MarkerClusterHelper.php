@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Exception\HelperException;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 /**
  * Marker cluster helper.
@@ -79,7 +79,7 @@ class MarkerClusterHelper implements MarkerClusterHelperInterface
      *
      * @param string $name The marker cluster type.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface The marker cluster helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface The marker cluster helper.
      */
     public function hasHelper($name)
     {
@@ -91,9 +91,9 @@ class MarkerClusterHelper implements MarkerClusterHelperInterface
      *
      * @param string $name The marker cluster type.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the helper does not exist.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the helper does not exist.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface The marker cluster helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface The marker cluster helper.
      */
     public function getHelper($name)
     {
@@ -108,7 +108,7 @@ class MarkerClusterHelper implements MarkerClusterHelperInterface
      * Sets a specific marker cluster helper.
      *
      * @param string                                                                      $name   The marker cluster type.
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface $helper The marker cluster helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface $helper The marker cluster helper.
      */
     public function setHelper($name, MarkerClusterHelperInterface $helper = null)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Events;
+namespace Fungio\GoogleMap\Events;
 
 /**
  * Event manager which manages the google map event.
@@ -79,7 +79,7 @@ class EventManager
     /**
      * Add a dom event.
      *
-     * @param \Ivory\GoogleMap\Events\Event $domEvent The dom event.
+     * @param \Fungio\GoogleMap\Events\Event $domEvent The dom event.
      */
     public function addDomEvent(Event $domEvent)
     {
@@ -99,7 +99,7 @@ class EventManager
     /**
      * Adds a dom event which is just triggered one time.
      *
-     * @param \Ivory\GoogleMap\Events\Event $domEventOnce A dom event which is just triggered one time.
+     * @param \Fungio\GoogleMap\Events\Event $domEventOnce A dom event which is just triggered one time.
      */
     public function addDomEventOnce(Event $domEventOnce)
     {
@@ -119,7 +119,7 @@ class EventManager
     /**
      * Adds an event.
      *
-     * @param \Ivory\GoogleMap\Events\Event $event An event.
+     * @param \Fungio\GoogleMap\Events\Event $event An event.
      */
     public function addEvent(Event $event)
     {
@@ -139,7 +139,7 @@ class EventManager
     /**
      * Adds an event which is just triggered one time.
      *
-     * @param \Ivory\GoogleMap\Events\Event $eventOnce An event which is just triggered one time.
+     * @param \Fungio\GoogleMap\Events\Event $eventOnce An event which is just triggered one time.
      */
     public function addEventOnce(Event $eventOnce)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Helper\Controls\ControlPositionHelper;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Helper\Controls\ControlPositionHelper;
 
 /**
  * Control position helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Controls\ControlPositionHelper;
  */
 class ControlPositionHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper */
     protected $controlPositionHelper;
 
     /**
@@ -104,7 +104,7 @@ class ControlPositionHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The control position can only be : bottom_center, bottom_left, bottom_right,
      * left_bottom, left_center, left_top, right_bottom, right_center, right_top, top_center, top_left, top_right.
      */

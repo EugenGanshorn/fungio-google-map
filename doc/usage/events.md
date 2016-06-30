@@ -11,7 +11,7 @@ used in V2 of the API, though much has changed under the hood. There are two typ
 ## Build your event
 
 ``` php
-use Ivory\GoogleMap\Events\Event;
+use Fungio\GoogleMap\Events\Event;
 
 $event = new Event();
 
@@ -27,7 +27,7 @@ $event->setCapture(true);
 
 ### Instance
 
-The ``$instance`` variable describes the javascript variable which registers the event. Each Ivory google map objects
+The ``$instance`` variable describes the javascript variable which registers the event. Each Fungio google map objects
 which can register an event have a method called ``getJavascriptVariable`` which identifies this variable.
 
 For example, in the case of an info window, it can be:

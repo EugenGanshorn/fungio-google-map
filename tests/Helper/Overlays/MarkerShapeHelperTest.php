@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Overlays\MarkerShape;
-use Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper;
+use Fungio\GoogleMap\Overlays\MarkerShape;
+use Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper;
 
 /**
  * Marker shape helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper;
  */
 class MarkerShapeHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper */
     protected $markerShapeHelper;
 
     /**

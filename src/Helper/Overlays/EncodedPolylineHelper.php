@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays;
+namespace Fungio\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Helper\Geometry\EncodingHelper;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Helper\Geometry\EncodingHelper;
 
 /**
  * Encoded polyline helper.
@@ -23,13 +23,13 @@ use Ivory\GoogleMap\Helper\Geometry\EncodingHelper;
  */
 class EncodedPolylineHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Geometry\EncodingHelper */
+    /** @var \Fungio\GoogleMap\Helper\Geometry\EncodingHelper */
     protected $encodingHelper;
 
     /**
      * Creates an encoded polyline helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Geometry\EncodingHelper $encodingHelper The encoding helper.
+     * @param \Fungio\GoogleMap\Helper\Geometry\EncodingHelper $encodingHelper The encoding helper.
      */
     public function __construct(EncodingHelper $encodingHelper = null)
     {
@@ -45,7 +45,7 @@ class EncodedPolylineHelper extends AbstractHelper
     /**
      * Gets the encoding helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Geometry\EncodingHelper The encoding helper.
+     * @return \Fungio\GoogleMap\Helper\Geometry\EncodingHelper The encoding helper.
      */
     public function getEncodingHelper()
     {
@@ -55,7 +55,7 @@ class EncodedPolylineHelper extends AbstractHelper
     /**
      * Sets the encoding helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Geometry\EncodingHelper $encodingHelper The encoding helper.
+     * @param \Fungio\GoogleMap\Helper\Geometry\EncodingHelper $encodingHelper The encoding helper.
      */
     public function setEncodingHelper(EncodingHelper $encodingHelper)
     {
@@ -65,8 +65,8 @@ class EncodedPolylineHelper extends AbstractHelper
     /**
      * Renders an encoded polyline.
      *
-     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline.
-     * @param \Ivory\GoogleMap\Map                      $map             The map.
+     * @param \Fungio\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline.
+     * @param \Fungio\GoogleMap\Map                      $map             The map.
      *
      * @return string The JS output.
      */

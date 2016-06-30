@@ -6,7 +6,7 @@ However, instead of being open-ended, polygons are designed to define regions wi
 ## Build your polygon
 
 ``` php
-use Ivory\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Overlays\Polygon;
 
 $polygon = new Polygon();
 
@@ -27,7 +27,7 @@ Like describe in the introduction, a polygon object consists of an array of coor
 to your polygon.
 
 ``` php
-use Ivory\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Overlays\Polygon;
 
 $polygon = new Polygon();
 
@@ -39,7 +39,7 @@ $polygon->addCoordinate(1, 1, true);
 ## Add your polygon to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Overlays\Polygon;
 
 $polygon = new Polygon();
 

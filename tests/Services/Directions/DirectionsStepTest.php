@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Directions;
+namespace Fungio\Tests\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Services\Directions\DirectionsStep;
-use Ivory\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Directions\DirectionsStep;
+use Fungio\GoogleMap\Services\Base\TravelMode;
 
 /**
  * Directions step test.
@@ -21,25 +21,25 @@ use Ivory\GoogleMap\Services\Base\TravelMode;
  */
 class DirectionsStepTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Directions\DirectionsStep */
+    /** @var \Fungio\GoogleMap\Services\Directions\DirectionsStep */
     protected $directionsStep;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Distance */
+    /** @var \Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Duration */
+    /** @var \Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $endLocation;
 
     /** @var string */
     protected $instructions;
 
-    /** @var \Ivory\GoogleMap\Overlays\EncodedPolyline */
+    /** @var \Fungio\GoogleMap\Overlays\EncodedPolyline */
     protected $encodedPolyline;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $startLocation;
 
     /** @var string */
@@ -50,18 +50,18 @@ class DirectionsStepTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->distance = $this->getMockBuilder('Ivory\GoogleMap\Services\Base\Distance')
+        $this->distance = $this->getMockBuilder('Fungio\GoogleMap\Services\Base\Distance')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->duration = $this->getMockBuilder('Ivory\GoogleMap\Services\Base\Duration')
+        $this->duration = $this->getMockBuilder('Fungio\GoogleMap\Services\Base\Duration')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->endLocation = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $this->endLocation = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->instructions = 'instructions';
-        $this->encodedPolyline = $this->getMock('Ivory\GoogleMap\Overlays\EncodedPolyline');
-        $this->startLocation = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $this->encodedPolyline = $this->getMock('Fungio\GoogleMap\Overlays\EncodedPolyline');
+        $this->startLocation = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->travelMode = TravelMode::DRIVING;
 
         $this->directionsStep = new DirectionsStep(
@@ -102,7 +102,7 @@ class DirectionsStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The step instructions must be a string value.
      */
     public function testInstructionsWithInvalidValue()
@@ -111,7 +111,7 @@ class DirectionsStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions step travel mode can only be : BICYCLING, DRIVING, WALKING, TRANSIT.
      */
     public function testTravelModeWithInvalidValue()

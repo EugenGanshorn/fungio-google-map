@@ -8,8 +8,8 @@ First, you need to create your own extension:
 ``` php
 namespace My\Own\Helper\Extension;
 
-use Ivory\GoogleMap\Helper\Extension\ExtensionHelperInterface;
-use Ivory\GoogleMap\Map;
+use Fungio\GoogleMap\Helper\Extension\ExtensionHelperInterface;
+use Fungio\GoogleMap\Map;
 
 class MyExtensionHelper implements ExtensionHelperInterface
 {
@@ -45,8 +45,8 @@ class MyExtensionHelper implements ExtensionHelperInterface
 Then, you need to register you extension on the map helper & simply render your map:
 
 ``` php
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Helper\MapHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Helper\MapHelper;
 use My\Own\Helper\Extension\MyExtensionHelper;
 
 $mapHelper = new MapHelper();

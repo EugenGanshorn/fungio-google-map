@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Assets;
+namespace Fungio\GoogleMap\Assets;
 
-use Ivory\GoogleMap\Exception\AssetException;
+use Fungio\GoogleMap\Exception\AssetException;
 
 /**
  * Allow easy add of options for any class model that requires it.
@@ -51,7 +51,7 @@ abstract class AbstractOptionsAsset extends AbstractJavascriptVariableAsset
      *
      * @param string $option The option.
      *
-     * @throws \Ivory\GoogleMap\Exception\AssetException If the option is not valid.
+     * @throws \Fungio\GoogleMap\Exception\AssetException If the option is not valid.
      *
      * @return boolean TRUE if the option exists else FALSE.
      */
@@ -93,7 +93,7 @@ abstract class AbstractOptionsAsset extends AbstractJavascriptVariableAsset
      *
      * @param string $option The option.
      *
-     * @throws \Ivory\GoogleMap\Exception\AssetException If the option does not exist.
+     * @throws \Fungio\GoogleMap\Exception\AssetException If the option does not exist.
      *
      * @return mixed The option value.
      */
@@ -112,7 +112,7 @@ abstract class AbstractOptionsAsset extends AbstractJavascriptVariableAsset
      * @param string $option The option
      * @param mixed  $value  The option value.
      *
-     * @throws \Ivory\GoogleMap\Exception\AssetException If the option is not valid.
+     * @throws \Fungio\GoogleMap\Exception\AssetException If the option is not valid.
      */
     public function setOption($option, $value)
     {
@@ -128,7 +128,7 @@ abstract class AbstractOptionsAsset extends AbstractJavascriptVariableAsset
      *
      * @param string $option The option.
      *
-     * @throws \Ivory\GoogleMap\Exception\AssetException If the option does not exist.
+     * @throws \Fungio\GoogleMap\Exception\AssetException If the option does not exist.
      */
     public function removeOption($option)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Base;
+namespace Fungio\Tests\GoogleMap\Base;
 
-use Ivory\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Base\Coordinate;
 
 /**
  * Coordinate test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Base\Coordinate;
  */
 class CoordinateTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $coordinate;
 
     /**
@@ -69,7 +69,7 @@ class CoordinateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The latitude of a coordinate must be a numeric value.
      */
     public function testLatitudeWithInvalidLatitude()
@@ -90,7 +90,7 @@ class CoordinateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The longitude of a coordinate must be a numeric value.
      */
     public function testLongitudeWithInvalidLongitude()
@@ -105,7 +105,7 @@ class CoordinateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage The no wrap coordinate property must be a boolean value.
      */
     public function testNoWrapWithInvalidNoWrap()

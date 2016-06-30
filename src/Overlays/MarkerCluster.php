@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
 
 /**
  * Marker Cluster.
@@ -101,7 +101,7 @@ class MarkerCluster extends AbstractOptionsAsset
     /**
      * Adds a marker to the cluster.
      *
-     * @param \Ivory\GoogleMap\Overlays\Marker $marker The marker to add.
+     * @param \Fungio\GoogleMap\Overlays\Marker $marker The marker to add.
      */
     public function addMarker(Marker $marker)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Base\Point;
-use Ivory\GoogleMap\Base\Size;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Base\Point;
+use Fungio\GoogleMap\Base\Size;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Marker image which describes a google map marker image.
@@ -27,16 +27,16 @@ class MarkerImage extends AbstractJavascriptVariableAsset
     /** @var string */
     protected $url;
 
-    /** @var \Ivory\GoogleMap\Base\Point */
+    /** @var \Fungio\GoogleMap\Base\Point */
     protected $anchor;
 
-    /** @var \Ivory\GoogleMap\Base\Point */
+    /** @var \Fungio\GoogleMap\Base\Point */
     protected $origin;
 
-    /** @var \Ivory\GoogleMap\Base\Size */
+    /** @var \Fungio\GoogleMap\Base\Size */
     protected $scaledSize;
 
-    /** @var Ivory\GoogleMap\Base\Size */
+    /** @var Fungio\GoogleMap\Base\Size */
     protected $size;
 
     /**
@@ -84,7 +84,7 @@ class MarkerImage extends AbstractJavascriptVariableAsset
      *
      * @param string $url The url of the marker image.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the url is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the url is not valid.
      */
     public function setUrl($url)
     {
@@ -108,7 +108,7 @@ class MarkerImage extends AbstractJavascriptVariableAsset
     /**
      * Gets the anchor of the marker image.
      *
-     * @return \Ivory\GoogleMap\Base\Point The marker image anchor.
+     * @return \Fungio\GoogleMap\Base\Point The marker image anchor.
      */
     public function getAnchor()
     {
@@ -119,10 +119,10 @@ class MarkerImage extends AbstractJavascriptVariableAsset
      * Sets the anchor of the marker image
      *
      * Available prototypes:
-     *  - function setAnchor(Ivory\GoogleMap\Base\Point $anchor = null)
+     *  - function setAnchor(Fungio\GoogleMap\Base\Point $anchor = null)
      *  - function setAnchor(double x, double y)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the anchor is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the anchor is not valid (prototypes).
      */
     public function setAnchor()
     {
@@ -157,7 +157,7 @@ class MarkerImage extends AbstractJavascriptVariableAsset
     /**
      * Gets the origin of the marker image.
      *
-     * @return \Ivory\GoogleMap\Base\Point The marker image origin.
+     * @return \Fungio\GoogleMap\Base\Point The marker image origin.
      */
     public function getOrigin()
     {
@@ -168,10 +168,10 @@ class MarkerImage extends AbstractJavascriptVariableAsset
      * Sets the origin of the marker image
      *
      * Available prototypes:
-     *  - function setOrigin(Ivory\GoogleMap\Base\Point $origin = null)
+     *  - function setOrigin(Fungio\GoogleMap\Base\Point $origin = null)
      *  - function setOrigin(double x, double y)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the origin is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the origin is not valid.
      */
     public function setOrigin()
     {
@@ -206,7 +206,7 @@ class MarkerImage extends AbstractJavascriptVariableAsset
     /**
      * Gets the scaled size of the marker image.
      *
-     * @return \Ivory\GoogleMap\Base\Size The marker image scaled size.
+     * @return \Fungio\GoogleMap\Base\Size The marker image scaled size.
      */
     public function getScaledSize()
     {
@@ -217,10 +217,10 @@ class MarkerImage extends AbstractJavascriptVariableAsset
      * Sets the scaled size of the marker image
      *
      * Available prototypes:
-     *  - function setScaledSize(Ivory\GoogleMap\Base\Size $scaledSize = null)
+     *  - function setScaledSize(Fungio\GoogleMap\Base\Size $scaledSize = null)
      *  - function setScaledSize(double $width, double $height, string $widthUnit = null, string $heightUnit = null)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the scaled size is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the scaled size is not valid.
      */
     public function setScaledSize()
     {
@@ -263,7 +263,7 @@ class MarkerImage extends AbstractJavascriptVariableAsset
     /**
      * Gets the size of the marker image.
      *
-     * @return \Ivory\GoogleMap\Base\Size The marker image size.
+     * @return \Fungio\GoogleMap\Base\Size The marker image size.
      */
     public function getSize()
     {
@@ -274,10 +274,10 @@ class MarkerImage extends AbstractJavascriptVariableAsset
      * Sets the size of the marker image.
      *
      * Available prototypes:
-     *  - function setSize(Ivory\GoogleMap\Base\Size $size = null)
+     *  - function setSize(Fungio\GoogleMap\Base\Size $size = null)
      *  - function setSize(double $width, double $height, string $widthUnit = null, string $heightUnit = null)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the size is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the size is not valid.
      */
     public function setSize()
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
 /**
- * Ivory google map exception.
+ * Fungio google map exception.
  *
  * @author GeLo <geloen.eric@gmail.com>
  */
@@ -21,7 +21,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID ASYNC" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID ASYNC" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID ASYNC" exception.
      */
     public static function invalidAsync()
     {
@@ -31,7 +31,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID AUTO ZOOM" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID AUTO ZOOM" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID AUTO ZOOM" exception.
      */
     public static function invalidAutoZoom()
     {
@@ -41,7 +41,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID BOUND" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID BOUND" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID BOUND" exception.
      */
     public static function invalidBound()
     {
@@ -49,10 +49,10 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The bound setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setBound(Ivory\GoogleMap\Base\Bound $bound)',
+            ' - function setBound(Fungio\GoogleMap\Base\Bound $bound)',
             ' - function setBount('.
-            'Ivory\GoogleMap\Base\Coordinate $southWest, '.
-            'Ivory\GoogleMap\Base\Coordinate $northEast'.
+            'Fungio\GoogleMap\Base\Coordinate $southWest, '.
+            'Fungio\GoogleMap\Base\Coordinate $northEast'.
             ')',
             ' - function setBound('.
             'double $southWestLatitude, '.
@@ -68,7 +68,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID CENTER" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID CENTER" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID CENTER" exception.
      */
     public static function invalidCenter()
     {
@@ -76,7 +76,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The center setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setCenter(Ivory\GoogleMap\Base\Coordinate $center)',
+            ' - function setCenter(Fungio\GoogleMap\Base\Coordinate $center)',
             ' - function setCenter(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -84,7 +84,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID HTML CONTAINER ID" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID HTML CONTAINER ID" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID HTML CONTAINER ID" exception.
      */
     public static function invalidHtmlContainerId()
     {
@@ -94,7 +94,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID MAP OPTION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID MAP OPTION" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID MAP OPTION" exception.
      */
     public static function invalidMapOption()
     {
@@ -104,7 +104,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID MAP TYPE CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INAVLID MAP TYPE CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INAVLID MAP TYPE CONTROL" exception.
      */
     public static function invalidMapTypeControl()
     {
@@ -112,7 +112,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The map type control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setMapTypeControl(Ivory\GoogleMap\Controls\MapTypeControl $mapTypeControl = null)',
+            ' - function setMapTypeControl(Fungio\GoogleMap\Controls\MapTypeControl $mapTypeControl = null)',
             ' - function setMaptypeControl(array $mapTypeIds, string $controlPosition, string $mapTypeControlStyle)'
         ));
     }
@@ -120,7 +120,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID OVERVIEW MAP CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID OVERVIEW MAP CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID OVERVIEW MAP CONTROL" exception.
      */
     public static function invalidOverviewMapControl()
     {
@@ -128,7 +128,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The overview map control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setOverviewMapControl(Ivory\GoogleMap\Controls\OverviewMapControl $overviewMapControl = null)',
+            ' - function setOverviewMapControl(Fungio\GoogleMap\Controls\OverviewMapControl $overviewMapControl = null)',
             ' - function setOverviewMapControl(boolean $opened)'
         ));
     }
@@ -136,7 +136,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID PAN CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID PAN CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID PAN CONTROL" exception.
      */
     public static function invalidPanControl()
     {
@@ -144,7 +144,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The pan control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setPanControl(Ivory\GoogleMap\Controls\PanControl $panControl = null)',
+            ' - function setPanControl(Fungio\GoogleMap\Controls\PanControl $panControl = null)',
             ' - function setPanControl(string $controlPosition)'
         ));
     }
@@ -152,7 +152,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID ROTATE CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID ROTATE CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID ROTATE CONTROL" exception.
      */
     public static function invalidRotateControl()
     {
@@ -160,7 +160,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The rotate control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setRotateControl(Ivory\GoogleMap\Controls\RotateControl $rotateControl = null)',
+            ' - function setRotateControl(Fungio\GoogleMap\Controls\RotateControl $rotateControl = null)',
             ' - function setRotateControl(string $controlPosition)'
         ));
     }
@@ -168,7 +168,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID SCALE CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID SCALE CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID SCALE CONTROL" exception.
      */
     public static function invalidScaleControl()
     {
@@ -176,7 +176,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The scale control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setScaleControl(Ivory\GoogleMap\Controls\ScaleControl $scaleControl = null)',
+            ' - function setScaleControl(Fungio\GoogleMap\Controls\ScaleControl $scaleControl = null)',
             ' - function setScaleControl(string $controlPosition, string $scaleControlStyle)'
         ));
     }
@@ -184,7 +184,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID STREET VIEW CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID STREET VIEW CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID STREET VIEW CONTROL" exception.
      */
     public static function invalidStreetViewControl()
     {
@@ -192,7 +192,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The street view control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setStreetViewControl(Ivory\GoogleMap\Controls\StreetViewControl $streetViewControl = null)',
+            ' - function setStreetViewControl(Fungio\GoogleMap\Controls\StreetViewControl $streetViewControl = null)',
             ' - function setStreetViewControl(string $controlPosition)'
         ));
     }
@@ -200,7 +200,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID ZOOM CONTROL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INVALID ZOOM CONTROL" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INVALID ZOOM CONTROL" exception.
      */
     public static function invalidZoomControl()
     {
@@ -208,7 +208,7 @@ class MapException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The zoom control setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setZoomControl(Ivory\GoogleMap\Controls\ZoomControl $zoomControl = null)',
+            ' - function setZoomControl(Fungio\GoogleMap\Controls\ZoomControl $zoomControl = null)',
             ' - function setZoomControl(string $controlPosition, string $zoomControlStyle)'
         ));
     }
@@ -216,7 +216,7 @@ class MapException extends Exception
     /**
      * Gets the "INVALID STYLESHEET OPTION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "INAVLID STYLESHEET OPTION" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "INAVLID STYLESHEET OPTION" exception.
      */
     public static function invalidStylesheetOption()
     {
@@ -228,7 +228,7 @@ class MapException extends Exception
      *
      * @param string $mapOption The map option.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "MAP OPTION DOES NOT EXIST" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "MAP OPTION DOES NOT EXIST" exception.
      */
     public static function mapOptionDoesNotExist($mapOption)
     {
@@ -240,7 +240,7 @@ class MapException extends Exception
      *
      * @param string $stylesheetOption The stylesheet option.
      *
-     * @return \Ivory\GoogleMap\Exception\MapException The "STYLESHEET OPTION DOES NOT EXIST" exception.
+     * @return \Fungio\GoogleMap\Exception\MapException The "STYLESHEET OPTION DOES NOT EXIST" exception.
      */
     public static function stylesheetOptionDoesNotExist($stylesheetOption)
     {

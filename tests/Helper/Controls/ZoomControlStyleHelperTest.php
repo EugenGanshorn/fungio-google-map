@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper;
 
 /**
  * Zoom control style helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper;
  */
 class ZoomControlStyleHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper */
     protected $zoomControlStyleHelper;
 
     /**
@@ -59,7 +59,7 @@ class ZoomControlStyleHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The zoom control style can only be : default, large, small.
      */
     public function testRenderWithInvalidValue()

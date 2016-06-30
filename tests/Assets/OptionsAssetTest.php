@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Assets;
+namespace Fungio\Tests\GoogleMap\Assets;
 
 /**
  * Options asset test.
@@ -18,7 +18,7 @@ namespace Ivory\Tests\GoogleMap\Assets;
  */
 class OptionsAssetTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Assets\AbstractOptionsAsset */
+    /** @var \Fungio\GoogleMap\Assets\AbstractOptionsAsset */
     protected $asset;
 
     /**
@@ -26,7 +26,7 @@ class OptionsAssetTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->asset = $this->getMockForAbstractClass('Ivory\GoogleMap\Assets\AbstractOptionsAsset');
+        $this->asset = $this->getMockForAbstractClass('Fungio\GoogleMap\Assets\AbstractOptionsAsset');
     }
 
     /**
@@ -45,7 +45,7 @@ class OptionsAssetTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $this->asset = $this->getMockBuilder('Ivory\GoogleMap\Assets\AbstractOptionsAsset')
+        $this->asset = $this->getMockBuilder('Fungio\GoogleMap\Assets\AbstractOptionsAsset')
             ->setConstructorArgs(array('foo', array('foo' => 'bar')))
             ->getMockForAbstractClass();
 
@@ -69,7 +69,7 @@ class OptionsAssetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\AssetException
+     * @expectedException \Fungio\GoogleMap\Exception\AssetException
      * @expectedExceptionMessage The option property must be a string value.
      */
     public function testHasOptionWithInvalidOption()
@@ -78,7 +78,7 @@ class OptionsAssetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\AssetException
+     * @expectedException \Fungio\GoogleMap\Exception\AssetException
      * @expectedExceptionMessage The option "foo" does not exist.
      */
     public function testGetOptionWithInvalidOption()
@@ -87,7 +87,7 @@ class OptionsAssetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\AssetException
+     * @expectedException \Fungio\GoogleMap\Exception\AssetException
      * @expectedExceptionMessage The option property must be a string value.
      */
     public function testSetOptionWithInvalidOption()
@@ -96,7 +96,7 @@ class OptionsAssetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\AssetException
+     * @expectedException \Fungio\GoogleMap\Exception\AssetException
      * @expectedExceptionMessage The option "foo" does not exist.
      */
     public function testRemoveOptionWithInvalidOption()

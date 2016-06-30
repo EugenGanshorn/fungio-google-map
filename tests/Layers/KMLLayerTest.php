@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Events;
+namespace Fungio\Tests\GoogleMap\Events;
 
-use Ivory\GoogleMap\Layers\KMLLayer;
+use Fungio\GoogleMap\Layers\KMLLayer;
 
 /**
  * KML layer test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Layers\KMLLayer;
  */
 class KMLLayerTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Layers\KMLLayer */
+    /** @var \Fungio\GoogleMap\Layers\KMLLayer */
     protected $kmlLayer;
 
     /**
@@ -59,7 +59,7 @@ class KMLLayerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\LayerException
+     * @expectedException \Fungio\GoogleMap\Exception\LayerException
      * @expectedExceptionMessage The kml layer url must be a string value.
      */
     public function testUrlWithInvalidValue()

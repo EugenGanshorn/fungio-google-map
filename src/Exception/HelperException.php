@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\Overlays\Animation;
-use Ivory\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\MapTypeId;
 
 /**
  * Helper exception.
@@ -28,7 +28,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID ANIMATION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID ANIMATION" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID ANIMATION" exception.
      */
     public static function invalidAnimation()
     {
@@ -38,7 +38,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID AUTOCOMPLETE BOUND" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\TemplatingException The "INVALID AUTOCOMPLETE BOUND" exception.
+     * @return \Fungio\GoogleMap\Exception\TemplatingException The "INVALID AUTOCOMPLETE BOUND" exception.
      */
     public static function invalidAutocompleteBound()
     {
@@ -48,7 +48,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID CONTROL POSITION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID CONTROL POSITION" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID CONTROL POSITION" exception.
      */
     public static function invalidControlPosition()
     {
@@ -61,7 +61,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID ENCODED PATH" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID ENCODED PATH" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID ENCODED PATH" exception.
      */
     public static function invalidEncodedPath()
     {
@@ -73,7 +73,7 @@ class HelperException extends Exception
      *
      * @param string $name The "INVALID EXTENSION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID EXTENSION" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID EXTENSION" exception.
      */
     public static function invalidExtension($name)
     {
@@ -83,7 +83,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID MAP TYPE CONTROL STYLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID MAP TYPE CONTROL STYLE" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID MAP TYPE CONTROL STYLE" exception.
      */
     public static function invalidMapTypeControlStyle()
     {
@@ -96,7 +96,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID MAP TYPE ID" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID MAP TYPE ID" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID MAP TYPE ID" exception.
      */
     public static function invalidMapTypeId()
     {
@@ -106,7 +106,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID MARKER CLUSTER HELPER" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID MARKER CLUSTER HELPER" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID MARKER CLUSTER HELPER" exception.
      */
     public static function invalidMarkerClusterHelper()
     {
@@ -116,7 +116,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID SCALE CONTROL STYLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID SCALE CONTROL STYLE" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID SCALE CONTROL STYLE" exception.
      */
     public static function invalidScaleControlStyle()
     {
@@ -129,7 +129,7 @@ class HelperException extends Exception
     /**
      * Gets the "INVALID ZOOM CONTROL STYLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\HelperException The "INVALID ZOOM CONTROL STYLE" exception.
+     * @return \Fungio\GoogleMap\Exception\HelperException The "INVALID ZOOM CONTROL STYLE" exception.
      */
     public static function invalidZoomControlStyle()
     {

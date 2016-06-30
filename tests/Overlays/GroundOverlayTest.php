@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\GroundOverlay;
+use Fungio\GoogleMap\Overlays\GroundOverlay;
 
 /**
  * Ground overlay test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\GroundOverlay;
  */
 class GroundOverlayTest extends \PHPUnit_Framework_TestCase
 {
-    /** @vra \Ivory\GoogleMap\Overlays\GroundOverlay */
+    /** @vra \Fungio\GoogleMap\Overlays\GroundOverlay */
     protected $groundOverlay;
 
     /**
@@ -54,7 +54,7 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
     {
         $url = 'foo';
 
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $bound
             ->expects($this->once())
             ->method('hasCoordinates')
@@ -74,7 +74,7 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The url of a ground overlay must be a string value.
      */
     public function testUrlWithInvalidValue()
@@ -84,7 +84,7 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithValidBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $bound
             ->expects($this->any())
             ->method('hasCoordinates')
@@ -96,12 +96,12 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage A ground overlay bound must have a south west & a north east coordinate.
      */
     public function testBoundWithInvalidBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $bound
             ->expects($this->any())
             ->method('hasCoordinates')
@@ -112,8 +112,8 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithSouthWestAndNorthEast()
     {
-        $southWest = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $northEast = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $southWest = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $northEast = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->groundOverlay->setBound($southWest, $northEast);
 
@@ -135,7 +135,7 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      */
     public function testBoundWithInvalidValue()
     {

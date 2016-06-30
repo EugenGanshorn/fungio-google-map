@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
 /**
  * Base exception.
@@ -21,7 +21,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID BOUND NORTH EAST" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID BOUND NORTH EAST" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID BOUND NORTH EAST" exception.
      */
     public static function invalidBoundNorthEast()
     {
@@ -29,7 +29,7 @@ class BaseException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The north east setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setNorthEast(Ivory\GoogleMap\Base\Coordinate $northEast)',
+            ' - function setNorthEast(Fungio\GoogleMap\Base\Coordinate $northEast)',
             ' - function setNorthEast(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -37,7 +37,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID BOUND SOUTH WEST" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID BOUND SOUTH WEST" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID BOUND SOUTH WEST" exception.
      */
     public static function invalidBoundSouthWest()
     {
@@ -45,7 +45,7 @@ class BaseException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The south west setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setSouthWest(Ivory\GoogleMap\Base\Coordinate $southWest)',
+            ' - function setSouthWest(Fungio\GoogleMap\Base\Coordinate $southWest)',
             ' - function setSouthWest(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -53,7 +53,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID COORDINATE LATITUDE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID COORDINATE LATITUDE" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID COORDINATE LATITUDE" exception.
      */
     public static function invalidCoordinateLatitude()
     {
@@ -63,7 +63,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID COORDINATE LONGITUDE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID COORDINATE LONGITUDE" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID COORDINATE LONGITUDE" exception.
      */
     public static function invalidCoordinateLongitude()
     {
@@ -73,7 +73,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID COORDINATE NO WRAP" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID COORDINATE NO WRAP" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID COORDINATE NO WRAP" exception.
      */
     public static function invalidCoordinateNoWrap()
     {
@@ -83,7 +83,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID POINT X" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID POINT X" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID POINT X" exception.
      */
     public static function invalidPointX()
     {
@@ -93,7 +93,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID POINT Y" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID POINT Y" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID POINT Y" exception.
      */
     public static function invalidPointY()
     {
@@ -103,7 +103,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID SIZE HEIGHT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID SIZE HEIGHT" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID SIZE HEIGHT" exception.
      */
     public static function invalidSizeHeight()
     {
@@ -113,7 +113,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID SIZE HEIGHT UNIT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID SIZE HEIGHT UNIT" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID SIZE HEIGHT UNIT" exception.
      */
     public static function invalidSizeHeightUnit()
     {
@@ -123,7 +123,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID SIZE WIDTH" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID SIZE WIDTH" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID SIZE WIDTH" exception.
      */
     public static function invalidSizeWidth()
     {
@@ -133,7 +133,7 @@ class BaseException extends Exception
     /**
      * Gets the "INVALID SIZE WIDTH UNIT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\BaseException The "INVALID SIZE WIDTH UNIT" exception.
+     * @return \Fungio\GoogleMap\Exception\BaseException The "INVALID SIZE WIDTH UNIT" exception.
      */
     public static function invalidSizeWidthUnit()
     {

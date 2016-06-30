@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\DistanceMatrixException;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\DistanceMatrixException;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * DistanceMatrixRequest represents a google map distance matrix query.
@@ -87,7 +87,7 @@ class DistanceMatrixRequest
      *
      * @param boolean $avoidHighways TRUE if the distance matrix request avoids hightways else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the avoid highways flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the avoid highways flag is not valid.
      */
     public function setAvoidHighways($avoidHighways = null)
     {
@@ -123,7 +123,7 @@ class DistanceMatrixRequest
      *
      * @param boolean $avoidTolls TRUE if the distance matrix request avoids tolls else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the avoid tolls flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the avoid tolls flag is not valid.
      */
     public function setAvoidTolls($avoidTolls = null)
     {
@@ -173,10 +173,10 @@ class DistanceMatrixRequest
      *
      * Available prototypes:
      * - function addDestination(string $destination)
-     * - function addDestination(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function addDestination(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function addDestination(double $latitude, double $longitude, boolean $noWrap)
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the destination is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the destination is not valid (prototypes).
      */
     public function addDestination()
     {
@@ -240,10 +240,10 @@ class DistanceMatrixRequest
      *
      * Available prototypes:
      * - function addOrigin(string $destination)
-     * - function addOrigin(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function addOrigin(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function addOrigin(double $latitude, double $longitude, boolean $noWrap)
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the origin is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the origin is not valid (prototypes).
      */
     public function addOrigin()
     {
@@ -293,7 +293,7 @@ class DistanceMatrixRequest
      *
      * @param string $region The distance matrix request region.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the region is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the region is not valid.
      */
     public function setRegion($region = null)
     {
@@ -329,7 +329,7 @@ class DistanceMatrixRequest
      *
      * @param string $language The distance matrix request language.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the language is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the language is not valid.
      */
     public function setLanguage($language = null)
     {
@@ -365,7 +365,7 @@ class DistanceMatrixRequest
      *
      * @param string $travelMode The distance matrix request travel mode.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the travel mode is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the travel mode is not valid.
      */
     public function setTravelMode($travelMode = null)
     {
@@ -403,7 +403,7 @@ class DistanceMatrixRequest
      *
      * @param string $unitSystem The distance matrix request unit system.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the unit system is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the unit system is not valid.
      */
     public function setUnitSystem($unitSystem = null)
     {
@@ -429,7 +429,7 @@ class DistanceMatrixRequest
      *
      * @param boolean $sensor TRUE if the distance matrix request has a sensor else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the sensor flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the sensor flag is not valid.
      */
     public function setSensor($sensor)
     {

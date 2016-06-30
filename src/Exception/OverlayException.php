@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Events\MouseEvent;
-use Ivory\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\Events\MouseEvent;
+use Fungio\GoogleMap\Overlays\Animation;
 
 /**
  * Overlay exception.
@@ -24,7 +24,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID CIRCLE CENTER" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID CIRCLE CENTER" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID CIRCLE CENTER" exception.
      */
     public static function invalidCircleCenter()
     {
@@ -32,7 +32,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The center setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setCenter(Ivory\GoogleMap\Base\Coordinate $center)',
+            ' - function setCenter(Fungio\GoogleMap\Base\Coordinate $center)',
             ' - function setCenter(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -40,7 +40,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID CIRCLE RADIUS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID CIRCLE RADIUS" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID CIRCLE RADIUS" exception.
      */
     public static function invalidCircleRadius()
     {
@@ -50,7 +50,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID ENCODED POLYLINE VALUE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID ENCODED POLYLINE VALUE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID ENCODED POLYLINE VALUE" exception.
      */
     public static function invalidEncodedPolylineValue()
     {
@@ -60,7 +60,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID GROUND OVERLAY BOUND COORDINATES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID GROUND OVERLAY BOUND COORDINATES" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID GROUND OVERLAY BOUND COORDINATES" exception.
      */
     public static function invalidGroundOverlayBoundCoordinates()
     {
@@ -70,7 +70,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID GROUND OVERLAY URL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID GROUND OVERLAY URL" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID GROUND OVERLAY URL" exception.
      */
     public static function invalidGroundOverlayUrl()
     {
@@ -80,7 +80,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID GROUND OVERLAY" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID GROUND OVERLAY" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID GROUND OVERLAY" exception.
      */
     public static function invalidGroundOverlayBound()
     {
@@ -88,10 +88,10 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The bound setter arguments is invalid.',
             'The available prototypes are :',
-            ' - public function setBound(Ivory\GoogleMapBundle\Model\Base\Bound $bound)',
+            ' - public function setBound(Fungio\GoogleMapBundle\Model\Base\Bound $bound)',
             ' - public function setBount('.
-            'Ivory\GoogleMapBundle\Model\Base\Coordinate $southWest, '.
-            'Ivory\GoogleMapBundle\Model\Base\Coordinate $northEast'.
+            'Fungio\GoogleMapBundle\Model\Base\Coordinate $southWest, '.
+            'Fungio\GoogleMapBundle\Model\Base\Coordinate $northEast'.
             ')',
             ' - public function setBound('.
             'double $southWestLatitude, '.
@@ -107,7 +107,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW AUTO CLOSE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW AUTO CLOSE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW AUTO CLOSE" exception.
      */
     public static function invalidInfoWindowAutoClose()
     {
@@ -117,7 +117,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW AUTO OPEN" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW AUTO OPEN" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW AUTO OPEN" exception.
      */
     public static function invalidInfoWindowAutoOpen()
     {
@@ -127,7 +127,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW CONTENT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW CONTENT" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW CONTENT" exception.
      */
     public static function invalidInfoWindowContent()
     {
@@ -137,7 +137,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW OPEN" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW OPEN" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW OPEN" exception.
      */
     public static function invalidInfoWindowOpen()
     {
@@ -147,7 +147,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW OPEN EVENT" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW OPEN EVENT" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW OPEN EVENT" exception.
      */
     public static function invalidInfoWindowOpenEvent()
     {
@@ -160,7 +160,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW POSITION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW POSITION" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW POSITION" exception.
      */
     public static function invalidInfoWindowPosition()
     {
@@ -168,7 +168,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The position setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setPosition(Ivory\GoogleMap\Base\Coordinate $position)',
+            ' - function setPosition(Fungio\GoogleMap\Base\Coordinate $position)',
             ' - function setPosition(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -176,7 +176,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID INFO WINDOW PIXEL OFFSET" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW PIXEL OFFSET" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID INFO WINDOW PIXEL OFFSET" exception.
      */
     public static function invalidInfoWindowPixelOffset()
     {
@@ -184,7 +184,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The pixel offset setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setPixelOffset(Ivory\GoogleMap\Base\Size $scaledSize)',
+            ' - function setPixelOffset(Fungio\GoogleMap\Base\Size $scaledSize)',
             ' - function setPixelOffset('.
             'double $width, '.
             'double $height, '.
@@ -197,7 +197,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER ANIMATION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER ANIMATION" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER ANIMATION" exception.
      */
     public static function invalidMarkerAnimation()
     {
@@ -210,7 +210,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER ICON" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER ICON" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER ICON" exception.
      */
     public static function invalidMarkerIcon()
     {
@@ -218,7 +218,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The icon setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setIcon(Ivory\GoogleMap\Overlays\MarkerImage $markerImage = null)',
+            ' - function setIcon(Fungio\GoogleMap\Overlays\MarkerImage $markerImage = null)',
             ' - function setIcon(string $url = null)'
         ));
     }
@@ -226,7 +226,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER ICON URL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER ICON URL" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER ICON URL" exception.
      */
     public static function invalidMarkerIconUrl()
     {
@@ -236,7 +236,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER IMAGE ANCHOR" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE ANCHOR" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE ANCHOR" exception.
      */
     public static function invalidMarkerImageAnchor()
     {
@@ -244,7 +244,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The anchor setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setAnchor(Ivory\GoogleMap\Base\Point $anchor)',
+            ' - function setAnchor(Fungio\GoogleMap\Base\Point $anchor)',
             ' - function setAnchor(double x, double y)'
         ));
     }
@@ -252,7 +252,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER IMAGE ORIGIN" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE ORIGIN" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE ORIGIN" exception.
      */
     public static function invalidMarkerImageOrigin()
     {
@@ -260,7 +260,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The origin setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setOrigin(Ivory\GoogleMap\Base\Point $origin)',
+            ' - function setOrigin(Fungio\GoogleMap\Base\Point $origin)',
             ' - function setOrigin(double x, double y)'
         ));
     }
@@ -268,7 +268,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER IMAGE SCALED SIZE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE SCALED SIZE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE SCALED SIZE" exception.
      */
     public static function invalidMarkerImageScaledSize()
     {
@@ -276,7 +276,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The scaled size setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setScaledSize(Ivory\GoogleMap\Base\Size $scaledSize = null)',
+            ' - function setScaledSize(Fungio\GoogleMap\Base\Size $scaledSize = null)',
             ' - function setScaledSize('.
             'double $width, '.
             'double $height, '.
@@ -289,7 +289,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER IMAGE SIZE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE SIZE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE SIZE" exception.
      */
     public static function invalidMarkerImageSize()
     {
@@ -297,7 +297,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The size setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setSize(Ivory\GoogleMap\Base\Size $size = null)',
+            ' - function setSize(Fungio\GoogleMap\Base\Size $size = null)',
             ' - function setSize(double $width, double $height, string $widthUnit = null, string $heightUnit = null)'
         ));
     }
@@ -305,7 +305,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER IMAGE URL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE URL" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER IMAGE URL" exception.
      */
     public static function invalidMarkeImageUrl()
     {
@@ -315,7 +315,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER POSITION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER POSITION" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER POSITION" exception.
      */
     public static function invalidMarkerPosition()
     {
@@ -323,7 +323,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The position setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setPosition(Ivory\GoogleMap\Base\Coordinate $position)',
+            ' - function setPosition(Fungio\GoogleMap\Base\Coordinate $position)',
             ' - function setPosition(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -331,7 +331,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHADOW URL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHADOW URL" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHADOW URL" exception.
      */
     public static function invalidMarkerShadowUrl()
     {
@@ -341,7 +341,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHADOW" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHADOW" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHADOW" exception.
      */
     public static function invalidMarkerShadow()
     {
@@ -349,7 +349,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The shadow setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setShadow(Ivory\GoogleMap\Overlays\MarkerImage $markerImage = null)',
+            ' - function setShadow(Fungio\GoogleMap\Overlays\MarkerImage $markerImage = null)',
             ' - function setShadow(string $url = null)'
         ));
     }
@@ -357,7 +357,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE" exception.
      */
     public static function invalidMarkerShape()
     {
@@ -365,7 +365,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The shape setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setShape(Ivory\GoogleMap\Overlays\MarkerShape $shape = null)',
+            ' - function setShape(Fungio\GoogleMap\Overlays\MarkerShape $shape = null)',
             ' - function setShape(string $type, array $coordinates)'
         ));
     }
@@ -373,7 +373,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE COORDINATES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE COORDINATES" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE COORDINATES" exception.
      */
     public static function invalidMarkerShapeCoordinates()
     {
@@ -383,7 +383,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE ADD POLY COORDINATE CALL" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE ADD POLY COORDINATE CALL"
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE ADD POLY COORDINATE CALL"
      *                                                     exception.
      */
     public static function invalidMarkerShapeAddPolyCoordinateCall()
@@ -397,7 +397,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE TYPE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE TYPE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE TYPE" exception.
      */
     public static function invalidMarkerShapeType()
     {
@@ -410,7 +410,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE CIRCLE COORDINATES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE CIRCLE COORDINATES" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE CIRCLE COORDINATES" exception.
      */
     public static function invalidMarkerShapeCircleCoordinates()
     {
@@ -424,7 +424,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE POLY COORDINATE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE POLY COORDINATE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE POLY COORDINATE" exception.
      */
     public static function invalidMarkerShapePolyCoordinate()
     {
@@ -434,7 +434,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE POLY COORDINATES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE POLY COORDINATES" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE POLY COORDINATES" exception.
      */
     public static function invalidMarkerShapePolyCoordinates()
     {
@@ -452,7 +452,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID MARKER SHAPE RECT COORDINATES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE RECT COORDINATES" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID MARKER SHAPE RECT COORDINATES" exception.
      */
     public static function invalidMarkerShapeRectCoordinates()
     {
@@ -468,7 +468,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID POLYGON COORDINATE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID POLYGON COORDINATE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID POLYGON COORDINATE" exception.
      */
     public static function invalidPolygonCoordinate()
     {
@@ -476,7 +476,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The coordinate adder arguments is invalid.',
             'The available prototypes are :',
-            ' - function addCoordinate(Ivory\GoogleMap\Base\Coordinate $coordinate)',
+            ' - function addCoordinate(Fungio\GoogleMap\Base\Coordinate $coordinate)',
             ' - function addCoordinate(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -484,7 +484,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID POLYLINE COORDINATE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID POLYLINE COORDINATE" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID POLYLINE COORDINATE" exception.
      */
     public static function invalidPolylineCoordinate()
     {
@@ -492,7 +492,7 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The coordinate adder arguments is invalid.',
             'The available prototypes are :',
-            ' - function addCoordinate(Ivory\GoogleMap\Base\Coordinate $coordinate)',
+            ' - function addCoordinate(Fungio\GoogleMap\Base\Coordinate $coordinate)',
             ' - function addCoordinate(double $latitude, double $longitude, boolean $noWrap = true)'
         ));
     }
@@ -500,7 +500,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID RECTANGLE BOUND" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID RECTANGLE BOUND" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID RECTANGLE BOUND" exception.
      */
     public static function invalidRectangleBound()
     {
@@ -508,10 +508,10 @@ class OverlayException extends Exception
             '%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s'.PHP_EOL.'%s',
             'The bound setter arguments is invalid.',
             'The available prototypes are :',
-            ' - function setBound(Ivory\GoogleMap\Base\Bound $bound)',
+            ' - function setBound(Fungio\GoogleMap\Base\Bound $bound)',
             ' - function setBount('.
-            'Ivory\GoogleMap\Base\Coordinate $southWest, '.
-            'Ivory\GoogleMap\Base\Coordinate $northEast'.
+            'Fungio\GoogleMap\Base\Coordinate $southWest, '.
+            'Fungio\GoogleMap\Base\Coordinate $northEast'.
             ')',
             ' - function setBound('.
             'double $southWestLatitude, '.
@@ -527,7 +527,7 @@ class OverlayException extends Exception
     /**
      * Gets the "INVALID RECTANGLE BOUND COORDINATES" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\OverlayException The "INVALID RECTANGLE BOUND COORDINATES" exception.
+     * @return \Fungio\GoogleMap\Exception\OverlayException The "INVALID RECTANGLE BOUND COORDINATES" exception.
      */
     public static function invalidRectangleBoundCoordinates()
     {

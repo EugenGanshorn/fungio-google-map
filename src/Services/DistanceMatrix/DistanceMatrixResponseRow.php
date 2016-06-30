@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\GoogleMap\Services\DistanceMatrix;
 
 /**
  * A distance matrix response wraps the distance results & the response status.
@@ -59,7 +59,7 @@ class DistanceMatrixResponseRow
     /**
      * Add a distance matrix element.
      *
-     * @param \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement $element The element to add.
+     * @param \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement $element The element to add.
      */
     public function addElement(DistanceMatrixResponseElement $element)
     {

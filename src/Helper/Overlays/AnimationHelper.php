@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays;
+namespace Fungio\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Exception\HelperException;
-use Ivory\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Overlays\Animation;
 
 /**
  * Animation helper.
@@ -26,7 +26,7 @@ class AnimationHelper
      *
      * @param string $animation The animation.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the animation is not valid.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the animation is not valid.
      *
      * @return string The JS output.
      */

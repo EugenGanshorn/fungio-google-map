@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper;
+namespace Fungio\GoogleMap\Helper;
 
 /**
  * Google Map API helper.
@@ -81,7 +81,7 @@ class ApiHelper extends AbstractHelper
             $this->jsonBuilder->setValue('[callback]', $callback, false);
         }
 
-        $callbackFunction = 'load_ivory_google_map_api';
+        $callbackFunction = 'load_fungio_google_map_api';
         $url = sprintf('//www.google.com/jsapi?callback=%s', $callbackFunction);
         $loader = sprintf('google.load("maps", "3", %s);', $this->jsonBuilder->build());
 

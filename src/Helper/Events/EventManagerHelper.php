@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Events;
+namespace Fungio\GoogleMap\Helper\Events;
 
-use Ivory\GoogleMap\Events\Event;
+use Fungio\GoogleMap\Events\Event;
 
 /**
  * Event manager helper.
@@ -23,7 +23,7 @@ class EventManagerHelper
     /**
      * Renders a dom event.
      *
-     * @param \Ivory\GoogleMap\Events\Event $domEvent The dom event.
+     * @param \Fungio\GoogleMap\Events\Event $domEvent The dom event.
      *
      * @return string The JS output.
      */
@@ -42,7 +42,7 @@ class EventManagerHelper
     /**
      * Renders a dom event once.
      *
-     * @param \Ivory\GoogleMap\Events\Event $domEventOnce The dom event once.
+     * @param \Fungio\GoogleMap\Events\Event $domEventOnce The dom event once.
      *
      * @return string The JS output.
      */
@@ -61,7 +61,7 @@ class EventManagerHelper
     /**
      * Renders an event.
      *
-     * @param \Ivory\GoogleMap\Events\Event $event The event.
+     * @param \Fungio\GoogleMap\Events\Event $event The event.
      *
      * @return string The JS output.
      */
@@ -79,7 +79,7 @@ class EventManagerHelper
     /**
      * Renders an event once.
      *
-     * @param \Ivory\GoogleMap\Events\Event $eventOnce The event once.
+     * @param \Fungio\GoogleMap\Events\Event $eventOnce The event once.
      *
      * @return string The JS output.
      */

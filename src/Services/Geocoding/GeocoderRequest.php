@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Geocoding;
+namespace Fungio\GoogleMap\Services\Geocoding;
 
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\GeocodingException;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\GeocodingException;
 
 /**
  * Geocoder request which describes a google map geocoder request.
@@ -26,10 +26,10 @@ class GeocoderRequest
     /** @var string */
     protected $address;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $coordinate;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /** @var string */
@@ -74,7 +74,7 @@ class GeocoderRequest
      *
      * @param string $address The geocoder request address.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the address is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the address is not valid.
      */
     public function setAddress($address)
     {
@@ -98,7 +98,7 @@ class GeocoderRequest
     /**
      * Gets the geocoder request coordinate.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The geocoder request coordinate.
+     * @return \Fungio\GoogleMap\Base\Coordinate The geocoder request coordinate.
      */
     public function getCoordinate()
     {
@@ -109,10 +109,10 @@ class GeocoderRequest
      * Sets the geocoder request coordinate
      *
      * Available prototypes:
-     *  - function setCoordinate(\Ivory\GoogleMap\Base\Coordinate $coordinate = null)
+     *  - function setCoordinate(\Fungio\GoogleMap\Base\Coordinate $coordinate = null)
      *  - function setCoordinate(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the coordinate is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the coordinate is not valid (prototypes).
      */
     public function setCoordinate()
     {
@@ -153,7 +153,7 @@ class GeocoderRequest
     /**
      * Gets the geocoder request bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The geocoder request bound.
+     * @return \Fungio\GoogleMap\Base\Bound The geocoder request bound.
      */
     public function getBound()
     {
@@ -164,8 +164,8 @@ class GeocoderRequest
      * Sets the geocoder request bound.
      *
      * Available prototypes:
-     *  - function setBound(Ivory\GoogleMap\Base\Bound $bound = null)
-     *  - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     *  - function setBound(Fungio\GoogleMap\Base\Bound $bound = null)
+     *  - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      *  - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,
@@ -175,7 +175,7 @@ class GeocoderRequest
      *     boolean $northEastNoWrap = true
      * )
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the bound is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the bound is not valid.
      */
     public function setBound()
     {
@@ -243,7 +243,7 @@ class GeocoderRequest
      *
      * @param string $region The geocoder request region.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the regin is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the regin is not valid.
      */
     public function setRegion($region = null)
     {
@@ -279,7 +279,7 @@ class GeocoderRequest
      *
      * @param string $language The geocoder request language.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the language is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the language is not valid.
      */
     public function setLanguage($language = null)
     {
@@ -305,7 +305,7 @@ class GeocoderRequest
      *
      * @param boolean $sensor TRUE if the geocoder request has a sensor else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingRequest If the sensor flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingRequest If the sensor flag is not valid.
      */
     public function setSensor($sensor)
     {

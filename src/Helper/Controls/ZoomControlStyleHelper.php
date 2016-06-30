@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Exception\HelperException;
 
 /**
  * Zoom control style helper.
@@ -26,7 +26,7 @@ class ZoomControlStyleHelper
      *
      * @param string $zoomControlStyle The zoom control style.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If thhe zoom control style is not valid.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If thhe zoom control style is not valid.
      *
      * @return string The JS output.
      */

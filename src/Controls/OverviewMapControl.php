@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Controls;
+namespace Fungio\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Exception\ControlException;
+use Fungio\GoogleMap\Exception\ControlException;
 
 /**
  * An overview map control describes a google map overview control.
@@ -49,7 +49,7 @@ class OverviewMapControl
      *
      * @param boolean $opened TRUE if the overview map control is opened else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\ControlException If the opened flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ControlException If the opened flag is not valid.
      */
     public function setOpened($opened)
     {

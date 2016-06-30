@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays;
+namespace Fungio\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Polygon;
 
 /**
  * Polygon helper.
@@ -25,8 +25,8 @@ class PolygonHelper extends AbstractHelper
     /**
      * Renders a polygon.
      *
-     * @param \Ivory\GoogleMap\Overlays\Polygon $polygon The polygon.
-     * @param \Ivory\GoogleMapl\Map             $map     The map.
+     * @param \Fungio\GoogleMap\Overlays\Polygon $polygon The polygon.
+     * @param \Fungio\GoogleMapl\Map             $map     The map.
      *
      * @return string Ths JS output.
      */

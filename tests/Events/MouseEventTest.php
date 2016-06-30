@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Events;
+namespace Fungio\Tests\GoogleMap\Events;
 
-use Ivory\GoogleMap\Events\MouseEvent;
+use Fungio\GoogleMap\Events\MouseEvent;
 
 /**
  * Mouse event test.

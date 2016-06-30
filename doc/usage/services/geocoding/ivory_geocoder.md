@@ -1,6 +1,6 @@
-# Ivory Geocoder
+# Fungio Geocoder
 
-Warning, if you want to use the Ivory Geocoder, you need to use the Ivory Provider otherwise there is no benefit.
+Warning, if you want to use the Fungio Geocoder, you need to use the Fungio Provider otherwise there is no benefit.
 
 ## Geocode a position
 
@@ -8,13 +8,13 @@ The library allows you to request the google map geocoding API by two different 
 simple address (IP or street) or an advanced geocoder request.
 
 If you want to use it with a business account, you can read this
-[documentation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/business_account.md).
+[documentation](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/business_account.md).
 
 ### Simple address
 
 ``` php
-use Ivory\GoogleMap\Services\Geocoding\Geocoder;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
+use Fungio\GoogleMap\Services\Geocoding\Geocoder;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderProvider;
 use Geocoder\HttpAdapter\CurlHttpAdapter;
 
 $geocoder = new Geocoder();
@@ -29,16 +29,16 @@ $response = $geocoder->geocode('1600 Amphitheatre Parkway, Mountain View, CA');
 ### Advanced geocoder request
 
 If you want to build an advanced request, read this specific
-[documenation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/geocoding/geocoder_request.md).
+[documenation](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/geocoding/geocoder_request.md).
 
 ## Geocoder response
 
-When you have requested your position, the returned object is an ``Ivory\GoogleMap\Services\Geocoding\GeocoderResponse``.
+When you have requested your position, the returned object is an ``Fungio\GoogleMap\Services\Geocoding\GeocoderResponse``.
 It wraps a geocoder status & geocoder results.
 
 ### Geocoder status
 
-The available status are defined by the ``Ivory\GoogleMap\Services\Geocoding\GeocoderStatus`` constants.
+The available status are defined by the ``Fungio\GoogleMap\Services\Geocoding\GeocoderStatus`` constants.
 
 ``` php
 // Get the geocoder status
@@ -47,7 +47,7 @@ $status = $response->getStatus();
 
 ### Geocoder results
 
-A request can return many results. The geocoder response wraps an array of ``Ivory\GoogleMap\Services\Geocoding\GeocoderResult``.
+A request can return many results. The geocoder response wraps an array of ``Fungio\GoogleMap\Services\Geocoding\GeocoderResult``.
 
 ``` php
 // Get the geocoder results
@@ -116,12 +116,12 @@ foreach ($results as $result) {
 
 Geometry contains the following information:
 
- - location which is an ``Ivory\GoogleMap\Base\Coordinate``.
+ - location which is an ``Fungio\GoogleMap\Base\Coordinate``.
  - location type stores additional data about the specified location. The available possibilites are describes by the
-   ``Ivory\GoogleMap\Services\Geocoding\GeocoderLocationType`` constants.
- - viewport which contains the recommended viewport for displaying the returned result, specified as ``Ivory\GoogleMap\Base\Bound``.
+   ``Fungio\GoogleMap\Services\Geocoding\GeocoderLocationType`` constants.
+ - viewport which contains the recommended viewport for displaying the returned result, specified as ``Fungio\GoogleMap\Base\Bound``.
  - bounds (optionally returned) which stores the bounding box which can fully contain the returned result, specified as
-   ``Ivory\GoogleMap\Base\Bound``. Note that these bounds may not match the recommended viewport.
+   ``Fungio\GoogleMap\Base\Bound``. Note that these bounds may not match the recommended viewport.
 
 ``` php
 // Get the geocoder results
@@ -169,9 +169,9 @@ foreach ($results as $result) {
 ## Create a marker according to a geocoded location
 
 ``` php
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Services\Geocoding\Geocoder;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Services\Geocoding\Geocoder;
 
 $geocoder = new Geocoder();
 

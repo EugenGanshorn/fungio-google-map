@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\Animation;
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\Overlays\Marker;
 
 /**
  * Marker test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Overlays\Marker;
  */
 class MarkerTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\Marker */
+    /** @var \Fungio\GoogleMap\Overlays\Marker */
     protected $marker;
 
     /**
@@ -42,7 +42,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testDefaultState()
     {
-        $this->assertInstanceOf('Ivory\GoogleMap\Base\Coordinate', $this->marker->getPosition());
+        $this->assertInstanceOf('Fungio\GoogleMap\Base\Coordinate', $this->marker->getPosition());
         $this->assertFalse($this->marker->hasAnimation());
         $this->assertFalse($this->marker->hasIcon());
         $this->assertFalse($this->marker->hasShadow());
@@ -52,28 +52,28 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $position = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $position = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $animation = Animation::DROP;
 
-        $icon = $this->getMock('Ivory\GoogleMap\Overlays\MarkerImage');
+        $icon = $this->getMock('Fungio\GoogleMap\Overlays\MarkerImage');
         $icon
             ->expects($this->once())
             ->method('getUrl')
             ->will($this->returnValue('foo'));
 
-        $shadow = $this->getMock('Ivory\GoogleMap\Overlays\MarkerImage');
+        $shadow = $this->getMock('Fungio\GoogleMap\Overlays\MarkerImage');
         $shadow
             ->expects($this->once())
             ->method('getUrl')
             ->will($this->returnValue('foo'));
 
-        $shape = $this->getMock('Ivory\GoogleMap\Overlays\MarkerShape');
+        $shape = $this->getMock('Fungio\GoogleMap\Overlays\MarkerShape');
         $shape
             ->expects($this->once())
             ->method('hasCoordinates')
             ->will($this->returnValue(true));
 
-        $infoWindow = $this->getMock('Ivory\GoogleMap\Overlays\InfoWindow');
+        $infoWindow = $this->getMock('Fungio\GoogleMap\Overlays\InfoWindow');
 
         $this->marker = new Marker($position, $animation, $icon, $shadow, $shape, $infoWindow);
 
@@ -87,7 +87,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testPositionWithCoordinate()
     {
-        $coordinate = $this->getMock('ivory\GoogleMap\Base\Coordinate');
+        $coordinate = $this->getMock('fungio\GoogleMap\Base\Coordinate');
         $this->marker->setPosition($coordinate);
 
         $this->assertSame($coordinate, $this->marker->getPosition());
@@ -107,17 +107,17 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testPositionWithNullValue()
     {
-        $this->marker->setPosition($this->getMock('ivory\GoogleMap\Base\Coordinate'));
+        $this->marker->setPosition($this->getMock('fungio\GoogleMap\Base\Coordinate'));
         $this->marker->setPosition(null);
 
         $this->assertNull($this->marker->getPosition());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The position setter arguments is invalid.
      * The available prototypes are :
-     * - function setPosition(Ivory\GoogleMap\Base\Coordinate $position)
+     * - function setPosition(Fungio\GoogleMap\Base\Coordinate $position)
      * - function setPosition(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testPositionWithInvalidValue()
@@ -133,7 +133,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The animation of a marker can only be : bounce, drop.
      */
     public function testAnimationWithInvalidValue()
@@ -143,7 +143,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testIconWithValidMarkerImage()
     {
-        $markerImage = $this->getMock('Ivory\GoogleMap\Overlays\MarkerImage');
+        $markerImage = $this->getMock('Fungio\GoogleMap\Overlays\MarkerImage');
         $markerImage
             ->expects($this->once())
             ->method('getUrl')
@@ -155,12 +155,12 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage A marker image icon must have an url.
      */
     public function testIconWithInvalidMarkerImage()
     {
-        $markerImage = $this->getMock('Ivory\GoogleMap\Overlays\MarkerImage');
+        $markerImage = $this->getMock('Fungio\GoogleMap\Overlays\MarkerImage');
         $this->marker->setIcon($markerImage);
     }
 
@@ -180,10 +180,10 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The icon setter arguments is invalid.
      * The available prototypes are :
-     * - function setIcon(Ivory\GoogleMap\Overlays\MarkerImage $markerImage = null)
+     * - function setIcon(Fungio\GoogleMap\Overlays\MarkerImage $markerImage = null)
      * - function setIcon(string $url = null)
      */
     public function testIconWithInvalidValue()
@@ -193,7 +193,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testShadowWithValidMarkerImage()
     {
-        $markerImage = $this->getMock('Ivory\GoogleMap\Overlays\MarkerImage');
+        $markerImage = $this->getMock('Fungio\GoogleMap\Overlays\MarkerImage');
         $markerImage
             ->expects($this->once())
             ->method('getUrl')
@@ -205,12 +205,12 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage A marker image shadow must have an url.
      */
     public function testShadowWithInvalidMarkerImage()
     {
-        $markerImage = $this->getMock('Ivory\GoogleMap\Overlays\MarkerImage');
+        $markerImage = $this->getMock('Fungio\GoogleMap\Overlays\MarkerImage');
         $this->marker->setShadow($markerImage);
     }
 
@@ -230,10 +230,10 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The shadow setter arguments is invalid.
      * The available prototypes are :
-     * - function setShadow(Ivory\GoogleMap\Overlays\MarkerImage $markerImage = null)
+     * - function setShadow(Fungio\GoogleMap\Overlays\MarkerImage $markerImage = null)
      * - function setShadow(string $url = null)
      */
     public function testShadowWithInvalidValue()
@@ -243,7 +243,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testShapeWithValidMarkerShape()
     {
-        $markerShape = $this->getMock('Ivory\GoogleMap\Overlays\MarkerShape');
+        $markerShape = $this->getMock('Fungio\GoogleMap\Overlays\MarkerShape');
         $markerShape
             ->expects($this->once())
             ->method('hasCoordinates')
@@ -255,12 +255,12 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage A marker shape must have coordinates.
      */
     public function testShapeWithInvalidMarkerShape()
     {
-        $markerShape = $this->getMock('Ivory\GoogleMap\Overlays\MarkerShape');
+        $markerShape = $this->getMock('Fungio\GoogleMap\Overlays\MarkerShape');
         $this->marker->setShape($markerShape);
     }
 
@@ -284,10 +284,10 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The shape setter arguments is invalid.
      * The available prototypes are :
-     * - function setShape(Ivory\GoogleMap\Overlays\MarkerShape $shape = null)
+     * - function setShape(Fungio\GoogleMap\Overlays\MarkerShape $shape = null)
      * - function setShape(string $type, array $coordinates)
      */
     public function testShapeWithInvalidValue()
@@ -297,7 +297,7 @@ class MarkerTest extends \PHPUnit_Framework_TestCase
 
     public function testInfoWindow()
     {
-        $infoWindow = $this->getMock('Ivory\GoogleMap\Overlays\InfoWindow');
+        $infoWindow = $this->getMock('Fungio\GoogleMap\Overlays\InfoWindow');
         $this->marker->setInfoWindow($infoWindow);
 
         $this->assertSame($infoWindow, $this->marker->getInfoWindow());

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Layers;
+namespace Fungio\Tests\GoogleMap\Helper\Layers;
 
-use Ivory\GoogleMap\Layers\KMLLayer;
-use Ivory\GoogleMap\Helper\Layers\KMLLayerHelper;
+use Fungio\GoogleMap\Layers\KMLLayer;
+use Fungio\GoogleMap\Helper\Layers\KMLLayerHelper;
 
 /**
  * KML Layer helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Layers\KMLLayerHelper;
  */
 class KMLLayerHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper */
+    /** @var \Fungio\GoogleMap\Helper\Layers\KMLLayerHelper */
     protected $kmlLayerHelper;
 
     /**
@@ -42,7 +42,7 @@ class KMLLayerHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithoutOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')
@@ -59,7 +59,7 @@ class KMLLayerHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')

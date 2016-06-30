@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Extension;
+namespace Fungio\GoogleMap\Helper\Extension;
 
-use Ivory\GoogleMap\Map;
+use Fungio\GoogleMap\Map;
 
 /**
  * Extension helper.
@@ -23,7 +23,7 @@ interface ExtensionHelperInterface
     /**
      * Renders libraires.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The html output.
      */
@@ -32,7 +32,7 @@ interface ExtensionHelperInterface
     /**
      * Renders JS code just before the generated one.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -41,7 +41,7 @@ interface ExtensionHelperInterface
     /**
      * Renders JS code just after the generated one.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */

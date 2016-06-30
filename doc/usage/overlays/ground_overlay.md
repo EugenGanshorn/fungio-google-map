@@ -6,7 +6,7 @@ that you wish to place on a map, you can use a GroundOverlay object.
 ## Build your ground overlay
 
 ``` php
-use Ivory\GoogleMap\Overlays\GroundOverlay;
+use Fungio\GoogleMap\Overlays\GroundOverlay;
 
 $groundOverlay = new GroundOverlay();
 
@@ -22,7 +22,7 @@ $groundOverlay->setOptions(array('clickable' => false));
 ## Add your ground overlay to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\GroundOverlay;
+use Fungio\GoogleMap\Overlays\GroundOverlay;
 
 $groundOverlay = new GroundOverlay();
 

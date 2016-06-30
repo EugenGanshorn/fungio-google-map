@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Rectangle which describes a google map rectangle.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Exception\OverlayException;
  */
 class Rectangle extends AbstractOptionsAsset implements ExtendableInterface
 {
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /**
@@ -45,7 +45,7 @@ class Rectangle extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the rectangle bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The rectangle bound.
+     * @return \Fungio\GoogleMap\Base\Bound The rectangle bound.
      */
     public function getBound()
     {
@@ -56,8 +56,8 @@ class Rectangle extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the rectangle bound.
      *
      * Available prototypes:
-     *  - function setBound(Ivory\GoogleMap\Base\Bound $bound)
-     *  - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     *  - function setBound(Fungio\GoogleMap\Base\Bound $bound)
+     *  - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      *  - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,
@@ -67,7 +67,7 @@ class Rectangle extends AbstractOptionsAsset implements ExtendableInterface
      *     boolean $northEastNoWrap = true
      * )
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the bound is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the bound is not valid.
      */
     public function setBound()
     {

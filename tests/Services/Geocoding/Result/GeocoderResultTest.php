@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResult;
 
 /**
  * Geocoder result test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult;
  */
 class GeocoderResultTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderResult */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderResult */
     protected $geocoderResult;
 
     /** @var array */
@@ -29,7 +29,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
     /** @var string */
     protected $formattedAddress;
 
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry */
     protected $geometry;
 
     /** @var boolean */
@@ -43,14 +43,14 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $addressComponent = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent')
+        $addressComponent = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent')
             ->disableOriginalConstructor()
             ->getMock();
 
         $this->addressComponents = array($addressComponent);
         $this->formattedAddress = 'formattedAddress';
 
-        $this->geometry = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry')
+        $this->geometry = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -89,7 +89,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
 
     public function testAddressComponentsWithoutType()
     {
-        $addressComponent = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent')
+        $addressComponent = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -102,7 +102,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
 
     public function testAddressComponentsWithType()
     {
-        $addressComponent = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent')
+        $addressComponent = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -127,7 +127,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder result formatted address must be a string value.
      */
     public function testFormattedAddressWithInvalidValue()
@@ -137,7 +137,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
 
     public function testGeometry()
     {
-        $geometry = $this->getMockBuilder('Ivory\GoogleMap\Services\Geocoding\Result\GeocoderGeometry')
+        $geometry = $this->getMockBuilder('Fungio\GoogleMap\Services\Geocoding\Result\GeocoderGeometry')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -154,7 +154,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder result partial match flag must be a boolean value.
      */
     public function testPartialMatchWithInvalidValue()
@@ -171,7 +171,7 @@ class GeocoderResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder result type must be a string value.
      */
     public function testTypeWithInvalidValue()

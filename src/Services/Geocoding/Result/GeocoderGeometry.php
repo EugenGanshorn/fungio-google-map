@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\GeocodingException;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\GeocodingException;
 
 /**
  * GeocoderGeometry which describes a google map geocoder geometry.
@@ -23,25 +23,25 @@ use Ivory\GoogleMap\Exception\GeocodingException;
  */
 class GeocoderGeometry
 {
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $location;
 
     /** @var string */
     protected $locationType;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $viewport;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /**
      * Create a geocoder geometry.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $location     The geometry location.
+     * @param \Fungio\GoogleMap\Base\Coordinate $location     The geometry location.
      * @param string                           $locationType The geometry location type.
-     * @param \Ivory\GoogleMap\Base\Bound      $viewport     The geometry viewport.
-     * @param \Ivory\GoogleMap\Base\Bound      $bound        The geometry bound.
+     * @param \Fungio\GoogleMap\Base\Bound      $viewport     The geometry viewport.
+     * @param \Fungio\GoogleMap\Base\Bound      $bound        The geometry bound.
      */
     public function __construct(Coordinate $location, $locationType, Bound $viewport, Bound $bound = null)
     {
@@ -54,7 +54,7 @@ class GeocoderGeometry
     /**
      * Gets the geometry location.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The geometry location.
+     * @return \Fungio\GoogleMap\Base\Coordinate The geometry location.
      */
     public function getLocation()
     {
@@ -64,7 +64,7 @@ class GeocoderGeometry
     /**
      * Sets the geometry location.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $location The geometry location.
+     * @param \Fungio\GoogleMap\Base\Coordinate $location The geometry location.
      */
     public function setLocation(Coordinate $location)
     {
@@ -86,7 +86,7 @@ class GeocoderGeometry
      *
      * @param string $locationType The geometry location type.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the location type is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the location type is not valid.
      */
     public function setLocationType($locationType)
     {
@@ -100,7 +100,7 @@ class GeocoderGeometry
     /**
      * Gets the geometry viewport
      *
-     * @return \Ivory\GoogleMap\Base\Bound The geometry viewport.
+     * @return \Fungio\GoogleMap\Base\Bound The geometry viewport.
      */
     public function getViewport()
     {
@@ -110,7 +110,7 @@ class GeocoderGeometry
     /**
      * Sets the geometry viewport.
      *
-     * @param \Ivory\GoogleMap\Base\Bound $viewport The geometry viewport.
+     * @param \Fungio\GoogleMap\Base\Bound $viewport The geometry viewport.
      */
     public function setViewport(Bound $viewport)
     {
@@ -120,7 +120,7 @@ class GeocoderGeometry
     /**
      * Gets the geometry bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The geometry bound.
+     * @return \Fungio\GoogleMap\Base\Bound The geometry bound.
      */
     public function getBound()
     {
@@ -130,7 +130,7 @@ class GeocoderGeometry
     /**
      * Sets the geometry bound.
      *
-     * @param \Ivory\GoogleMap\Base\Bound $bound The geometry bound.
+     * @param \Fungio\GoogleMap\Base\Bound $bound The geometry bound.
      */
     public function setBound(Bound $bound = null)
     {

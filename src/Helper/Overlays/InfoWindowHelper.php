@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays;
+namespace Fungio\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 /**
  * Info window helper.
@@ -26,7 +26,7 @@ class InfoWindowHelper extends AbstractHelper
    /**
      * Renders an info window.
      *
-     * @param \Ivory\GoogleMap\Overlays\InfoWindow $infoWindow     The info window.
+     * @param \Fungio\GoogleMap\Overlays\InfoWindow $infoWindow     The info window.
      * @param boolean                              $renderPosition TRUE if the position is rendered else FALSE.
      *
      * @return string The JS output.
@@ -45,9 +45,9 @@ class InfoWindowHelper extends AbstractHelper
     /**
      * Renders the info window open flag.
      *
-     * @param \Ivory\GoogleMap\Overlays\InfoWindow $infoWindow The info window.
-     * @param \Ivory\GoogleMap\Map                 $map        The map.
-     * @param \Ivory\GoogleMap\Overlays\Marker     $marker     The marker.
+     * @param \Fungio\GoogleMap\Overlays\InfoWindow $infoWindow The info window.
+     * @param \Fungio\GoogleMap\Map                 $map        The map.
+     * @param \Fungio\GoogleMap\Overlays\Marker     $marker     The marker.
      *
      * @return string The JS output.
      */
@@ -68,7 +68,7 @@ class InfoWindowHelper extends AbstractHelper
     /**
      * Configures the json builder in order to render an info window.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\InfoWinfow $infoWindow     The info window.
+     * @param \Fungio\GoogleMap\Helper\Overlays\InfoWinfow $infoWindow     The info window.
      * @param boolean                                     $renderPosition TRUE if the position is rendered else FALSE.
      */
     protected function doRender(InfoWindow $infoWindow, $renderPosition)

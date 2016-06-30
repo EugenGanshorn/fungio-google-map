@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Base;
+namespace Fungio\Tests\GoogleMap\Base;
 
-use Ivory\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Base\Bound;
 
 /**
  * Bound test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Base\Bound;
  */
 class BoundTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /**
@@ -48,9 +48,9 @@ class BoundTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $southWest = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $northEast = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $extends = array($this->getMock('Ivory\GoogleMap\Overlays\ExtendableInterface'));
+        $southWest = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $northEast = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $extends = array($this->getMock('Fungio\GoogleMap\Overlays\ExtendableInterface'));
 
         $this->bound = new Bound($southWest, $northEast, $extends);
 
@@ -64,7 +64,7 @@ class BoundTest extends \PHPUnit_Framework_TestCase
 
     public function testSouthWestWithCoordinate()
     {
-        $southWest = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $southWest = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->bound->setSouthWest($southWest);
 
         $this->assertSame($southWest, $this->bound->getSouthWest());
@@ -88,11 +88,11 @@ class BoundTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage
      * The south west setter arguments is invalid.
      * The available prototypes are :
-     *  - function setSouthWest(Ivory\GoogleMap\Base\Coordinate $southWest)
+     *  - function setSouthWest(Fungio\GoogleMap\Base\Coordinate $southWest)
      *  - function setSouthWest(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testSouthWestWithInvalidValue()
@@ -102,7 +102,7 @@ class BoundTest extends \PHPUnit_Framework_TestCase
 
     public function testNorthEastWithCoordinate()
     {
-        $northEast = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $northEast = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->bound->setNorthEast($northEast);
 
         $this->assertSame($northEast, $this->bound->getNorthEast());
@@ -126,11 +126,11 @@ class BoundTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\BaseException
+     * @expectedException \Fungio\GoogleMap\Exception\BaseException
      * @expectedExceptionMessage
      * The north east setter arguments is invalid.
      * The available prototypes are :
-     *  - function setNorthEast(Ivory\GoogleMap\Base\Coordinate $northEast)
+     *  - function setNorthEast(Fungio\GoogleMap\Base\Coordinate $northEast)
      *  - function setNorthEast(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testNorthEastWithInvalidValue()

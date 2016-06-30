@@ -12,8 +12,8 @@ In fact, when you use a marker in your map, internally, a marker cluster is used
 marker cluster. Then, a marker cluster is a simple object which stores a type, markers & options:
 
 ``` php
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 $map = new Map();
 
@@ -31,7 +31,7 @@ The default marker cluster is the marker cluster which does nothing... As a map 
 implementation allows to fallback on the default google map behavior. To enable it:
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 $markerCluster->setType(MarkerCluster::_DEFAULT);
 $markerCluster->setType('default');
@@ -43,7 +43,7 @@ The javascript marker cluster provides a [MarkerCluster](http://google-maps-util
 integration. To enable it:
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 $markerCluster->setType(MarkerCluster::MARKER_CLUSTER);
 $markerCluster->setType('marker_cluster');
@@ -64,9 +64,9 @@ clustering. So, first step is create your own implementation:
 ``` php
 namespace Acme\GoogleMap;
 
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Helper\Overlays\MarkerCluster\AbstractMarkerClusterHelper;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Helper\Overlays\MarkerCluster\AbstractMarkerClusterHelper;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 class MyFuckingMarkerClusterHelper extends AbstractMarkerClusterHelper
 {
@@ -100,7 +100,7 @@ After, you must register your marker cluster helper:
 
 ``` php
 use Acme\GoogleMap\MyFuckingMarkerClusterHelper;
-use Ivory\GoogleMap\Helper\MapHelper;
+use Fungio\GoogleMap\Helper\MapHelper;
 
 $mapHelper = new MapHelper();
 $markerClusterHelper = new MyFuckingMarkerClusterHelper();

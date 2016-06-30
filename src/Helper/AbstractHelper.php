@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper;
+namespace Fungio\GoogleMap\Helper;
 
-use Ivory\GoogleMap\Map;
-use Ivory\JsonBuilder\JsonBuilder;
+use Fungio\GoogleMap\Map;
+use Fungio\JsonBuilder\JsonBuilder;
 
 /**
  * Abstract helper.
@@ -21,13 +21,13 @@ use Ivory\JsonBuilder\JsonBuilder;
  */
 abstract class AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Utils\JsonBuilder */
+    /** @var \Fungio\GoogleMap\Helper\Utils\JsonBuilder */
     protected $jsonBuilder;
 
     /**
      * Creates an helper.
      *
-     * @param \Ivory\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
+     * @param \Fungio\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
      */
     public function __construct(JsonBuilder $jsonBuilder = null)
     {
@@ -41,7 +41,7 @@ abstract class AbstractHelper
     /**
      * Gets the json builder.
      *
-     * @return \Ivory\JsonBuilder\JsonBuilder The json builder.
+     * @return \Fungio\JsonBuilder\JsonBuilder The json builder.
      */
     public function getJsonBuilder()
     {
@@ -51,7 +51,7 @@ abstract class AbstractHelper
     /**
      * Sets the json builder.
      *
-     * @param \Ivory\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
+     * @param \Fungio\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
      */
     public function setJsonBuilder(JsonBuilder $jsonBuilder)
     {
@@ -61,7 +61,7 @@ abstract class AbstractHelper
     /**
      * Gets the javascript container name according to the map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The javascript container name.
      */

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Exception\DirectionsException;
 
 /**
  * A directions response wraps the directions results (routes) & the response status.
@@ -65,7 +65,7 @@ class DirectionsResponse
     /**
      * Add a directions route.
      *
-     * @param Ivory\GoogleMapBundle\Model\Services\Directions\DirectionsRoute $route The route to add.
+     * @param Fungio\GoogleMapBundle\Model\Services\Directions\DirectionsRoute $route The route to add.
      */
     public function addRoute(DirectionsRoute $route)
     {
@@ -87,7 +87,7 @@ class DirectionsResponse
      *
      * @param string $status The directions response status.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the status is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the status is not valid.
      */
     public function setStatus($status)
     {

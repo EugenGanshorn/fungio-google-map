@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Geometry;
+namespace Fungio\Tests\GoogleMap\Helper\Geometry;
 
-use Ivory\GoogleMap\Helper\Geometry\EncodingHelper;
+use Fungio\GoogleMap\Helper\Geometry\EncodingHelper;
 
 /**
  * Encoding helper test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Helper\Geometry\EncodingHelper;
  */
 class EncodingHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Geometry\EncodingHelper */
+    /** @var \Fungio\GoogleMap\Helper\Geometry\EncodingHelper */
     protected $encodingHelper;
 
     /**
@@ -56,7 +56,7 @@ class EncodingHelperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\HelperException
+     * @expectedException \Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The encoded path must be a string value.
      */
     public function testRenderDecodePathWithInvalidValue()

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,37 +9,37 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper;
+namespace Fungio\GoogleMap\Helper;
 
-use Ivory\GoogleMap\Exception\HelperException;
-use Ivory\GoogleMap\Helper\Base\BoundHelper;
-use Ivory\GoogleMap\Helper\Base\CoordinateHelper;
-use Ivory\GoogleMap\Helper\Base\PointHelper;
-use Ivory\GoogleMap\Helper\Base\SizeHelper;
-use Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper;
-use Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper;
-use Ivory\GoogleMap\Helper\Controls\PanControlHelper;
-use Ivory\GoogleMap\Helper\Controls\RotateControlHelper;
-use Ivory\GoogleMap\Helper\Controls\ScaleControlHelper;
-use Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper;
-use Ivory\GoogleMap\Helper\Controls\ZoomControlHelper;
-use Ivory\GoogleMap\Helper\Events\EventManagerHelper;
-use Ivory\GoogleMap\Helper\Extension\CoreExtensionHelper;
-use Ivory\GoogleMap\Helper\Extension\ExtensionHelperInterface;
-use Ivory\GoogleMap\Helper\Layers\KMLLayerHelper;
-use Ivory\GoogleMap\Helper\MapTypeIdHelper;
-use Ivory\GoogleMap\Helper\Overlays\CircleHelper;
-use Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper;
-use Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper;
-use Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper;
-use Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper;
-use Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface;
-use Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper;
-use Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper;
-use Ivory\GoogleMap\Helper\Overlays\PolygonHelper;
-use Ivory\GoogleMap\Helper\Overlays\PolylineHelper;
-use Ivory\GoogleMap\Helper\Overlays\RectangleHelper;
-use Ivory\GoogleMap\Map;
+use Fungio\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Helper\Base\BoundHelper;
+use Fungio\GoogleMap\Helper\Base\CoordinateHelper;
+use Fungio\GoogleMap\Helper\Base\PointHelper;
+use Fungio\GoogleMap\Helper\Base\SizeHelper;
+use Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper;
+use Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper;
+use Fungio\GoogleMap\Helper\Controls\PanControlHelper;
+use Fungio\GoogleMap\Helper\Controls\RotateControlHelper;
+use Fungio\GoogleMap\Helper\Controls\ScaleControlHelper;
+use Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper;
+use Fungio\GoogleMap\Helper\Controls\ZoomControlHelper;
+use Fungio\GoogleMap\Helper\Events\EventManagerHelper;
+use Fungio\GoogleMap\Helper\Extension\CoreExtensionHelper;
+use Fungio\GoogleMap\Helper\Extension\ExtensionHelperInterface;
+use Fungio\GoogleMap\Helper\Layers\KMLLayerHelper;
+use Fungio\GoogleMap\Helper\MapTypeIdHelper;
+use Fungio\GoogleMap\Helper\Overlays\CircleHelper;
+use Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper;
+use Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper;
+use Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper;
+use Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper;
+use Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface;
+use Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper;
+use Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper;
+use Fungio\GoogleMap\Helper\Overlays\PolygonHelper;
+use Fungio\GoogleMap\Helper\Overlays\PolylineHelper;
+use Fungio\GoogleMap\Helper\Overlays\RectangleHelper;
+use Fungio\GoogleMap\Map;
 
 /**
  * Map helper.
@@ -48,76 +48,76 @@ use Ivory\GoogleMap\Map;
  */
 class MapHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Base\CoordinateHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\CoordinateHelper */
     protected $coordinateHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Base\BoundHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\BoundHelper */
     protected $boundHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Base\PointHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\PointHelper */
     protected $pointHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Base\SizeHelper */
+    /** @var \Fungio\GoogleMap\Helper\Base\SizeHelper */
     protected $sizeHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\MapTypeIdHelper */
+    /** @var \Fungio\GoogleMap\Helper\MapTypeIdHelper */
     protected $mapTypeIdHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper */
     protected $mapTypeControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper */
     protected $overviewMapControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\PanControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\PanControlHelper */
     protected $panControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\RotateControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\RotateControlHelper */
     protected $rotateControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ScaleControlHelper */
     protected $scaleControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper */
     protected $streetViewControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ZoomControlHelper */
     protected $zoomControlHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface */
     protected $markerClusterHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper */
     protected $markerImageHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper */
     protected $markerShapeHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper */
     protected $infoWindowHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\PolylineHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\PolylineHelper */
     protected $polylineHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper */
     protected $encodedPolylineHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\PolygonHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\PolygonHelper */
     protected $polygonHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\RectangleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\RectangleHelper */
     protected $rectangleHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\CircleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\CircleHelper */
     protected $circleHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper */
     protected $groundOverlayHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper */
+    /** @var \Fungio\GoogleMap\Helper\Layers\KMLLayerHelper */
     protected $kmlLayerHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Events\EventManagerHelper */
+    /** @var \Fungio\GoogleMap\Helper\Events\EventManagerHelper */
     protected $eventManagerHelper;
 
     /** @var array */
@@ -126,30 +126,30 @@ class MapHelper extends AbstractHelper
     /**
      * Creates a map helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\CoordinateHelper                 $coordinateHelper         The coordinate helper.
-     * @param \Ivory\GoogleMap\Helper\Base\BoundHelper                      $boundHelper              The bound helper.
-     * @param \Ivory\GoogleMap\Helper\Base\PointHelper                      $pointHelper              The point helper.
-     * @param \Ivory\GoogleMap\Helper\Base\SizeHelper                       $sizeHelper               The size helper.
-     * @param \Ivory\GoogleMap\Helper\MapTypeIdHelper                       $mapTypeIdHelper          The map type id helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper         $mapTypeControlHelper     The map type control helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper     $overviewMapControlHelper The overview map control helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\PanControlHelper             $panControlHelper         The pan control helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\RotateControlHelper          $rotateControlHelper      The rotate control helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper           $scaleControlHelper       The scale control helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper      $streetViewControlHelper  The street view control helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper            $zoomControlHelper        The zoom control helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerClusterHelperInterface $markerClusterHelper      The marker cluster helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper            $markerImageHelper        The marker image helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper            $markerShapeHelper        The marker shape helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper             $infoWindowHelper         The info window helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\PolylineHelper               $polylineHelper           The polyline helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper        $encodedPolylineHelper    The encoded polyline helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\PolygonHelper                $polygonHelper            The polygon helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\RectangleHelper              $rectangleHelper          The rectangle helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\CircleHelper                 $circleHelper             The circle helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper          $groundOverlayHelper      The ground overlay helper.
-     * @param \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper                 $kmlLayerHelper           The KML layer helper.
-     * @param \Ivory\GoogleMap\Helper\Events\EventManagerHelper             $eventManagerHelper       The event manager helper.
+     * @param \Fungio\GoogleMap\Helper\Base\CoordinateHelper                 $coordinateHelper         The coordinate helper.
+     * @param \Fungio\GoogleMap\Helper\Base\BoundHelper                      $boundHelper              The bound helper.
+     * @param \Fungio\GoogleMap\Helper\Base\PointHelper                      $pointHelper              The point helper.
+     * @param \Fungio\GoogleMap\Helper\Base\SizeHelper                       $sizeHelper               The size helper.
+     * @param \Fungio\GoogleMap\Helper\MapTypeIdHelper                       $mapTypeIdHelper          The map type id helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper         $mapTypeControlHelper     The map type control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper     $overviewMapControlHelper The overview map control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\PanControlHelper             $panControlHelper         The pan control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\RotateControlHelper          $rotateControlHelper      The rotate control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ScaleControlHelper           $scaleControlHelper       The scale control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper      $streetViewControlHelper  The street view control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ZoomControlHelper            $zoomControlHelper        The zoom control helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerClusterHelperInterface $markerClusterHelper      The marker cluster helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper            $markerImageHelper        The marker image helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper            $markerShapeHelper        The marker shape helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper             $infoWindowHelper         The info window helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\PolylineHelper               $polylineHelper           The polyline helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper        $encodedPolylineHelper    The encoded polyline helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\PolygonHelper                $polygonHelper            The polygon helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\RectangleHelper              $rectangleHelper          The rectangle helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\CircleHelper                 $circleHelper             The circle helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper          $groundOverlayHelper      The ground overlay helper.
+     * @param \Fungio\GoogleMap\Helper\Layers\KMLLayerHelper                 $kmlLayerHelper           The KML layer helper.
+     * @param \Fungio\GoogleMap\Helper\Events\EventManagerHelper             $eventManagerHelper       The event manager helper.
      * @param array                                                         $extensionHelpers         The extension helpers.
      */
     public function __construct(
@@ -316,7 +316,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the coordinate helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Base\CoordinateHelper The coordinate helper.
+     * @return \Fungio\GoogleMap\Helper\Base\CoordinateHelper The coordinate helper.
      */
     public function getCoordinateHelper()
     {
@@ -326,7 +326,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the coordinate helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\CoordinateHelper $coordinateHelper The coordinate helper.
+     * @param \Fungio\GoogleMap\Helper\Base\CoordinateHelper $coordinateHelper The coordinate helper.
      */
     public function setCoordinateHelper(CoordinateHelper $coordinateHelper)
     {
@@ -336,7 +336,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the bound helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Base\BoundHelper The bound helper.
+     * @return \Fungio\GoogleMap\Helper\Base\BoundHelper The bound helper.
      */
     public function getBoundHelper()
     {
@@ -346,7 +346,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the bound helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\BoundHelper $boundHelper The bound helper.
+     * @param \Fungio\GoogleMap\Helper\Base\BoundHelper $boundHelper The bound helper.
      */
     public function setBoundHelper(BoundHelper $boundHelper)
     {
@@ -356,7 +356,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the point helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Base\PointHelper The point helper.
+     * @return \Fungio\GoogleMap\Helper\Base\PointHelper The point helper.
      */
     public function getPointHelper()
     {
@@ -366,7 +366,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the point helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\PointHelper $pointHelper The point helper.
+     * @param \Fungio\GoogleMap\Helper\Base\PointHelper $pointHelper The point helper.
      */
     public function setPointHelper(PointHelper $pointHelper)
     {
@@ -376,7 +376,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the size helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Base\SizeHelper The size helper.
+     * @return \Fungio\GoogleMap\Helper\Base\SizeHelper The size helper.
      */
     public function getSizeHelper()
     {
@@ -386,7 +386,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the size helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Base\SizeHelper $sizeHelper The size helper.
+     * @param \Fungio\GoogleMap\Helper\Base\SizeHelper $sizeHelper The size helper.
      */
     public function setSizeHelper(SizeHelper $sizeHelper)
     {
@@ -396,7 +396,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the map type id helper.
      *
-     * @return \Ivory\GoogleMap\Helper\MapTypeIdHelper The map type id helper.
+     * @return \Fungio\GoogleMap\Helper\MapTypeIdHelper The map type id helper.
      */
     public function getMapTypeIdHelper()
     {
@@ -406,7 +406,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the map type id helper.
      *
-     * @param \Ivory\GoogleMap\Helper\MapTypeIdHelper $mapTypeIdHelper The map type id helper.
+     * @param \Fungio\GoogleMap\Helper\MapTypeIdHelper $mapTypeIdHelper The map type id helper.
      */
     public function setMapTypeIdHelper(MapTypeIdHelper $mapTypeIdHelper)
     {
@@ -416,7 +416,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the map type control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper The map type control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper The map type control helper.
      */
     public function getMapTypeControlHelper()
     {
@@ -426,7 +426,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the map type control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper $mapTypeControlHelper The map type control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper $mapTypeControlHelper The map type control helper.
      */
     public function setMapTypeControlHelper(MapTypeControlHelper $mapTypeControlHelper)
     {
@@ -436,7 +436,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the overview map control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper The overview map control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper The overview map control helper.
      */
     public function getOverviewMapControlHelper()
     {
@@ -446,7 +446,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the overview map control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper $overviewMapControlHelper The overview map
+     * @param \Fungio\GoogleMap\Helper\Controls\OverviewMapControlHelper $overviewMapControlHelper The overview map
      *                                                                                            control helper.
      */
     public function setOverviewMapControlHelper(OverviewMapControlHelper $overviewMapControlHelper)
@@ -457,7 +457,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the pan control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\PanControlHelper The pan control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\PanControlHelper The pan control helper.
      */
     public function getPanControlHelper()
     {
@@ -467,7 +467,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the pan control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\PanControlHelper $panControlHelper The pan control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\PanControlHelper $panControlHelper The pan control helper.
      */
     public function setPanControlHelper(PanControlHelper $panControlHelper)
     {
@@ -477,7 +477,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the rotate control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\RotateControlHelper The rotate control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\RotateControlHelper The rotate control helper.
      */
     public function getRotateControlHelper()
     {
@@ -487,7 +487,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the rotate control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\RotateControlHelper $rotateControlHelper The rotate control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\RotateControlHelper $rotateControlHelper The rotate control helper.
      */
     public function setRotateControlHelper(RotateControlHelper $rotateControlHelper)
     {
@@ -497,7 +497,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the scale control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper The scale control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ScaleControlHelper The scale control helper.
      */
     public function getScaleControlHelper()
     {
@@ -507,7 +507,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the scale control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper $scaleControlHelper The scale control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ScaleControlHelper $scaleControlHelper The scale control helper.
      */
     public function setScaleControlHelper(ScaleControlHelper $scaleControlHelper)
     {
@@ -517,7 +517,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the street view control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper The street view control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper The street view control helper.
      */
     public function getStreetViewControlHelper()
     {
@@ -527,7 +527,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the street view control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper $streetViewControlHelper The street view control
+     * @param \Fungio\GoogleMap\Helper\Controls\StreetViewControlHelper $streetViewControlHelper The street view control
      *                                                                                          helper.
      */
     public function setStreetViewControlHelper(StreetViewControlHelper $streetViewControlHelper)
@@ -538,7 +538,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the zoom control helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper The zoom control helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ZoomControlHelper The zoom control helper.
      */
     public function getZoomControlHelper()
     {
@@ -548,7 +548,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the zoom control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper $zoomControlHelper The zoom control helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ZoomControlHelper $zoomControlHelper The zoom control helper.
      */
     public function setZoomControlHelper(ZoomControlHelper $zoomControlHelper)
     {
@@ -558,7 +558,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the marker cluster helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface The marker cluster helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface The marker cluster helper.
      */
     public function getMarkerClusterHelper()
     {
@@ -568,7 +568,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the marker cluster helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface $markerClusterHelper The marker cluster helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelperInterface $markerClusterHelper The marker cluster helper.
      */
     public function setMarkerClusterHelper(MarkerClusterHelperInterface $markerClusterHelper)
     {
@@ -578,7 +578,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the marker image helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper The marker image helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper The marker image helper.
      */
     public function getMarkerImageHelper()
     {
@@ -588,7 +588,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the marker image helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper $markerImageHelper The marker image helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerImageHelper $markerImageHelper The marker image helper.
      */
     public function setMarkerImageHelper(MarkerImageHelper $markerImageHelper)
     {
@@ -598,7 +598,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the marker shape helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper The marker shape helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper The marker shape helper.
      */
     public function getMarkerShapeHelper()
     {
@@ -608,7 +608,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the marker shape helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper $markerShapeHelper The marker shape helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerShapeHelper $markerShapeHelper The marker shape helper.
      */
     public function setMarkerShapeHelper(MarkerShapeHelper $markerShapeHelper)
     {
@@ -618,7 +618,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the info window helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper The info window helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper The info window helper.
      */
     public function getInfoWindowHelper()
     {
@@ -628,7 +628,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the info window helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper $infoWindowHelper The info window helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper $infoWindowHelper The info window helper.
      */
     public function setInfoWindowHelper(InfoWindowHelper $infoWindowHelper)
     {
@@ -638,7 +638,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the polyline helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\PolylineHelper The polyline helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\PolylineHelper The polyline helper.
      */
     public function getPolylineHelper()
     {
@@ -648,7 +648,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the polyline helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\PolylineHelper $polylineHelper The polyline helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\PolylineHelper $polylineHelper The polyline helper.
      */
     public function setPolylineHelper(PolylineHelper $polylineHelper)
     {
@@ -658,7 +658,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the encoded polyline helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper The encoded polyline helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper The encoded polyline helper.
      */
     public function getEncodedPolylineHelper()
     {
@@ -668,7 +668,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the encoded polyline helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper $encodedPolylineHelper The encoded polyline helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper $encodedPolylineHelper The encoded polyline helper.
      */
     public function setEncodedPolylineHelper(EncodedPolylineHelper $encodedPolylineHelper)
     {
@@ -678,7 +678,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the polygon helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\PolygonHelper The polygon helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\PolygonHelper The polygon helper.
      */
     public function getPolygonHelper()
     {
@@ -688,7 +688,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the polygon helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\PolygonHelper $polygonHelper The polygon helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\PolygonHelper $polygonHelper The polygon helper.
      */
     public function setPolygonHelper(PolygonHelper $polygonHelper)
     {
@@ -698,7 +698,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the rectangle helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\RectangleHelper The rectangle helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\RectangleHelper The rectangle helper.
      */
     public function getRectangleHelper()
     {
@@ -708,7 +708,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the rectangle helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\RectangleHelper $rectangleHelper The rectangle helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\RectangleHelper $rectangleHelper The rectangle helper.
      */
     public function setRectangleHelper(RectangleHelper $rectangleHelper)
     {
@@ -718,7 +718,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the circle helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\CircleHelper The circle helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\CircleHelper The circle helper.
      */
     public function getCircleHelper()
     {
@@ -728,7 +728,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the circle helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\CircleHelper $circleHelper The circle helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\CircleHelper $circleHelper The circle helper.
      */
     public function setCircleHelper(CircleHelper $circleHelper)
     {
@@ -738,7 +738,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the ground overlay helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper The ground overlay helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper The ground overlay helper.
      */
     public function getGroundOverlayHelper()
     {
@@ -748,7 +748,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the ground overlay helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper $groundOverlayHelper The ground overlay helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\GroundOverlayHelper $groundOverlayHelper The ground overlay helper.
      */
     public function setGroundOverlayHelper(GroundOverlayHelper $groundOverlayHelper)
     {
@@ -758,7 +758,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the KML layer helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper The KML layer helper.
+     * @return \Fungio\GoogleMap\Helper\Layers\KMLLayerHelper The KML layer helper.
      */
     public function getKmlLayerHelper()
     {
@@ -768,7 +768,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the KML layer helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper $kmlLayerHelper The KML layer helper.
+     * @param \Fungio\GoogleMap\Helper\Layers\KMLLayerHelper $kmlLayerHelper The KML layer helper.
      */
     public function setKmlLayerHelper(KMLLayerHelper $kmlLayerHelper)
     {
@@ -778,7 +778,7 @@ class MapHelper extends AbstractHelper
     /**
      * Gets the event manager helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Events\EventManagerHelper The event manager helper.
+     * @return \Fungio\GoogleMap\Helper\Events\EventManagerHelper The event manager helper.
      */
     public function getEventManagerHelper()
     {
@@ -788,7 +788,7 @@ class MapHelper extends AbstractHelper
     /**
      * Sets the event manager helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Events\EventManagerHelper $eventManagerHelper The event manager helper.
+     * @param \Fungio\GoogleMap\Helper\Events\EventManagerHelper $eventManagerHelper The event manager helper.
      */
     public function setEventManagerHelper(EventManagerHelper $eventManagerHelper)
     {
@@ -846,9 +846,9 @@ class MapHelper extends AbstractHelper
      *
      * @param string $name The extension helper name.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the extension helper does not exist.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the extension helper does not exist.
      *
-     * @return \Ivory\GoogleMap\Helper\Extension\ExtensionHelperInterface The extension helper.
+     * @return \Fungio\GoogleMap\Helper\Extension\ExtensionHelperInterface The extension helper.
      */
     public function getExtensionHelper($name)
     {
@@ -863,7 +863,7 @@ class MapHelper extends AbstractHelper
      * Sets an extension helper.
      *
      * @param string                                                     $name            The extension helper name.
-     * @param \Ivory\GoogleMap\Helper\Extension\ExtensionHelperInterface $extensionHelper The extension helper.
+     * @param \Fungio\GoogleMap\Helper\Extension\ExtensionHelperInterface $extensionHelper The extension helper.
      */
     public function setExtensionHelper($name, ExtensionHelperInterface $extensionHelper)
     {
@@ -875,7 +875,7 @@ class MapHelper extends AbstractHelper
      *
      * @param string $name The extension helper name.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the extension helper does not exist.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the extension helper does not exist.
      */
     public function removeExtensionHelper($name)
     {
@@ -889,7 +889,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the html (container & stylesheets).
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The HTML output.
      */
@@ -905,7 +905,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the map container.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The HTML output.
      */
@@ -922,7 +922,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the html map stylesheets.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The HTML output.
      */
@@ -946,7 +946,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the map javascripts.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The HTML output.
      */
@@ -974,7 +974,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript libraries.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The HTML output.
      */
@@ -992,7 +992,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders JS code just before the generated one.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1010,7 +1010,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders JS code just after the generated one.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1028,7 +1028,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1068,7 +1068,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container initialization (empty container).
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1117,7 +1117,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container coordinates.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1140,7 +1140,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container bounds.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1163,7 +1163,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container points.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1186,7 +1186,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container sizes.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1209,7 +1209,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1221,7 +1221,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container circles.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1244,7 +1244,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container encoded polylines.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1267,7 +1267,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container ground overlays.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1290,7 +1290,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container polygons.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1313,7 +1313,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container polylines.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1336,7 +1336,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container rectangles.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1359,7 +1359,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container info windows.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1405,7 +1405,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container maker images.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1428,7 +1428,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container marker shapes.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1451,7 +1451,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container marker cluster.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1468,7 +1468,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container KML layer.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1491,7 +1491,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the javascript container event manager.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1541,7 +1541,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the js container extra.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1579,7 +1579,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1611,7 +1611,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the map center.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string Ths JS output.
      */
@@ -1627,7 +1627,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the map bound.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return string The JS output.
      */
@@ -1643,7 +1643,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the coordinates of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed coordinated.
      */
@@ -1707,7 +1707,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the bounds of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed bounds.
      */
@@ -1737,7 +1737,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the points of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed points.
      */
@@ -1773,7 +1773,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the sizes of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed sizes.
      */
@@ -1815,7 +1815,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the marker images of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed marker images.
      */
@@ -1839,7 +1839,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the marker shapes of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed marker shapes.
      */
@@ -1859,7 +1859,7 @@ class MapHelper extends AbstractHelper
     /**
      * Computes the marker info windows of a map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The computed marker info windows.
      */
@@ -1879,7 +1879,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders the map controls in the json builder.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      */
     protected function renderMapControls(Map $map)
     {
@@ -1902,7 +1902,7 @@ class MapHelper extends AbstractHelper
     /**
      * Renders a map control in the json builder.
      *
-     * @param \Ivory\GoogleMap\Map $map           The map.
+     * @param \Fungio\GoogleMap\Map $map           The map.
      * @param string               $controlName   The control name.
      * @param mixed                $controlHelper The control helper.
      */

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Assets;
+namespace Fungio\GoogleMap\Assets;
 
-use Ivory\GoogleMap\Exception\AssetException;
+use Fungio\GoogleMap\Exception\AssetException;
 
 /**
  * Allow easy generation of unique javascript variable for any class model that requires it.
@@ -40,7 +40,7 @@ abstract class AbstractJavascriptVariableAsset
      *
      * @param string $prefixJavascriptVariable The prefix of the javascript variable.
      *
-     * @throws \Ivory\GoogleMap\Exception\AssetException If the prefix javascript variable is not valid.
+     * @throws \Fungio\GoogleMap\Exception\AssetException If the prefix javascript variable is not valid.
      */
     public function setPrefixJavascriptVariable($prefixJavascriptVariable)
     {
@@ -66,7 +66,7 @@ abstract class AbstractJavascriptVariableAsset
      *
      * @param string $javascriptVariable The javascript variable.
      *
-     * @throws \Ivory\GoogleMap\Exception\AssetException If the javascript variable is not valid.
+     * @throws \Fungio\GoogleMap\Exception\AssetException If the javascript variable is not valid.
      */
     public function setJavascriptVariable($javascriptVariable)
     {

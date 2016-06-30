@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
 /**
  * Event exception.
@@ -21,7 +21,7 @@ class EventException extends Exception
     /**
      * Gets the "INVALID CAPTURE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\EventException The "INVALID CAPTURE" exception.
+     * @return \Fungio\GoogleMap\Exception\EventException The "INVALID CAPTURE" exception.
      */
     public static function invalidCapture()
     {
@@ -31,7 +31,7 @@ class EventException extends Exception
     /**
      * Gets the "INVALID EVENT NAME" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\EventException The "INVALID EVENT NAME" exception.
+     * @return \Fungio\GoogleMap\Exception\EventException The "INVALID EVENT NAME" exception.
      */
     public static function invalidEventName()
     {
@@ -41,7 +41,7 @@ class EventException extends Exception
     /**
      * Gets the "INVALID HANDLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\EventException The "INVALID HANDLE" exception.
+     * @return \Fungio\GoogleMap\Exception\EventException The "INVALID HANDLE" exception.
      */
     public static function invalidHandle()
     {
@@ -51,7 +51,7 @@ class EventException extends Exception
     /**
      * Gets the "INVALID INSTANCE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\EventException The "INVALID INSTANCE" exception.
+     * @return \Fungio\GoogleMap\Exception\EventException The "INVALID INSTANCE" exception.
      */
     public static function invalidInstance()
     {

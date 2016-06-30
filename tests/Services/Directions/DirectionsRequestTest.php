@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Directions;
+namespace Fungio\Tests\GoogleMap\Services\Directions;
 
 use \DateTime;
-use Ivory\GoogleMap\Services\Directions\DirectionsRequest;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\Directions\DirectionsRequest;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * Directions request test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Services\Base\UnitSystem;
  */
 class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Directions\DirectionsRequest */
+    /** @var \Fungio\GoogleMap\Services\Directions\DirectionsRequest */
     protected $directionsRequest;
 
     /**
@@ -76,7 +76,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request avoid hightways flag must be a boolean value.
      */
     public function testAvoidHighwaysWithInvalidValue()
@@ -101,7 +101,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request avoid tolls flag must be a boolean value.
      */
     public function testAvoidTollsWithInvalidValue()
@@ -119,7 +119,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testDestinationWithCoordinate()
     {
-        $location = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $location = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->directionsRequest->setDestination($location);
 
@@ -136,11 +136,11 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The destination setter arguments are invalid.
      * The available prototypes are :
      * - function setDestination(string $destination)
-     * - function setDestination(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setDestination(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setDestination(double $latitude, double $longitude, boolean $noWrap)
      */
     public function testDestinationWithInvalidValue()
@@ -165,7 +165,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request optimize waypoints flag must be a boolean value.
      */
     public function testOptimizeWaypointsWithInvalidValue()
@@ -183,7 +183,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testOriginWithCoordinate()
     {
-        $origin = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $origin = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->directionsRequest->setOrigin($origin);
 
         $this->assertSame($origin, $this->directionsRequest->getOrigin());
@@ -199,11 +199,11 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The origin setter arguments are invalid.
      * The available prototypes are :
      * - function setOrigin(string $destination)
-     * - function setOrigin(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setOrigin(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setOrigin(double $latitude, double $longitude, boolean $noWrap)
      */
     public function testOriginWithInvalidValue()
@@ -262,7 +262,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request provide route alternatives flag must be a boolean value.
      */
     public function testProvideRouteAlternativesWithInvalidValue()
@@ -287,7 +287,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request region must be a string with two characters.
      */
     public function testRegionWithInvalidValue()
@@ -312,7 +312,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request language must be a string with two or five characters.
      */
     public function testLanguageWithInvalidValue()
@@ -337,7 +337,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request travel mode can only be : BICYCLING, DRIVING, WALKING, TRANSIT.
      */
     public function testTravelModeWithInvalidValue()
@@ -362,7 +362,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request unit system can only be : IMPERIAL, METRIC.
      */
     public function testUnitSystemWithInvalidValue()
@@ -372,7 +372,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testWaypointWithWaypoint()
     {
-        $waypoint = $this->getMock('Ivory\GoogleMap\Services\Directions\DirectionsWaypoint');
+        $waypoint = $this->getMock('Fungio\GoogleMap\Services\Directions\DirectionsWaypoint');
         $this->directionsRequest->setWaypoints(array($waypoint));
 
         $this->assertTrue($this->directionsRequest->hasWaypoints());
@@ -381,7 +381,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testWaypointWithCoordinate()
     {
-        $coordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $coordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->directionsRequest->setWaypoints(array($coordinate));
 
         $waypoints = $this->directionsRequest->getWaypoints();
@@ -403,12 +403,12 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The waypoint adder arguments are invalid.
      * The available prototypes are :
-     * - function addWaypoint(Ivory\GoogleMap\Services\Directions\DirectionsWaypoint $waypoint)
+     * - function addWaypoint(Fungio\GoogleMap\Services\Directions\DirectionsWaypoint $waypoint)
      * - function addWaypoint(string $location)
-     * - function addWaypoint(Ivory\GoogleMap\Base\Coordinate $location)
+     * - function addWaypoint(Fungio\GoogleMap\Base\Coordinate $location)
      * - function addWaypoint(double $latitude, double $longitude, boolean $noWrap)
      */
     public function testWaypointWithInvalidValue()
@@ -424,7 +424,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request sensor flag must be a boolean value.
      */
     public function testSensorWithInvalidValue()
@@ -461,7 +461,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testIsValidWithValidWaypoint()
     {
-        $waypoint = $this->getMock('Ivory\GoogleMap\Services\Directions\DirectionsWaypoint');
+        $waypoint = $this->getMock('Fungio\GoogleMap\Services\Directions\DirectionsWaypoint');
         $waypoint
             ->expects($this->once())
             ->method('isValid')
@@ -476,7 +476,7 @@ class DirectionsRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testIsValidWithInvalidWaypoint()
     {
-        $waypoint = $this->getMock('Ivory\GoogleMap\Services\Directions\DirectionsWaypoint');
+        $waypoint = $this->getMock('Fungio\GoogleMap\Services\Directions\DirectionsWaypoint');
         $waypoint
             ->expects($this->once())
             ->method('isValid')

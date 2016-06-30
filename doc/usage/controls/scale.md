@@ -5,9 +5,9 @@ The Scale control displays a map scale element. This control is not enabled by d
 ## Build your scale control
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
 
 $scaleControl = new ScaleControl();
 
@@ -19,12 +19,12 @@ $scaleControl->setScaleControlStyle(ScaleControlStyle::DEFAULT_);
 ## Configure your scale control position
 
 For configurating the pan control position, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
+``Fungio\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
 position. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ScaleControl;
 
 $scaleControl = new ScaleControl();
 
@@ -69,12 +69,12 @@ $scaleControl->setControlPosition('bottom_right');
 ## Configure your scale control style
 
 For configurating the scale control style, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ScaleControlStyle`` is here. It allows you to access all constants which describe scale
+``Fungio\GoogleMap\Controls\ScaleControlStyle`` is here. It allows you to access all constants which describe scale
 control style. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
 
 $scaleControl = new ScaleControl();
 
@@ -85,9 +85,9 @@ $scaleControl->setScaleControlStyle(ScaleControlStyle::DEFAULT_);
 ## Add your scale control to the map
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
 
 $scaleControl = new ScaleControl();
 

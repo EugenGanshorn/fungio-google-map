@@ -19,7 +19,7 @@ the value of type as follows:
 ## Build your marker shape
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerShape;
+use Fungio\GoogleMap\Overlays\MarkerShape;
 
 $markerShape = new MarkerShape();
 
@@ -37,7 +37,7 @@ $markerShape->addPolyCoordinates(1, 1);
 Now you have configurated your marker shape, you need to add it to your marker.
 
 ``` php
-use Ivory\GoogleMap\Overlays\MarkerShape;
+use Fungio\GoogleMap\Overlays\MarkerShape;
 
 $markerShape = new MarkerShape();
 

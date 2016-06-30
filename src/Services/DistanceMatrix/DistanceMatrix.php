@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Services\AbstractService;
-use Ivory\GoogleMap\Exception\DistanceMatrixException;
-use Ivory\GoogleMap\Services\Base\Distance;
-use Ivory\GoogleMap\Services\Base\Duration;
+use Fungio\GoogleMap\Services\AbstractService;
+use Fungio\GoogleMap\Exception\DistanceMatrixException;
+use Fungio\GoogleMap\Services\Base\Distance;
+use Fungio\GoogleMap\Services\Base\Duration;
 use Widop\HttpAdapter\HttpAdapterInterface;
 
 /**
@@ -40,9 +40,9 @@ class DistanceMatrix extends AbstractService
      *
      * Available prototypes:
      * - function process(array $origins, array $destinations)
-     * - function process(Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $request)
+     * - function process(Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $request)
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the request is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the request is not valid (prototypes).
      */
     public function process()
     {
@@ -72,7 +72,7 @@ class DistanceMatrix extends AbstractService
     /**
      * Generates distance matrix URL API according to the request.
      *
-     * @param \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $distanceMatrixRequest The distance matrix request.
+     * @param \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $distanceMatrixRequest The distance matrix request.
      *
      * @return string The generated URL.
      */
@@ -193,7 +193,7 @@ class DistanceMatrix extends AbstractService
      *
      * @param \stdClass $distanceMatrixResponse The normalized distance matrix response.
      *
-     * @return \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse The built distance matrix response.
+     * @return \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse The built distance matrix response.
      */
     protected function buildDistanceMatrixResponse(\stdClass $distanceMatrixResponse)
     {
@@ -228,7 +228,7 @@ class DistanceMatrix extends AbstractService
      *
      * @param \stdClass $row The normalized distance matrix response row.
      *
-     * @return \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow The built distance matrix response row.
+     * @return \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow The built distance matrix response row.
      */
     protected function buildDistanceMatrixRow($row)
     {
@@ -246,7 +246,7 @@ class DistanceMatrix extends AbstractService
      *
      * @param \stdClass $element The normalized distance matrix response element.
      *
-     * @return \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement The built distance matrix response element.
+     * @return \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement The built distance matrix response element.
      */
     protected function buildDistanceMatrixResponseElement($element)
     {

@@ -6,8 +6,8 @@ map on non-touch devices. The Pan control also allows you to rotate 45° imagery
 ## Build your pan control
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\PanControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\PanControl;
 
 $panControl = new PanControl();
 
@@ -18,12 +18,12 @@ $panControl->setControlPosition(ControlPosition::TOP_LEFT);
 ## Configure the pan control position
 
 For configurating the pan control position, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
+``Fungio\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
 position. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\PanControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\PanControl;
 
 $panControl = new PanControl();
 
@@ -68,8 +68,8 @@ $panControl->setControlPosition('bottom_right');
 ## Add your pan control to the map
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\PanControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\PanControl;
 
 $panControl = new PanControl();
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Extension;
+namespace Fungio\GoogleMap\Helper\Extension;
 
-use Ivory\GoogleMap\Map;
+use Fungio\GoogleMap\Map;
 
 /**
  * InfoBox extension helper.
@@ -34,7 +34,7 @@ class InfoBoxExtensionHelper extends AbstractExtensionHelper
      */
     public function __construct(
         $source = '//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js',
-        $callback = 'load_ivory_google_map_info_box'
+        $callback = 'load_fungio_google_map_info_box'
     ) {
         $this->setSource($source);
         $this->setCallback($callback);

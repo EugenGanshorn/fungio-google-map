@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Polygon which describes a google map polygon.
@@ -77,10 +77,10 @@ class Polygon extends AbstractOptionsAsset implements ExtendableInterface
      * Adds a coordinate to the polygon.
      *
      * Available prototypes:
-     *  - function addCoordinate(Ivory\GoogleMap\Base\Coordinate $coordinate)
+     *  - function addCoordinate(Fungio\GoogleMap\Base\Coordinate $coordinate)
      *  - function addCoordinate(double $latitude, double $longitude, boolean $noWrap = true)
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the coordinate is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the coordinate is not valid.
      */
     public function addCoordinate()
     {

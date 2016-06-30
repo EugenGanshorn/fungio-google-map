@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper;
 
 /**
  * Encoded polyline helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper;
  */
 class EncodedPolylineHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\EncodedPolylineHelper */
     protected $encodedPolylineHelper;
 
     /**
@@ -43,14 +43,14 @@ class EncodedPolylineHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Geometry\EncodingHelper',
+            'Fungio\GoogleMap\Helper\Geometry\EncodingHelper',
             $this->encodedPolylineHelper->getEncodingHelper()
         );
     }
 
     public function testInitialState()
     {
-        $encodingHelper = $this->getMock('Ivory\GoogleMap\Helper\Geometry\EncodingHelper');
+        $encodingHelper = $this->getMock('Fungio\GoogleMap\Helper\Geometry\EncodingHelper');
 
         $this->encodedPolylineHelper = new EncodedPolylineHelper($encodingHelper);
 
@@ -59,7 +59,7 @@ class EncodedPolylineHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithoutOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')
@@ -78,7 +78,7 @@ class EncodedPolylineHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')

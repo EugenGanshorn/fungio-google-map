@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Events\MouseEvent;
-use Ivory\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Events\MouseEvent;
+use Fungio\GoogleMap\Overlays\InfoWindow;
 
 /**
  * Info window test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Overlays\InfoWindow;
  */
 class InfoWindowTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\InfoWindow */
+    /** @var \Fungio\GoogleMap\Overlays\InfoWindow */
     protected $infoWindow;
 
     /**
@@ -54,8 +54,8 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
     public function testInitialState()
     {
         $content = 'foo';
-        $position = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $pixelOffset = $this->getMock('Ivory\GoogleMap\Base\Size');
+        $position = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $pixelOffset = $this->getMock('Fungio\GoogleMap\Base\Size');
         $opentEvent = MouseEvent::DBLCLICK;
 
         $this->infoWindow = new InfoWindow($content, $position, $pixelOffset, true, $opentEvent, false, true);
@@ -71,7 +71,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
 
     public function testPositionWithCoordinate()
     {
-        $position = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $position = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->infoWindow->setPosition($position);
 
         $this->assertSame($position, $this->infoWindow->getPosition());
@@ -91,17 +91,17 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
 
     public function testPositionWithNullValue()
     {
-        $this->infoWindow->setPosition($this->getMock('Ivory\GoogleMap\Base\Coordinate'));
+        $this->infoWindow->setPosition($this->getMock('Fungio\GoogleMap\Base\Coordinate'));
         $this->infoWindow->setPosition(null);
 
         $this->assertNull($this->infoWindow->getPosition());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The position setter arguments is invalid.
      * The available prototypes are :
-     * - function setPosition(Ivory\GoogleMap\Base\Coordinate $position)
+     * - function setPosition(Fungio\GoogleMap\Base\Coordinate $position)
      * - function setPosition(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testPositionWithInvalidValue()
@@ -111,7 +111,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
 
     public function testPixedOffsetWithSize()
     {
-        $size = $this->getMock('Ivory\GoogleMap\Base\Size');
+        $size = $this->getMock('Fungio\GoogleMap\Base\Size');
         $this->infoWindow->setPixelOffset($size);
 
         $this->assertSame($size, $this->infoWindow->getPixelOffset());
@@ -134,17 +134,17 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
 
     public function testPixelOffsetWithNullValue()
     {
-        $this->infoWindow->setPixelOffset($this->getMock('Ivory\GoogleMap\Base\Size'));
+        $this->infoWindow->setPixelOffset($this->getMock('Fungio\GoogleMap\Base\Size'));
         $this->infoWindow->setPixelOffset(null);
 
         $this->assertNull($this->infoWindow->getPixelOffset());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The pixel offset setter arguments is invalid.
      * The available prototypes are :
-     * - function setPixelOffset(Ivory\GoogleMap\Base\Size $scaledSize)
+     * - function setPixelOffset(Fungio\GoogleMap\Base\Size $scaledSize)
      * - function setPixelOffset(double $width, double $height, string $widthUnit = null, string $heightUnit = null)
      */
     public function testPixedOffsetWithInvalidValue()
@@ -160,7 +160,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The content of an info window must be a string value.
      */
     public function testContentWithInvalidValue()
@@ -176,7 +176,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The open property of an info window must be a boolean value.
      */
     public function testOpenWithInvalidValue()
@@ -192,7 +192,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The auto open property of an info window must be a boolean value.
      */
     public function testAutoOpenWithInvalidValue()
@@ -208,7 +208,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The only available open event are : click, dblclick, mouseup, mousedown, mouseover,
      * mouseout.
      */
@@ -225,7 +225,7 @@ class InfoWindowTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The info window auto close flag must be a boolean value.
      */
     public function testAutoCloseWithInvalidValue()

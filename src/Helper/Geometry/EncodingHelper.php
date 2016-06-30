@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Geometry;
+namespace Fungio\GoogleMap\Helper\Geometry;
 
-use Ivory\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Exception\HelperException;
 
 /**
  * Encoding helper.
@@ -26,7 +26,7 @@ class EncodingHelper
      *
      * @param string $encodedPath The encoded path.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the encoded path is not valid.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the encoded path is not valid.
      *
      * @return string The JS output.
      */

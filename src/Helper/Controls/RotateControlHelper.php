@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\RotateControl;
-use Ivory\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Controls\RotateControl;
+use Fungio\GoogleMap\Helper\AbstractHelper;
 
 /**
  * Rotate control helper.
@@ -21,13 +21,13 @@ use Ivory\GoogleMap\Helper\AbstractHelper;
  */
 class RotateControlHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper */
     protected $controlPositionHelper;
 
     /**
      * Creates a rotate control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
      */
     public function __construct(ControlPositionHelper $controlPositionHelper = null)
     {
@@ -43,7 +43,7 @@ class RotateControlHelper extends AbstractHelper
     /**
      * Gets the control position helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
      */
     public function getControlPositionHelper()
     {
@@ -53,7 +53,7 @@ class RotateControlHelper extends AbstractHelper
     /**
      * Sets the control position helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
      */
     public function setControlPositionHelper(ControlPositionHelper $controlPositionHelper)
     {
@@ -63,7 +63,7 @@ class RotateControlHelper extends AbstractHelper
     /**
      * Renders a rotate control.
      *
-     * @param \Ivory\GoogleMap\Controls\RotateControl $rotateControl The rotate control.
+     * @param \Fungio\GoogleMap\Controls\RotateControl $rotateControl The rotate control.
      *
      * @return string The JS output.
      */

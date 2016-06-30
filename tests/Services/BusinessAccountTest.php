@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services;
+namespace Fungio\Tests\GoogleMap\Services;
 
-use Ivory\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\BusinessAccount;
 
 /**
  * Business account test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\BusinessAccount;
  */
 class BusinessAccountTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\BusinessAccount */
+    /** @var \Fungio\GoogleMap\Services\BusinessAccount */
     protected $businessAccount;
 
     /**

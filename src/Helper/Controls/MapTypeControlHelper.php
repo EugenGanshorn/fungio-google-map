@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Helper\MapTypeIdHelper;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Helper\MapTypeIdHelper;
 
 /**
  * Map type control helper.
@@ -22,21 +22,21 @@ use Ivory\GoogleMap\Helper\MapTypeIdHelper;
  */
 class MapTypeControlHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\MapTypeIdHelper */
+    /** @var \Fungio\GoogleMap\Helper\MapTypeIdHelper */
     protected $mapTypeIdHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper */
     protected $controlPositionHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\MapTypeControleStyleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\MapTypeControleStyleHelper */
     protected $mapTypeControlStyleHelper;
 
     /**
      * Construct a map type control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\MapTypeIdHelper                     $mapTypeIdHelper           The map type ID helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper      $controlPositionHelper     The control position helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\MapTypeControleStyleHelper $mapTypeControlStyleHelper The map type control style helper.
+     * @param \Fungio\GoogleMap\Helper\MapTypeIdHelper                     $mapTypeIdHelper           The map type ID helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper      $controlPositionHelper     The control position helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\MapTypeControleStyleHelper $mapTypeControlStyleHelper The map type control style helper.
      */
     public function __construct(
         MapTypeIdHelper $mapTypeIdHelper = null,
@@ -65,7 +65,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Gets the map type ID helper.
      *
-     * @return \Ivory\GoogleMap\Helper\MapTypeIdHelper The map type ID helper.
+     * @return \Fungio\GoogleMap\Helper\MapTypeIdHelper The map type ID helper.
      */
     public function getMapTypeIdHelper()
     {
@@ -75,7 +75,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Sets the map type ID helper.
      *
-     * @param \Ivory\GoogleMap\Helper\MapTypeIdHelper $mapTypeIdHelper The map type ID helper.
+     * @param \Fungio\GoogleMap\Helper\MapTypeIdHelper $mapTypeIdHelper The map type ID helper.
      */
     public function setMapTypeIdHelper(MapTypeIdHelper $mapTypeIdHelper)
     {
@@ -85,7 +85,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Gets the control position helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
      */
     public function getControlPositionHelper()
     {
@@ -95,7 +95,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Sets the control position helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
      */
     public function setControlPositionHelper(ControlPositionHelper $controlPositionHelper)
     {
@@ -105,7 +105,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Gets the map type control style helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper The map type control style helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\MapTypeControlStyleHelper The map type control style helper.
      */
     public function getMapTypeControlStyleHelper()
     {
@@ -115,7 +115,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Sets the map type control style helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper $mapTypeControlStyleHelper The map type
+     * @param \Fungio\GoogleMap\Helper\Controls\MapTypeControlStyleHelper $mapTypeControlStyleHelper The map type
      *                                                                                              control style
      *                                                                                              helper.
      */
@@ -127,7 +127,7 @@ class MapTypeControlHelper extends AbstractHelper
     /**
      * Renders a map type control.
      *
-     * @param \Ivory\GoogleMap\Controls\MapTypeControl $mapTypeControl The map type control.
+     * @param \Fungio\GoogleMap\Controls\MapTypeControl $mapTypeControl The map type control.
      *
      * @return string The JS output.
      */

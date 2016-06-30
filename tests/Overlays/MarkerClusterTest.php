@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 /**
  * Marker cluster test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\MarkerCluster;
  */
 class MarkerClusterTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\MarkerCluster */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerCluster */
     protected $markerCluster;
 
     /**
@@ -56,7 +56,7 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
 
     public function testMarker()
     {
-        $marker = $this->getMock('Ivory\GoogleMap\Overlays\Marker');
+        $marker = $this->getMock('Fungio\GoogleMap\Overlays\Marker');
         $this->markerCluster->setMarkers(array($marker));
 
         $this->assertTrue($this->markerCluster->hasMarkers());

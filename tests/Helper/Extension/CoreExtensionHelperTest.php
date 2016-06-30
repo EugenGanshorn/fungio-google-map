@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Extension;
+namespace Fungio\Tests\GoogleMap\Helper\Extension;
 
-use Ivory\GoogleMap\Helper\Extension\CoreExtensionHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Helper\Extension\CoreExtensionHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
 
 /**
  * Core extension helper test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Overlays\EncodedPolyline;
  */
 class CoreExtensionHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Extension\CoreExtensionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Extension\CoreExtensionHelper */
     protected $coreExtensionHelper;
 
     /**
@@ -43,17 +43,17 @@ class CoreExtensionHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testDefaultState()
     {
-        $this->assertInstanceOf('Ivory\GoogleMap\Helper\ApiHelper', $this->coreExtensionHelper->getApiHelper());
+        $this->assertInstanceOf('Fungio\GoogleMap\Helper\ApiHelper', $this->coreExtensionHelper->getApiHelper());
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper',
+            'Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper',
             $this->coreExtensionHelper->getMarkerClusterHelper()
         );
     }
 
     public function testInitialState()
     {
-        $apiHelper = $this->getMock('Ivory\GoogleMap\Helper\ApiHelper');
-        $markerClusterHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper');
+        $apiHelper = $this->getMock('Fungio\GoogleMap\Helper\ApiHelper');
+        $markerClusterHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper');
 
         $this->coreExtensionHelper = new CoreExtensionHelper($apiHelper, $markerClusterHelper);
 
@@ -65,9 +65,9 @@ class CoreExtensionHelperTest extends \PHPUnit_Framework_TestCase
     {
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -81,9 +81,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false","callback":load_ivory_google_map}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false","callback":load_fungio_google_map}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -98,9 +98,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places,geometry&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places,geometry&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -111,9 +111,9 @@ EOF;
     {
         $expected1 = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -131,7 +131,7 @@ EOF;
         $map = new Map();
         $map->setAsync(true);
 
-        $this->assertSame('function load_ivory_google_map() {'.PHP_EOL, $this->coreExtensionHelper->renderBefore($map));
+        $this->assertSame('function load_fungio_google_map() {'.PHP_EOL, $this->coreExtensionHelper->renderBefore($map));
     }
 
     public function testRenderAfterWithDefaultMap()

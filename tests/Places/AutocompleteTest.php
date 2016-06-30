@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Places;
+namespace Fungio\Tests\GoogleMap\Places;
 
-use Ivory\GoogleMap\Places\Autocomplete;
-use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
-use Ivory\GoogleMap\Places\AutocompleteType;
+use Fungio\GoogleMap\Places\Autocomplete;
+use Fungio\GoogleMap\Places\AutocompleteComponentRestriction;
+use Fungio\GoogleMap\Places\AutocompleteType;
 
 /**
  * Autocomplete test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Places\AutocompleteType;
  */
 class AutocompleteTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Places\Autocomplete */
+    /** @var \Fungio\GoogleMap\Places\Autocomplete */
     protected $autocomplete;
 
     /**
@@ -61,7 +61,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException \Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete input ID must be a string value.
      */
     public function testInputIdWithInvalidValue()
@@ -71,7 +71,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $this->autocomplete->setBound($bound);
 
         $this->assertSame($bound, $this->autocomplete->getBound());
@@ -79,8 +79,8 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithCoordinates()
     {
-        $southWestCoordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $northEastCoordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $southWestCoordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $northEastCoordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->autocomplete->setBound($southWestCoordinate, $northEastCoordinate);
 
@@ -110,11 +110,11 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException \Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The bound setter arguments is invalid.
      * The available prototypes are :
-     * - function setBound(Ivory\GoogleMap\Base\Bound $bound)
-     * - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     * - function setBound(Fungio\GoogleMap\Base\Bound $bound)
+     * - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      * - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,
@@ -141,7 +141,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete type can only be: establishment, geocode, (regions), (cities).
      */
     public function testAddTypeWithInvalidType()
@@ -150,7 +150,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete type "establishment" already exists.
      */
     public function testAddTypeWithExistingType()
@@ -168,7 +168,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete type "establishment" does not exist.
      */
     public function testRemoveTypeWithNonExistingType()
@@ -194,7 +194,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete component restriction type "country" does not exist.
      */
     public function testComponentRestrictionsWithInvalidComponentRestrictions()
@@ -203,7 +203,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete component restriction can only be: country.
      */
     public function testAddComponentRestrictionWithInvalidComponentRestrictions()
@@ -212,7 +212,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete component restriction type "country" already exists.
      */
     public function testAddComponentRestrictionWithExistingComponentRestriction()
@@ -230,7 +230,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The place autocomplete component restriction type "country" does not exist.
      */
     public function testRemoveComponentRestrictionWithNonExistingComponentRestriction()
@@ -264,7 +264,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\PlaceException
+     * @expectedException \Fungio\GoogleMap\Exception\PlaceException
      * @expectedExceptionMessage The asynchronous load of a place autocomplete must be a boolean value.
      */
     public function testAsyncWithInvalidValue()

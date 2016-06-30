@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Base;
+namespace Fungio\GoogleMap\Helper\Base;
 
-use Ivory\GoogleMap\Base\Size;
+use Fungio\GoogleMap\Base\Size;
 
 /**
  * Size helper.
@@ -23,7 +23,7 @@ class SizeHelper
     /**
      * Renders a size.
      *
-     * @param \Ivory\GoogleMap\Base\Size $size The size.
+     * @param \Fungio\GoogleMap\Base\Size $size The size.
      *
      * @return string The JS output.
      */

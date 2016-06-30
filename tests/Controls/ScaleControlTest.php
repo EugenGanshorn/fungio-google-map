@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Controls;
+namespace Fungio\Tests\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
 
 /**
  * Scale control test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Controls\ScaleControlStyle;
  */
 class ScaleControlTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Controls\ScaleControl */
+    /** @var \Fungio\GoogleMap\Controls\ScaleControl */
     protected $scaleControl;
 
     /**
@@ -56,7 +56,7 @@ class ScaleControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      */
     public function testControlPositionWithInvalidValue()
     {
@@ -64,7 +64,7 @@ class ScaleControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      * @expectedExceptionMessage The scale control style of a scale control can only be : default.
      */
     public function testScaleControlStyleWithInvalidValue()

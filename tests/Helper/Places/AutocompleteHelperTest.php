@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Places;
+namespace Fungio\Tests\GoogleMap\Helper\Places;
 
-use Ivory\GoogleMap\Helper\Places\AutocompleteHelper;
-use Ivory\GoogleMap\Places\Autocomplete;
-use Ivory\GoogleMap\Places\AutocompleteComponentRestriction;
-use Ivory\GoogleMap\Places\AutocompleteType;
+use Fungio\GoogleMap\Helper\Places\AutocompleteHelper;
+use Fungio\GoogleMap\Places\Autocomplete;
+use Fungio\GoogleMap\Places\AutocompleteComponentRestriction;
+use Fungio\GoogleMap\Places\AutocompleteType;
 
 /**
  * Autocomplete helper test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Places\AutocompleteType;
  */
 class AutocompleteHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Places\AutocompleteHelper */
+    /** @var \Fungio\GoogleMap\Helper\Places\AutocompleteHelper */
     protected $autocompleteHelper;
 
     /**
@@ -44,21 +44,21 @@ class AutocompleteHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testDefaultState()
     {
-        $this->assertInstanceOf('Ivory\GoogleMap\Helper\ApiHelper', $this->autocompleteHelper->getApiHelper());
+        $this->assertInstanceOf('Fungio\GoogleMap\Helper\ApiHelper', $this->autocompleteHelper->getApiHelper());
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Base\CoordinateHelper',
+            'Fungio\GoogleMap\Helper\Base\CoordinateHelper',
             $this->autocompleteHelper->getCoordinateHelper()
         );
 
-        $this->assertInstanceOf('ivory\GoogleMap\Helper\Base\BoundHelper', $this->autocompleteHelper->getBoundHelper());
+        $this->assertInstanceOf('fungio\GoogleMap\Helper\Base\BoundHelper', $this->autocompleteHelper->getBoundHelper());
     }
 
     public function testInitialState()
     {
-        $apiHelper = $this->getMock('Ivory\GoogleMap\Helper\ApiHelper');
-        $coordinateHelper = $this->getMock('Ivory\GoogleMap\Helper\Base\CoordinateHelper');
-        $boundHelper = $this->getMock('Ivory\GoogleMap\Helper\Base\BoundHelper');
+        $apiHelper = $this->getMock('Fungio\GoogleMap\Helper\ApiHelper');
+        $coordinateHelper = $this->getMock('Fungio\GoogleMap\Helper\Base\CoordinateHelper');
+        $boundHelper = $this->getMock('Fungio\GoogleMap\Helper\Base\BoundHelper');
 
         $this->autocompleteHelper = new AutocompleteHelper($apiHelper, $coordinateHelper, $boundHelper);
 
@@ -182,9 +182,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 autocomplete = new google.maps.places.Autocomplete(document.getElementById('place_input'), {});
 </script>
@@ -204,9 +204,9 @@ EOF;
 
         $expected1 = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 autocomplete1 = new google.maps.places.Autocomplete(document.getElementById('place_input'), {});
 </script>
@@ -236,9 +236,9 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false"}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 <script type="text/javascript">
 bound_south_west = new google.maps.LatLng(1, 2, true);
 bound_north_east = new google.maps.LatLng(3, 4, false);
@@ -259,14 +259,14 @@ EOF;
 
         $expected = <<<EOF
 <script type="text/javascript">
-function load_ivory_google_place () {
+function load_fungio_google_place () {
 autocomplete = new google.maps.places.Autocomplete(document.getElementById('place_input'), {});
 }
 </script>
 <script type="text/javascript">
-function load_ivory_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false","callback":load_ivory_google_place}); };
+function load_fungio_google_map_api () { google.load("maps", "3", {"other_params":"libraries=places&language=en&sensor=false","callback":load_fungio_google_place}); };
 </script>
-<script type="text/javascript" src="//www.google.com/jsapi?callback=load_ivory_google_map_api"></script>
+<script type="text/javascript" src="//www.google.com/jsapi?callback=load_fungio_google_map_api"></script>
 
 EOF;
 
@@ -274,7 +274,7 @@ EOF;
     }
 
     /**
-     * @expectedException Ivory\GoogleMap\Exception\HelperException
+     * @expectedException Fungio\GoogleMap\Exception\HelperException
      * @expectedExceptionMessage The place autocomplete bound must have coordinates.
      */
     public function testRenderJavascriptsWithInvalidBound()

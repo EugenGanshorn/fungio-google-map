@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Base;
+namespace Fungio\Tests\GoogleMap\Services\Base;
 
-use Ivory\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\TravelMode;
 
 /**
  * Travel mode test.

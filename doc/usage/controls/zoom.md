@@ -7,9 +7,9 @@ left corner on touch devices.
 ## Build your zoom control
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
 
 $zoomControl = new ZoomControl();
 
@@ -21,12 +21,12 @@ $zoomControl->setZoomControlStyle(ZoomControlStyle::DEFAULT_);
 ## Configure your zoom control position
 
 For configurating the zoom control position, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
+``Fungio\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
 position. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ZoomControl;
 
 $zoomControl = new ZoomControl();
 
@@ -71,12 +71,12 @@ $zoomControl->setControlPosition('bottom_right');
 ## Configure your zoom control style
 
 For configurating the zoom control style, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ZoomControlStyle`` is here. It allows you to access all constants which describe zoom
+``Fungio\GoogleMap\Controls\ZoomControlStyle`` is here. It allows you to access all constants which describe zoom
 control style. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
 
 $zoomControl = new ZoomControl();
 
@@ -94,9 +94,9 @@ $zoomControl->setZoomControlStyle('small');
 ## Add your zoom control to the map
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
 
 $zoomControl = new ZoomControl();
 

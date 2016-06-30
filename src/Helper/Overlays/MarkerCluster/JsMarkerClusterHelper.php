@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 /**
  * Javascript marker cluster helper.
@@ -56,8 +56,8 @@ class JsMarkerClusterHelper extends DefaultMarkerClusterHelper
     /**
      * Renders a marker with the js map container.
      *
-     * @param \Ivory\GoogleMap\Overlays\Marker $marker The marker.
-     * @param \Ivory\GoogleMap\Map             $map    The map.
+     * @param \Fungio\GoogleMap\Overlays\Marker $marker The marker.
+     * @param \Fungio\GoogleMap\Map             $map    The map.
      *
      * @return string The JS output.
      */

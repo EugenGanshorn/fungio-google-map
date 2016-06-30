@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\Tests\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * DistanceMatrix request test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Services\Base\UnitSystem;
  */
 class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest */
+    /** @var \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest */
     protected $distanceMatrixRequest;
 
     /**
@@ -72,7 +72,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request avoid hightways flag must be a boolean value.
      */
     public function testAvoidHighwaysWithInvalidValue()
@@ -97,7 +97,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request avoid tolls flag must be a boolean value.
      */
     public function testAvoidTollsWithInvalidValue()
@@ -115,7 +115,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testDestinationWithCoordinate()
     {
-        $location = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $location = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->distanceMatrixRequest->setDestinations(array($location));
 
@@ -140,11 +140,11 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The destination adder arguments are invalid.
      * The available prototypes are :
      * - function setDestination(string $destination)
-     * - function setDestination(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setDestination(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setDestination(double $latitude, double $longitude, boolean $noWrap)
      */
     public function testDestinationWithInvalidValue()
@@ -162,7 +162,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testOriginWithCoordinate()
     {
-        $origin = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $origin = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->distanceMatrixRequest->setOrigins(array($origin));
 
         $origins = $this->distanceMatrixRequest->getOrigins();
@@ -185,11 +185,11 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The origin adder arguments are invalid.
      * The available prototypes are :
      * - function setOrigin(string $origin)
-     * - function setOrigin(Ivory\GoogleMap\Base\Coordinate $origin)
+     * - function setOrigin(Fungio\GoogleMap\Base\Coordinate $origin)
      * - function setOrigin(double $latitude, double $longitude, boolean $noWrap)
      */
     public function testOriginWithInvalidValue()
@@ -214,7 +214,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request region must be a string with two characters.
      */
     public function testRegionWithInvalidValue()
@@ -239,7 +239,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request language must be a string with two or five characters.
      */
     public function testLanguageWithInvalidValue()
@@ -264,7 +264,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request travel mode can only be : BICYCLING, DRIVING, WALKING.
      */
     public function testTravelModeWithTransitValue()
@@ -273,7 +273,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request travel mode can only be : BICYCLING, DRIVING, WALKING.
      */
     public function testTravelModeWithInvalidValue()
@@ -298,7 +298,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request unit system can only be : IMPERIAL, METRIC.
      */
     public function testUnitSystemWithInvalidValue()
@@ -314,7 +314,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix request sensor flag must be a boolean value.
      */
     public function testSensorWithInvalidValue()

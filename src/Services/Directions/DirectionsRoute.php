@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Exception\DirectionsException;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
 
 /**
  * A directions route which describes a google map route.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Overlays\EncodedPolyline;
  */
 class DirectionsRoute
 {
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /** @var string */
@@ -32,7 +32,7 @@ class DirectionsRoute
     /** @var array */
     protected $legs;
 
-    /** @var \Ivory\GoogleMap\Overlays\EncodedPolyline */
+    /** @var \Fungio\GoogleMap\Overlays\EncodedPolyline */
     protected $overviewPolyline;
 
     /** @var string */
@@ -47,10 +47,10 @@ class DirectionsRoute
     /**
      * Creates a directions route.
      *
-     * @param \Ivory\GoogleMap\Base\Bound               $bound            The bound.
+     * @param \Fungio\GoogleMap\Base\Bound               $bound            The bound.
      * @param string                                    $copyrights       The copyrights.
      * @param array                                     $legs             The legs.
-     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $overviewPolyline The encoded polyline.
+     * @param \Fungio\GoogleMap\Overlays\EncodedPolyline $overviewPolyline The encoded polyline.
      * @param string                                    $summary          The summary.
      * @param array                                     $warnings         The warnings.
      * @param array                                     $waypointOrder    The waypoint order.
@@ -76,7 +76,7 @@ class DirectionsRoute
     /**
      * Gets the route bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The route bound.
+     * @return \Fungio\GoogleMap\Base\Bound The route bound.
      */
     public function getBound()
     {
@@ -86,7 +86,7 @@ class DirectionsRoute
     /**
      * Sets the route bound.
      *
-     * @param \Ivory\GoogleMap\Base\Bound $bound The route bound.
+     * @param \Fungio\GoogleMap\Base\Bound $bound The route bound.
      */
     public function setBound(Bound $bound)
     {
@@ -108,7 +108,7 @@ class DirectionsRoute
      *
      * @param string $copyrights The route copyrights.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the copyrights is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the copyrights is not valid.
      */
     public function setCopyrights($copyrights)
     {
@@ -146,7 +146,7 @@ class DirectionsRoute
     /**
      * Adds a leg to the route.
      *
-     * @param \Ivory\GoogleMap\Services\Directions\DirectionsLeg The leg to add.
+     * @param \Fungio\GoogleMap\Services\Directions\DirectionsLeg The leg to add.
      */
     public function addLeg(DirectionsLeg $leg)
     {
@@ -156,7 +156,7 @@ class DirectionsRoute
     /**
      * Gets the route overview polyline.
      *
-     * @return \Ivory\GoogleMap\Overlays\EncodedPolyline The route overview polyline.
+     * @return \Fungio\GoogleMap\Overlays\EncodedPolyline The route overview polyline.
      */
     public function getOverviewPolyline()
     {
@@ -166,7 +166,7 @@ class DirectionsRoute
     /**
      * Sets the route overview polyline.
      *
-     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $overviewPolyline The route overview polyline.
+     * @param \Fungio\GoogleMap\Overlays\EncodedPolyline $overviewPolyline The route overview polyline.
      */
     public function setOverviewPolyline(EncodedPolyline $overviewPolyline)
     {
@@ -188,7 +188,7 @@ class DirectionsRoute
      *
      * @param string $summary The route summary.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the summary is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the summary is not valid.
      */
     public function setSummary($summary)
     {
@@ -228,7 +228,7 @@ class DirectionsRoute
      *
      * @param string $warning The warning to add.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the warning is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the warning is not valid.
      */
     public function addWarning($warning)
     {
@@ -268,7 +268,7 @@ class DirectionsRoute
      *
      * @param integer $waypointOrder The waypoint to add.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the waypoint order is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the waypoint order is not valid.
      */
     public function addWaypointOrder($waypointOrder)
     {

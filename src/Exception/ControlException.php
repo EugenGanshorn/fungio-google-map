@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\MapTypeId;
 
 /**
  * Control exception.
@@ -27,7 +27,7 @@ class ControlException extends Exception
     /**
      * Gets the "INVALID CONTROL POSITION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ControlException The "INVALID CONTROL POSITION" exception.
+     * @return \Fungio\GoogleMap\Exception\ControlException The "INVALID CONTROL POSITION" exception.
      */
     public static function invalidControlPosition()
     {
@@ -40,7 +40,7 @@ class ControlException extends Exception
     /**
      * Gets the "INVALID MAP TYPE CONTROL STYLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ControlException The "INVALID MAP TYPE CONTROL STYLE" exception.
+     * @return \Fungio\GoogleMap\Exception\ControlException The "INVALID MAP TYPE CONTROL STYLE" exception.
      */
     public static function invalidMapTypeControlStyle()
     {
@@ -53,7 +53,7 @@ class ControlException extends Exception
     /**
      * Gets the "INVALID MAP TYPE ID" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ControlException The "INVALID MAP TYPE ID" exception.
+     * @return \Fungio\GoogleMap\Exception\ControlException The "INVALID MAP TYPE ID" exception.
      */
     public static function invalidMapTypeId()
     {
@@ -63,7 +63,7 @@ class ControlException extends Exception
     /**
      * Gets the "INVALID OVERVIEW MAP CONTROL OPENED" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ControlException The "INVALID OVERVIEW MAP CONTROL OPENED" exception.
+     * @return \Fungio\GoogleMap\Exception\ControlException The "INVALID OVERVIEW MAP CONTROL OPENED" exception.
      */
     public static function invalidOverviewMapControlOpened()
     {
@@ -73,7 +73,7 @@ class ControlException extends Exception
     /**
      * Gets the "INVALID SCALE CONTROL STYLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ControlException The "INVALID SCALE CONTROL STYLE" exception.
+     * @return \Fungio\GoogleMap\Exception\ControlException The "INVALID SCALE CONTROL STYLE" exception.
      */
     public static function invalidScaleControlStyle()
     {
@@ -86,7 +86,7 @@ class ControlException extends Exception
     /**
      * Gets the "INVALID ZOOM CONTROL STYLE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\ControlException The "INVALID ZOOM CONTROL STYLE" exception.
+     * @return \Fungio\GoogleMap\Exception\ControlException The "INVALID ZOOM CONTROL STYLE" exception.
      */
     public static function invalidZoomControlStyle()
     {

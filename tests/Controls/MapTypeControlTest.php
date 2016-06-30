@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Controls;
+namespace Fungio\Tests\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\MapTypeId;
 
 /**
  * Map type control test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\MapTypeId;
  */
 class MapTypeControlTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Controls\MapTypeControl */
+    /** @var \Fungio\GoogleMap\Controls\MapTypeControl */
     protected $mapTypeControl;
 
     /**
@@ -63,7 +63,7 @@ class MapTypeControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      * @expectedExceptionMessage The map type id can only be : hybrid, roadmap, satellite, terrain.
      */
     public function testMapTypeIdWithInvalidValue()
@@ -72,7 +72,7 @@ class MapTypeControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      * @expectedExceptionMessage The control position can only be : bottom_center, bottom_left, bottom_right,
      * left_bottom, left_center, left_top, right_bottom, right_center, right_top, top_center, top_left, top_right.
      */
@@ -82,7 +82,7 @@ class MapTypeControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      * @expectedExceptionMessage The map type control style can only be : default, dropdown_menu, horizontal_bar.
      */
     public function testMapTypeControlStyleWithInvalidValue()

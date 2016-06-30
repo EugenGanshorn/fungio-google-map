@@ -8,7 +8,7 @@ center of the circle, radius of the circle, in meters.
 ## Build your circle
 
 ``` php
-use Ivory\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Overlays\Circle;
 
 $circle = new Circle();
 
@@ -28,7 +28,7 @@ $circle->setOptions(array(
 ## Add your circle to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Overlays\Circle;
 
 $circle = new Circle();
 

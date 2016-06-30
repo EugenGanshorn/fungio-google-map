@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Polyline;
 
 /**
  * Polyline test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\Polyline;
  */
 class PolylineTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\Polyline */
+    /** @var \Fungio\GoogleMap\Overlays\Polyline */
     protected $polyline;
 
     /**
@@ -47,8 +47,8 @@ class PolylineTest extends \PHPUnit_Framework_TestCase
     public function testInitialState()
     {
         $coordinates = array(
-            $this->getMock('Ivory\GoogleMap\Base\Coordinate'),
-            $this->getMock('Ivory\GoogleMap\Base\Coordinate'),
+            $this->getMock('Fungio\GoogleMap\Base\Coordinate'),
+            $this->getMock('Fungio\GoogleMap\Base\Coordinate'),
         );
 
         $this->polyline = new Polyline($coordinates);
@@ -73,10 +73,10 @@ class PolylineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The coordinate adder arguments is invalid.
      * The available prototypes are :
-     * - function addCoordinate(Ivory\GoogleMap\Base\Coordinate $coordinate)
+     * - function addCoordinate(Fungio\GoogleMap\Base\Coordinate $coordinate)
      * - function addCoordinate(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testCoordinateWithInvalidValue()

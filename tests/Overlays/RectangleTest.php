@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Overlays\Rectangle;
 
 /**
  * Rectangle test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\Rectangle;
  */
 class RectangleTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\Rectangle */
+    /** @var \Fungio\GoogleMap\Overlays\Rectangle */
     protected $rectangle;
 
     /**
@@ -52,7 +52,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $bound
             ->expects($this->once())
             ->method('hasCoordinates')
@@ -65,7 +65,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase
 
     public function testBoundWithValidBound()
     {
-        $bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $bound
             ->expects($this->once())
             ->method('hasCoordinates')
@@ -77,18 +77,18 @@ class RectangleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage A rectangle bound must have a south west & a north east coordinate.
      */
     public function testBoundWithInvalidBound()
     {
-        $this->rectangle->setBound($this->getMock('Ivory\GoogleMap\Base\Bound'));
+        $this->rectangle->setBound($this->getMock('Fungio\GoogleMap\Base\Bound'));
     }
 
     public function testBoundWithCoordinates()
     {
-        $southWeestCoordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
-        $northEastCoordinate = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $southWeestCoordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
+        $northEastCoordinate = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->rectangle->setBound($southWeestCoordinate, $northEastCoordinate);
 
@@ -123,11 +123,11 @@ class RectangleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The bound setter arguments is invalid.
      * The available prototypes are :
-     * - function setBound(Ivory\GoogleMap\Base\Bound $bound)
-     * - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     * - function setBound(Fungio\GoogleMap\Base\Bound $bound)
+     * - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      * - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Directions;
+namespace Fungio\Tests\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Services\Directions\DirectionsRoute;
+use Fungio\GoogleMap\Services\Directions\DirectionsRoute;
 
 /**
  * Directions route test.
@@ -20,10 +20,10 @@ use Ivory\GoogleMap\Services\Directions\DirectionsRoute;
  */
 class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Directions\DirectionsRoute */
+    /** @var \Fungio\GoogleMap\Services\Directions\DirectionsRoute */
     protected $directionsRoute;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /** @var string */
@@ -32,7 +32,7 @@ class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
     /** @var array */
     protected $legs;
 
-    /** @var \Ivory\GoogleMap\Overlays\EncodedPolyline */
+    /** @var \Fungio\GoogleMap\Overlays\EncodedPolyline */
     protected $encodedPolyline;
 
     /** @var string */
@@ -49,16 +49,16 @@ class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->bound = $this->getMock('Ivory\GoogleMap\Base\Bound');
+        $this->bound = $this->getMock('Fungio\GoogleMap\Base\Bound');
         $this->copyrights = 'foo';
 
-        $leg = $this->getMockBuilder('Ivory\GoogleMap\Services\Directions\DirectionsLeg')
+        $leg = $this->getMockBuilder('Fungio\GoogleMap\Services\Directions\DirectionsLeg')
             ->disableOriginalConstructor()
             ->getMock();
 
         $this->legs = array($leg);
 
-        $this->encodedPolyline = $this->getMock('Ivory\GoogleMap\Overlays\EncodedPolyline');
+        $this->encodedPolyline = $this->getMock('Fungio\GoogleMap\Overlays\EncodedPolyline');
         $this->summary = 'bar';
         $this->warnings = array('foo', 'baz');
         $this->waypointOrder = array(3, 2, 1);
@@ -101,7 +101,7 @@ class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions route copyrights must be a string value.
      */
     public function testCopyrightsWithInvalidValue()
@@ -110,7 +110,7 @@ class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions route summary must be a string value.
      */
     public function testSummaryWithInvalidValue()
@@ -119,7 +119,7 @@ class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions route warning must be a string value.
      */
     public function testWarningsWithInvalidValue()
@@ -128,7 +128,7 @@ class DirectionsRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions route waypoint order must be an integer value.
      */
     public function testWaypointOrderWithInvalidValue()

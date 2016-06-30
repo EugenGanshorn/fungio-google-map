@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Base;
+namespace Fungio\GoogleMap\Base;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Exception\BaseException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Exception\BaseException;
 
 /**
  * Size which describes a google map size.
@@ -68,7 +68,7 @@ class Size extends AbstractJavascriptVariableAsset
      *
      * @param double $width The width size.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the width is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the width is not valid.
      */
     public function setWidth($width)
     {
@@ -94,7 +94,7 @@ class Size extends AbstractJavascriptVariableAsset
      *
      * @param double $height The height size.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the height is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the height is not valid.
      */
     public function setHeight($height)
     {
@@ -130,7 +130,7 @@ class Size extends AbstractJavascriptVariableAsset
      *
      * @param string $widthUnit The width unit size.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the width unit is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the width unit is not valid.
      */
     public function setWidthUnit($widthUnit)
     {
@@ -156,7 +156,7 @@ class Size extends AbstractJavascriptVariableAsset
      *
      * @param string $heightUnit The height unit size.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the height unit is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the height unit is not valid.
      */
     public function setHeightUnit($heightUnit)
     {

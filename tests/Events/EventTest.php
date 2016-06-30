@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Events;
+namespace Fungio\Tests\GoogleMap\Events;
 
-use Ivory\GoogleMap\Events\Event;
+use Fungio\GoogleMap\Events\Event;
 
 /**
  * Event test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Events\Event;
  */
 class EventTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Events\Event */
+    /** @var \Fungio\GoogleMap\Events\Event */
     protected $event;
 
     /**
@@ -65,7 +65,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\EventException
+     * @expectedException \Fungio\GoogleMap\Exception\EventException
      * @expectedExceptionMessage The instance of an event must be a string value.
      */
     public function testInstanceWithInvalidValue()
@@ -81,7 +81,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\EventException
+     * @expectedException \Fungio\GoogleMap\Exception\EventException
      * @expectedExceptionMessage The event name of an event must be a string value.
      */
     public function testEventNameWithInvalidValue()
@@ -97,7 +97,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\EventException
+     * @expectedException \Fungio\GoogleMap\Exception\EventException
      * @expectedExceptionMessage The handle of an event must be a string value.
      */
     public function testHandleWithInvalidValue()
@@ -113,7 +113,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\EventException
+     * @expectedException \Fungio\GoogleMap\Exception\EventException
      * @expectedExceptionMessage The capture property of an event must be a boolean value.
      */
     public function testCaptureWithInvalidValue()

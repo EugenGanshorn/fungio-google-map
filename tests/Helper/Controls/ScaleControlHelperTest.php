@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Controls\ScaleControlStyle;
-use Ivory\GoogleMap\Helper\Controls\ScaleControlHelper;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Controls\ScaleControlStyle;
+use Fungio\GoogleMap\Helper\Controls\ScaleControlHelper;
 
 /**
  * Scale control helper test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Helper\Controls\ScaleControlHelper;
  */
 class ScaleControlHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ScaleControlHelper */
     protected $scaleControlHelper;
 
     /**
@@ -45,20 +45,20 @@ class ScaleControlHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ControlPositionHelper',
+            'Fungio\GoogleMap\Helper\Controls\ControlPositionHelper',
             $this->scaleControlHelper->getControlPositionHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper',
+            'Fungio\GoogleMap\Helper\Controls\ScaleControlStyleHelper',
             $this->scaleControlHelper->getScaleControlStyleHelper()
         );
     }
 
     public function testInitialState()
     {
-        $controlPositionHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ControlPositionHelper');
-        $scaleControlStyleHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper');
+        $controlPositionHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ControlPositionHelper');
+        $scaleControlStyleHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ScaleControlStyleHelper');
 
         $this->scaleControlHelper = new ScaleControlHelper($controlPositionHelper, $scaleControlStyleHelper);
 

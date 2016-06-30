@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Extension;
+namespace Fungio\GoogleMap\Helper\Extension;
 
-use Ivory\GoogleMap\Helper\ApiHelper;
-use Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper;
-use Ivory\GoogleMap\Map;
+use Fungio\GoogleMap\Helper\ApiHelper;
+use Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper;
+use Fungio\GoogleMap\Map;
 
 /**
  * Core extension helper.
@@ -22,17 +22,17 @@ use Ivory\GoogleMap\Map;
  */
 class CoreExtensionHelper implements ExtensionHelperInterface
 {
-    /** @var \Ivory\GoogleMap\Helper\ApiHelper */
+    /** @var \Fungio\GoogleMap\Helper\ApiHelper */
     protected $apiHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper */
     protected $markerClusterHelper;
 
     /**
      * Creates a core extension helper.
      *
-     * @param \Ivory\GoogleMap\Helper\ApiHelper                                  $apiHelper           The api helper.
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper $markerClusterHelper The marker cluster helper.
+     * @param \Fungio\GoogleMap\Helper\ApiHelper                                  $apiHelper           The api helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper $markerClusterHelper The marker cluster helper.
      */
     public function __construct(ApiHelper $apiHelper = null, MarkerClusterHelper $markerClusterHelper = null)
     {
@@ -51,7 +51,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
     /**
      * Gets the api helper.
      *
-     * @return \Ivory\GoogleMap\Helper\ApiHelper The api helper.
+     * @return \Fungio\GoogleMap\Helper\ApiHelper The api helper.
      */
     public function getApiHelper()
     {
@@ -61,7 +61,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
     /**
      * Sets the api helper.
      *
-     * @param \Ivory\GoogleMap\Helper\ApiHelper $apiHelper The api helper.
+     * @param \Fungio\GoogleMap\Helper\ApiHelper $apiHelper The api helper.
      */
     public function setApiHelper(ApiHelper $apiHelper)
     {
@@ -71,7 +71,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
     /**
      * Gets the marker cluster helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper The marker cluster helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper The marker cluster helper.
      */
     public function getMarkerClusterHelper()
     {
@@ -81,7 +81,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
     /**
      * Sets the marker cluster helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper $markerClusterHelper The marker cluster helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper $markerClusterHelper The marker cluster helper.
      */
     public function setMarkerClusterHelper(MarkerClusterHelper $markerClusterHelper)
     {
@@ -100,7 +100,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
         $callback = null;
 
         if ($map->isAsync()) {
-            $callback = 'load_ivory_google_map';
+            $callback = 'load_fungio_google_map';
         }
 
         $output = array();
@@ -117,7 +117,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
     public function renderBefore(Map $map)
     {
         if ($map->isAsync()) {
-            return 'function load_ivory_google_map() {'.PHP_EOL;
+            return 'function load_fungio_google_map() {'.PHP_EOL;
         }
     }
 
@@ -134,7 +134,7 @@ class CoreExtensionHelper implements ExtensionHelperInterface
     /**
      * Gets the libraries needed for the map.
      *
-     * @param \Ivory\GoogleMap\Map $map The map.
+     * @param \Fungio\GoogleMap\Map $map The map.
      *
      * @return array The map libraries.
      */

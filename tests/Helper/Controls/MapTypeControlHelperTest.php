@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\MapTypeId;
-use Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper;
 
 /**
  * Map type control helper test.
@@ -24,7 +24,7 @@ use Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper;
  */
 class MapTypeControlHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\MapTypeControlHelper */
     protected $mapTypeControlHelper;
 
     /**
@@ -46,26 +46,26 @@ class MapTypeControlHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\MapTypeIdHelper',
+            'Fungio\GoogleMap\Helper\MapTypeIdHelper',
             $this->mapTypeControlHelper->getMapTypeIdHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ControlPositionHelper',
+            'Fungio\GoogleMap\Helper\Controls\ControlPositionHelper',
             $this->mapTypeControlHelper->getControlPositionHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper',
+            'Fungio\GoogleMap\Helper\Controls\MapTypeControlStyleHelper',
             $this->mapTypeControlHelper->getMapTypeControlStyleHelper()
         );
     }
 
     public function testInitialState()
     {
-        $mapTypeIdHelper = $this->getMock('Ivory\GoogleMap\Helper\MapTypeIdHelper');
-        $controlPositionHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ControlPositionHelper');
-        $mapTypeControlStyleHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper');
+        $mapTypeIdHelper = $this->getMock('Fungio\GoogleMap\Helper\MapTypeIdHelper');
+        $controlPositionHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ControlPositionHelper');
+        $mapTypeControlStyleHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\MapTypeControlStyleHelper');
 
         $this->mapTypeControlHelper = new MapTypeControlHelper(
             $mapTypeIdHelper,

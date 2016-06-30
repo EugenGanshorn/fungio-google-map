@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\Tests\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent;
+use Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent;
 
 /**
  * Geocoder address component test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent;
  */
 class GeocoderAddressComponentTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent */
+    /** @var \Fungio\GoogleMap\Services\Geocoding\Result\GeocoderAddressComponent */
     protected $geocoderAddressComponent;
 
     /** @var string */
@@ -74,7 +74,7 @@ class GeocoderAddressComponentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder address component long name must be a string value.
      */
     public function testLongNameWithInvalidValue()
@@ -90,7 +90,7 @@ class GeocoderAddressComponentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder address component short name must be a string value.
      */
     public function testShortNameWithInvalidValue()
@@ -107,7 +107,7 @@ class GeocoderAddressComponentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\GeocodingException
+     * @expectedException \Fungio\GoogleMap\Exception\GeocodingException
      * @expectedExceptionMessage The geocoder address component type must be a string value.
      */
     public function testTypesWithInvalidValue()

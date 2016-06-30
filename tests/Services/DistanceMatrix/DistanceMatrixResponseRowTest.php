@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\Tests\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow;
 
 /**
  * Directions response row test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow;
  */
 class DirectionsResponseRowTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse */
+    /** @var \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse */
     protected $distanceMatrixResponseRow;
 
     /** @var array */
@@ -31,7 +31,7 @@ class DirectionsResponseRowTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $element = $this->getMockBuilder('Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement')
+        $element = $this->getMockBuilder('Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement')
             ->disableOriginalConstructor()
             ->getMock();
 

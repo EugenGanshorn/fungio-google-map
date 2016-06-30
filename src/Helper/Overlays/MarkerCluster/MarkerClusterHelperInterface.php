@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\MarkerCluster;
 
 /**
  * Marker cluster helper.
@@ -24,8 +24,8 @@ interface MarkerClusterHelperInterface
     /**
      * Renders a marker cluster with the js map container.
      *
-     * @param \Ivory\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
-     * @param \Ivory\GoogleMap\Map                    $map           The map
+     * @param \Fungio\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
+     * @param \Fungio\GoogleMap\Map                    $map           The map
      *
      * @return string The JS output.
      */
@@ -34,8 +34,8 @@ interface MarkerClusterHelperInterface
     /**
      * Renders the markers of a marker cluster with the js container.
      *
-     * @param \Ivory\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
-     * @param \Ivory\GoogleMap\Map                    $map           The map.
+     * @param \Fungio\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
+     * @param \Fungio\GoogleMap\Map                    $map           The map.
      *
      * @return string The JS output.
      */
@@ -44,8 +44,8 @@ interface MarkerClusterHelperInterface
     /**
      * Renders the marker cluster libraries.
      *
-     * @param \Ivory\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
-     * @param \Ivory\GoogleMap\Map                    $map           The map.
+     * @param \Fungio\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
+     * @param \Fungio\GoogleMap\Map                    $map           The map.
      *
      * @return string The html output.
      */

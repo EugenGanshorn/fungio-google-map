@@ -9,19 +9,19 @@ by the Google Maps API, and consists of rows containing duration and distance va
 
 This service does not return detailed route information. Route information can be obtained by passing the desired
 single origin and destination to the
-[Directions API](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/directions/directions.md).
+[Directions API](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/directions/directions.md).
 
 ## Request the distance matrix service
 
 ``` php
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrix;
 use Widop\HttpAdapter\CurlHttpAdapter;
 
 $distanceMatrix = new DistanceMatrix(new CurlHttpAdapter());
 ```
 
 If you want to use it with a business account, you can read this
-[documentation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/business_account.md).
+[documentation](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/business_account.md).
 
 ## Processes a request
 
@@ -30,16 +30,16 @@ $response = $distanceMatrix->process(array('Vancouver BC'), array('San Francisco
 ```
 
 The distance matrix allows you to proceess a much more advanced request. If you want to lear more, you can read this
-[documentation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/distance_matrix/distance_matrix_request.md).
+[documentation](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/distance_matrix/distance_matrix_request.md).
 
 ## Distance matrix response
 
 When you have requested your distance matrix, the returned object is an
-``Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse``. It wraps a status, origins, destinations and rows.
+``Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse``. It wraps a status, origins, destinations and rows.
 
 ### Distance matrix status
 
-The available status are defined by the ``Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus`` constants.
+The available status are defined by the ``Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus`` constants.
 
 ``` php
 // Get the status
@@ -86,7 +86,7 @@ foreach ($rows as $row) {
 ## Distance matrix element
 
 The information about each origin-destination pairing is represented by the
-`Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElement`. An element contains a status, a duration and
+`Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixElement`. An element contains a status, a duration and
 a distance.
 
 ``` php
@@ -97,7 +97,7 @@ foreach ($elements as $element) {
 
 ### Distance matrix element status
 
-The available status are defined by the ``Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus``
+The available status are defined by the ``Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus``
 constants.
 
 ``` php
@@ -107,7 +107,7 @@ $status = $element->getStatus();
 
 ### Distance matrix element distance
 
-The duration of this route represented by `Ivory\GoogleMap\Services\Base\Distance`.
+The duration of this route represented by `Fungio\GoogleMap\Services\Base\Distance`.
 
 ``` php
 // Get the distance
@@ -116,7 +116,7 @@ $distance = $element->getDistance();
 
 ### Distance matrix element duration
 
-The duration of this route represented by `Ivory\GoogleMap\Services\Base\Duration`.
+The duration of this route represented by `Fungio\GoogleMap\Services\Base\Duration`.
 
 ``` php
 // Get the duration

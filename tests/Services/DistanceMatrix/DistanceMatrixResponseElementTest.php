@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\Tests\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
 
 /**
  * Directions response row test.
@@ -21,16 +21,16 @@ use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseElement;
  */
 class DirectionsResponseElementTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse */
+    /** @var \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponse */
     protected $distanceMatrixResponseElement;
 
     /** @var string */
     protected $status;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Distance */
+    /** @var \Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Duration */
+    /** @var \Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
     /**
@@ -40,11 +40,11 @@ class DirectionsResponseElementTest extends \PHPUnit_Framework_TestCase
     {
         $this->status = DistanceMatrixElementStatus::ZERO_RESULTS;
 
-        $this->distance = $this->getMockBuilder('Ivory\GoogleMap\Services\Base\Distance')
+        $this->distance = $this->getMockBuilder('Fungio\GoogleMap\Services\Base\Distance')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->duration = $this->getMockBuilder('Ivory\GoogleMap\Services\Base\Duration')
+        $this->duration = $this->getMockBuilder('Fungio\GoogleMap\Services\Base\Duration')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -74,7 +74,7 @@ class DirectionsResponseElementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DistanceMatrixException
+     * @expectedException \Fungio\GoogleMap\Exception\DistanceMatrixException
      * @expectedExceptionMessage The distance matrix response element status can only be : NOT_FOUND, OK, ZERO_RESULTS.
      */
     public function testStatusWithInvalidValue()

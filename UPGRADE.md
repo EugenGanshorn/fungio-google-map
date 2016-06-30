@@ -2,15 +2,15 @@
 
 ### 1.3 to 1.4
 
- * The `Ivory\GoogleMap\Helper\Utils\JsonBuilder` have been extracted to a dedicated library for reusability purpose.
- * The `Ivory\GoogleMap\Helper\MapHelper::renderJsContainerExtra` has been introduced in order to render method's calls
+ * The `Fungio\GoogleMap\Helper\Utils\JsonBuilder` have been extracted to a dedicated library for reusability purpose.
+ * The `Fungio\GoogleMap\Helper\MapHelper::renderJsContainerExtra` has been introduced in order to render method's calls
    after the JS container.
- * The `Ivory\GoogleMap\Helper\MapHelper::renderJsContainerMap` has been updated to only render the map and so, the
-   method's calls have been moved to the `Ivory\GoogleMap\Helper\MapHelper::renderJsContainerExtra`.
- * The `Ivory\GoogleMap\Helper\MapHelper::renderJsContainerBoundsExtends` method has been removed/merged into the
-   `Ivory\GoogleMap\Helper\MapHelper::renderJsContainerExtra`.
- * The method's calls present in the `Ivory\GoogleMap\Helper\MapHelper::renderAfter` has been moved to the
-   `Ivory\GoogleMap\Helper\MapHelper::renderJsContainerExtra`.
+ * The `Fungio\GoogleMap\Helper\MapHelper::renderJsContainerMap` has been updated to only render the map and so, the
+   method's calls have been moved to the `Fungio\GoogleMap\Helper\MapHelper::renderJsContainerExtra`.
+ * The `Fungio\GoogleMap\Helper\MapHelper::renderJsContainerBoundsExtends` method has been removed/merged into the
+   `Fungio\GoogleMap\Helper\MapHelper::renderJsContainerExtra`.
+ * The method's calls present in the `Fungio\GoogleMap\Helper\MapHelper::renderAfter` has been moved to the
+   `Fungio\GoogleMap\Helper\MapHelper::renderJsContainerExtra`.
 
 ### 1.2.0 to 1.3.0
 
@@ -39,8 +39,8 @@
 
 ### 0.9.1 to 1.0.0
 
- * The  `Distance`, `Duration`, `TravelMode` & `UnitSystem` which lived in the `Ivory\GoogleMap\Services\Directions`
-   namespace have been moved in the `Ivory\GoogleMap\Services\Base` one in order to be shared across services.
+ * The  `Distance`, `Duration`, `TravelMode` & `UnitSystem` which lived in the `Fungio\GoogleMap\Services\Directions`
+   namespace have been moved in the `Fungio\GoogleMap\Services\Base` one in order to be shared across services.
  * The `MapHelper` constructor now takes an `ApiHelper` as first argument (all the other parameters have been moved
    forward).
 

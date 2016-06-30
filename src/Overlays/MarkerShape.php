@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Marker shape which describes a google map marker shape.
@@ -58,7 +58,7 @@ class MarkerShape extends AbstractJavascriptVariableAsset
      *
      * @param string $type The marker schape type.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the type is not valid.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the type is not valid.
      */
     public function setType($type)
     {
@@ -106,7 +106,7 @@ class MarkerShape extends AbstractJavascriptVariableAsset
      *
      * @param array $coordinates The marker shape coordinates.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the coordinates are not valid according to the type.
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the coordinates are not valid according to the type.
      */
     public function setCoordinates(array $coordinates)
     {
@@ -156,7 +156,7 @@ class MarkerShape extends AbstractJavascriptVariableAsset
      * @param integer $x The X coordinate.
      * @param integer $y The Y coordinate.
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the type is not poly or if the poly coordinate is not
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the type is not poly or if the poly coordinate is not
      *                                                     valid.
      */
     public function addPolyCoordinate($x, $y)

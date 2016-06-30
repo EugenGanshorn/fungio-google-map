@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays;
+namespace Fungio\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Marker;
 
 /**
  * Marker helper.
@@ -22,13 +22,13 @@ use Ivory\GoogleMap\Overlays\Marker;
  */
 class MarkerHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\AnimationHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\AnimationHelper */
     protected $animationHelper;
 
     /**
      * Creates a marker helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\AnimationHelper $animationHelper The animation helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\AnimationHelper $animationHelper The animation helper.
      */
     public function __construct(AnimationHelper $animationHelper = null)
     {
@@ -44,7 +44,7 @@ class MarkerHelper extends AbstractHelper
     /**
      * Gets the animation helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\AnimationHelper The animation helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\AnimationHelper The animation helper.
      */
     public function getAnimationHelper()
     {
@@ -54,7 +54,7 @@ class MarkerHelper extends AbstractHelper
     /**
      * Sets the animation helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\AnimationHelper $animationHelper The animation helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\AnimationHelper $animationHelper The animation helper.
      */
     public function setAnimationHelper(AnimationHelper $animationHelper)
     {
@@ -64,8 +64,8 @@ class MarkerHelper extends AbstractHelper
     /**
      * Renders a marker.
      *
-     * @param Ivory\GoogleMap\Overlays\Marker $marker The marker.
-     * @param Ivory\GoogleMap\Map             $map    The map.
+     * @param Fungio\GoogleMap\Overlays\Marker $marker The marker.
+     * @param Fungio\GoogleMap\Map             $map    The map.
      *
      * @return string The JS output.
      */

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper;
+namespace Fungio\Tests\GoogleMap\Helper;
 
 /**
  * Abstract helper test.
@@ -18,7 +18,7 @@ namespace Ivory\Tests\GoogleMap\Helper;
  */
 class AbstractHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\AbstractHelper */
+    /** @var \Fungio\GoogleMap\Helper\AbstractHelper */
     protected $helper;
 
     /**
@@ -26,7 +26,7 @@ class AbstractHelperTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->helper = $this->getMockForAbstractClass('Ivory\GoogleMap\Helper\AbstractHelper');
+        $this->helper = $this->getMockForAbstractClass('Fungio\GoogleMap\Helper\AbstractHelper');
     }
 
     /**
@@ -39,12 +39,12 @@ class AbstractHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $this->assertInstanceOf('Ivory\JsonBuilder\JsonBuilder', $this->helper->getJsonBuilder());
+        $this->assertInstanceOf('Fungio\JsonBuilder\JsonBuilder', $this->helper->getJsonBuilder());
     }
 
     public function testJsContainerName()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')

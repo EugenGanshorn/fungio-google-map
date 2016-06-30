@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays;
+namespace Fungio\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Overlays\MarkerImage;
+use Fungio\GoogleMap\Overlays\MarkerImage;
 
 /**
  * Marker image helper.
@@ -23,7 +23,7 @@ class MarkerImageHelper
     /**
      * Renders a marker image.
      *
-     * @param \Ivory\GoogleMap\Overlays\MarkerImage $markerImage The marker image.
+     * @param \Fungio\GoogleMap\Overlays\MarkerImage $markerImage The marker image.
      *
      * @return string The JS output.
      */

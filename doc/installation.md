@@ -1,6 +1,6 @@
 # Installation
 
-To install the Ivory Google Map library, you will need [Composer](http://getcomposer.org). It's a PHP 5.3+ dependency
+To install the Fungio Google Map library, you will need [Composer](http://getcomposer.org). It's a PHP 5.3+ dependency
 manager which allows you to declare the dependent libraries your project needs and it will install & autoload them for
 you.
 
@@ -18,12 +18,12 @@ $ sudo mv composer.phar /usr/local/bin/composer
 ### Mandatories dependencies
 
 Create a ``composer.json`` file at the root directory of your project and simply require the
-``egeloen/google-map`` package:
+``fungio/google-map`` package:
 
 ```
 {
     "require": {
-        "egeloen/google-map": "dev-master"
+        "fungio/google-map": "dev-master"
     }
 }
 ```
@@ -70,10 +70,10 @@ So easy, you just have to require the generated autoload file and you are alread
 
 require __DIR__.'/vendor/autoload.php';
 
-use Ivory\GoogleMap;
+use Fungio\GoogleMap;
 
 // ...
 ```
 
-The Ivory Google Map library follows the [PSR-4 Standard](http://www.php-fig.org/psr/psr-4/). If you prefer install it
+The Fungio Google Map library follows the [PSR-4 Standard](http://www.php-fig.org/psr/psr-4/). If you prefer install it
 manually, it can be autoload by any convenient autoloader.

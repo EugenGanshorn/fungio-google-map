@@ -2,7 +2,7 @@
 
 /*
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -10,12 +10,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\InfoWindow;
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\Marker;
 
 /**
  * Default marker cluster helper test.
@@ -24,7 +24,7 @@ use Ivory\GoogleMap\Overlays\Marker;
  */
 class DefaultMarkerClusterHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper */
     protected $helper;
 
     /**
@@ -45,13 +45,13 @@ class DefaultMarkerClusterHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testDefaultState()
     {
-        $this->assertInstanceOf('Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper', $this->helper->getInfoWindowHelper());
+        $this->assertInstanceOf('Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper', $this->helper->getInfoWindowHelper());
     }
 
     public function testInitialState()
     {
-        $markerHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\MarkerHelper');
-        $infoWindowHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper');
+        $markerHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\MarkerHelper');
+        $infoWindowHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper');
 
         $this->helper = new DefaultMarkerClusterHelper($markerHelper, $infoWindowHelper);
 
@@ -61,16 +61,16 @@ class DefaultMarkerClusterHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRender()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
-        $markerCluster = $this->getMock('Ivory\GoogleMap\Overlays\MarkerCluster');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
+        $markerCluster = $this->getMock('Fungio\GoogleMap\Overlays\MarkerCluster');
 
         $this->assertNull($this->helper->render($markerCluster, $map));
     }
 
     public function testRenderLibraires()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
-        $markerCluster = $this->getMock('Ivory\GoogleMap\Overlays\MarkerCluster');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
+        $markerCluster = $this->getMock('Fungio\GoogleMap\Overlays\MarkerCluster');
 
         $this->assertNull($this->helper->renderLibraries($markerCluster, $map));
     }

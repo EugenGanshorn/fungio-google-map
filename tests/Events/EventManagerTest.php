@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Events;
+namespace Fungio\Tests\GoogleMap\Events;
 
-use Ivory\GoogleMap\Events\EventManager;
+use Fungio\GoogleMap\Events\EventManager;
 
 /**
  * Event manager test.
@@ -20,10 +20,10 @@ use Ivory\GoogleMap\Events\EventManager;
  */
 class EventManagerTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Events\EventManager */
+    /** @var \Fungio\GoogleMap\Events\EventManager */
     protected $eventManager;
 
-    /** @var \Ivory\GoogleMap\Events\Event */
+    /** @var \Fungio\GoogleMap\Events\Event */
     protected $eventMock;
 
     /**
@@ -32,7 +32,7 @@ class EventManagerTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->eventManager = new EventManager();
-        $this->eventMock = $this->getMock('Ivory\GoogleMap\Events\Event');
+        $this->eventMock = $this->getMock('Fungio\GoogleMap\Events\Event');
     }
 
     /**
@@ -54,10 +54,10 @@ class EventManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialState()
     {
-        $domEvents = array($this->getMock('Ivory\GoogleMap\Events\Event'));
-        $domEventsOnce = array($this->getMock('Ivory\GoogleMap\Events\Event'));
-        $events = array($this->getMock('Ivory\GoogleMap\Events\Event'));
-        $eventsOnce = array($this->getMock('Ivory\GoogleMap\Events\Event'));
+        $domEvents = array($this->getMock('Fungio\GoogleMap\Events\Event'));
+        $domEventsOnce = array($this->getMock('Fungio\GoogleMap\Events\Event'));
+        $events = array($this->getMock('Fungio\GoogleMap\Events\Event'));
+        $eventsOnce = array($this->getMock('Fungio\GoogleMap\Events\Event'));
 
         $this->eventManager = new EventManager($domEvents, $domEventsOnce, $events, $eventsOnce);
 

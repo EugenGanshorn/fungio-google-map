@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Controls;
+namespace Fungio\Tests\GoogleMap\Controls;
 
-use Ivory\GoogleMap\Controls\OverviewMapControl;
+use Fungio\GoogleMap\Controls\OverviewMapControl;
 
 /**
  * Overview map control test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Controls\OverviewMapControl;
  */
 class OverviewMapControlTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Controls\OverviewMapControl */
+    /** @var \Fungio\GoogleMap\Controls\OverviewMapControl */
     protected $overviewMapControl;
 
     /**
@@ -52,7 +52,7 @@ class OverviewMapControlTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ControlException
+     * @expectedException \Fungio\GoogleMap\Exception\ControlException
      * @expectedExceptionMessage The opened property of an overview map control must be a boolean value.
      */
     public function testOpenedWithInvalidValue()

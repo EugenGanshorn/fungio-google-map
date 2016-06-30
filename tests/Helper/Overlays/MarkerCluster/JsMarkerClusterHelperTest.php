@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Helper\Overlays\MarkerCluster\JsMarkerClusterHelper;
-use Ivory\GoogleMap\Map;
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Helper\Overlays\MarkerCluster\JsMarkerClusterHelper;
+use Fungio\GoogleMap\Map;
+use Fungio\GoogleMap\Overlays\Marker;
 
 /**
  * Javscript marker cluster helper test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Overlays\Marker;
  */
 class JsMarkerClusterHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\JsMarkerClusterHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerCluster\JsMarkerClusterHelper */
     protected $helper;
 
     /**
@@ -44,7 +44,7 @@ class JsMarkerClusterHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper',
+            'Fungio\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper',
             $this->helper
         );
     }

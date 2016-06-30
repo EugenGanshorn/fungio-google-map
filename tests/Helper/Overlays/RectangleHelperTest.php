@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Overlays\Rectangle;
-use Ivory\GoogleMap\Helper\Overlays\RectangleHelper;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Helper\Overlays\RectangleHelper;
 
 /**
  * Rectangle helper test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Helper\Overlays\RectangleHelper;
  */
 class RectangleHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\RectangleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\RectangleHelper */
     protected $rectangleHelper;
 
     /**
@@ -43,7 +43,7 @@ class RectangleHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithoutOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')
@@ -65,7 +65,7 @@ class RectangleHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\DistanceMatrix;
+namespace Fungio\GoogleMap\Services\DistanceMatrix;
 
-use Ivory\GoogleMap\Exception\DistanceMatrixException;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
+use Fungio\GoogleMap\Exception\DistanceMatrixException;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
 
 /**
  * A distance matrix response wraps the distance results & the response status.
@@ -145,7 +145,7 @@ class DistanceMatrixResponse
     /**
      * Add a distance matrix route.
      *
-     * @param \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow $row The row to add.
+     * @param \Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixResponseRow $row The row to add.
      */
     public function addRow(DistanceMatrixResponseRow $row)
     {
@@ -167,7 +167,7 @@ class DistanceMatrixResponse
      *
      * @param string $status The distance matrix status.
      *
-     * @throws \Ivory\GoogleMap\Exception\DistanceMatrixException If the status is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DistanceMatrixException If the status is not valid.
      */
     public function setStatus($status)
     {

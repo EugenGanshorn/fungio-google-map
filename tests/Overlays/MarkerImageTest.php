@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\MarkerImage;
+use Fungio\GoogleMap\Overlays\MarkerImage;
 
 /**
  * Marker image test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\MarkerImage;
  */
 class MarkerImageTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\MarkerImage */
+    /** @var \Fungio\GoogleMap\Overlays\MarkerImage */
     protected $markerImage;
 
     /**
@@ -51,10 +51,10 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
     public function testInitialState()
     {
         $url = 'foo';
-        $anchor = $this->getMock('Ivory\GoogleMap\Base\Point');
-        $origin = $this->getMock('Ivory\GoogleMap\Base\Point');
-        $scaledSize = $this->getMock('Ivory\GoogleMap\Base\Size');
-        $size = $this->getMock('Ivory\GoogleMap\Base\Size');
+        $anchor = $this->getMock('Fungio\GoogleMap\Base\Point');
+        $origin = $this->getMock('Fungio\GoogleMap\Base\Point');
+        $scaledSize = $this->getMock('Fungio\GoogleMap\Base\Size');
+        $size = $this->getMock('Fungio\GoogleMap\Base\Size');
 
         $this->markerImage = new MarkerImage($url, $anchor, $origin, $scaledSize, $size);
 
@@ -73,7 +73,7 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The url of a maker image must be a string value.
      */
     public function testUrlWithInvalidValue()
@@ -83,7 +83,7 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testAnchorWithPoint()
     {
-        $point = $this->getMock('Ivory\GoogleMap\Base\Point');
+        $point = $this->getMock('Fungio\GoogleMap\Base\Point');
         $this->markerImage->setAnchor($point);
 
         $this->assertSame($point, $this->markerImage->getAnchor());
@@ -102,17 +102,17 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testAnchorWithNullValue()
     {
-        $this->markerImage->setAnchor($this->getMock('Ivory\GoogleMap\Base\Point'));
+        $this->markerImage->setAnchor($this->getMock('Fungio\GoogleMap\Base\Point'));
         $this->markerImage->setAnchor(null);
 
         $this->assertNull($this->markerImage->getAnchor());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The anchor setter arguments is invalid.
      * The available prototypes are :
-     * - function setAnchor(Ivory\GoogleMap\Base\Point $anchor)
+     * - function setAnchor(Fungio\GoogleMap\Base\Point $anchor)
      * - function setAnchor(double x, double y)
      */
     public function testAnchorWithInvalidValue()
@@ -122,7 +122,7 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testOriginWithPoint()
     {
-        $point = $this->getMock('Ivory\GoogleMap\Base\Point');
+        $point = $this->getMock('Fungio\GoogleMap\Base\Point');
         $this->markerImage->setOrigin($point);
 
         $this->assertSame($point, $this->markerImage->getOrigin());
@@ -141,17 +141,17 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testOriginWithNullValue()
     {
-        $this->markerImage->setOrigin($this->getMock('Ivory\GoogleMap\Base\Point'));
+        $this->markerImage->setOrigin($this->getMock('Fungio\GoogleMap\Base\Point'));
         $this->markerImage->setOrigin(null);
 
         $this->assertNull($this->markerImage->getOrigin());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The origin setter arguments is invalid.
      * The available prototypes are :
-     * - function setOrigin(Ivory\GoogleMap\Base\Point $anchor)
+     * - function setOrigin(Fungio\GoogleMap\Base\Point $anchor)
      * - function setOrigin(double x, double y)
      */
     public function testOriginWithInvalidValue()
@@ -161,7 +161,7 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testScaledSizeWithSize()
     {
-        $size = $this->getMock('Ivory\GoogleMap\Base\Size');
+        $size = $this->getMock('Fungio\GoogleMap\Base\Size');
         $this->markerImage->setScaledSize($size);
 
         $this->assertSame($size, $this->markerImage->getScaledSize());
@@ -185,17 +185,17 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testScaledSizeWithNullValue()
     {
-        $this->markerImage->setScaledSize($this->getMock('Ivory\GoogleMap\Base\Size'));
+        $this->markerImage->setScaledSize($this->getMock('Fungio\GoogleMap\Base\Size'));
         $this->markerImage->setScaledSize(null);
 
         $this->assertNull($this->markerImage->getScaledSize());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The scaled size setter arguments is invalid.
      * The available prototypes are :
-     * - function setScaledSize(Ivory\GoogleMap\Base\Size $scaledSize = null)
+     * - function setScaledSize(Fungio\GoogleMap\Base\Size $scaledSize = null)
      * - function setScaledSize(double $width, double $height, string $widthUnit = null, string $heightUnit = null)
      */
     public function testScaledSizeWithInvalidValue()
@@ -205,7 +205,7 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testSizeWithSize()
     {
-        $size = $this->getMock('Ivory\GoogleMap\Base\Size');
+        $size = $this->getMock('Fungio\GoogleMap\Base\Size');
         $this->markerImage->setSize($size);
 
         $this->assertSame($size, $this->markerImage->getSize());
@@ -229,17 +229,17 @@ class MarkerImageTest extends \PHPUnit_Framework_TestCase
 
     public function testSizeWithNullValue()
     {
-        $this->markerImage->setSize($this->getMock('Ivory\GoogleMap\Base\Size'));
+        $this->markerImage->setSize($this->getMock('Fungio\GoogleMap\Base\Size'));
         $this->markerImage->setSize(null);
 
         $this->assertNull($this->markerImage->getSize());
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The size setter arguments is invalid.
      * The available prototypes are :
-     * - function setSize(Ivory\GoogleMap\Base\Size $scaledSize = null)
+     * - function setSize(Fungio\GoogleMap\Base\Size $scaledSize = null)
      * - function setSize(double $width, double $height, string $widthUnit = null, string $heightUnit = null)
      */
     public function testSizeWithInvalidValue()

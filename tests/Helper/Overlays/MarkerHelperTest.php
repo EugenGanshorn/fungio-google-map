@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Overlays\Animation;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Helper\Overlays\MarkerHelper;
+use Fungio\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Helper\Overlays\MarkerHelper;
 
 /**
  * Marker helper test.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Helper\Overlays\MarkerHelper;
  */
 class MarkerHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerHelper */
     protected $markerHelper;
 
     /**
@@ -44,14 +44,14 @@ class MarkerHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Overlays\AnimationHelper',
+            'Fungio\GoogleMap\Helper\Overlays\AnimationHelper',
             $this->markerHelper->getAnimationHelper()
         );
     }
 
     public function testInitialState()
     {
-        $animationHelper = $this->getMock('Ivory\GoogleMap\Helper\Overlays\AnimationHelper');
+        $animationHelper = $this->getMock('Fungio\GoogleMap\Helper\Overlays\AnimationHelper');
 
         $this->markerHelper = new MarkerHelper($animationHelper);
 
@@ -60,7 +60,7 @@ class MarkerHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithoutOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')
@@ -97,7 +97,7 @@ class MarkerHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWithOptions()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->any())
             ->method('getJavascriptVariable')

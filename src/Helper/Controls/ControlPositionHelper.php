@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Exception\HelperException;
 
 /**
  * Control position helper.
@@ -26,7 +26,7 @@ class ControlPositionHelper
      *
      * @param string $controlPosition The control position.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the control position is not valid.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the control position is not valid.
      *
      * @return The JS output.
      */

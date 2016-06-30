@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Overlays;
+namespace Fungio\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Assets\AbstractOptionsAsset;
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Exception\OverlayException;
+use Fungio\GoogleMap\Assets\AbstractOptionsAsset;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Exception\OverlayException;
 
 /**
  * Ground overlay which describes a google map ground overlay.
@@ -27,14 +27,14 @@ class GroundOverlay extends AbstractOptionsAsset implements ExtendableInterface
     /** @var string */
     protected $url;
 
-    /** @var \Ivory\GoogleMap\Base\Bound */
+    /** @var \Fungio\GoogleMap\Base\Bound */
     protected $bound;
 
     /**
      * Creates a ground overlay.
      *
      * @param string                      $url   The ground overlay url.
-     * @param \Ivory\GoogleMap\Base\Bound $bound The ground overlay bound.
+     * @param \Fungio\GoogleMap\Base\Bound $bound The ground overlay bound.
      */
     public function __construct($url = null, Bound $bound = null)
     {
@@ -80,7 +80,7 @@ class GroundOverlay extends AbstractOptionsAsset implements ExtendableInterface
     /**
      * Gets the ground overlay bound.
      *
-     * @return \Ivory\GoogleMap\Base\Bound The ground overlay bound.
+     * @return \Fungio\GoogleMap\Base\Bound The ground overlay bound.
      */
     public function getBound()
     {
@@ -91,8 +91,8 @@ class GroundOverlay extends AbstractOptionsAsset implements ExtendableInterface
      * Sets the ground overlay bound.
      *
      * Available prototypes:
-     *  - function setBound(Ivory\GoogleMap\Base\Bound $bound)
-     *  - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
+     *  - function setBound(Fungio\GoogleMap\Base\Bound $bound)
+     *  - function setBount(Fungio\GoogleMap\Base\Coordinate $southWest, Fungio\GoogleMap\Base\Coordinate $northEast)
      *  - function setBound(
      *     double $southWestLatitude,
      *     double $southWestLongitude,
@@ -102,7 +102,7 @@ class GroundOverlay extends AbstractOptionsAsset implements ExtendableInterface
      *     boolean $northEastNoWrap = true
      *  )
      *
-     * @throws \Ivory\GoogleMap\Exception\OverlayException If the ground overlay bound is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\OverlayException If the ground overlay bound is not valid (prototypes).
      */
     public function setBound()
     {

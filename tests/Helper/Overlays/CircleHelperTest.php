@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Overlays\Circle;
-use Ivory\GoogleMap\Helper\Overlays\CircleHelper;
+use Fungio\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Helper\Overlays\CircleHelper;
 
 /**
  * Circle helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Overlays\CircleHelper;
  */
 class CircleHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\CircleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\CircleHelper */
     protected $circleHelper;
 
     /**
@@ -42,7 +42,7 @@ class CircleHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRender()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')

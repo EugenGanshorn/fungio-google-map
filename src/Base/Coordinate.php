@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Base;
+namespace Fungio\GoogleMap\Base;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Exception\BaseException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Exception\BaseException;
 
 /**
  * Coordinate which describes a google map coordinate.
@@ -62,7 +62,7 @@ class Coordinate extends AbstractJavascriptVariableAsset
      *
      * @param double $latitude The latitude.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the latitude is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the latitude is not valid.
      */
     public function setLatitude($latitude)
     {
@@ -88,7 +88,7 @@ class Coordinate extends AbstractJavascriptVariableAsset
      *
      * @param double $longitude The longitude.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the longitude is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the longitude is not valid.
      */
     public function setLongitude($longitude)
     {
@@ -114,7 +114,7 @@ class Coordinate extends AbstractJavascriptVariableAsset
      *
      * @param boolean $noWrap TRUE if the coordinate is not wrap else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the no wrap flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the no wrap flag is not valid.
      */
     public function setNoWrap($noWrap)
     {

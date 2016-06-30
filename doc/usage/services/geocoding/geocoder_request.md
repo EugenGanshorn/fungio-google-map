@@ -3,7 +3,7 @@
 ## Build a geocoder request
 
 ``` php
-use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderRequest;
 
 $request = new GeocoderRequest();
 
@@ -24,7 +24,7 @@ If you set an address & a coordinate, address takes precedence over coordinate.
 ## Geocoloate your request
 
 ``` php
-use Ivory\GoogleMap\Services\Geocoding\GeocoderRequest;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderRequest;
 
 $request = new GeocoderRequest();
 

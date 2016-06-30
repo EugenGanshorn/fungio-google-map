@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\DirectionsException;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Services\Base\Distance;
-use Ivory\GoogleMap\Services\Base\Duration;
-use Ivory\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Services\Base\Distance;
+use Fungio\GoogleMap\Services\Base\Duration;
+use Fungio\GoogleMap\Services\Base\TravelMode;
 
 /**
  * A directions step which describes a google map directions step.
@@ -26,22 +26,22 @@ use Ivory\GoogleMap\Services\Base\TravelMode;
  */
 class DirectionsStep
 {
-    /** @var \Ivory\GoogleMap\Services\Base\Distance */
+    /** @var \Fungio\GoogleMap\Services\Base\Distance */
     protected $distance;
 
-    /** @var \Ivory\GoogleMap\Services\Base\Duration */
+    /** @var \Fungio\GoogleMap\Services\Base\Duration */
     protected $duration;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $endLocation;
 
     /** @var string */
     protected $instructions;
 
-    /** @var \Ivory\GoogleMap\Overlays\EncodedPolyline */
+    /** @var \Fungio\GoogleMap\Overlays\EncodedPolyline */
     protected $encodedPolyline;
 
-    /** @var \Ivory\GoogleMap\Base\Coordinate */
+    /** @var \Fungio\GoogleMap\Base\Coordinate */
     protected $startLocation;
 
     /** @var string */
@@ -50,12 +50,12 @@ class DirectionsStep
     /**
      * Creates a directions step.
      *
-     * @param \Ivory\GoogleMap\Services\Base\Distance   $distance        The distance.
-     * @param \Ivory\GoogleMap\Services\Base\Duration   $duration        The duration.
-     * @param \Ivory\GoogleMap\Base\Coordinate          $endLocation     The end location.
+     * @param \Fungio\GoogleMap\Services\Base\Distance   $distance        The distance.
+     * @param \Fungio\GoogleMap\Services\Base\Duration   $duration        The duration.
+     * @param \Fungio\GoogleMap\Base\Coordinate          $endLocation     The end location.
      * @param string                                    $instructions    The instructions.
-     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline.
-     * @param \Ivory\GoogleMap\Base\Coordinate          $startLocation   The start location.
+     * @param \Fungio\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline.
+     * @param \Fungio\GoogleMap\Base\Coordinate          $startLocation   The start location.
      * @param string                                    $travelMode      The travel mode.
      */
     public function __construct(
@@ -79,7 +79,7 @@ class DirectionsStep
     /**
      * Gets the step distance.
      *
-     * @return \Ivory\GoogleMap\Services\Base\Distance The step distance.
+     * @return \Fungio\GoogleMap\Services\Base\Distance The step distance.
      */
     public function getDistance()
     {
@@ -89,7 +89,7 @@ class DirectionsStep
     /**
      * Sets the step distance.
      *
-     * @param \Ivory\GoogleMap\Services\Base\Distance $distance The step distance.
+     * @param \Fungio\GoogleMap\Services\Base\Distance $distance The step distance.
      */
     public function setDistance(Distance $distance)
     {
@@ -99,7 +99,7 @@ class DirectionsStep
     /**
      * Gets the step duration.
      *
-     * @return \Ivory\GoogleMap\Services\Base\Duration The step duration.
+     * @return \Fungio\GoogleMap\Services\Base\Duration The step duration.
      */
     public function getDuration()
     {
@@ -109,7 +109,7 @@ class DirectionsStep
     /**
      * Sets the step duration
      *
-     * @param \Ivory\GoogleMap\Services\Base\Duration $duration The step duration.
+     * @param \Fungio\GoogleMap\Services\Base\Duration $duration The step duration.
      */
     public function setDuration(Duration $duration)
     {
@@ -119,7 +119,7 @@ class DirectionsStep
     /**
      * Gets the step end location.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The step end location.
+     * @return \Fungio\GoogleMap\Base\Coordinate The step end location.
      */
     public function getEndLocation()
     {
@@ -129,7 +129,7 @@ class DirectionsStep
     /**
      * Sets the step end location.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $endLocation The step end location.
+     * @param \Fungio\GoogleMap\Base\Coordinate $endLocation The step end location.
      */
     public function setEndLocation(Coordinate $endLocation)
     {
@@ -151,7 +151,7 @@ class DirectionsStep
      *
      * @param string $instructions The step instructions.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the instructions is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the instructions is not valid.
      */
     public function setInstructions($instructions)
     {
@@ -165,7 +165,7 @@ class DirectionsStep
     /**
      * Gets the encoded polyline which describes the step.
      *
-     * @return \Ivory\GoogleMap\Overlays\EncodedPolyline The encoded polyline.
+     * @return \Fungio\GoogleMap\Overlays\EncodedPolyline The encoded polyline.
      */
     public function getEncodedPolyline()
     {
@@ -175,7 +175,7 @@ class DirectionsStep
     /**
      * Sets the encoded polyline which describes the step.
      *
-     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline.
+     * @param \Fungio\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline.
      */
     public function setEncodedPolyline(EncodedPolyline $encodedPolyline)
     {
@@ -185,7 +185,7 @@ class DirectionsStep
     /**
      * Gets the step start location.
      *
-     * @return \Ivory\GoogleMap\Base\Coordinate The step start location.
+     * @return \Fungio\GoogleMap\Base\Coordinate The step start location.
      */
     public function getStartLocation()
     {
@@ -195,7 +195,7 @@ class DirectionsStep
     /**
      * Sets the step start location.
      *
-     * @param \Ivory\GoogleMap\Base\Coordinate $startLocation The step start position.
+     * @param \Fungio\GoogleMap\Base\Coordinate $startLocation The step start position.
      */
     public function setStartLocation(Coordinate $startLocation)
     {
@@ -217,7 +217,7 @@ class DirectionsStep
      *
      * @param string $travelMode The step travel mode.
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the travel mode is not valid.
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the travel mode is not valid.
      */
     public function setTravelMode($travelMode)
     {

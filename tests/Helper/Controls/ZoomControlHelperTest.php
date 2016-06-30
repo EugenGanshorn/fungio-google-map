@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Controls;
+namespace Fungio\Tests\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\Helper\Controls\ZoomControlHelper;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\ZoomControl;
+use Fungio\GoogleMap\Controls\ZoomControlStyle;
+use Fungio\GoogleMap\Helper\Controls\ZoomControlHelper;
 
 /**
  * Zoom control helper test.
@@ -23,7 +23,7 @@ use Ivory\GoogleMap\Helper\Controls\ZoomControlHelper;
  */
 class ZoomControlHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ZoomControlHelper */
     protected $zoomControlHelper;
 
     /**
@@ -45,20 +45,20 @@ class ZoomControlHelperTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ControlPositionHelper',
+            'Fungio\GoogleMap\Helper\Controls\ControlPositionHelper',
             $this->zoomControlHelper->getControlPositionHelper()
         );
 
         $this->assertInstanceOf(
-            'Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper',
+            'Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper',
             $this->zoomControlHelper->getZoomControlStyleHelper()
         );
     }
 
     public function testInitialState()
     {
-        $controlPositionHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ControlPositionHelper');
-        $zoomControlStyleHelper = $this->getMock('Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper');
+        $controlPositionHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ControlPositionHelper');
+        $zoomControlStyleHelper = $this->getMock('Fungio\GoogleMap\Helper\Controls\ZoomControlStyleHelper');
 
         $this->zoomControlHelper = new ZoomControlHelper($controlPositionHelper, $zoomControlStyleHelper);
 

@@ -6,10 +6,10 @@ default in the top right corner of the map.
 ## Build your map type control
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
-use Ivory\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\MapTypeId;
 
 $mapTypeControl = new MapTypeControl();
 
@@ -27,12 +27,12 @@ $mapTypeControl->setMapTypeControlStyle(MapTypeControlStyle::DEFAULT_);
 ## Configure the map type control IDs
 
 For configurating the map type ids, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\MapTypeId`` is here. It allows you to access all constants which describe map types. If you don't
+``Fungio\GoogleMap\MapTypeId`` is here. It allows you to access all constants which describe map types. If you don't
 want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\MapTypeId;
-use Ivory\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Controls\MapTypeControl;
 
 $mapTypeControl = new MapTypeControl();
 
@@ -53,12 +53,12 @@ $mapTypeControl->addMapTypeId('terrain');
 ## Configure the map type control position
 
 For configurating the map type control position, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
+``Fungio\GoogleMap\Controls\ControlPosition`` is here. It allows you to access all constants which describe control
 position. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControl;
 
 $mapTypeControl = new MapTypeControl();
 
@@ -103,12 +103,12 @@ $mapTypeControl->setControlPosition('bottom_right');
 ## Configure the map type control style
 
 For configurating the map type control style, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Controls\MapTypeControlStyle`` is here. It allows you to access all constants which describe map type
+``Fungio\GoogleMap\Controls\MapTypeControlStyle`` is here. It allows you to access all constants which describe map type
 control style. If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMap\Controls\MapTypeControlStyle;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMap\Controls\MapTypeControlStyle;
 
 $mapTypeControl = new MapTypeControl();
 
@@ -126,10 +126,10 @@ $mapTypeControl->setMapTypeControlStyle('horizontal_bar');
 ## Add your map type control to the map
 
 ``` php
-use Ivory\GoogleMapBundle\Model\MapTypeId;
-use Ivory\GoogleMapBundle\Model\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\MapTypeControl;
-use Ivory\GoogleMapBundle\Model\Controls\MapTypeControlStyle;
+use Fungio\GoogleMapBundle\Model\MapTypeId;
+use Fungio\GoogleMapBundle\Model\Controls\ControlPosition;
+use Fungio\GoogleMap\Controls\MapTypeControl;
+use Fungio\GoogleMapBundle\Model\Controls\MapTypeControlStyle;
 
 $mapTypeControl = new MapTypeControl();
 

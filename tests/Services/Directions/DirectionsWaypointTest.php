@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Directions;
+namespace Fungio\Tests\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Services\Directions\DirectionsWaypoint;
+use Fungio\GoogleMap\Services\Directions\DirectionsWaypoint;
 
 /**
  * Directions waypoint test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Directions\DirectionsWaypoint;
  */
 class DirectionsWaypointTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Directions\DirectionsWaypoint */
+    /** @var \Fungio\GoogleMap\Services\Directions\DirectionsWaypoint */
     protected $directionsWaypoint;
 
     /**
@@ -54,7 +54,7 @@ class DirectionsWaypointTest extends \PHPUnit_Framework_TestCase
 
     public function testLocationWithCoordinate()
     {
-        $location = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $location = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
 
         $this->directionsWaypoint->setLocation($location);
 
@@ -71,11 +71,11 @@ class DirectionsWaypointTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The location setter arguments are invalid.
      * The available prototypes are :
      * - function setLocation(string $destination)
-     * - function setLocation(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setLocation(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setLocation(double $latitude, double $longitude, boolean $noWrap)
      */
     public function testLocationWithInvalidValue()
@@ -100,7 +100,7 @@ class DirectionsWaypointTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions waypoint stopover flag must be a boolean value.
      */
     public function testStopoverWithInvalidValue()

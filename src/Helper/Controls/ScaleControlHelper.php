@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\ScaleControl;
-use Ivory\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Controls\ScaleControl;
+use Fungio\GoogleMap\Helper\AbstractHelper;
 
 /**
  * Scale control helper.
@@ -21,18 +21,18 @@ use Ivory\GoogleMap\Helper\AbstractHelper;
  */
 class ScaleControlHelper extends AbstractHelper
 {
-    /** @var \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper */
     protected $controlPositionHelper;
 
-    /** @var \Ivory\GoogleMap\Helper\Controls\ScaleControleStyleHelper */
+    /** @var \Fungio\GoogleMap\Helper\Controls\ScaleControleStyleHelper */
     protected $scaleControlStyleHelper;
 
     /**
      * Construct a scale control helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper    $controlPositionHelper   The control position
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper    $controlPositionHelper   The control position
      *                                                                                           helper.
-     * @param \Ivory\GoogleMap\Helper\Controls\ScaleControleStyleHelper $scaleControlStyleHelper The scale control
+     * @param \Fungio\GoogleMap\Helper\Controls\ScaleControleStyleHelper $scaleControlStyleHelper The scale control
      *                                                                                           style helper.
      */
     public function __construct(
@@ -56,7 +56,7 @@ class ScaleControlHelper extends AbstractHelper
     /**
      * Gets the control position helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper The control position helper.
      */
     public function getControlPositionHelper()
     {
@@ -66,7 +66,7 @@ class ScaleControlHelper extends AbstractHelper
     /**
      * Sets the control position helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
+     * @param \Fungio\GoogleMap\Helper\Controls\ControlPositionHelper $controlPositionHelper The control position helper.
      */
     public function setControlPositionHelper(ControlPositionHelper $controlPositionHelper)
     {
@@ -76,7 +76,7 @@ class ScaleControlHelper extends AbstractHelper
     /**
      * Gets the scale control style helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper The scale control style helper.
+     * @return \Fungio\GoogleMap\Helper\Controls\ScaleControlStyleHelper The scale control style helper.
      */
     public function getScaleControlStyleHelper()
     {
@@ -86,7 +86,7 @@ class ScaleControlHelper extends AbstractHelper
     /**
      * Sets the scale control style helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper $scaleControlStyleHelper The scale control style
+     * @param \Fungio\GoogleMap\Helper\Controls\ScaleControlStyleHelper $scaleControlStyleHelper The scale control style
      *                                                                                          helper.
      */
     public function setScaleControlStyleHelper(ScaleControlStyleHelper $scaleControlStyleHelper)
@@ -97,7 +97,7 @@ class ScaleControlHelper extends AbstractHelper
     /**
      * Renders a scale control.
      *
-     * @param \Ivory\GoogleMap\Controls\ScaleControl $scaleControl The scale control.
+     * @param \Fungio\GoogleMap\Controls\ScaleControl $scaleControl The scale control.
      *
      * @return string The JS output.
      */

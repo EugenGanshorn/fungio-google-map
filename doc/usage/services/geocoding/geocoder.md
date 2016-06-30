@@ -11,12 +11,12 @@ process is known as "reverse geocoding".
 ## Request a geocoder
 
 ``` php
-use Ivory\GoogleMap\Services\Geocoding\Geocoder;
+use Fungio\GoogleMap\Services\Geocoding\Geocoder;
 
 $geocoder = new Geocoder();
 ```
 
-The Ivory Google Map Geocoder allows you to build all available geocoder directly by configuration file.
+The Fungio Google Map Geocoder allows you to build all available geocoder directly by configuration file.
 
 Available providers:
 
@@ -26,7 +26,7 @@ Available providers:
    - ``Geocoder\Provider\HostIpProvider``
    - ``Geocoder\Provider\IpInfoDbProvider``
    - ``Geocoder\Provider\YahooProvider``
-   - ``Ivory\GoogleMapBundle\Model\Services\Geocoding\Provider``
+   - ``Fungio\GoogleMapBundle\Model\Services\Geocoding\Provider``
 
 Available adapters:
 
@@ -38,8 +38,8 @@ Available adapters:
 To use these providers/adapters, simply register them:
 
 ``` php
-use Ivory\GoogleMap\Services\Geocoding\Geocoder;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
+use Fungio\GoogleMap\Services\Geocoding\Geocoder;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderProvider;
 use Geocoder\HttpAdapter\CurlHttpAdapter;
 
 $geocoder = new Geocoder();
@@ -53,8 +53,8 @@ $geocoder->registerProviders(array(
 If you use the standard Geocoder components, I recommand you to directly read this own documentation available
 [here](http://www.geocoder-php.org/).
 
-## The Ivory Google Map Geocoder
+## The Fungio Google Map Geocoder
 
-The specific Ivory Google Map Geocoder has been added to allow you to geocode a very advanced request & use the
+The specific Fungio Google Map Geocoder has been added to allow you to geocode a very advanced request & use the
 response to directly build your overlays. If you are interested about this geocoder, the documentation is available
-[here](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/geocoding/ivory_geocoder.md).
+[here](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/geocoding/fungio_geocoder.md).

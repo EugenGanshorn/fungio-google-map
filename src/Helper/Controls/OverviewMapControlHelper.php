@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Controls;
+namespace Fungio\GoogleMap\Helper\Controls;
 
-use Ivory\GoogleMap\Controls\OverviewMapControl;
-use Ivory\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Controls\OverviewMapControl;
+use Fungio\GoogleMap\Helper\AbstractHelper;
 
 /**
  * Overview map control helper.
@@ -24,7 +24,7 @@ class OverviewMapControlHelper extends AbstractHelper
     /**
      * Renders an overview map control.
      *
-     * @param \Ivory\GoogleMap\Controls\OverviewMapControl $overviewMapControl The overview map control.
+     * @param \Fungio\GoogleMap\Controls\OverviewMapControl $overviewMapControl The overview map control.
      *
      * @return string The JS output.
      */

@@ -6,7 +6,7 @@ This control appears by default in the bottom right corner of the map, and is by
 ## Build your overview map control
 
 ``` php
-use Ivory\GoogleMap\Controls\OverviewMapControl;
+use Fungio\GoogleMap\Controls\OverviewMapControl;
 
 $overviewMapControl = new OverviewMapControl();
 
@@ -17,7 +17,7 @@ $overviewMapControl->setOpened(false);
 ## Add your overview map control to the map
 
 ``` php
-use Ivory\GoogleMap\Controls\OverviewMapControl;
+use Fungio\GoogleMap\Controls\OverviewMapControl;
 
 $overviewMapControl = new OverviewMapControl();
 

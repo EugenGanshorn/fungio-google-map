@@ -5,8 +5,8 @@ Markers identify locations on the map. By default, they use a standard icon.
 ## Build your marker
 
 ``` php
-use Ivory\GoogleMap\Overlays\Animation;
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 
@@ -26,12 +26,12 @@ $marker->setOptions(array(
 ## Configure marker animation
 
 For configurating the marker animation, the better way is to follow the oriented object way. For that, the
-``Ivory\GoogleMap\Overlays\Animation`` is here. It allows you to access all constants which describe marker animation.
+``Fungio\GoogleMap\Overlays\Animation`` is here. It allows you to access all constants which describe marker animation.
 If you don't want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Overlays\Animation;
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Animation;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 
@@ -53,7 +53,7 @@ image.
 ### Configure marker icon URL
 
 ``` php
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 
@@ -64,10 +64,10 @@ $marker->setIcon('http://maps.gstatic.com/mapfiles/markers/marker.png');
 ### Configure marker image
 
 The complete marker image configuration is available
-[here](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/marker_image.md).
+[here](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/marker_image.md).
 
 ``` php
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 
@@ -85,7 +85,7 @@ marker image.
 ### Configure shadow URL
 
 ``` php
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 
@@ -96,10 +96,10 @@ $marker->setShadow('http://maps.gstatic.com/mapfiles/markers/marker.png');
 ### Configure marker image
 
 The complete marker image configuration is available
-[here](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/marker_image.md).
+[here](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/marker_image.md).
 
 ``` php
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 
@@ -110,14 +110,14 @@ $marker->setShadow($markerImage);
 ## Configure marker shape
 
 The complete marker shape configuration is available
-[here](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/marker_shape.md).
+[here](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/marker_shape.md).
 
 ## Add your marker to the map
 
 Now you have configurated your marker, you need to add it to the map.
 
 ``` php
-use Ivory\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Marker;
 
 $marker = new Marker();
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Directions;
+namespace Fungio\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Coordinate;
-use Ivory\GoogleMap\Exception\DirectionsException;
+use Fungio\GoogleMap\Base\Coordinate;
+use Fungio\GoogleMap\Exception\DirectionsException;
 
 /**
  * A directions waypoint which describes the google map directions waypoint.
@@ -22,7 +22,7 @@ use Ivory\GoogleMap\Exception\DirectionsException;
  */
 class DirectionsWaypoint
 {
-    /** @var string | \Ivory\GoogleMap\Base\Coordinate */
+    /** @var string | \Fungio\GoogleMap\Base\Coordinate */
     protected $location;
 
     /** @var boolean */
@@ -41,7 +41,7 @@ class DirectionsWaypoint
     /**
      * Gets the directions waypoint location.
      *
-     * @return string | \Ivory\GoogleMap\Base\Coordinate The directions waypoint location.
+     * @return string | \Fungio\GoogleMap\Base\Coordinate The directions waypoint location.
      */
     public function getLocation()
     {
@@ -53,10 +53,10 @@ class DirectionsWaypoint
      *
      * Available prototypes:
      * - function setLocation(string $destination)
-     * - function setLocation(Ivory\GoogleMap\Base\Coordinate $destination)
+     * - function setLocation(Fungio\GoogleMap\Base\Coordinate $destination)
      * - function setLocation(double $latitude, double $longitude, boolean $noWrap)
      *
-     * @throws \Ivory\GoogleMap\Exception\DirectionsException If the location is not valid (prototypes).
+     * @throws \Fungio\GoogleMap\Exception\DirectionsException If the location is not valid (prototypes).
      */
     public function setLocation()
     {

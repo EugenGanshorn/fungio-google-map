@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Overlays\MarkerCluster;
+namespace Fungio\GoogleMap\Helper\Overlays\MarkerCluster;
 
-use Ivory\GoogleMap\Helper\AbstractHelper;
-use Ivory\GoogleMap\Helper\Overlays\MarkerHelper;
+use Fungio\GoogleMap\Helper\AbstractHelper;
+use Fungio\GoogleMap\Helper\Overlays\MarkerHelper;
 
 /**
  * Abstract marker cluster helper.
@@ -21,13 +21,13 @@ use Ivory\GoogleMap\Helper\Overlays\MarkerHelper;
  */
 abstract class AbstractMarkerClusterHelper extends AbstractHelper implements MarkerClusterHelperInterface
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\MarkerHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\MarkerHelper */
     protected $markerHelper;
 
     /**
      * Creates a default marker cluster helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerHelper $markerHelper The marker helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerHelper $markerHelper The marker helper.
      */
     public function __construct(MarkerHelper $markerHelper = null)
     {
@@ -43,7 +43,7 @@ abstract class AbstractMarkerClusterHelper extends AbstractHelper implements Mar
     /**
      * Gets the marker helper.
      *
-     * @return \Ivory\GoogleMap\Helper\Overlays\MarkerHelper The marker helper.
+     * @return \Fungio\GoogleMap\Helper\Overlays\MarkerHelper The marker helper.
      */
     public function getMarkerHelper()
     {
@@ -53,7 +53,7 @@ abstract class AbstractMarkerClusterHelper extends AbstractHelper implements Mar
     /**
      * Sets the marker helper.
      *
-     * @param \Ivory\GoogleMap\Helper\Overlays\MarkerHelper $markerHelper The marker helper.
+     * @param \Fungio\GoogleMap\Helper\Overlays\MarkerHelper $markerHelper The marker helper.
      */
     public function setMarkerHelper(MarkerHelper $markerHelper)
     {

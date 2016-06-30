@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
 
 /**
  * Encoded polyline test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\EncodedPolyline;
  */
 class EncodedPolylineTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\EncodedPolyline */
+    /** @var \Fungio\GoogleMap\Overlays\EncodedPolyline */
     protected $encodedPolyline;
 
     /**
@@ -52,7 +52,7 @@ class EncodedPolylineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The encoded polyline value must be a string value.
      */
     public function testValueWithInvalidValue()

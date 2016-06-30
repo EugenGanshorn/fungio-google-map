@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Base;
+namespace Fungio\GoogleMap\Base;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
-use Ivory\GoogleMap\Exception\BaseException;
+use Fungio\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Fungio\GoogleMap\Exception\BaseException;
 
 /**
  * Point which describes a google map point
@@ -57,7 +57,7 @@ class Point extends AbstractJavascriptVariableAsset
      *
      * @param double $x The x coordinate.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the X coordinate is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the X coordinate is not valid.
      */
     public function setX($x)
     {
@@ -83,7 +83,7 @@ class Point extends AbstractJavascriptVariableAsset
      *
      * @param double $y The y coordinate.
      *
-     * @throws \Ivory\GoogleMap\Exception\BaseException If the Y coordinate is not valid.
+     * @throws \Fungio\GoogleMap\Exception\BaseException If the Y coordinate is not valid.
      */
     public function setY($y)
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Overlays;
+namespace Fungio\Tests\GoogleMap\Overlays;
 
-use Ivory\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Overlays\Circle;
 
 /**
  * Circle test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Overlays\Circle;
  */
 class CircleTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Overlays\Circle */
+    /** @var \Fungio\GoogleMap\Overlays\Circle */
     protected $circle;
 
     /**
@@ -41,13 +41,13 @@ class CircleTest extends \PHPUnit_Framework_TestCase
 
     public function testDefaultState()
     {
-        $this->assertInstanceOf('Ivory\GoogleMap\Base\Coordinate', $this->circle->getCenter());
+        $this->assertInstanceOf('Fungio\GoogleMap\Base\Coordinate', $this->circle->getCenter());
         $this->assertSame(1, $this->circle->getRadius());
     }
 
     public function testInitialState()
     {
-        $center = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $center = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $radius = 2;
 
         $this->circle = new Circle($center, $radius);
@@ -58,7 +58,7 @@ class CircleTest extends \PHPUnit_Framework_TestCase
 
     public function testCenterWithCoordinate()
     {
-        $center = $this->getMock('Ivory\GoogleMap\Base\Coordinate');
+        $center = $this->getMock('Fungio\GoogleMap\Base\Coordinate');
         $this->circle->setCenter($center);
 
         $this->assertSame($center, $this->circle->getCenter());
@@ -77,11 +77,11 @@ class CircleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage
      * The center setter arguments is invalid.
      * The available prototypes are :
-     * - function setCenter(Ivory\GoogleMap\Base\Coordinate $center)
+     * - function setCenter(Fungio\GoogleMap\Base\Coordinate $center)
      * - function setCenter(double $latitude, double $longitude, boolean $noWrap = true)
      */
     public function testCenterWithInvalidValue()
@@ -97,7 +97,7 @@ class CircleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\OverlayException
+     * @expectedException \Fungio\GoogleMap\Exception\OverlayException
      * @expectedExceptionMessage The radius of a circle must be a numeric value.
      */
     public function testRadiusWithInvalidValue()

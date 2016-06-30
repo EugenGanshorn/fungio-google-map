@@ -11,14 +11,14 @@ or as latitude/longitude coordinates. The Directions API can return multi-part d
 ## Request the directions service
 
 ``` php
-use Ivory\GoogleMap\Services\Directions\Directions;
+use Fungio\GoogleMap\Services\Directions\Directions;
 use Widop\HttpAdapter\CurlHttpAdapter;
 
 $directions = new Directions(new CurlHttpAdapter());
 ```
 
 If you want to use it with a business account, you can read this
-[documentation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/business_account.md).
+[documentation](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/business_account.md).
 
 ## Request a direction
 
@@ -27,16 +27,16 @@ $response = $directions->route('New York', 'Washington');
 ```
 
 The directions service allows you to route a much more advance request. If you want to learn more, you can read this
-[documentation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/services/directions/directions_request.md).
+[documentation](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/services/directions/directions_request.md).
 
 ## Directions response
 
-When you have requested your direction, the returned object is an ``Ivory\GoogleMap\Services\Directions\DirectionsResponse``.
+When you have requested your direction, the returned object is an ``Fungio\GoogleMap\Services\Directions\DirectionsResponse``.
 It wraps a status & routes.
 
 ### Directions status
 
-The available status are defined by the ``Ivory\GoogleMap\Services\Directions\DirectionsStatus`` constants.
+The available status are defined by the ``Fungio\GoogleMap\Services\Directions\DirectionsStatus`` constants.
 
 ``` php
 // Get the status
@@ -46,7 +46,7 @@ $status = $response->getStatus();
 ### Directions routes
 
 A request can return many routes. The directions response wraps an array of
-``Ivory\GoogleMap\Services\Directions\DirectionsRoute``.
+``Fungio\GoogleMap\Services\Directions\DirectionsRoute``.
 
 ``` php
 // Get the routes
@@ -99,7 +99,7 @@ $legs = $route->getLegs();
 
 ### Overview polyline
 
-The overview polyline is an [encoded polyline](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/encoded_polyline.md)
+The overview polyline is an [encoded polyline](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/encoded_polyline.md)
 which represents the route.
 
 ``` php
@@ -155,7 +155,7 @@ foreach ($legs as $leg) {
 ### Distance
 
 It indicates the total distance covered by this leg. It represented by the
-`Ivory\GoogleMap\Services\Base\Distance`.
+`Fungio\GoogleMap\Services\Base\Distance`.
 
 ``` php
 // Gets the distance
@@ -165,7 +165,7 @@ $duration = $leg->getDistance();
 ### Duration
 
 It indicates the total duration of this leg. It is represented by the
-`Ivory\GoogleMap\Services\Base\Duration`.
+`Fungio\GoogleMap\Services\Base\Duration`.
 
 ``` php
 // Gets the duration
@@ -175,7 +175,7 @@ $duration = $leg->getDuration();
 ### Start location
 
 The start location is the coordinate of the start of this leg. It is represented by the
-`Ivory\GoogleMap\Base\Coordinate`.
+`Fungio\GoogleMap\Base\Coordinate`.
 
 ``` php
 // Gets the start location
@@ -185,7 +185,7 @@ $startLocation = $leg->getStartLocation();
 ### End location
 
 The end location is the coordinate of the end of this leg. It is represented by the
-`Ivory\GoogleMap\Base\Coordinate`.
+`Fungio\GoogleMap\Base\Coordinate`.
 
 ``` php
 // Gets the end location
@@ -263,7 +263,7 @@ $duration = $step->getDuration();
 ### Start Location
 
 It contains the location of the starting point of this step. It is represented by the
-`Ivory\GoogleMap\Base\Coordinate`.
+`Fungio\GoogleMap\Base\Coordinate`.
 
 ``` php
 // Gets the start location.
@@ -273,7 +273,7 @@ $startLocation = $step->getStartLocation();
 ### End Location
 
 It contains the location of the ending point of this step. It is represented by the
-`Ivory\GoogleMap\Base\Coordinate`.
+`Fungio\GoogleMap\Base\Coordinate`.
 
 ``` php
 // Gets the end location.
@@ -291,7 +291,7 @@ $instructions = $step->getInstructions();
 
 ### Encoded polyline
 
-It represents the step as an [encoded polyline](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/encoded_polyline.md).
+It represents the step as an [encoded polyline](http://github.com/fungio/fungio-google-map/blob/master/doc/usage/overlays/encoded_polyline.md).
 
 ``` php
 // Gets the encoded polyline.
@@ -300,7 +300,7 @@ $encodedPolyline = $step->getEncodedPolyline();
 
 ### Travel Mode
 
-It contains the travel mode of this step. it is represented by the `Ivory\GoogleMap\Services\Base\TravelMode`
+It contains the travel mode of this step. it is represented by the `Fungio\GoogleMap\Services\Base\TravelMode`
 constants.
 
 ``` php

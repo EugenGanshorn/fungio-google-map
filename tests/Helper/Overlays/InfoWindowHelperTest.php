@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Overlays;
+namespace Fungio\Tests\GoogleMap\Helper\Overlays;
 
-use Ivory\GoogleMap\Overlays\InfoWindow;
-use Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper;
+use Fungio\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper;
 
 /**
  * Info window helper test.
@@ -21,7 +21,7 @@ use Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper;
  */
 class InfoWindowHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper */
+    /** @var \Fungio\GoogleMap\Helper\Overlays\InfoWindowHelper */
     protected $infoWindowHelper;
 
     /**
@@ -89,7 +89,7 @@ class InfoWindowHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderOpenWithoutMarker()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')
@@ -107,7 +107,7 @@ class InfoWindowHelperTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderOpenWithMarker()
     {
-        $map = $this->getMock('Ivory\GoogleMap\Map');
+        $map = $this->getMock('Fungio\GoogleMap\Map');
         $map
             ->expects($this->once())
             ->method('getJavascriptVariable')
@@ -120,7 +120,7 @@ class InfoWindowHelperTest extends \PHPUnit_Framework_TestCase
         $infoWindow->setOpen(true);
         $infoWindow->setOptions(array('option1' => 'value1', 'option2' => 'value2'));
 
-        $marker = $this->getMock('Ivory\GoogleMap\Overlays\Marker');
+        $marker = $this->getMock('Fungio\GoogleMap\Overlays\Marker');
         $marker
             ->expects($this->once())
             ->method('getJavascriptVariable')

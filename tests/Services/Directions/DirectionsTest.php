@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Directions;
+namespace Fungio\Tests\GoogleMap\Services\Directions;
 
 use \DateTime;
-use Ivory\GoogleMap\Services\Directions\Directions;
-use Ivory\GoogleMap\Services\Directions\DirectionsRequest;
-use Ivory\GoogleMap\Services\Directions\DirectionsStatus;
-use Ivory\GoogleMap\Services\Directions\DirectionsWaypoint;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\Directions\Directions;
+use Fungio\GoogleMap\Services\Directions\DirectionsRequest;
+use Fungio\GoogleMap\Services\Directions\DirectionsStatus;
+use Fungio\GoogleMap\Services\Directions\DirectionsWaypoint;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 use Widop\HttpAdapter\CurlHttpAdapter;
 
 /**
@@ -27,7 +27,7 @@ use Widop\HttpAdapter\CurlHttpAdapter;
  */
 class DirectionsTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Directions\Directions */
+    /** @var \Fungio\GoogleMap\Services\Directions\Directions */
     protected $directions;
 
     /**
@@ -227,7 +227,7 @@ class DirectionsTest extends \PHPUnit_Framework_TestCase
     {
         $url = 'http://maps.googleapis.com/maps/api/staticmap?center=%E4%B8%8A%E6%B5%B7+%E4%B8%AD%E5%9C%8B&size=640x640&zoom=10&sensor=false';
 
-        $businessAccount = $this->getMockBuilder('Ivory\GoogleMap\Services\BusinessAccount')
+        $businessAccount = $this->getMockBuilder('Fungio\GoogleMap\Services\BusinessAccount')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -246,11 +246,11 @@ class DirectionsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The route arguments are invalid.
      * The available prototypes are:
      * - function route(string $origin, string $destination)
-     * - function route(Ivory\GoogleMap\Services\Directions\DirectionsRequest $request)
+     * - function route(Fungio\GoogleMap\Services\Directions\DirectionsRequest $request)
      */
     public function testRouteWithInvalidRequestParameters()
     {
@@ -258,7 +258,7 @@ class DirectionsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\DirectionsException
+     * @expectedException \Fungio\GoogleMap\Exception\DirectionsException
      * @expectedExceptionMessage The directions request is not valid. It needs at least an origin and a destination.
      * If you add waypoint to the directions request, it needs at least a location.
      */
@@ -268,7 +268,7 @@ class DirectionsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Ivory\GoogleMap\Exception\ServiceException
+     * @expectedException \Fungio\GoogleMap\Exception\ServiceException
      * @expectedExceptionMessage The service result is not valid.
      */
     public function testRouteWithInvalidResult()

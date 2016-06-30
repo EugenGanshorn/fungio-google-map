@@ -8,7 +8,7 @@ shape : the bound.
 ## Build your rectangle
 
 ``` php
-use Ivory\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Overlays\Rectangle;
 
 $rectangle = new Rectangle();
 
@@ -27,7 +27,7 @@ $rectangle->setOptions(array(
 ## Add your rectangle to the map
 
 ``` php
-use Ivory\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Overlays\Rectangle;
 
 $rectangle = new Rectangle();
 

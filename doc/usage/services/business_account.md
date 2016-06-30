@@ -2,10 +2,10 @@
 
 When using a service for business purpose, you will receive a business account from Google. This one allows you to
 bypass Google limitation according to your billing plan. In order to use this feature, you will need an
-`Ivory\GoogleMap\Services\BusinessAccount`:
+`Fungio\GoogleMap\Services\BusinessAccount`:
 
 ``` php
-use Ivory\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\BusinessAccount;
 
 $businessAccount = new BusinessAccount('client_id', 'secret');
 
@@ -33,9 +33,9 @@ If you want to use the geocoder service with a Google business account, you need
 everything is done automatically:
 
 ``` php
-use Ivory\GoogleMap\Services\BusinessAccount;
-use Ivory\GoogleMap\Services\Geocoding\Geocoder;
-use Ivory\GoogleMap\Services\Geocoding\GeocoderProvider;
+use Fungio\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\Geocoding\Geocoder;
+use Fungio\GoogleMap\Services\Geocoding\GeocoderProvider;
 use Geocoder\HttpAdapter\CurlHttpAdapter;
 
 
@@ -62,7 +62,7 @@ If you want to use the directions service with a Google business account, you ne
 everything is done automatically:
 
 ``` php
-use Ivory\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\BusinessAccount;
 
 $directions->setBusinessAccount(new BusinessAccount('client_id', 'secret'));
 $businessAccount = $directions->getBusinessAccount();
@@ -82,7 +82,7 @@ If you want to use the distance matrix service with a Google business account, y
 then, everything is done automatically:
 
 ``` php
-use Ivory\GoogleMap\Services\BusinessAccount;
+use Fungio\GoogleMap\Services\BusinessAccount;
 
 $distanceMatrix->setBusinessAccount(new BusinessAccount('client_id', 'secret'));
 $businessAccount = $distanceMatrix->getBusinessAccount();

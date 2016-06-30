@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Services\Utils;
+namespace Fungio\Tests\GoogleMap\Services\Utils;
 
-use Ivory\GoogleMap\Services\Utils\XmlParser;
+use Fungio\GoogleMap\Services\Utils\XmlParser;
 
 /**
  * Xml parser test.
@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Services\Utils\XmlParser;
  */
 class XmlParserTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \Ivory\GoogleMap\Services\Utils\XmlParser */
+    /** @var \Fungio\GoogleMap\Services\Utils\XmlParser */
     protected $xmlParser;
 
     /**

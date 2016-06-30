@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper\Base;
+namespace Fungio\GoogleMap\Helper\Base;
 
-use Ivory\GoogleMap\Base\Bound;
-use Ivory\GoogleMap\Overlays\Circle;
-use Ivory\GoogleMap\Overlays\EncodedPolyline;
-use Ivory\GoogleMap\Overlays\GroundOverlay;
-use Ivory\GoogleMap\Overlays\InfoWindow;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Overlays\Polyline;
-use Ivory\GoogleMap\Overlays\Polygon;
-use Ivory\GoogleMap\Overlays\Rectangle;
+use Fungio\GoogleMap\Base\Bound;
+use Fungio\GoogleMap\Overlays\Circle;
+use Fungio\GoogleMap\Overlays\EncodedPolyline;
+use Fungio\GoogleMap\Overlays\GroundOverlay;
+use Fungio\GoogleMap\Overlays\InfoWindow;
+use Fungio\GoogleMap\Overlays\Marker;
+use Fungio\GoogleMap\Overlays\Polyline;
+use Fungio\GoogleMap\Overlays\Polygon;
+use Fungio\GoogleMap\Overlays\Rectangle;
 
 /**
  * Bound helper.
@@ -31,7 +31,7 @@ class BoundHelper
     /**
      * Renders the bound.
      *
-     * @param \Ivory\GoogleMap\Base\Bound $bound The bound.
+     * @param \Fungio\GoogleMap\Base\Bound $bound The bound.
      *
      * @return string The JS output.
      */
@@ -52,7 +52,7 @@ class BoundHelper
     /**
      * Renders the bound's extend of a marker.
      *
-     * @param \Ivory\GoogleMap\Base\Bound $bound The bound.
+     * @param \Fungio\GoogleMap\Base\Bound $bound The bound.
      *
      * @return string The JS output.
      */

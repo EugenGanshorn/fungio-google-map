@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services\Geocoding\Result;
+namespace Fungio\GoogleMap\Services\Geocoding\Result;
 
-use Ivory\GoogleMap\Exception\GeocodingException;
+use Fungio\GoogleMap\Exception\GeocodingException;
 
 /**
  * GeocoderAddressComponent which describes a google map geocoder address component.
@@ -59,7 +59,7 @@ class GeocoderAddressComponent
      *
      * @param string $longName The address componenet long name.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the long name is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the long name is not valid.
      */
     public function setLongName($longName)
     {
@@ -85,7 +85,7 @@ class GeocoderAddressComponent
      *
      * @param string $shortName The address component short name.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the short name is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the short name is not valid.
      */
     public function setShortName($shortName)
     {
@@ -125,7 +125,7 @@ class GeocoderAddressComponent
      *
      * @param string $type The type to add.
      *
-     * @throws \Ivory\GoogleMap\Exception\GeocodingException If the type is not valid.
+     * @throws \Fungio\GoogleMap\Exception\GeocodingException If the type is not valid.
      */
     public function addType($type)
     {

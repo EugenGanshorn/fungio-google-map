@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Exception;
+namespace Fungio\GoogleMap\Exception;
 
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
-use Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
-use Ivory\GoogleMap\Services\Base\TravelMode;
-use Ivory\GoogleMap\Services\Base\UnitSystem;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixStatus;
+use Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixElementStatus;
+use Fungio\GoogleMap\Services\Base\TravelMode;
+use Fungio\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * DistanceMatrix exception.
@@ -27,7 +27,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST" exception.
      */
     public static function invalidDistanceMatrixRequest()
     {
@@ -37,7 +37,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST PARAMETERS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST PARAMETERS" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST PARAMETERS" exception.
      */
     public static function invalidDistanceMatrixRequestParameters()
     {
@@ -46,14 +46,14 @@ class DistanceMatrixException extends ServiceException
             'The process arguments are invalid.',
             'The available prototypes are:',
             '- function process(array $origins, array $destinations)',
-            '- function process(Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $request)'
+            '- function process(Fungio\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest $request)'
         ));
     }
 
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST DESTINATION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST DESTINATION" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST DESTINATION" exception.
      */
     public static function invalidDistanceMatrixRequestDestination()
     {
@@ -62,7 +62,7 @@ class DistanceMatrixException extends ServiceException
             'The destination adder arguments are invalid.',
             'The available prototypes are :',
             ' - function addDestination(string $destination)',
-            ' - function addDestination(Ivory\GoogleMap\Base\Coordinate $destination)',
+            ' - function addDestination(Fungio\GoogleMap\Base\Coordinate $destination)',
             ' - function addDestination(double $latitude, double $longitude, boolean $noWrap)'
         ));
     }
@@ -70,7 +70,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST ORIGIN" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST ORIGIN" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST ORIGIN" exception.
      */
     public static function invalidDistanceMatrixRequestOrigin()
     {
@@ -79,7 +79,7 @@ class DistanceMatrixException extends ServiceException
             'The origin adder arguments are invalid.',
             'The available prototypes are :',
             ' - function addOrigin(string $origin)',
-            ' - function addOrigin(Ivory\GoogleMap\Base\Coordinate $origin)',
+            ' - function addOrigin(Fungio\GoogleMap\Base\Coordinate $origin)',
             ' - function addOrigin(double $latitude, double $longitude, boolean $noWrap)'
         ));
     }
@@ -87,7 +87,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST REGION" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST REGION" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST REGION" exception.
      */
     public static function invalidDistanceMatrixRequestRegion()
     {
@@ -97,7 +97,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST LANGUAGE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST LANGUAGE" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST LANGUAGE" exception.
      */
     public static function invalidDistanceMatrixRequestLanguage()
     {
@@ -107,7 +107,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST SENSOR" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST SENSOR" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST SENSOR" exception.
      */
     public static function invalidDistanceMatrixRequestSensor()
     {
@@ -117,7 +117,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST TRAVEL MODE" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST TRAVEL MODE" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST TRAVEL MODE" exception.
      */
     public static function invalidDistanceMatrixRequestTravelMode()
     {
@@ -132,7 +132,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST UNIT SYSTEM" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST UNIT SYSTEM" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST UNIT SYSTEM" exception.
      */
     public static function invalidDistanceMatrixRequestUnitSystem()
     {
@@ -145,7 +145,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST AVOID HIGHWAYS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST AVOID HIGHWAYS" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST AVOID HIGHWAYS" exception.
      */
     public static function invalidDistanceMatrixRequestAvoidHighways()
     {
@@ -155,7 +155,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX REQUEST AVOID TOLLS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST AVOID TOLLS" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX REQUEST AVOID TOLLS" exception.
      */
     public static function invalidDistanceMatrixRequestAvoidTolls()
     {
@@ -165,7 +165,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX RESPONSE STATUS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX RESPONSE STATUS" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX RESPONSE STATUS" exception.
      */
     public static function invalidDistanceMatrixResponseStatus()
     {
@@ -178,7 +178,7 @@ class DistanceMatrixException extends ServiceException
     /**
      * Gets the "INVALID DISTANCE MATRIX RESPONSE ELEMENT STATUS" exception.
      *
-     * @return \Ivory\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX RESPONSE ELEMENT STATUS" exception.
+     * @return \Fungio\GoogleMap\Exception\DistanceMatrixException The "INVALID DISTANCE MATRIX RESPONSE ELEMENT STATUS" exception.
      */
     public static function invalidDistanceMatrixResponseElementStatus()
     {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Helper;
+namespace Fungio\GoogleMap\Helper;
 
-use Ivory\GoogleMap\Exception\HelperException;
-use Ivory\GoogleMap\MapTypeId;
+use Fungio\GoogleMap\Exception\HelperException;
+use Fungio\GoogleMap\MapTypeId;
 
 /**
  * Map type ID helper.
@@ -26,7 +26,7 @@ class MapTypeIdHelper
      *
      * @param string $mapTypeId The map type ID.
      *
-     * @throws \Ivory\GoogleMap\Exception\HelperException If the map type ID is not valid.
+     * @throws \Fungio\GoogleMap\Exception\HelperException If the map type ID is not valid.
      *
      * @return string The JS output.
      */

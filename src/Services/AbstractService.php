@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ivory Google Map package.
+ * This file is part of the Fungio Google Map package.
  *
  * (c) Eric GELOEN <geloen.eric@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\GoogleMap\Services;
+namespace Fungio\GoogleMap\Services;
 
-use Ivory\GoogleMap\Exception\ServiceException;
-use Ivory\GoogleMap\Services\Utils\XmlParser;
+use Fungio\GoogleMap\Exception\ServiceException;
+use Fungio\GoogleMap\Services\Utils\XmlParser;
 use Widop\HttpAdapter\HttpAdapterInterface;
 
 /**
@@ -34,10 +34,10 @@ abstract class AbstractService
     /** @var string */
     protected $format;
 
-    /** @var \Ivory\GoogleMap\Services\Utils\XmlParser */
+    /** @var \Fungio\GoogleMap\Services\Utils\XmlParser */
     protected $xmlParser;
 
-    /** @var \Ivory\GoogleMap\Services\BusinessAccount */
+    /** @var \Fungio\GoogleMap\Services\BusinessAccount */
     protected $businessAccount;
 
     /**
@@ -47,8 +47,8 @@ abstract class AbstractService
      * @param string                                    $url             The service url.
      * @param boolean                                   $https           TRUE if the service uses HTTPS else FALSE.
      * @param string                                    $format          Format used by the service.
-     * @param \Ivory\GoogleMap\Services\Utils\XmlParser $xmlParser       The xml parser.
-     * @param \Ivory\GoogleMap\Services\BusinessAccount $businessAccount The business account.
+     * @param \Fungio\GoogleMap\Services\Utils\XmlParser $xmlParser       The xml parser.
+     * @param \Fungio\GoogleMap\Services\BusinessAccount $businessAccount The business account.
      */
     public function __construct(
         HttpAdapterInterface $httpAdapter,
@@ -109,7 +109,7 @@ abstract class AbstractService
      *
      * @param string $url The service API url.
      *
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the url is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the url is not valid.
      */
     public function setUrl($url)
     {
@@ -135,7 +135,7 @@ abstract class AbstractService
      *
      * @param boolean $https TRUE if the service uses HTTPS else FALSE.
      *
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the https flag is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the https flag is not valid.
      */
     public function setHttps($https)
     {
@@ -161,7 +161,7 @@ abstract class AbstractService
      *
      * @param string $format The service format.
      *
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the format is not valid.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the format is not valid.
      */
     public function setFormat($format)
     {
@@ -175,7 +175,7 @@ abstract class AbstractService
     /**
      * Gets the xml parser.
      *
-     * @return \Ivory\GoogleMap\Services\Utils\XmlParser The xml parser.
+     * @return \Fungio\GoogleMap\Services\Utils\XmlParser The xml parser.
      */
     public function getXmlParser()
     {
@@ -185,7 +185,7 @@ abstract class AbstractService
     /**
      * Sets the xml parser.
      *
-     * @param \Ivory\GoogleMap\Services\Geocoding\XmlParser $xmlParser The xml parser.
+     * @param \Fungio\GoogleMap\Services\Geocoding\XmlParser $xmlParser The xml parser.
      */
     public function setXmlParser(XmlParser $xmlParser)
     {
@@ -205,7 +205,7 @@ abstract class AbstractService
     /**
      * Gets the business account.
      *
-     * @return \Ivory\GoogleMap\Services\BusinessAccount The business account.
+     * @return \Fungio\GoogleMap\Services\BusinessAccount The business account.
      */
     public function getBusinessAccount()
     {
@@ -215,7 +215,7 @@ abstract class AbstractService
     /**
      * Sets the business account.
      *
-     * @param \Ivory\GoogleMap\Services\BusinessAccount $businessAccount The business account.
+     * @param \Fungio\GoogleMap\Services\BusinessAccount $businessAccount The business account.
      */
     public function setBusinessAccount(BusinessAccount $businessAccount = null)
     {
@@ -245,8 +245,8 @@ abstract class AbstractService
      *
      * @return \Widop\HttpAdapter\HttpResponse The response.
      *
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the response is null.
-     * @throws \Ivory\GoogleMap\Exception\ServiceException If the response has an error 4XX or 5XX.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the response is null.
+     * @throws \Fungio\GoogleMap\Exception\ServiceException If the response has an error 4XX or 5XX.
      */
     protected function send($url)
     {
