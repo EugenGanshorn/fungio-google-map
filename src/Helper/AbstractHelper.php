@@ -12,7 +12,7 @@
 namespace Fungio\GoogleMap\Helper;
 
 use Fungio\GoogleMap\Map;
-use Fungio\JsonBuilder\JsonBuilder;
+use Ivory\JsonBuilder\JsonBuilder;
 
 /**
  * Abstract helper.
@@ -21,13 +21,13 @@ use Fungio\JsonBuilder\JsonBuilder;
  */
 abstract class AbstractHelper
 {
-    /** @var \Fungio\GoogleMap\Helper\Utils\JsonBuilder */
+    /** @var \Ivory\JsonBuilder\JsonBuilder */
     protected $jsonBuilder;
 
     /**
      * Creates an helper.
      *
-     * @param \Fungio\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
+     * @param \Ivory\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
      */
     public function __construct(JsonBuilder $jsonBuilder = null)
     {
@@ -41,7 +41,7 @@ abstract class AbstractHelper
     /**
      * Gets the json builder.
      *
-     * @return \Fungio\JsonBuilder\JsonBuilder The json builder.
+     * @return \Ivory\JsonBuilder\JsonBuilder The json builder.
      */
     public function getJsonBuilder()
     {
@@ -51,7 +51,7 @@ abstract class AbstractHelper
     /**
      * Sets the json builder.
      *
-     * @param \Fungio\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
+     * @param \Ivory\JsonBuilder\JsonBuilder $jsonBuilder The json builder.
      */
     public function setJsonBuilder(JsonBuilder $jsonBuilder)
     {
