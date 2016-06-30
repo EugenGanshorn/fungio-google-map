@@ -1,6 +1,6 @@
 {
     "name": "fungio/google-map",
-    "description": "Google Map API v3 integration for PHP 5.3+",
+    "description": "Google Map API v3 integration for PHP 5.3.0+",
     "keywords": [ "google map" ],
     "license": "MIT",
     "authors": [
@@ -32,10 +32,5 @@
     },
     "config": {
         "bin-dir": "bin/"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "dev-master"
-        }
     }
 }
