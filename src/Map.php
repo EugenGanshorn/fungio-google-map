@@ -161,7 +161,7 @@ class Map extends AbstractJavascriptVariableAsset
 
         $this->libraries = array();
         $this->language = 'en';
-        $this->apiKey = 'apiKey';
+        $this->apiKey = '';
     }
 
     /**
