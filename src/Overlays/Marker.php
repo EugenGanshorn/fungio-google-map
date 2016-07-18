@@ -63,11 +63,9 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
 
         $this->setPrefixJavascriptVariable('marker_');
 
-        if ($position === null) {
-            $position = new Coordinate();
+        if ($position !== null) {
+            $this->setPosition($position);
         }
-
-        $this->setPosition($position);
 
         if ($animation !== null) {
             $this->setAnimation($animation);
@@ -116,6 +114,10 @@ class Marker extends AbstractOptionsAsset implements ExtendableInterface
         if (isset($args[0]) && ($args[0] instanceof Coordinate)) {
             $this->position = $args[0];
         } elseif ((isset($args[0]) && is_numeric($args[0])) && (isset($args[1]) && is_numeric($args[1]))) {
+            if ($this->position === null) {
+                $this->position = new Coordinate();
+            }
+
             $this->position->setLatitude($args[0]);
             $this->position->setLongitude($args[1]);
 
