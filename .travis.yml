@@ -21,4 +21,4 @@ matrix:
         - php: hhvm-nightly
 
 notifications:
-    email: geloen.eric@gmail.com
+    email: fungio76@gmail.com
