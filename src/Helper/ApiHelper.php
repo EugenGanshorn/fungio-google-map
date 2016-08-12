@@ -21,6 +21,9 @@ class ApiHelper extends AbstractHelper
     /** @var boolean */
     protected $loaded;
 
+    /** @var string */
+    protected $apiKey;
+
     /**
      * Creates a Google Map API helper.
      */
@@ -29,6 +32,7 @@ class ApiHelper extends AbstractHelper
         parent::__construct();
 
         $this->loaded = false;
+        $this->apiKey = '';
     }
 
     /**
@@ -41,26 +45,32 @@ class ApiHelper extends AbstractHelper
     public function isLoaded($loaded = null)
     {
         if ($loaded !== null) {
-            $this->loaded = (bool) $loaded;
+            $this->loaded = (bool)$loaded;
         }
 
         return $this->loaded;
     }
 
     /**
+     * @param $apiKey
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+    }
+
+    /**
      * Renders the API.
      *
-     * @param string  $language  The language.
-     * @param string  $apiKey  The API Key.
-     * @param array   $libraries Additionnal libraries.
-     * @param string  $callback  A JS callback.
-     * @param boolean $sensor    The sensor flag.
+     * @param string $language The language.
+     * @param array $libraries Additionnal libraries.
+     * @param string $callback A JS callback.
+     * @param boolean $sensor The sensor flag.
      *
      * @return string The HTML output.
      */
     public function render(
         $language = 'en',
-        $apiKey = '',
         array $libraries = array(),
         $callback = null,
         $sensor = false
@@ -73,10 +83,10 @@ class ApiHelper extends AbstractHelper
         }
 
         $otherParameters['language'] = $language;
-        if ($apiKey != '') {
-            $otherParameters['key'] = $apiKey;
+        if ($this->apiKey != '') {
+            $otherParameters['key'] = $this->apiKey;
         }
-        $otherParameters['sensor'] = json_encode((bool) $sensor);
+//        $otherParameters['sensor'] = json_encode((bool) $sensor);
 
         $this->jsonBuilder
             ->reset()
@@ -91,10 +101,10 @@ class ApiHelper extends AbstractHelper
         $loader = sprintf('google.load("maps", "3", %s);', $this->jsonBuilder->build());
 
         $output = array();
-        $output[] = '<script type="text/javascript">'.PHP_EOL;
-        $output[] = sprintf('function %s () { %s };'.PHP_EOL, $callbackFunction, $loader);
-        $output[] = '</script>'.PHP_EOL;
-        $output[] = sprintf('<script type="text/javascript" src="%s"></script>'.PHP_EOL, $url);
+        $output[] = '<script type="text/javascript">' . PHP_EOL;
+        $output[] = sprintf('function %s () { %s };' . PHP_EOL, $callbackFunction, $loader);
+        $output[] = '</script>' . PHP_EOL;
+        $output[] = sprintf('<script type="text/javascript" src="%s"></script>' . PHP_EOL, $url);
 
         $this->loaded = true;
 

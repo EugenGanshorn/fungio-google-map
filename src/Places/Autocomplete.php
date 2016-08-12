@@ -56,7 +56,7 @@ class Autocomplete extends AbstractJavascriptVariableAsset
 
         $this->inputId = 'place_input';
         $this->inputAttributes = array(
-            'type'        => 'text',
+            'type' => 'text',
             'placeholder' => 'off',
         );
 
@@ -322,8 +322,8 @@ class Autocomplete extends AbstractJavascriptVariableAsset
     /**
      * Adds a component restriction.
      *
-     * @param string $type  The component restriction type.
-     * @param mixed  $value The component restriction value.
+     * @param string $type The component restriction type.
+     * @param mixed $value The component restriction value.
      *
      * @throws \Fungio\GoogleMap\Exception\PlaceException If the component restriction type is not supported.
      * @throws \Fungio\GoogleMap\Exception\PlaceException If the component restriction type already exists.
@@ -416,8 +416,8 @@ class Autocomplete extends AbstractJavascriptVariableAsset
      *
      * You can remove an attribute by setting it to `null`.
      *
-     * @param string $name  The attribute name.
-     * @param mixed  $value The attribute value.
+     * @param string $name The attribute name.
+     * @param mixed $value The attribute value.
      */
     public function setInputAttribute($name, $value)
     {
