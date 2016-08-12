@@ -1,6 +1,6 @@
 # README
 
-[![Coverage Status](https://coveralls.io/repos/fungio/fungio-google-map/badge.png?branch=master)](https://coveralls.io/r/fungio/fungio-google-map?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/fungio/fungio-google-map/badge.svg?branch=master)](https://coveralls.io/github/fungio/fungio-google-map?branch=master)
 
 The Fungio Google Map project provides a Google Map integration for your PHP 5.3+ Project. It allows you to manage map,
 controls, overlays, events & services through the Google Map API v3.
