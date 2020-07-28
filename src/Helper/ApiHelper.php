@@ -96,7 +96,8 @@ class ApiHelper extends AbstractHelper
             $this->jsonBuilder->setValue('[callback]', $callback, false);
         }
 
-        $url = sprintf('//maps.googleapis.com/maps/api/js?%s', $this->jsonBuilder->build());
+        $params = json_decode($this->jsonBuilder->build(), true);
+        $url = sprintf('//maps.googleapis.com/maps/api/js?%s', $params['other_params']);
         
         $output = array();
         $output[] = sprintf('<script type="text/javascript" src="%s"></script>' . PHP_EOL, $url);
