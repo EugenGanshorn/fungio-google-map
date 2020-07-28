@@ -96,14 +96,10 @@ class ApiHelper extends AbstractHelper
             $this->jsonBuilder->setValue('[callback]', $callback, false);
         }
 
-        $callbackFunction = 'load_fungio_google_map_api';
-        $url = sprintf('//www.google.com/jsapi?callback=%s', $callbackFunction);
-        $loader = sprintf('google.load("maps", "3", %s);', $this->jsonBuilder->build());
-
+        $params = json_decode($this->jsonBuilder->build(), true);
+        $url = sprintf('//maps.googleapis.com/maps/api/js?%s', $params['other_params']);
+        
         $output = array();
-        $output[] = '<script type="text/javascript">' . PHP_EOL;
-        $output[] = sprintf('function %s () { %s };' . PHP_EOL, $callbackFunction, $loader);
-        $output[] = '</script>' . PHP_EOL;
         $output[] = sprintf('<script type="text/javascript" src="%s"></script>' . PHP_EOL, $url);
 
         $this->loaded = true;
